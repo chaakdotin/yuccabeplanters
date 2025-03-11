@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { gsap, ScrollTrigger, ScrollToPlugin } from "gsap/all";
 import ScrollSections from "./ScrollSections";
 import './new.css';
-import Carousel from './carousel';
+import Carousel from './Carousel';
 gsap.registerPlugin( ScrollTrigger, ScrollToPlugin);
 const CubeEffectSwiper = ({scrollToSection}) => {
     const { refs, setCurrentPage } = scrollToSection;
