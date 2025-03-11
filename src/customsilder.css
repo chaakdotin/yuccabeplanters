@@ -1,0 +1,4 @@
+.swiper-container {
+    width: 100%; /* Ensure the container has a valid width */
+    overflow: hidden; /* Prevent overflow */
+  }

@@ -1,0 +1,98 @@
+.menu-logo {
+    width: 76px;
+}
+.navbar-container-padding{
+    padding: 0px 9vw;
+}
+
+a, a:hover{
+    text-decoration: none!important;
+}
+/* Animate the nav line */
+.scroll-nav .w--current .scroll-nav-line {
+    animation: scrollnavline 1s forwards;
+    opacity: 1;
+    box-shadow: 0px 0px 2px 0.2px rgba(217, 217, 217, 0.5);
+    transform: translate3d(0px, 0px, 0px) scale3d(1.5, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+}
+
+
+
+/* Animate the nav text */
+.scroll-nav .w--current .scroll-nav-text {
+
+    display: block !important;
+    transform: translate3d(5px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        opacity: 1;
+        filter: blur(0px);
+}
+
+
+.scroll-nav .w--current .scroll-nav-line::before{
+    content: "";
+    display: inline-block;
+    width: 2px; /* Adjust size */
+    height: 4px;
+    background-color: black; /* Adjust color */
+    border-radius: 50%; /* Makes it a circle */
+    margin-right: 5px; /* Spacing between dot and text */
+    left: -2px;
+    top: -1.5px;
+    position: absolute;;
+}
+.w-node-div-block-21-7d08bc7f {
+    -ms-grid-column-span: 1;
+    grid-column-end: 2;
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    -ms-grid-row-span: 1;
+    grid-row-end: 3;
+    -ms-grid-row: 2;
+    grid-row-start: 2;
+    
+}
+.huge-statement-wrapper {
+    height: 100vh;
+    position: relative;
+    z-index: 30;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.huge-statement {
+    max-width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    color: #000;
+    text-align: center;
+}
+.content-wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 9vw;
+    padding-left: 9vw;
+}
+.huge-text {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 7.5vw;
+    line-height: 1.1em;
+    font-weight: 600;
+}
+.z-index-99{
+    z-index: 99;
+}

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Separate Background Video & Cards Div</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    /* Reset and remove body background so video shows through */
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: sans-serif;
+      background: transparent;
+    }
+
+    /* Background video container */
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .background-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Cards container */
+    .cards-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Each card occupies full viewport height */
+    .card {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3em;
+      color: #fff;
+      will-change: transform;
+      /* Semi-transparent background so the video shows through gaps */
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .cards {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3em;
+      color: #fff;
+      will-change: transform;
+      /* Semi-transparent background so the video shows through gaps */
+      background: rgba(22, 160, 133, 1);
+    }
+
+    /* Demo background colors for each card */
+    .card:nth-child(1) {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .card:nth-child(2) {
+      background: rgba(52, 152, 219, 0.8);
+    }
+
+    .card:nth-child(3) {
+      background: rgba(155, 89, 182, 0.8);
+    }
+
+    .card:nth-child(4) {
+      background: rgba(230, 126, 34, 0.8);
+    }
+
+    .card:nth-child(5) {
+      background: rgba(231, 76, 60, 0.8);
+    }
+
+    .card:nth-child(6) {
+      background: rgba(241, 196, 15, 0.8);
+    }
+
+    .card:nth-child(7) {
+      background: rgba(46, 204, 113, 0.8);
+    }
+
+    .card:nth-child(8) {
+      background: rgba(52, 73, 94, 0.8);
+    }
+
+    .card:nth-child(9) {
+      background: rgba(22, 160, 133, 0.8);
+    }
+
+    .card:nth-child(10) {
+      background: rgba(39, 174, 96, 0.8);
+    }
+
+    .index-99 {
+      z-index: 99;
+    }
+
+    .w-100 {
+      width: 100%;
+    }
+
+
+    .link .dot {
+      display: none;
+      transform: scale(0);
+    }
+
+    .dot--red {
+      color: #ff391e;
+    }
+
+    .dot--filled:before {
+      opacity: 1;
+    }
+
+    .dot:before {
+      background-color: currentColor;
+      border-radius: 50%;
+      content: "";
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+    }
+
+    .nav-item__link.router-link-active,
+    .nav-item__link.router-link-exact-active {
+      color: #ff391e;
+    }
+
+    .nav__list {
+      display: flex;
+      flex-direction: row;
+      /* padding: 0rem .8rem; */
+      position: relative;
+      row-gap: .2rem;
+      z-index: 1;
+    }
+
+    .nav__list .nav-item__link {
+      padding: 0px 5px;
+      display: flex;
+    }
+
+    ol,
+    ul {
+      list-style-type: none;
+    }
+
+    .nav__list li {
+      text-transform: uppercase;
+      display: flex;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-item__slash {
+      color: #fff;
+      display: flex;
+      padding: 0em .2em;
+      font-size: 1.27315vw;
+    }
+
+    .slash-light i {
+      font-style: normal;
+      font-weight: 300;
+    }
+
+    .link .text {
+      font-size: 1.27315vw;
+      font-weight: 440;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="position-fixed index-99 w-100">
+    <div class="d-flex justify-content-between">
+      <div style="width: 50px;">
+        <img src="https://socialshosha.chaak.in/110.png" alt="">
+      </div>
+      <div class="">
+        <ul class="d-flex nav__list">
+          <li class="nav-item p4 ttu slash-light">
+            <a href="a.html" class="router-link-active router-link-exact-active link--has-dot link nav-item__link">
+              <span class="dot--15 dot--red dot--filled dot "></span>
+              <span class="text">Home</span>
+
+            </a>
+            <i class="nav-item__slash" style="">/</i>
+          </li>
+          <li class="nav-item p4 ttu slash-light">
+            <a href="h.html" class="link--has-dot link nav-item__link">
+              <span class="dot--15 dot--red dot--filled dot"></span>
+              <span class="text">
+                Work
+              </span>
+            </a>
+            <i class="nav-item__slash" style="">/</i>
+          </li>
+          <li class="nav-item p4 ttu slash-light">
+            <a href="" class="link--has-dot link nav-item__link">
+              <span class="dot--15 dot--red dot--filled dot"></span>
+              <span class="text">
+                Entertainment
+              </span>
+            </a>
+            <i class="nav-item__slash" style="">/</i>
+          </li>
+          <li class="nav-item p4 ttu slash-light">
+            <a href="" class="link--has-dot link nav-item__link">
+              <span class="dot--15 dot--red dot--filled dot"></span>
+              <span class="text">
+                About
+              </span>
+            </a>
+            <i class="nav-item__slash" style="">/</i>
+          </li>
+          <li class="nav-item p4 ttu slash-light">
+            <a href="" class="link--has-dot link nav-item__link">
+              <span class="dot--15 dot--red dot--filled dot"></span>
+              <span class="text">
+                Feed
+              </span>
+            </a>
+            <i class="nav-item__slash" style="">/</i>
+          </li>
+          <li class="nav-item p4 ttu slash-light">
+            <a href="" class="link--has-dot link nav-item__link">
+              <span class="dot--15 dot--red dot--filled dot"></span>
+              <span class="text">
+                Podcast
+              </span>
+            </a>
+            <i class="nav-item__slash" style="">/</i>
+          </li>
+          <li class="nav-item p4 ttu slash-light">
+            <a href="" class="link--has-dot link nav-item__link">
+              <span class="dot--15 dot--red dot--filled dot"></span>
+              <span class="text"> Contact</span>
+            </a>
+            <i class="nav-item__slash" style="">/</i>
+          </li>
+          <li class="nav-item p4 ttu slash-light">
+            <a href="" class="link--has-dot link nav-item__link">
+              <span class="dot--15 dot--red dot--filled dot"></span>
+              <span class="text">
+                Shop
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Background Video Div -->
+  <div class="background-video">
+    <video autoplay loop muted>
+      <source src="assets/3433789-hd_1920_1080_25fps.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Cards Div -->
+  <div class="cards-container">
+    <div class="card">
+      Card 1
+    </div>
+    <div class="card">Card 2</div>
+    <div class="card">Card 3</div>
+    <div class="card">Card 4</div>
+    <div class="card">Card 5</div>
+    <div class="card">Card 6</div>
+    <div class="card">Card 7</div>
+    <div class="card">Card 8</div>
+    <div class="card">Card 9</div>
+    <div class="card">Card 10</div>
+  </div>
+  <div class="cards">Card 10</div>
+  <!-- Include GSAP and ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    const cards = document.querySelectorAll('.card');
+    gsap.fromTo(
+      cards[0],
+      { y: "-100vh", x: "-10vw" },
+      { y: "0", x: "0", duration: 1, ease: "power2.out", onComplete: setupFirstCardTrigger }
+    );
+
+    // After the initial load animation for the first card, set up its scroll trigger.
+    function setupFirstCardTrigger() {
+      ScrollTrigger.create({
+        trigger: cards[0],
+        start: "top top",
+        end: "top -50%",
+        scrub: true,
+        onUpdate: self => {
+          const p = self.progress;
+          // For very small progress, keep it normal.
+          if (p <= 0.01) {
+            cards[0].style.transform = "none";
+            return;
+          }
+          let xVal, yVal, rotVal;
+          if (self.direction > 0) { // scrolling down
+            xVal = -20 * Math.sin(Math.PI * p);
+            yVal = -20 * Math.sin(Math.PI * p);
+            rotVal = -5 * Math.sin(Math.PI * p);
+          } else { // scrolling up
+            xVal = 10 * Math.sin(Math.PI * p);
+            yVal = -10 * Math.sin(Math.PI * p);
+            rotVal = 5 * Math.sin(Math.PI * p);
+          }
+          cards[0].style.transform = `translate(${xVal}vw, ${yVal}vh) rotate(${rotVal}deg)`;
+        },
+        onLeaveBack: () => {
+          cards[0].style.transform = "none";
+        }
+      });
+      cards.forEach((card, index) => {
+      if (index === 0) return; // first card is handled above.
+      const isLast = index === cards.length - 1;
+      ScrollTrigger.create({
+        trigger: card,
+        start: "top center",
+        end: "top -50%",
+        scrub: true,
+        onUpdate: self => {
+          const p = self.progress;
+          if (isLast && p >= 0.99) {
+            card.style.transform = "none";
+            return;
+          }
+          let xVal, yVal, rotVal;
+          if (self.direction > 0) { // scrolling down
+            xVal = -20 * Math.sin(Math.PI * p);
+            yVal = -20 * Math.sin(Math.PI * p);
+            rotVal = -5 * Math.sin(Math.PI * p);
+          } else { // scrolling up
+            xVal = 10 * Math.sin(Math.PI * p);
+            yVal = -10 * Math.sin(Math.PI * p);
+            rotVal = 5 * Math.sin(Math.PI * p);
+          }
+          card.style.transform = `translate(${xVal}vw, ${yVal}vh) rotate(${rotVal}deg)`;
+        },
+        onLeaveBack: () => {
+          card.style.transform = "none";
+        }
+      });
+    });
+    }
+
+    // Set up ScrollTriggers for the rest of the cards.
+    
+  </script>
+</body>
+
+</html>
