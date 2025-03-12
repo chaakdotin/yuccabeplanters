@@ -312,13 +312,15 @@ export default function Carousel({data}) {
                 <div ref={refs.home} >
                     <div className=' carousel-img d-flex justify-content-center align-items-end h-100vh' style={{padding:"2rem"}}>
                         <div className='h-90vh bg-image border-reduis w-100 d-flex justify-content-start align-items-center text-white' >
-                            <div style={{width: "40%", display:"flex", flexDirection:"column", justifyContent:"space-between", gap:"1rem"}}>
+                            <div style={{width: "60%", display:"flex", flexDirection:"column", gap:"1rem", paddingLeft:"11rem", textAlign:"left"}}>
                                 <span>
                                     At Yuccabe, our vision is to elevate landscaping and space expectations by blending premiumness, functionality and strength harmoniously.
                                 </span>
                                 <span>
-                                Out of all the aspects of enhancing the beauty of space, greenery is the most sustainable choice. </span>
-                                <span>And we here at Yuccabe Planters make it come home your way. Trust us we are experts at what we do!</span>
+                                    Out of all the aspects of enhancing the beauty of space, greenery is the most sustainable choice. </span>
+                                <span>
+                                    And we here at Yuccabe Planters make it come home your way. Trust us we are experts at what we do!
+                                </span>
                                 <span>
                                     Designed for Elegance. Crafted for Life
                                 </span>
