@@ -312,7 +312,7 @@ export default function Carousel({data}) {
                 <div ref={refs.home} >
                     <div className=' carousel-img d-flex justify-content-center align-items-end h-100vh' style={{padding:"2rem"}}>
                         <div className='h-90vh bg-image border-reduis w-100 d-flex justify-content-start align-items-center text-white' >
-                            <div style={{width: "60%", display:"flex", flexDirection:"column", gap:"1rem", paddingLeft:"10.2rem", textAlign:"left"}}>
+                            <div style={{width: "60%", display:"flex", flexDirection:"column", gap:"1rem", textAlign:"left"}} className='navbar-container-padding'>
                                 <span>[yu-ka-bey]</span>
                                 <span>
                                     At Yuccabe, our vision is to elevate landscaping and space expectations by blending premiumness, functionality and strength harmoniously.
