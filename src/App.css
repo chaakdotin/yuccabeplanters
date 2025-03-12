@@ -32,6 +32,9 @@
   border-radius: 50px;
 
 }
+.h-80vh{
+  height: 80vh;
+}
 .bg-color-1{
   background-color: #b0aca6!important;
 }

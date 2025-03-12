@@ -309,8 +309,10 @@ export default function Carousel({data}) {
                         </div>
                     </div>
                 </div>
-                <div className='px-5 py-5 carousel-img' ref={refs.home}>
-                    <div className='h-100vh bg-image border-reduis w-100 '></div>
+                <div ref={refs.home} >
+                    <div className='px-5 py-5 carousel-img d-flex justify-content-center align-items-center h-100vh' >
+                        <div className='h-80vh bg-image border-reduis w-100'></div>
+                    </div>
                 </div>
             </div>
         </>
