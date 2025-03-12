@@ -312,7 +312,7 @@ export default function Carousel({data}) {
                 <div ref={refs.home} >
                     <div className='px-5 py-5 carousel-img d-flex justify-content-center align-items-center h-100vh' >
                         <div className='h-80vh bg-image border-reduis w-100 d-flex justify-content-start align-items-center text-white' >
-                            <div style={{width: "40%", display:"flex", flexDirection:"column", justifyContent:"space-between"}}>
+                            <div style={{width: "40%", display:"flex", flexDirection:"column", justifyContent:"space-between", gap:"1rem"}}>
                                 <span>
                                     At Yuccabe, our vision is to elevate landscaping and space expectations by blending premiumness, functionality and strength harmoniously.
                                 </span>
@@ -322,7 +322,6 @@ export default function Carousel({data}) {
                                 <span>
                                     Designed for Elegance. Crafted for Life
                                 </span>
-                                <span></span>
                             </div>
                         </div>
                     </div>
