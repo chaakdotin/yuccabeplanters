@@ -322,6 +322,7 @@ export default function Carousel({data}) {
                                 <span>
                                     Designed for Elegance. Crafted for Life
                                 </span>
+                                <span></span>
                             </div>
                         </div>
                     </div>
