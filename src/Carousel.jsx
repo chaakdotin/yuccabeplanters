@@ -311,7 +311,19 @@ export default function Carousel({data}) {
                 </div>
                 <div ref={refs.home} >
                     <div className='px-5 py-5 carousel-img d-flex justify-content-center align-items-center h-100vh' >
-                        <div className='h-80vh bg-image border-reduis w-100'></div>
+                        <div className='h-80vh bg-image border-reduis w-100 d-flex justify-content-start align-items-center'>
+                            <div style={{width: "40%"}}>
+                                <span>
+                                    At Yuccabe, our vision is to elevate landscaping and space expectations by blending premiumness, functionality and strength harmoniously.
+                                </span>
+                                <span>
+                                Out of all the aspects of enhancing the beauty of space, greenery is the most sustainable choice. </span>
+                                <span>And we here at Yuccabe Planters make it come home your way. Trust us we are experts at what we do!</span>
+                                <span>
+                                    Designed for Elegance. Crafted for Life
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
