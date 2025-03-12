@@ -310,7 +310,7 @@ export default function Carousel({data}) {
                     </div>
                 </div>
                 <div ref={refs.home} >
-                    <div className='px-5 py-5 carousel-img d-flex justify-content-center align-items-end h-100vh' >
+                    <div className=' carousel-img d-flex justify-content-center align-items-end h-100vh' style={{padding:"2rem"}}>
                         <div className='h-90vh bg-image border-reduis w-100 d-flex justify-content-start align-items-center text-white' >
                             <div style={{width: "40%", display:"flex", flexDirection:"column", justifyContent:"space-between", gap:"1rem"}}>
                                 <span>
