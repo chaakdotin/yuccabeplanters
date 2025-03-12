@@ -20,4 +20,5 @@ body{
   }
 h1, h2, h3, h4, span, input{
     font-family: "Poppins", sans-serif;
+    font-style: normal;
 }
