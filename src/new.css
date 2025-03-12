@@ -414,9 +414,21 @@ summary {
     font-size: 800px!important;
   }
 }
-/* .stagger1 h1 {
-
-  opacity: 0;
+ .stagger1 h1 {
+  font-size: 3rem;
+  color: #333;
+  /* Initially, the text is lying flat */
+  transform: rotateX(90deg);
+  transform-origin: bottom;
+  backface-visibility: hidden;
+  display: inline-block;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  /* A slight transition can add smoothness when scroll speed is low */
+  transition: transform 0.2s ease-out;
+ }
+ /* opacity: 0;
   transform: translateY(100%) rotateX(-80deg);
   transform-origin: center top;
   transform-style: preserve-3d;
