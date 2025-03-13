@@ -423,7 +423,7 @@ summary {
   backface-visibility: hidden;
   display: inline-block;
   padding: 20px;
-  background: #fff;
+
   border-radius: 4px;
   /* A slight transition can add smoothness when scroll speed is low */
   transition: transform 0.2s ease-out;
