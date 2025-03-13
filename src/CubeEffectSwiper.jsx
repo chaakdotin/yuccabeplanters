@@ -146,7 +146,6 @@ const CubeEffectSwiper = ({scrollToSection}) => {
                                     <span className="poppins-medium">We’re here to make it a reality. Whether you’re looking for innovative planters, custom designs, or expert advice, we’re just a call or click away</span>
                                 </div>
                             </div>
-
                             <div className='text-white tagline'>
                                 <span className="poppins-medium">We collaborate with ambitious companies and aesthetes.</span>
                             </div>
@@ -155,7 +154,8 @@ const CubeEffectSwiper = ({scrollToSection}) => {
                             </div>
                             <div className='text-white py-2 lastline'>
                                 <span className="poppins-medium">Making a change starts with one conversation.
-                                    Let’s talk!</span>
+                                    Let’s talk!
+                                </span>
                             </div>
                         </div>
                         <div className="col-lg-6 col-md-6 col-sm-12 px-5 form">
