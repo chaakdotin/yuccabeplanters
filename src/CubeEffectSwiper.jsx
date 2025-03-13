@@ -11,47 +11,28 @@ const CubeEffectSwiper = ({scrollToSection}) => {
     var i = 0;
     // const textEl = document.getElementById('.stagger1 h1');
 
-    const textRef = useRef(null);
+
 
     useEffect(() => {
-      const updateTransform = () => {
-        if (!textRef.current) return;
-        const rect = textRef.current.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-  
-        const start = windowHeight; // fully lying down position
-        const end = windowHeight * 0.2; // fully standing up position
-  
-        let progress = (start - rect.top) / (start - end);
-        progress = Math.min(Math.max(progress, 0), 1);
-  
-        const angle = 90 - progress * 90;
-        textRef.current.style.transform = `rotateX(${angle}deg)`;
-      };
-  
-      window.addEventListener("scroll", updateTransform);
-      window.addEventListener("resize", updateTransform);
-      updateTransform(); // Initial call
-  
-      
-    
+     
         
-        // const tl1 = gsap.timeline({
-        //     scrollTrigger: {
-        //         trigger: ".stagger", // Element that triggers the animation
-        //         start: "top top",     // When the top of `.start-class` hits the center of the viewport/ Element that defines the end point
-        //         end: "bottom bottom",    // When the bottom of `.end-class` hits the center of the viewport
-        //         scrub: true,
-        //         markers: true
-        //     }
-        // });
-        // tl1.to(".stagger1 h1", {
-        //     opacity: 1,
-        //     transform: "none",
-        //     transitionDuration : '.8s',
-        //     stagger: 0.05,
-        //     duration: 1,
-        // });
+        const tl1 = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".stagger", // Element that triggers the animation
+                start: "top top",     // When the top of `.start-class` hits the center of the viewport/ Element that defines the end point
+                end: "bottom bottom",    // When the bottom of `.end-class` hits the center of the viewport
+                scrub: true,
+                markers: true,
+                toggleActions: "play reverse play reverse",
+            }
+        });
+        tl1.to(".stagger1 h1", {
+            opacity: 1,
+            transform: "none",
+            transitionDuration : '.8s',
+            stagger: 0.05,
+            duration: 1,
+        });
         
         const lt = gsap.timeline({
             scrollTrigger: {
@@ -122,10 +103,7 @@ const CubeEffectSwiper = ({scrollToSection}) => {
         }
         
         detectDeviceTypeChange();
-        return () => {
-            window.removeEventListener("scroll", updateTransform);
-            window.removeEventListener("resize", updateTransform);
-          };
+       
     }, []);
     
     return (
@@ -134,12 +112,7 @@ const CubeEffectSwiper = ({scrollToSection}) => {
             <div style={{ zIndex: 1 }} className="h-100vh bg-color position-relative h-100vh stagger"  ref={refs.about}>
                 <div className='d-flex flex-column gap-5 align-items-center justify-content-center h-100 border-reduis'>
                     <div className="stagger1">
-                        <h1 className='text-white secrion-3-font poppins-medium'
-                        ref={textRef}
-                        style={{
-                          transformOrigin: "top center",
-                          transition: "transform 0.1s ease-out",
-                        }}>co-create </h1>
+                        <h1 className='text-white secrion-3-font poppins-medium'>co-create </h1>
                         <h1 className='text-white secrion-3-font poppins-medium'>your green</h1>
                         <h1 className='text-white secrion-3-font poppins-medium'>spaces with us</h1>
                     </div>
