@@ -3,7 +3,11 @@ import { gsap, ScrollTrigger, ScrollToPlugin } from "gsap/all";
 import ScrollSections from "./ScrollSections";
 import './new.css';
 import Carousel from './Carousel';
+// ..
+import AOS from 'aos';
+AOS.init();
 gsap.registerPlugin( ScrollTrigger, ScrollToPlugin);
+
 const CubeEffectSwiper = ({scrollToSection}) => {
     const { refs, setCurrentPage } = scrollToSection;
     const swiperRef = useRef(null);
@@ -16,23 +20,24 @@ const CubeEffectSwiper = ({scrollToSection}) => {
     useEffect(() => {
      
         
-        const tl1 = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".stagger", // Element that triggers the animation
-                start: "top top",     // When the top of `.start-class` hits the center of the viewport/ Element that defines the end point
-                end: "bottom bottom",    // When the bottom of `.end-class` hits the center of the viewport
-                scrub: true,
-                markers: true,
-                toggleActions: "play reverse play reverse",
-            }
-        });
-        tl1.to(".stagger1 h1", {
-            opacity: 1,
-            transform: "none",
-            transitionDuration : '.8s',
-            stagger: 0.05,
-            duration: 1,
-        });
+        // const tl1 = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: ".stagger", // Element that triggers the animation
+        //         start: "top top",     // When the top of `.start-class` hits the center of the viewport/ Element that defines the end point
+        //         end: "bottom bottom",    // When the bottom of `.end-class` hits the center of the viewport
+        //         scrub: true,
+        //         markers: true,
+        //         toggleActions: "play none none none"
+        //     }
+        // });
+        // tl1.to(".stagger1 h1", {
+        //     opacity: 1,
+        //     transform: "none",
+        //     transitionDuration : '.8s',
+        //     stagger: 0.05,
+        //     duration: .8,
+        //     ease: "power2.inOut",
+        // });
         
         const lt = gsap.timeline({
             scrollTrigger: {
@@ -112,9 +117,9 @@ const CubeEffectSwiper = ({scrollToSection}) => {
             <div style={{ zIndex: 1 }} className="h-100vh bg-color position-relative h-100vh stagger"  ref={refs.about}>
                 <div className='d-flex flex-column gap-5 align-items-center justify-content-center h-100 border-reduis'>
                     <div className="stagger1">
-                        <h1 className='text-white secrion-3-font poppins-medium'>co-create </h1>
-                        <h1 className='text-white secrion-3-font poppins-medium'>your green</h1>
-                        <h1 className='text-white secrion-3-font poppins-medium'>spaces with us</h1>
+                        <h1 className='text-white secrion-3-font poppins-medium' data-aos="fade-up">co-create </h1>
+                        <h1 className='text-white secrion-3-font poppins-medium' data-aos="fade-up">your green</h1>
+                        <h1 className='text-white secrion-3-font poppins-medium' data-aos="fade-up">spaces with us</h1>
                     </div>
                 </div>
             </div>
