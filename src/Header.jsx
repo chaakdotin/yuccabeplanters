@@ -1,25 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 import { Outlet } from 'react-router';
+import { useLocation } from 'react-router-dom';
+
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { gsap, ScrollTrigger } from "gsap/all";
 import './header.css';
 const Header = () => {
-  window.addEventListener("scroll", function () {
-    let popup = document.getElementById("header");
-    let scrollPosition = window.scrollY;
-    let triggerPoint = window.innerHeight * 0.9; // 200vh
-    if (scrollPosition >= triggerPoint) {
-      popup.classList.remove("d-none");
-    } else {
-      popup.classList.add("d-none");
-    }
-  });
+  
+  const location = useLocation();
+  const header = useRef(null);
+  if(location.pathname == '/'){
+    window.addEventListener("scroll", function () {
+      let scrollPosition = window.scrollY;
+      let triggerPoint = window.innerHeight * 0.9; // 200vh
+      if (scrollPosition >= triggerPoint) {
+        header.current.classList.remove("d-none");
+      } else {
+        header.current.classList.add("d-none");
+      }
+    });
+  }
   return (
     <>
-      <div className="navbar-container position-fixed z-index-99 w-100 d-none" id="header">
+      <div className={`navbar-container position-fixed z-index-99 w-100 ${location.pathname == '/' ? 'd-none' : ''}`} id="header" ref={header}>
         <Navbar data-bs-theme="light">
           <Container fluid className="navbar-container-padding">
             <Navbar.Brand href="/" className="menu-logos" >
@@ -34,6 +40,7 @@ const Header = () => {
           </Container>
         </Navbar>
       </div>
+      <div className='w-100' style={{height: location.pathname == '/' ? '0px' : location.pathname == '/work' ? '70px' : '100px'}}></div>
       <div className='position-fixed ' style={{
         width: "50px",
         height: "50px",
@@ -48,5 +55,6 @@ const Header = () => {
       <Outlet />
     </>
   );
+  
 };
 export default Header;
