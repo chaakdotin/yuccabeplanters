@@ -34,8 +34,8 @@ const Header = () => {
                 alt="Logo" width={'100%'} />
             </Navbar.Brand>
             <Nav className="w-100 d-flex justify-content-between">
-              <Nav.Link href="/about">About</Nav.Link>
-              <Nav.Link href="#contact">Contact</Nav.Link>
+              <Nav.Link href="/work">Work</Nav.Link>
+              <Nav.Link href="/services">Services</Nav.Link>
             </Nav>
           </Container>
         </Navbar>
