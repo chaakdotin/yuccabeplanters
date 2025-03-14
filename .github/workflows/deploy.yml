@@ -24,6 +24,6 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
           script: |
-            cd htdocs/yuccabeplanters.otlu.online || exit 1
+            cd /home/otlu-yuccabeplanters/htdocs/yuccabeplanters.otlu.online || exit 1
             chmod +x .scripts/deploy.sh
             .scripts/deploy.sh
