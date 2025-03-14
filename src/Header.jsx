@@ -46,7 +46,7 @@ const Header = () => {
         height: "50px",
         right: "20px",
         bottom: "20px",
-        zIndex: "1000"
+        zIndex: "1000
       }}>
         <a href="https://wa.link/m2jwc3">
           <img src="./img/Whats App.png" alt="" className='w-100'/>
