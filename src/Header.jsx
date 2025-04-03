@@ -50,7 +50,7 @@ const Header = () => {
       }}>
         <a href="https://wa.link/m2jwc3">
           <img src="./img/Whats App.png" alt="" className='w-100'/>
-        </a>d
+        </a>
       </div>
       <Outlet />
     </>
