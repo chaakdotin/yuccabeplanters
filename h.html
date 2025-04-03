@@ -3,70 +3,236 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Live Scroll Stand Up Text</title>
+  <title>30:70 Scroll Animation with GSAP</title>
   <style>
-    body {
+    /* Reset */
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       font-family: sans-serif;
-      background: #f0f0f0;
-      /* Added extra height to allow scrolling */
-      height: 200vh;
+      overflow-x: hidden;
     }
-    /* Container with perspective for 3D effect */
-    .scroll-section {
-      margin-top: 100vh;  /* position the text further down the page */
-      perspective: 800px;
-      text-align: center;
+    /* Fixed header (30% of viewport height) */
+    .fixed-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 30vh;
+      background: #333;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
     }
-    .standup-text {
-      font-size: 3rem;
-      color: #333;
-      /* Initially, the text is lying flat */
-      transform: rotateX(90deg);
-      transform-origin: bottom;
-      backface-visibility: hidden;
-      display: inline-block;
+    /* Container for sections starting below header */
+    .sections-container {
+      margin-top: 30vh;
+    }
+    /* Each section occupies 70% of the viewport height */
+    .section {
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding: 20px;
-      background: #fff;
-      border-radius: 4px;
-      /* A slight transition can add smoothness when scroll speed is low */
-      transition: transform 0.2s ease-out;
+    }
+    /* Alternating backgrounds for clarity */
+    .section:nth-child(odd) {
+      background: #f0f0f0;
+    }
+    .section:nth-child(even) {
+      background: #ddd;
+    }
+    /* Left-side text */
+    .text {
+      width: 60%;
+    }
+    .text h2 {
+      margin-bottom: 10px;
+    }
+    .text p {
+      line-height: 1.5;
+    }
+    /* Right-side image container */
+    .image-container {
+      width: 35%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .image-container img {
+      max-width: 100%;
+      /* The images will be animated via GSAP, so we set a default transform. */
+      transform: scale(0.8) translateX(0);
+    }
+    /* Set first section's image initial state to be large (active) */
+    #section1 .image-container img {
+      transform: scale(1.2) translateX(0);
     }
   </style>
 </head>
 <body>
-  <div class="scroll-section">
-    <div class="standup-text" id="standupText">
-      Stand Up!
+  <!-- Fixed header (30% of viewport) -->
+  <div class="fixed-header">
+    <h1>Welcome to Our Scroll Animation</h1>
+  </div>
+
+  <!-- Scrollable sections container -->
+  <div class="sections-container">
+    <!-- Section 1 -->
+    <div class="section" id="section1">
+      <div class="text">
+        <h2>Section 1</h2>
+        <p>This is the content for section 1.</p>
+      </div>
+      <div class="image-container">
+        <img src="https://source.unsplash.com/random/300x300?sig=1" alt="Section 1 Image">
+      </div>
+    </div>
+    <!-- Section 2 -->
+    <div class="section" id="section2">
+      <div class="text">
+        <h2>Section 2</h2>
+        <p>This is the content for section 2.</p>
+      </div>
+      <div class="image-container">
+        <img src="https://source.unsplash.com/random/300x300?sig=2" alt="Section 2 Image">
+      </div>
+    </div>
+    <!-- Section 3 -->
+    <div class="section" id="section3">
+      <div class="text">
+        <h2>Section 3</h2>
+        <p>This is the content for section 3.</p>
+      </div>
+      <div class="image-container">
+        <img src="https://source.unsplash.com/random/300x300?sig=3" alt="Section 3 Image">
+      </div>
+    </div>
+    <!-- Section 4 -->
+    <div class="section" id="section4">
+      <div class="text">
+        <h2>Section 4</h2>
+        <p>This is the content for section 4.</p>
+      </div>
+      <div class="image-container">
+        <img src="https://source.unsplash.com/random/300x300?sig=4" alt="Section 4 Image">
+      </div>
+    </div>
+    <!-- Section 5 -->
+    <div class="section" id="section5">
+      <div class="text">
+        <h2>Section 5</h2>
+        <p>This is the content for section 5.</p>
+      </div>
+      <div class="image-container">
+        <img src="https://source.unsplash.com/random/300x300?sig=5" alt="Section 5 Image">
+      </div>
+    </div>
+    <!-- Section 6 -->
+    <div class="section" id="section6">
+      <div class="text">
+        <h2>Section 6</h2>
+        <p>This is the content for section 6.</p>
+      </div>
+      <div class="image-container">
+        <img src="https://source.unsplash.com/random/300x300?sig=6" alt="Section 6 Image">
+      </div>
+    </div>
+    <!-- Section 7 -->
+    <div class="section" id="section7">
+      <div class="text">
+        <h2>Section 7</h2>
+        <p>This is the content for section 7.</p>
+      </div>
+      <div class="image-container">
+        <img src="https://source.unsplash.com/random/300x300?sig=7" alt="Section 7 Image">
+      </div>
+    </div>
+    <!-- Section 8 -->
+    <div class="section" id="section8">
+      <div class="text">
+        <h2>Section 8</h2>
+        <p>This is the content for section 8.</p>
+      </div>
+      <div class="image-container">
+        <img src="https://source.unsplash.com/random/300x300?sig=8" alt="Section 8 Image">
+      </div>
+    </div>
+    <!-- Section 9 -->
+    <div class="section" id="section9">
+      <div class="text">
+        <h2>Section 9</h2>
+        <p>This is the content for section 9.</p>
+      </div>
+      <div class="image-container">
+        <img src="https://source.unsplash.com/random/300x300?sig=9" alt="Section 9 Image">
+      </div>
+    </div>
+    <!-- Section 10 -->
+    <div class="section" id="section10">
+      <div class="text">
+        <h2>Section 10</h2>
+        <p>This is the content for section 10.</p>
+      </div>
+      <div class="image-container">
+        <img src="https://source.unsplash.com/random/300x300?sig=10" alt="Section 10 Image">
+      </div>
     </div>
   </div>
 
+  <!-- Include GSAP and its ScrollTrigger plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script>
-    const textEl = document.getElementById('standupText');
+    gsap.registerPlugin(ScrollTrigger);
 
-    function updateTransform() {
-      const rect = textEl.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      // Define the scroll range where the animation occurs.
-      // When the top of the element is at the bottom of the viewport, it starts at 90°.
-      // When it reaches a defined position (e.g., 20% from the top), it reaches 0°.
-      const start = windowHeight;           // fully lying down position
-      const end = windowHeight * 0.2;         // fully standing up position
+    // Outgoing animation: for each section except the last, animate its image as it scrolls out.
+    document.querySelectorAll('.section').forEach((section, index, sections) => {
+      const img = section.querySelector('.image-container img');
+      if(index < sections.length - 1) {
+        gsap.to(img, {
+          scrollTrigger: {
+            trigger: section,
+            start: "top 30vh",   // When the section's top reaches 30vh from the top (just below the fixed header)
+            end: "bottom 30vh",  // When the section's bottom reaches 30vh from the top
+            scrub: true
+          },
+          scale: 0.8,  // Scale down the outgoing image
+          x: -100,     // Translate it to the left
+          ease: "none"
+        });
+      }
+    });
 
-      // Calculate progress between 0 and 1 based on the element's position.
-      let progress = (start - rect.top) / (start - end);
-      progress = Math.min(Math.max(progress, 0), 1);
-
-      // Map progress to rotation angle: 90° when progress is 0, 0° when progress is 1.
-      const angle = 90 - progress * 90;
-      textEl.style.transform = `rotateX(${angle}deg)`;
-    }
-
-    window.addEventListener('scroll', updateTransform);
-    window.addEventListener('resize', updateTransform);
-    updateTransform(); // initial call
+    // Incoming animation: for each section except the first, animate its image as it scrolls in.
+    document.querySelectorAll('.section').forEach((section, index) => {
+      if(index > 0) {
+        const img = section.querySelector('.image-container img');
+        gsap.fromTo(img,
+          {
+            scale: 0.8,  // Start small
+            x: 100       // Start shifted to the right
+          },
+          {
+            scale: 1.2,  // Grow to active size
+            x: 0,        // Move into place
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 30vh",   // When this section's top reaches 30vh from the top
+              end: "bottom 30vh",  // Until its bottom reaches 30vh
+              scrub: true
+            }
+          }
+        );
+      }
+    });
   </script>
 </body>
-</html>
+</html> 

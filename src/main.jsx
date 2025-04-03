@@ -8,6 +8,7 @@ import Header from './Header';
 import Page from './Page';
 import Work from './Work';
 import Services from './Services';
+import OurActivities from './OurActivities';
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
@@ -19,6 +20,7 @@ ReactDOM.createRoot(root).render(
         <Route path="/work" element={<Work />} />
         <Route path="/services" element={<Services />} />
         <Route path="/page" element={<Page />} />
+        <Route path="/activities" element={<OurActivities />} />
       </Route>
     </Routes>
   </BrowserRouter>
