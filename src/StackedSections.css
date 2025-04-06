@@ -16,7 +16,37 @@ header {
   padding: 20px;
   text-align: center;
 }
-
+.kdjff{
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.ab-about-content span {
+  height: 60px;
+  line-height: 60px;
+  color: #fff;
+  background-color:#000;
+  padding: 0 20px;
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 600;
+  position: absolute;
+  top: -55px;
+  left: 20px;
+  transform: rotate(-24deg);
+}
+.ab-about-content P {
+  font-size: 54px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -1.08px;
+  color:#000;
+  padding-right: 25px;
+}
 /* Intro Section */
 .intro {
   height: 100vh;
@@ -36,7 +66,7 @@ header {
 /* Container for small-section & panels */
 .stack-container {
   position: relative;
-  height: 300vh; /* Extra scroll space for all transitions */
+  height: 100vh; /* Extra scroll space for all transitions */
 
 }
 
@@ -54,6 +84,9 @@ header {
 .small-sectio .articles_header {
   padding: 0;
   list-style-type: none;
+}
+.articles_header li {
+  color: #000;;
 }
 /* Panels styling */
 .panel {
@@ -79,10 +112,13 @@ header {
   display: flex;
   justify-content: space-between;
 }
+.font-en-df{
+  color: #000;
+} 
 .panel-image {
-    height: 45%;
-    transform-origin: center center;
-    transform: scale(0.5); /* Default scale */
+  height: 45%;
+  transform-origin: center center;
+  transform: scale(0.5); /* Default scale */
 }
 
 /* First panel image starts at full scale */
@@ -91,35 +127,8 @@ header {
 }
 
 /* Different background colors for each panel */
-.panel.panel1 {
-  background: #1abc9c;
-}
-.panel.panel2 {
-  background: #2ecc71;
-}
-.panel.panel3 {
-  background: #3498db;
-}
-.panel.panel4 {
-  background: #9b59b6;
-}
-.panel.panel5 {
-  background: #34495e;
-}
-.panel.panel6 {
-  background: #f1c40f;
-}
-.panel.panel7 {
-  background: #e67e22;
-}
-.panel.panel8 {
-  background: #e74c3c;
-}
-.panel.panel9 {
-  background: #95a5a6;
-}
-.panel.panel10 {
-  background: #7f8c8d;
+.panel {
+  background: #ffffff;
 }
 
 .panel-body{
