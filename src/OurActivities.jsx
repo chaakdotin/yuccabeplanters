@@ -8,12 +8,12 @@ export default  function OurActivities() {
     // Define maximum (active) and minimum (inactive) scale values.
     const sections = Array.from({ length: 10 }, (_, i) => ({
         s_id: i + 1,
-        id: `section${i + 1}`,
+        id: `panel${i + 1}`,
         title: `Section ${i + 1}`,
         content: `This is the content for section ${i + 1}.`,
         imageUrl: `https://source.unsplash.com/random/300x300?sig=${i + 1}`,
-      }));
-      
+    }));
+
     useEffect(() => {
         if (sections.length === 0) return;
         sections.forEach((section, index) => {
@@ -28,7 +28,8 @@ export default  function OurActivities() {
                 markers: true
               },
             });
-          });
+        });
+          
     }, [sections]);
     return (
         <>
@@ -115,7 +116,7 @@ export default  function OurActivities() {
                             display: "inline-flex",
                             transform: "rotate(0.001deg)",
                         }}>
-                        Activities
+                        Our Activities
                     </span>
                 </h1>
                 <div className="articles_header_container " data-als-section-3-head="" >
@@ -141,14 +142,13 @@ export default  function OurActivities() {
                     ></div>
                 </div>
             </div>
-            
             <div className="home_1st_footer" data-als-section-3="" >
                 <div className="container-fuild">
-                    <div data-als-container="" style={{ width: "100%", position: 'fixed', width: '100%', top: '35vh' }}>
+                    <div className='dffdfff' data-als-container="" style={{ width: "100%", position: 'fixed', width: '100%', top: '35vh' }}>
                         <ol className="articles_li" data-als-list="">
                             {sections.map(({ s_id, id, title, content, imageUrl }) => (
                                 <li className="articles_li_i" data-als-item="" id={id} key={id}>
-                                    <a className="articles_li_block" data-als-block="" href="https://fedl.jp/articles/2181/" style={{}}>
+                                    <a className="articles_li_block" data-als-block="" href="#" style={{}}>
                                         <div className="articles_li_header" data-als-head="" style={{ height: "78px", padding: "0px 30px", textAlign: "left" }}>
                                             <p className="articles_li_num font-en-df">{s_id}</p>
                                             <h2 className="articles_li_title font-en-df">〔column〕街中の家・自然の中の家</h2>
@@ -157,7 +157,7 @@ export default  function OurActivities() {
                                                 <time dateTime="2025-02-13">2025.02.13</time>
                                             </p>
                                         </div>
-                                        <div className="articles_li_body" data-als-body="" style={{ height: "221px" }}>
+                                        <div className="articles_li_body" data-als-body="" style={{ height: "55vh" }}>
                                             <div className="articles_li_body_inner">
                                                 <p className="articles_li_body_num font-en-df">001</p>
                                                 <div className="articles_li_body_more font-en-df"  >
@@ -173,7 +173,7 @@ export default  function OurActivities() {
                                                     data-img-src-2x="https://fedl.jp/wp/wp-content/uploads/2025/02/8_SunkenRetreat-1440x1033.jpg" data-img-src="https://fedl.jp/wp/wp-content/uploads/2025/02/8_SunkenRetreat-720x517.jpg" data-img-src-mobile-3x="https://fedl.jp/wp/wp-content/uploads/2025/02/8_SunkenRetreat-1170x839.jpg" data-img-src-mobile-2x="https://fedl.jp/wp/wp-content/uploads/2025/02/8_SunkenRetreat-780x560.jpg" data-img-src-mobile="https://fedl.jp/wp/wp-content/uploads/2025/02/8_SunkenRetreat-390x280.jpg" data-img-src-tablet-2x="https://fedl.jp/wp/wp-content/uploads/2025/02/8_SunkenRetreat-768x551.jpg" data-img-src-tablet="https://fedl.jp/wp/wp-content/uploads/2025/02/8_SunkenRetreat-384x275.jpg" data-als-img="" data-gl-img="" data-gl-item="article-item-thumb" style={{ opacity: 1 }} >
                                                     
                                                         <img
-                                                            src="https://fedl.jp/wp/wp-content/uploads/2025/02/8_SunkenRetreat-1440x1033.jpg"
+                                                            src="./img/YP.jpg"
                                                             alt="(column) 街中の家・自然の中の家"
                                                         />
                                                 </div>

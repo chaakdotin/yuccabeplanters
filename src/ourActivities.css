@@ -76,6 +76,9 @@
   --ls-page-ttl-small: -0.05em;
   --article-header-height: 5rem;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
 /* :root {
   --height-header: 10.5rem;
   --fs-jp-ttl: 1.8rem;
@@ -118,10 +121,13 @@ ol, ul {
     margin-bottom: 2rem;
     font-size: 13rem;
     line-height: var(--lh-page-ttl-large);
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
     letter-spacing: -.05em;
     pointer-events: auto;
 }
 .articles_header_container {
+
   width: 100%;
   display: block;
   z-index: 40;
@@ -136,17 +142,19 @@ ol, ul {
   z-index: 40;
   position: relative;
   justify-content: space-between;
-  background-color: var(--clr-bg-gray);
+  background-color: #ffffff;
   will-change: transform;
   list-style: none;
   margin-bottom: 0rem;
   width: 100%;
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
 }
 .articles_header_i {
   position: relative;
   padding-right: 1em;
   padding-bottom: 1.2rem;
-  font-size: var(--fs-text-small);
+  font-size: 14px;
   line-height: var(--lh-text-small);
   text-align: left;
   color: #000;
@@ -256,9 +264,15 @@ ol {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
 }
 .articles_li_body {
   /* display: none; */
+}
+.word-split_i, .articles_li_body_more_in{
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
 }
 @media (hover: hover) {
   .articles_li_header,
