@@ -1,0 +1,25 @@
+.Link_default__VBYZf{
+    text-decoration: transparent !important;
+    width: 100%;
+    font-size: 1rem;
+    color: #000;
+}
+.Typography_variant-bodyLarge__q0OzA {
+    --font-family-text: '__haasGrotText_7ea857', '__haasGrotText_Fallback_7ea857';
+    --font-family-disp: '__haasGrotDisp_332926', '__haasGrotDisp_Fallback_332926';
+    --font-family-mono: '__martianMono_eeab0a', '__martianMono_Fallback_eeab0a';
+    font-family: var(--font-family-text);
+    --font-size-h6: 1.5rem;
+    --font-size-body-large: 1.25rem;
+    font-size: calc(var(--font-size-body-large)*0);
+    line-height: 1.2;
+}
+.SiteFooter_socials__TI9kV{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.SiteFooter_socials__TI9kV svg {
+   height: 1em;
+}

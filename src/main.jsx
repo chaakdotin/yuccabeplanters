@@ -9,6 +9,7 @@ import Page from './Page';
 import Work from './Work';
 import Services from './Services';
 import OurActivities from './OurActivities';
+import Footer from './Footer';
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
@@ -22,6 +23,8 @@ ReactDOM.createRoot(root).render(
         <Route path="/page" element={<Page />} />
         <Route path="/activities" element={<OurActivities />} />
       </Route>
+      
     </Routes>
+    <Footer />
   </BrowserRouter>
 );

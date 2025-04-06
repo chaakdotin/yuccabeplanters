@@ -116,7 +116,7 @@ export default  function OurActivities() {
                             display: "inline-flex",
                             transform: "rotate(0.001deg)",
                         }}>
-                        Our Activities
+                        Activities
                     </span>
                 </h1>
                 <div className="articles_header_container " data-als-section-3-head="" >
