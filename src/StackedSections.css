@@ -81,7 +81,7 @@ header {
   transform: translateY(100vh); /* Initially off-screen */
 }
 .small-section .articles_header {
-  padding: 5px 0px!important;
+  padding: 2px 0px!important;
   background-color: #d9d4c5;
   font-weight: bold;
   -webkit-text-stroke-width: 1px;
