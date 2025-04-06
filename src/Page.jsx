@@ -175,7 +175,7 @@ const ScrollSections = () => {
         }
         /* Text style */
         .slide span {
-          font-size: 1.8rem;
+          font-size: 2.2rem;
           margin-right: 10px;
         }
         /* Rotating SVG style */
