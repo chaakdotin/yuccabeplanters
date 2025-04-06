@@ -170,28 +170,32 @@ const ScrollSections = () => {
             </ul>
           </div>
           {sections.map(({ s_id, id, title, content, imageUrl }) => (
-            <div className={"panel "+id} key={id}>
-              <div className="row">
-                <div className="panel-text">
-                  <div className="articles_li_header" >
-                    <p className="articles_li_num font-en-df">00{s_id}</p>
-                    <h2 className="articles_li_title font-en-df">〔column〕街中の家・自然の中の家</h2>
-                    <p className="articles_li_cat font-en-df">Articles</p>
-                    <p className="articles_li_date font-en-df">
-                        <time dateTime="2025-02-13">2025.02.13</time>
-                    </p>
+            <div className={"panel p-0 "+id} key={id}>
+              <div className="container-fluid">
+                <div className="row px-1">
+                  <div className="panel-text col-12">
+                    <div className="articles_li_header" >
+                      <p className="articles_li_num font-en-df">00{s_id}</p>
+                      <h2 className="articles_li_title font-en-df">〔column〕街中の家・自然の中の家</h2>
+                      <p className="articles_li_cat font-en-df">Articles</p>
+                      <p className="articles_li_date font-en-df">
+                          <time dateTime="2025-02-13">2025.02.13</time>
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="panel-body row">
-                  <div className="panel-text-div">
-                    <span>Panel 1</span>
-                  </div>
-                  <div className="panel-image-div overflow-hidden"> 
-                    <img
-                      className="panel-image"
-                      src="./img/YP.jpg"
-                      alt="Image 1"
-                    />
+                  <div className="panel-body col-12">
+                    <div className="d-flex">
+                      <div className="panel-text-div">
+                        <span style={{ color: "#000" }}>Panel 1</span>
+                      </div>
+                      <div className="panel-image-div overflow-hidden"> 
+                        <img
+                          className="panel-image"
+                          src="./img/YP.jpg"
+                          alt="Image 1"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
