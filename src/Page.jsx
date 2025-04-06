@@ -161,7 +161,7 @@ const ScrollSections = () => {
               </p>
             </div>
           </div>
-          <div className="small-section">
+          <div className="small-section ">
             <ul className="articles_header">
               <li className="articles_header_i font-en-df">No.</li>
               <li className="articles_header_i font-en-df">Title</li>
