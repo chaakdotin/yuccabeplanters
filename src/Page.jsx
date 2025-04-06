@@ -184,11 +184,6 @@ const ScrollSections = () => {
           ))}
         </div>
       </div>
-      <section className="intro">
-        <h2>Welcome to My Webpage</h2>
-        <p>Yahan par kuch text aur image dikh rahi hai.</p>
-        <img src="https://via.placeholder.com/400x300" alt="Placeholder" />
-      </section>
     </>
 
   );

@@ -36,6 +36,8 @@ header {
 /* Container for small-section & panels */
 .stack-container {
   position: relative;
+  height: 300vh; /* Extra scroll space for all transitions */
+
 }
 
 /* 5vh rectangular section */
