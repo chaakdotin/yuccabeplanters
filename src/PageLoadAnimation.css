@@ -1,4 +1,3 @@
-
 /* Overlay styles */
 #overlay {
   position: fixed;
@@ -9,11 +8,13 @@
   height: 100%;
   z-index: 1000;
 }
+
 .bar {
   flex: 1;
   background-color: #D9D4C5; /* Glowing color – change as desired */
   animation: drop 1.2s forwards;
 }
+
 /* Add a slight delay for each bar to create the staggered effect */
 .bar:nth-child(1) {
   animation-delay: 0s;
@@ -45,6 +46,7 @@
 .bar:nth-child(10) {
   animation-delay: 0.9s;
 }
+
 /* Keyframes for the drop animation */
 @keyframes drop {
   0% {
