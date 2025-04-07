@@ -24,11 +24,11 @@ export default function Footer() {
                                     <h1>Learn</h1>
                                 </div>
                                 <div className='d-flex flex-column align-items-center gap-1' style={{textAlign: 'left'}}>
-                                    <a class="Link_default__VBYZf" href="/catalog">All courses</a>
-                                    <a class="Link_default__VBYZf" href="/search?subject=code">Code</a>
-                                    <a class="Link_default__VBYZf" href="/search?subject=design">Design</a>
-                                    <a class="Link_default__VBYZf" href="/search?subject=project_management">Project management</a>
-                                    <a class="Link_default__VBYZf" href="https://subeditor.superhi.com" target="_blank" rel="noopener">SuperHi Editor</a>
+                                    <a className="Link_default__VBYZf" href="/catalog">All courses</a>
+                                    <a className="Link_default__VBYZf" href="/search?subject=code">Code</a>
+                                    <a className="Link_default__VBYZf" href="/search?subject=design">Design</a>
+                                    <a className="Link_default__VBYZf" href="/search?subject=project_management">Project management</a>
+                                    <a className="Link_default__VBYZf" href="https://subeditor.superhi.com" target="_blank" rel="noopener">SuperHi Editor</a>
                                 </div>
                             </div>
                         </div>
@@ -38,11 +38,11 @@ export default function Footer() {
                                     <h1>Learn</h1>
                                 </div>
                                 <div className='d-flex flex-column align-items-center gap-1' style={{textAlign: 'left'}}>
-                                    <a class="Link_default__VBYZf" href="/catalog">All courses</a>
-                                    <a class="Link_default__VBYZf" href="/search?subject=code">Code</a>
-                                    <a class="Link_default__VBYZf" href="/search?subject=design">Design</a>
-                                    <a class="Link_default__VBYZf" href="/search?subject=project_management">Project management</a>
-                                    <a class="Link_default__VBYZf" href="https://subeditor.superhi.com" target="_blank" rel="noopener">SuperHi Editor</a>
+                                    <a className="Link_default__VBYZf" href="/catalog">All courses</a>
+                                    <a className="Link_default__VBYZf" href="/search?subject=code">Code</a>
+                                    <a className="Link_default__VBYZf" href="/search?subject=design">Design</a>
+                                    <a className="Link_default__VBYZf" href="/search?subject=project_management">Project management</a>
+                                    <a className="Link_default__VBYZf" href="https://subeditor.superhi.com" target="_blank" rel="noopener">SuperHi Editor</a>
                                 </div>
                             </div>
                         </div>
@@ -52,23 +52,23 @@ export default function Footer() {
                                     <h1>Learn</h1>
                                 </div>
                                 <div className='d-flex flex-column align-items-center gap-1' style={{textAlign: 'left'}}>
-                                    <a class="Link_default__VBYZf" href="/catalog">All courses</a>
-                                    <a class="Link_default__VBYZf" href="/search?subject=code">Code</a>
-                                    <a class="Link_default__VBYZf" href="/search?subject=design">Design</a>
-                                    <a class="Link_default__VBYZf" href="/search?subject=project_management">Project management</a>
-                                    <a class="Link_default__VBYZf" href="https://subeditor.superhi.com" target="_blank" rel="noopener">SuperHi Editor</a>
+                                    <a className="Link_default__VBYZf" href="/catalog">All courses</a>
+                                    <a className="Link_default__VBYZf" href="/search?subject=code">Code</a>
+                                    <a className="Link_default__VBYZf" href="/search?subject=design">Design</a>
+                                    <a className="Link_default__VBYZf" href="/search?subject=project_management">Project management</a>
+                                    <a className="Link_default__VBYZf" href="https://subeditor.superhi.com" target="_blank" rel="noopener">SuperHi Editor</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className='d-flex justify-content-space-between'>
                         <div className='col-6 d-flex justify-content-start'>
-                            <p class="Typography_variant-monoCaption__CtFq1 Typography_variant-mono__xLZrF Typography_weight-normal__omiiB my-2 px-3"
+                            <p className="Typography_variant-monoCaption__CtFq1 Typography_variant-mono__xLZrF Typography_weight-normal__omiiB my-2 px-3"
                                 data-variant-name="monoCaption">© 2025 
-                                <a class="Link_default__VBYZf Link_discreet__Qrwpa" href="https://superhi.com" target="_blank" rel="noopener"> SuperHi, Inc.</a>
+                                <a className="Link_default__VBYZf Link_discreet__Qrwpa" href="https://superhi.com" target="_blank" rel="noopener"> SuperHi, Inc.</a>
                             </p>
                         </div>
-                        <div class="SiteFooter_socials__TI9kV col-6 d-flex justify-content-end my-2">
+                        <div className="SiteFooter_socials__TI9kV col-6 d-flex justify-content-end my-2">
                             <a href="https://youtube.com/c/superhi" aria-label="SuperHi YouTube">
                                 <svg viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M25.2369 2.81657C24.9488 1.7152 24.1044 0.847011 23.0335 0.550447C21.0772 0 13.2517 0 13.2517 0C13.2517 0 5.42649 0 3.47016 0.529578C2.41989 0.825828 1.55487 1.71536 1.26679 2.81657C0.751953 4.82818 0.751953 9 0.751953 9C0.751953 9 0.751953 13.1928 1.26679 15.1834C1.55518 16.2846 2.3993 17.1528 3.47031 17.4494C5.44709 18 13.252 18 13.252 18C13.252 18 21.0772 18 23.0335 17.4704C24.1045 17.174 24.9488 16.3058 25.2372 15.2046C25.7518 13.1928 25.7518 9.02118 25.7518 9.02118C25.7518 9.02118 25.7724 4.82818 25.2369 2.81657ZM10.7602 12.8541V5.14593L17.2675 9L10.7602 12.8541Z" fill="#2727E6"></path>
@@ -81,10 +81,10 @@ export default function Footer() {
                             </a>
                             <a href="https://instagram.com/hisuperhi" aria-label="SuperHi Instagram">
                                 <svg viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                    <path fillRule="evenodd" clipRule="evenodd"
                                         d="M5.65119 0H12.8893C15.8308 0 18.224 2.39317 18.224 5.33478V12.5729C18.224 15.5145 15.8309 17.9076 12.8893 17.9076H5.65119C2.70958 17.9076 0.316406 15.5145 0.316406 12.5729V5.33478C0.316406 2.39317 2.70958 0 5.65119 0ZM12.8878 16.1058C14.8391 16.1058 16.421 14.5239 16.421 12.5725V5.33444C16.421 3.38306 14.8391 1.80117 12.8878 1.80117H5.64968C3.69832 1.80117 2.11641 3.38306 2.11641 5.33444V12.5725C2.11641 14.5239 3.69832 16.1058 5.64968 16.1058H12.8878Z"
                                         fill="#2727E6"></path>
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                    <path fillRule="evenodd" clipRule="evenodd"
                                         d="M4.6416 8.95403C4.6416 6.40022 6.71931 4.32251 9.27315 4.32251C11.827 4.32251 13.9047 6.40019 13.9047 8.95403C13.9047 11.5079 11.827 13.5856 9.27315 13.5856C6.71931 13.5856 4.6416 11.5078 4.6416 8.95403ZM6.4416 8.95368C6.4416 10.5167 7.70864 11.7837 9.27165 11.7837C10.8346 11.7837 12.1017 10.5166 12.1017 8.95368C12.1017 7.39067 10.8346 6.12363 9.27165 6.12363C7.70868 6.12363 6.4416 7.39067 6.4416 8.95368Z"
                                         fill="#2727E6"></path>
                                     <path

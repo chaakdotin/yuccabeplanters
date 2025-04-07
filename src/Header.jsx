@@ -2,16 +2,25 @@ import React, { useEffect, useState, useRef } from 'react';
 
 import { Outlet } from 'react-router';
 import { useLocation } from 'react-router-dom';
-
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { gsap, ScrollTrigger } from "gsap/all";
 import './header.css';
+gsap.registerPlugin(ScrollTrigger);
 const Header = () => {
   
   const location = useLocation();
   const header = useRef(null);
+  const cursor = useRef(null);
+  window.addEventListener("mousemove", (e) => {
+    gsap.to(cursor.current, {
+      duration: 0,
+      x: e.clientX,
+      y: e.clientY,
+    });
+    // cursor.current.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`
+  })
   if(location.pathname == '/'){
     window.addEventListener("scroll", function () {
       let scrollPosition = window.scrollY;
@@ -25,6 +34,7 @@ const Header = () => {
   }
   return (
     <>
+      <div className='cursor' ref={cursor}></div>
       <div className={`navbar-container position-fixed z-index-99 w-100 ${location.pathname == '/' ? 'd-none' : ''}`} id="header" ref={header}>
         <Navbar data-bs-theme="light">
           <Container fluid className="navbar-container-padding">
