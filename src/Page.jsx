@@ -2,6 +2,8 @@
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Lenis from 'lenis'
+import 'lenis/dist/lenis.css'
 import "./StackedSections.css"; // Make sure this file contains your CSS
 
 const ScrollSections = () => {
@@ -13,13 +15,21 @@ const ScrollSections = () => {
     imageUrl: `https://source.unsplash.com/random/300x300?sig=${i + 1}`,
   }));
   useEffect(() => {
+    const lenis = new Lenis();
     gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll', ScrollTrigger.update);
+  
+    // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+    // This ensures Lenis's smooth scroll animation updates on each GSAP tick
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+    });
     let tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: ".kdjff",
         start: "top top",
         end: "+=200", // Adjust scroll distance as needed
-        scrub: true
+        scrub: true,
       },
     })
     tl1.to(".kdjff", { 
@@ -150,56 +160,58 @@ const ScrollSections = () => {
 
   return (
     <>
-      <style>{`
-        body {
-          margin: 0;
-          padding: 0;
-        }
-        /* Section with 8vh height */
-        section.slider {
-          overflow: hidden;
-          position: relative;
-        }
-        /* Slider wrapper with duplicated content for seamless looping */
-        .slider-wrapper {
-          display: flex;
-          width: 200%;
-          animation: marquee 20s linear infinite;
-        }
-        /* Each slide takes full width of the section */
-        .slide {
-          display: inline-flex;
-          align-items: center;
-          white-space: nowrap;
-          width: 100%;
-        }
-        /* Text style */
-        .slide span {
-          font-size: 2.2rem;
-          margin-right: 10px;
-        }
-        /* Rotating SVG style */
-        .rotating-svg {
-          width: 30px;
-          height: 30px;
-          margin-right: 10px;
-          animation: rotate 4s linear infinite;
-        }
-        /* Marquee animation for continuous left-to-right sliding */
-        @keyframes marquee {
-          0% {
-            transform: translateX(-50%);
+      <style>
+        {`
+          body {
+            margin: 0;
+            padding: 0;
           }
-          100% {
-            transform: translateX(0%);
+          /* Section with 8vh height */
+          section.slider {
+            overflow: hidden;
+            position: relative;
           }
-        }
-        /* SVG rotation animation */
-        @keyframes rotate {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-      `}</style>
+          /* Slider wrapper with duplicated content for seamless looping */
+          .slider-wrapper {
+            display: flex;
+            width: 200%;
+            animation: marquee 20s linear infinite;
+          }
+          /* Each slide takes full width of the section */
+          .slide {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+            width: 100%;
+          }
+          /* Text style */
+          .slide span {
+            font-size: 2.2rem;
+            margin-right: 10px;
+          }
+          /* Rotating SVG style */
+          .rotating-svg {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            animation: rotate 4s linear infinite;
+          }
+          /* Marquee animation for continuous left-to-right sliding */
+          @keyframes marquee {
+            0% {
+              transform: translateX(-50%);
+            }
+            100% {
+              transform: translateX(0%);
+            }
+          }
+          /* SVG rotation animation */
+          @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+        `}
+      </style>
       <div style={{ overflow: "hidden", position: "relative" }}>
         <div className="kdjff" style={{ position: "fixed", top: "5%", fontSize: "225px",}}>
             <span style={{  fontWeight: "bold" }}>Our Activities</span>

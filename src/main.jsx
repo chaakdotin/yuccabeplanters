@@ -1,8 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Lenis from 'lenis'
+import 'lenis/dist/lenis.css'
 import { BrowserRouter, Routes, Route } from "react-router";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import './index.css'
 import App from './App.jsx'
 import Header from './Header';
@@ -13,7 +16,7 @@ import OurActivities from './OurActivities';
 import PageLoadAnimation from './PageLoadAnimation';
 import Footer from './Footer';
 import ContactUs from './Contact-us';
-
+gsap.registerPlugin(ScrollTrigger);
 const root = document.getElementById("root");
 
 const Data = () => {
@@ -21,6 +24,12 @@ const Data = () => {
   const lenis = new Lenis({
     autoRaf: true,
   });
+  // Use requestAnimationFrame to continuously update the scroll
+ 
+  
+  // Disable lag smoothing in GSAP to prevent any delay in scroll animations
+  gsap.ticker.lagSmoothing(0);
+
   return (
     <>
     <PageLoadAnimation>
