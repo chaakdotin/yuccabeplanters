@@ -50,7 +50,7 @@ const ScrollSections = () => {
 
     // Small-section slide in from below
     tl.fromTo(".small-section", { y: "100vh" }, { y: "0", duration: 0.5 });
-
+    
     // Panel 1 slides in from below
     tl.fromTo(".panel.panel1", { y: "100%" }, { y: "0%", duration: 1 }, "<");
 
