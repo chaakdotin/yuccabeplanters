@@ -173,7 +173,7 @@
     position: relative;
     width: calc(25% - 20px)!important;
     height: 300px!important;
-    border: 1px dashed black;
+    border: 1px dotted #D9D4C5;
     border-radius: 15px;
     overflow: hidden;
     /* background: #ffffff00 !important; */
@@ -183,7 +183,7 @@
     position: relative;
     width: 100%!important;
     height: 400px!important;
-    border: 1px dashed #000;
+    border: 1px dotted #D9D4C5;
     border-radius: .7vw;
     flex-direction: column;
     flex: 1;
@@ -198,7 +198,7 @@
   position: relative;
     width: 100%!important;
     height: 100%!important;
-    border: 1px dashed #000;
+    border: 1px dotted #D9D4C5;
     border-radius: .7vw;
     flex-direction: column;
     flex: 1;
@@ -254,7 +254,7 @@
     transform: translateY(-50%);
   }
   .box {
-    border: 2px dotted black;
+    border: 2px dotted #D9D4C5;
     border-radius: 15px;
     margin: 10px;
     background: #f9f9f9;
@@ -273,7 +273,6 @@
   .container .box:hover {
     flex: 2;
   }
-  
   @media (max-width: 768px) {
     
     .box {

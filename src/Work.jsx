@@ -18,7 +18,7 @@ const Work = () => {
     
   return (
     <>
-      <div className="p-4 pt-5">
+      <div className="p-4 pt-5 update-card">
         <div style={{ width:"100%",gap: '20px' }} className="d-flex justify-content-center align-items-center">
             {cards.map((card, index) => (
                 <Card key={index} text={card.text} img={card.img} />
