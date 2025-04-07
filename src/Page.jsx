@@ -28,7 +28,7 @@ const ScrollSections = () => {
       scrollTrigger: {
         trigger: ".kdjff",
         start: "top top",
-        end: "+=200", // Adjust scroll distance as needed
+        end: "+=200",
         scrub: true,
       },
     })
@@ -42,7 +42,7 @@ const ScrollSections = () => {
       scrollTrigger: {
         trigger: ".stack-container",
         start: "top top",
-        end: "+=2000", // Adjust scroll distance as needed
+        end: "+=2000",
         scrub: true,
         pin: true
       },
