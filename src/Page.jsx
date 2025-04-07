@@ -214,7 +214,7 @@ const ScrollSections = () => {
       </style>
       <div style={{ overflow: "hidden", position: "relative" }}>
         <div className="kdjff" style={{ position: "fixed", top: "5%", fontSize: "225px",}}>
-            <span style={{  fontWeight: "bold" }}>Our Activities</span>
+            <span style={{  fontWeight: "bold" }}>Collections</span>
         </div>
         <div className="stack-container">
           <div className="small-section ">
