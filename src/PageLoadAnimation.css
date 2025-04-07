@@ -57,5 +57,5 @@
 /* Content styles - initially hidden */
 #content {
   opacity: 0;
-  transition: opacity 0.2s ease;
+  transition: opacity 2s ease;
 }
