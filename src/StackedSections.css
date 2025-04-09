@@ -157,3 +157,12 @@ header {
 .panel-image-div{
     height: 60vh;
 }
+
+.btn_style{
+  border: 1px solid #C3C3BB;
+  border-radius: 30px;
+  color: #2d2d2b;
+  font-size: 14px;
+  font-family: Neurialgrotesk Bold, sans-serif;
+  padding:1rem 1.6rem 1rem 3.6rem;
+}
