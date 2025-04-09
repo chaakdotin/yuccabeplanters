@@ -77,8 +77,9 @@ header {
   left: 0;
   width: 100%;
   height: 5vh;
-  z-index: 100;
+  z-index: 9;
   transform: translateY(100vh); /* Initially off-screen */
+
 }
 .small-section .articles_header {
   padding: 2px 0px!important;

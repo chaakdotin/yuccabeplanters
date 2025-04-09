@@ -38,6 +38,18 @@ const ScrollSections = () => {
       fontSize: "80px",
       duration: 1 
     });
+    const tl2 = gsap.timeline({
+      scrollTrigger:{
+        trigger:".sdsss",
+        start:"top top",
+        end: "+=100",
+        scrub: true,
+      }
+    });
+    tl2.to(".sdsss", { 
+      left: "30%",
+      duration: 1 
+    });
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".stack-container",
@@ -213,44 +225,52 @@ const ScrollSections = () => {
         `}
       </style>
       <div style={{ overflow: "hidden", position: "relative" }}>
-        <div className="kdjff" style={{ position: "fixed", top: "5%", fontSize: "225px",}}>
+        <div className="sdsss" style={{ position: "fixed", top: "24%", left:"-500px",  }}>
+          <div className="d-flex gap-2">
+            <button className="btn rounded btn-dangar">Tesing</button>
+            <button className="btn rounded btn-dangar">Tesing</button>
+            <button className="btn rounded btn-dangar">Tesing</button>
+          </div>
+        </div>
+        <div className="kdjff" style={{ position: "fixed", top: "5%", fontSize: "225px", backgroundColor:"#fff", zIndex:'0',width:"28%"}}>
             <span style={{  fontWeight: "bold" }}>Collections</span>
         </div>
+        
         <div className="stack-container">
           <div className="small-section ">
             <div className="articles_header w-100 text-center">
-            <section className="slider">
-              <div className="slider-wrapper">
+              <section className="slider">
+                <div className="slider-wrapper">
 
-                <div className="slide">
-                  <span>Design Lives in Yuccabe Originals</span>
-                  <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                  <span>Design Lives in Yuccabe Originals</span>
-                  <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                  <span>Design Lives in Yuccabe Originals</span>
-                  <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                  <span>Design Lives in Yuccabe Originals</span>
-                  <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                  <span>Design Lives in Yuccabe Originals</span>
-                  <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
+                  <div className="slide">
+                    <span>Design Lives in Yuccabe Originals</span>
+                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
+                    <span>Design Lives in Yuccabe Originals</span>
+                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
+                    <span>Design Lives in Yuccabe Originals</span>
+                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
+                    <span>Design Lives in Yuccabe Originals</span>
+                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
+                    <span>Design Lives in Yuccabe Originals</span>
+                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
+                  </div>
+                  <div className="slide">
+                    <span>Design Lives in Yuccabe Originals</span>
+                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
+                    <span>Design Lives in Yuccabe Originals</span>
+                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
+                    <span>Design Lives in Yuccabe Originals</span>
+                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
+                    <span>Design Lives in Yuccabe Originals</span>
+                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
+                    <span>Design Lives in Yuccabe Originals</span>
+                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
+                  </div>
                 </div>
-                <div className="slide">
-                  <span>Design Lives in Yuccabe Originals</span>
-                  <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                  <span>Design Lives in Yuccabe Originals</span>
-                  <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                  <span>Design Lives in Yuccabe Originals</span>
-                  <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                  <span>Design Lives in Yuccabe Originals</span>
-                  <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                  <span>Design Lives in Yuccabe Originals</span>
-                  <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                </div>
-              </div>
-            </section>
+              </section>
             </div>
           </div>
-          {sections.map(({ s_id, id, title, content, imageUrl }) => (
+          {sections.map(({ s_id, id, title, content, imageUrl}) => (
             <div className={"panel p-0 "+id} key={id}>
               <div className="container-fluid">
                 <div className="row px-1">
