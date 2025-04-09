@@ -227,9 +227,36 @@ const ScrollSections = () => {
       <div style={{ overflow: "hidden", position: "relative" }}>
         <div className="sdsss" style={{ position: "fixed", top: "22%", left:"-500px",  }}>
           <div className="d-flex gap-2">
-            <button className="btn btn_style">Tesing</button>
-            <button className="btn btn_style">Tesing</button>
-            <button className="btn btn_style">Tesing</button>
+            <button className="btn btn_style"> 
+              <div className="btn_icon">
+                <i className="fa-solid fa-headphones"> </i>
+              </div> Tesing
+            </button>
+            <button className="btn btn_style"> 
+              <div className="btn_icon">
+                <i className="fa-solid fa-headphones"> </i>
+              </div> Tesing
+            </button>
+            <button className="btn btn_style"> 
+              <div className="btn_icon">
+                <i className="fa-solid fa-headphones"> </i>
+              </div> Tesing
+            </button>
+            <button className="btn btn_style"> 
+              <div className="btn_icon">
+                <i className="fa-solid fa-headphones"> </i>
+              </div> Tesing
+            </button>
+            <button className="btn btn_style"> 
+              <div className="btn_icon">
+                <i className="fa-solid fa-headphones"> </i>
+              </div> Tesing
+            </button>
+            <button className="btn btn_style"> 
+              <div className="btn_icon">
+                <i className="fa-solid fa-headphones"> </i>
+              </div> Tesing
+            </button>
           </div>
         </div>
         <div className="kdjff" style={{ position: "fixed", top: "5%", fontSize: "225px", backgroundColor:"#fff", zIndex:'0',width:"28%"}}>
