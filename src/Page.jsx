@@ -259,7 +259,7 @@ const ScrollSections = () => {
                 <div className="row">
                     <div className="col-2 px-3">
                       <div className="card w-100 p-0 border-0">
-                        <img className="card-img-top" alt="" src="./img/Geometrical.png" />
+                        <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                       </div>
                     </div>
                     <div className="col-2 px-3">
@@ -269,17 +269,17 @@ const ScrollSections = () => {
                     </div>
                     <div className="col-2 px-3">
                       <div className="card w-100 p-0 border-0">
-                        <img className="card-img-top" alt="" src="./img/Geometrical.png" />
+                        <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                       </div>
                     </div>
                     <div className="col-2 px-3">
                       <div className="card w-100 p-0 border-0">
-                        <img className="card-img-top" alt="" src="./img/Geometrical.png" />
+                        <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                       </div>
                     </div>
                     <div className="col-2 px-3">
                       <div className="card w-100 p-0 border-0">
-                        <img className="card-img-top" alt="" src="./img/Geometrical.png" />
+                        <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                       </div>
                     </div>
 
