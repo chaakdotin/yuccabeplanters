@@ -62,9 +62,9 @@ const ScrollSections = () => {
     let tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: ".kdjff",
-        start: "top top",
+        start: "top 10%",
         end: "+=200",
-        scrub: true,
+        scrub: true 
       },
     })
     tl1.to(".kdjff", { 
@@ -82,7 +82,7 @@ const ScrollSections = () => {
       }
     });
     tl2.to(".sdsss", { 
-      left: "30%",
+      x: 500,
       duration: 1 
     });
     const tl3 = gsap.timeline({
@@ -192,7 +192,7 @@ const ScrollSections = () => {
         
         <div className="stack-container">
           <div>
-            <div className="sdsss" style={{ position: "fixed", top: "23.5%", left:"-500px", zIndex:"1" }}>
+            <div className="sdsss" style={{ position: "fixed",top:"1px", transform: "translate(-1000px, 220px)", zIndex:"1" }}>
               <div className="d-flex gap-2">
                 <button className="btn btn_style active" data-filter="all"> 
                   <div className="btn_icon">
@@ -232,7 +232,7 @@ const ScrollSections = () => {
                 </button>
               </div>
             </div>
-            <div className="kdjff" style={{ position: "fixed", top: "5%", fontSize: "225px",zIndex:'2', width:"28%", lineHeight:"1"}}>
+            <div className="kdjff" style={{ position: "fixed", transform: "translate(0px, -5px)", fontSize: "225px",zIndex:'2', width:"28%", lineHeight:"1"}}>
               <span style={{  fontWeight: "bold", backgroundColor: "rgb(255, 255, 255)" }}>Collections</span>
             </div>
             <div className="container-fluid" id="newcolum"  style={{ position: "fixed", top: "40%"}}>
