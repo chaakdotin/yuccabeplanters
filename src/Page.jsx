@@ -83,7 +83,6 @@ const ScrollSections = () => {
       duration: 1
     });
     // tl1.to(".kdjff", { duration: 1 });
-    
     const tl2 = gsap.timeline({
       scrollTrigger:{
         trigger:".sdsss",
@@ -108,7 +107,6 @@ const ScrollSections = () => {
       y: "400px",
       duration: 1 
     });
-    
     let tl;
     function setupTimeline() {
       let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
@@ -248,13 +246,13 @@ const ScrollSections = () => {
                 </div>
               </div>
             </div>
-            <div className="container-fluid " id="newcolum"  style={{ position: "fixed",  transform: "translate(0px, 100px)", height: '210px'}}>
+            <div className="container-fluid " id="newcolum"  style={{ position: "fixed",  transform: "translate(0px, 100px)"}}>
               <div className="w-100 h-100 " style={{overflow: "hidden",}}>
                 <div className="row">
                   {[...Array(6)].map((_, index) => (
                     <div className="col-2" key={index}>
-                      <div className="card w-100 p-0" style={{ height: "200px", width: "300px" }}>
-                        <img className="card-img-top" alt="" src="./img/YP.jpg" />
+                      <div className="card w-100 p-0">
+                        <img className="card-img-top" alt="" src="./img/Geometrical.png" />
                       </div>
                     </div>
                   ))}
