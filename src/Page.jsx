@@ -68,7 +68,7 @@ const ScrollSections = () => {
       },
     })
     tl1.to(".kdjff", { 
-      top: "17%", 
+      top: "22%", 
       left: "1%",
       fontSize: "80px",
       duration: 1 
@@ -85,6 +85,19 @@ const ScrollSections = () => {
       left: "30%",
       duration: 1 
     });
+    const tl3 = gsap.timeline({
+      scrollTrigger:{
+        trigger:"#newcolum",
+        start:"top 30%",
+        end: "+=100",
+        scrub: true,
+      }
+    });
+    tl3.to("#newcolum", { 
+      top: "100%",
+      duration: 1 
+    });
+    
     let tl;
     function setupTimeline() {
       let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
@@ -179,7 +192,7 @@ const ScrollSections = () => {
         
         <div className="stack-container">
           <div>
-            <div className="sdsss" style={{ position: "fixed", top: "22%", left:"-500px", zIndex:"1" }}>
+            <div className="sdsss" style={{ position: "fixed", top: "23.5%", left:"-500px", zIndex:"1" }}>
               <div className="d-flex gap-2">
                 <button className="btn btn_style active" data-filter="all"> 
                   <div className="btn_icon">
