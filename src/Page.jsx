@@ -258,7 +258,7 @@ const ScrollSections = () => {
               <div className="w-100 h-100 " style={{overflow: "hidden",}}>
                 <div className="row">
                   {[...Array(6)].map((_, index) => (
-                    <div className="col-2" key={index}>
+                    <div className="col-2 px-3" key={index}>
                       <div className="card w-100 p-0 border-0">
                         <img className="card-img-top" alt="" src="./img/Geometrical.png" />
                       </div>
