@@ -184,38 +184,38 @@ const ScrollSections = () => {
             <div className="d-flex gap-2">
               <button className="btn btn_style active" data-filter="all"> 
                 <div className="btn_icon">
-                  <i className="fa-solid fa-headphones"> </i>
+                  <img src="./svg/icon2.svg" className="w-100" />
                 </div> Tesing
               </button>
               <button className="btn btn_style" data-filter="cat1"> 
                 <div className="btn_icon">
-                  <i className="fa-solid fa-headphones"> </i>
+                  <img src="./svg/icon3.svg" className="w-100" />
                 </div> Tesing
               </button>
               
               <button className="btn btn_style" data-filter="cat2"> 
                 <div className="btn_icon">
-                  <i className="fa-solid fa-headphones"> </i>
+                  <img src="./svg/icon4.svg" className="w-100" />
                 </div> Tesing
               </button>
               <button className="btn btn_style" data-filter="cat3"> 
                 <div className="btn_icon">
-                  <i className="fa-solid fa-headphones"> </i>
+                  <img src="./svg/icon2.svg" className="w-100" />
                 </div> Tesing
               </button>
               <button className="btn btn_style" data-filter="cat4"> 
                 <div className="btn_icon">
-                  <i className="fa-solid fa-headphones"> </i>
+                  <img src="./svg/icon3.svg" className="w-100" />
                 </div> Tesing
               </button>
               <button className="btn btn_style" data-filter="cat5"> 
                 <div className="btn_icon">
-                  <i className="fa-solid fa-headphones"> </i>
+                  <img src="./svg/icon4.svg" className="w-100" />
                 </div> Tesing
               </button>
               <button className="btn btn_style" data-filter="cat6"> 
                 <div className="btn_icon">
-                  <i className="fa-solid fa-headphones"> </i>
+                  <img src="./svg/icon2.svg" className="w-100" />
                 </div> Tesing
               </button>
             </div>
