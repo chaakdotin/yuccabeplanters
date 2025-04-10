@@ -111,7 +111,7 @@ const ScrollSections = () => {
       y: "400px",
       duration: 1,
       stagger: {
-        each: 0.2,       // 0.2s delay between each card
+        each: 0.4,       // 0.2s delay between each card
         from: "start"    // animation starts from the first card
       } 
     });
