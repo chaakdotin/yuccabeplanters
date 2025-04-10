@@ -136,7 +136,7 @@ header {
 }
 
 /* First panel image starts at full scale */
-.panel.panel1 .panel-image {
+.panel .panel-image {
   transform: scale(1);
 }
 

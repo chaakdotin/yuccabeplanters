@@ -69,7 +69,7 @@ const ScrollSections = () => {
       },
     })
     tl1.to(".kdjff", { 
-      top: "18%", 
+      top: "17%", 
       left: "1%",
       fontSize: "80px",
       duration: 1 
@@ -116,13 +116,12 @@ const ScrollSections = () => {
           tl.to(panel, { height: "5vh", y: "0%", duration: 1 });
           tl.to(panel.querySelector(".panel-image"), { scale: 0.5, duration: 1 }, "<");
         }
+       
       });
-
     }
     setupTimeline();
     ScrollTrigger.refresh();
   }, []);
-
   return (
     <>
       <style>
