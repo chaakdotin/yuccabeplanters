@@ -5,25 +5,61 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
 import "./StackedSections.css"; // Make sure this file contains your CSS
-
 const ScrollSections = () => {
+  
+  
   const sections = Array.from({ length: 10 }, (_, i) => ({
     s_id: i + 1,
     id: `panel${i + 1}`,
     title: `Section ${i + 1}`,
     content: `This is the content for section ${i + 1}.`,
     imageUrl: `https://source.unsplash.com/random/300x300?sig=${i + 1}`,
+    dataCategory: `cat${i + 1}`,
   }));
   useEffect(() => {
+    // Get the current tag from URL
+    var url = new URL(window.location.href);
+    var c = url.searchParams.get('tags') || "all"; // default to 'all' if not present
+
+    const filterButtons = document.querySelectorAll(".sdsss button");
+    const productItems = document.querySelectorAll(".panel");
+
+    // Add click events to each filter button
+    filterButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const filter = btn.getAttribute("data-filter");
+        window.location.href = "?tags=" + filter;
+      });
+    });
+
+    // Set active button class and filter items
+    filterButtons.forEach(btn => {
+      const filter = btn.getAttribute("data-filter");
+      if (c === "all" || filter === c) {
+        btn.classList.add("active");
+      } else {
+        btn.classList.remove("active");
+      }
+    });
+
+    // Show/hide items based on the filter
+    productItems.forEach(item => {
+      const category = item.getAttribute("data-category");
+      if (c === "all" || category === c) {
+        item.style.display = "";
+      } else {
+        item.style.display = "none";
+      }
+    });
     const lenis = new Lenis();
     gsap.registerPlugin(ScrollTrigger);
     lenis.on('scroll', ScrollTrigger.update);
-  
     // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
     // This ensures Lenis's smooth scroll animation updates on each GSAP tick
     gsap.ticker.add((time) => {
       lenis.raf(time * 1000); // Convert time from seconds to milliseconds
     });
+
     let tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: ".kdjff",
@@ -50,124 +86,41 @@ const ScrollSections = () => {
       left: "30%",
       duration: 1 
     });
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".stack-container",
-        start: "top top",
-        end: "+=2000",
-        scrub: true,
-        pin: true
-      },
-    });
+    let tl;
+    function setupTimeline() {
+      let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
+      let count = panels.length;
+      console.log(count * 200);
+      tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".stack-container",
+          start: "top top",
+          end: "+=" + (count * 200),
+          scrub: true,
+          pin: true,
+        }
+      });
+      tl.fromTo(".small-section",
+        {
+          y: "100vh"
+        }, {
+          y: "0",
+          duration: 0.5
+        }
+      );
+            
+      panels.forEach((panel, i) => {
+        let lastPanel = panels.length - 1;
+        tl.fromTo(panel, { y: "100%" }, { y: "0%", duration: 1 }, "<");
+        if(i < lastPanel){
+          tl.to(panel, { height: "5vh", y: "0%", duration: 1 });
+          tl.to(panel.querySelector(".panel-image"), { scale: 0.5, duration: 1 }, "<");
+        }
+      });
 
-    // Small-section slide in from below
-    tl.fromTo(".small-section", { y: "100vh" }, { y: "0", duration: 0.5 });
-    
-    // Panel 1 slides in from below
-    tl.fromTo(".panel.panel1", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-
-    // Transition: Panel 1 shrink + Image scale animation + Panel 2 slide in & image scale up
-    tl.to(".panel.panel1", { height: "5vh", y: "0%", duration: 1 });
-    tl.to(".panel.panel1 .panel-image", { scale: 0.5, duration: 1 }, "<");
-    tl.fromTo(".panel.panel2", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-    tl.fromTo(
-      ".panel.panel2 .panel-image",
-      { scale: 0.5 },
-      { scale: 1, duration: 1 },
-      "<"
-    );
-
-    // // Transition: Panel 2 shrink & Panel 3 slide in with image scale changes
-    tl.to(".panel.panel2", { height: "5vh", y: "0%", duration: 1 });
-    tl.to(".panel.panel2 .panel-image", { scale: 0.5, duration: 1 }, "<");
-    tl.fromTo(".panel.panel3", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-    tl.fromTo(
-      ".panel.panel3 .panel-image",
-      { scale: 0.5 },
-      { scale: 1, duration: 1 },
-      "<"
-    );
-
-    // Transition: Panel 3 -> Panel 4
-    tl.to(".panel.panel3", { height: "5vh", y: "0%", duration: 1 });
-    tl.to(".panel.panel3 .panel-image", { scale: 0.5, duration: 1 }, "<");
-    tl.fromTo(".panel.panel4", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-    tl.fromTo(
-      ".panel.panel4 .panel-image",
-      { scale: 0.5 },
-      { scale: 1, duration: 1 },
-      "<"
-    );
-
-    // Transition: Panel 4 -> Panel 5
-    tl.to(".panel.panel4", { height: "5vh", y: "0%", duration: 1 });
-    tl.to(".panel.panel4 .panel-image", { scale: 0.5, duration: 1 }, "<");
-    tl.fromTo(".panel.panel5", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-    tl.fromTo(
-      ".panel.panel5 .panel-image",
-      { scale: 0.5 },
-      { scale: 1, duration: 1 },
-      "<"
-    );
-
-    // Transition: Panel 5 -> Panel 6
-    tl.to(".panel.panel5", { height: "5vh", y: "0%", duration: 1 });
-    tl.to(".panel.panel5 .panel-image", { scale: 0.5, duration: 1 }, "<");
-    tl.fromTo(".panel.panel6", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-    tl.fromTo(
-      ".panel.panel6 .panel-image",
-      { scale: 0.5 },
-      { scale: 1, duration: 1 },
-      "<"
-    );
-
-    // Transition: Panel 6 -> Panel 7
-    tl.to(".panel.panel6", { height: "5vh", y: "0%", duration: 1 });
-    tl.to(".panel.panel6 .panel-image", { scale: 0.5, duration: 1 }, "<");
-    tl.fromTo(".panel.panel7", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-    tl.fromTo(
-      ".panel.panel7 .panel-image",
-      { scale: 0.5 },
-      { scale: 1, duration: 1 },
-      "<"
-    );
-
-    // Transition: Panel 7 -> Panel 8
-    tl.to(".panel.panel7", { height: "5vh", y: "0%", duration: 1 });
-    tl.to(".panel.panel7 .panel-image", { scale: 0.5, duration: 1 }, "<");
-    tl.fromTo(".panel.panel8", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-    tl.fromTo(
-      ".panel.panel8 .panel-image",
-      { scale: 0.5 },
-      { scale: 1, duration: 1 },
-      "<"
-    );
-
-    // Transition: Panel 8 -> Panel 9
-    tl.to(".panel.panel8", { height: "5vh", y: "0%", duration: 1 });
-    tl.to(".panel.panel8 .panel-image", { scale: 0.5, duration: 1 }, "<");
-    tl.fromTo(".panel.panel9", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-    tl.fromTo(
-      ".panel.panel9 .panel-image",
-      { scale: 0.5 },
-      { scale: 1, duration: 1 },
-      "<"
-    );
-
-    // Transition: Panel 9 -> Panel 10
-    tl.to(".panel.panel9", { height: "5vh", y: "0%", duration: 1 });
-    tl.to(".panel.panel9 .panel-image", { scale: 0.5, duration: 1 }, "<");
-    tl.fromTo(".panel.panel10", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-    tl.fromTo(
-      ".panel.panel10 .panel-image",
-      { scale: 0.5 },
-      { scale: 1, duration: 1 },
-      "<"
-    );
-
-    // If desired, you can also animate the last panel to shrink:
-    tl.to(".panel.panel10", { height: "65vh", y: "0%", duration: 1 });
-    // tl.to(".panel.panel10 .panel-image", { scale: 0.5, duration: 1 }, "<");
+    }
+    setupTimeline();
+    ScrollTrigger.refresh();
   }, []);
 
   return (
@@ -224,47 +177,54 @@ const ScrollSections = () => {
           }
         `}
       </style>
-      <div style={{ overflow: "hidden", position: "relative" }}>
-        <div className="sdsss" style={{ position: "fixed", top: "22%", left:"-500px",  }}>
+      <div >
+        <div className="sdsss" style={{ position: "fixed", top: "22%", left:"-500px", zIndex:"1" }}>
           <div className="d-flex gap-2">
-            <button className="btn btn_style"> 
+            <button className="btn btn_style active" data-filter="all"> 
               <div className="btn_icon">
                 <i className="fa-solid fa-headphones"> </i>
               </div> Tesing
             </button>
-            <button className="btn btn_style"> 
+            <button className="btn btn_style" data-filter="cat1"> 
               <div className="btn_icon">
                 <i className="fa-solid fa-headphones"> </i>
               </div> Tesing
             </button>
-            <button className="btn btn_style"> 
+            
+            <button className="btn btn_style" data-filter="cat2"> 
               <div className="btn_icon">
                 <i className="fa-solid fa-headphones"> </i>
               </div> Tesing
             </button>
-            <button className="btn btn_style"> 
+            <button className="btn btn_style" data-filter="cat3"> 
               <div className="btn_icon">
                 <i className="fa-solid fa-headphones"> </i>
               </div> Tesing
             </button>
-            <button className="btn btn_style"> 
+            <button className="btn btn_style" data-filter="cat4"> 
               <div className="btn_icon">
                 <i className="fa-solid fa-headphones"> </i>
               </div> Tesing
             </button>
-            <button className="btn btn_style"> 
+            <button className="btn btn_style" data-filter="cat5"> 
+              <div className="btn_icon">
+                <i className="fa-solid fa-headphones"> </i>
+              </div> Tesing
+            </button>
+            <button className="btn btn_style" data-filter="cat6"> 
               <div className="btn_icon">
                 <i className="fa-solid fa-headphones"> </i>
               </div> Tesing
             </button>
           </div>
         </div>
-        <div className="kdjff" style={{ position: "fixed", top: "5%", fontSize: "225px", backgroundColor:"#fff", zIndex:'0',width:"28%"}}>
-            <span style={{  fontWeight: "bold" }}>Collections</span>
+        <div className="kdjff" style={{ position: "fixed", top: "5%", fontSize: "225px",zIndex:'2', width:"28%"}}>
+            <span style={{  fontWeight: "bold", backgroundColor: "rgb(255, 255, 255)" }}>Collections</span>
         </div>
-        
+      </div>
+      <div style={{  position: "relative" }}>
         <div className="stack-container">
-          <div className="small-section ">
+          <div className="small-section" >
             <div className="articles_header w-100 text-center">
               <section className="slider">
                 <div className="slider-wrapper">
@@ -297,14 +257,14 @@ const ScrollSections = () => {
               </section>
             </div>
           </div>
-          {sections.map(({ s_id, id, title, content, imageUrl}) => (
-            <div className={"panel p-0 "+id} key={id}>
+          {sections.map(({ s_id, id, title, content, imageUrl, dataCategory}) => (
+            <div className={"panel p-0 "+id} key={id} data-category={dataCategory}>
               <div className="container-fluid">
                 <div className="row px-1">
                   <div className="panel-body col-12" style={{ paddingTop: "25px" }}>
                     <div className="d-flex">
                       <div className="panel-text-div col-8">
-                        <span style={{ color: "#000" }}>Panel 1</span>
+                        <span style={{ color: "#000" }}>Panel {s_id}</span>
                       </div>
                       <div className="panel-image-div col-4 overflow-hidden"> 
                         <img
