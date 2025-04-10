@@ -158,7 +158,9 @@ header {
 .panel-image-div{
     height: 60vh;
 }
-
+.sdsss .active {
+  background-color: #d9d4c5;
+}
 .btn_style{
   position: relative;
   border: 1px solid #d9d4c5!important;
@@ -172,6 +174,6 @@ header {
   position: absolute;
   left: 2%;
   top: 4%;
-  width: 42%;
+  width: 30%;
   
 }

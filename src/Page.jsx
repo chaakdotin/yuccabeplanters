@@ -48,12 +48,14 @@ const ScrollSections = () => {
         window.location.href = "?tags=" + filter;
       });
     });
-
+    
     // Set active button class and filter items
     filterButtons.forEach(btn => {
       const filter = btn.getAttribute("data-filter");
-      if (c === "all" || filter === c) {
+    
+      if (c === filter || filter === c) {
         btn.classList.add("active");
+        console.log(c,filter)
       } else {
         btn.classList.remove("active");
       }
@@ -211,45 +213,45 @@ const ScrollSections = () => {
           <div style={{ position: "fixed", transform: "translate(0px, 21vh)", zIndex:'2', width:"100%", lineHeight:"1", height:"85px"}}>
             <div className="w-100 d-flex h-100">
               <div className="kdjff" style={{ width:"30%",position: "relative", lineHeight:"1"}}>
-                <span className="k8nd8" style={{position:"absolute", fontSize: "225px", fontWeight: "bold", backgroundColor: "rgb(255, 255, 255)" }}>Collections</span>
+                <span className="k8nd8" style={{position:"absolute", fontSize: "225px", fontWeight: "bold", backgroundColor: "rgb(255, 255, 255)", zIndex:1 }}>Collections</span>
               </div>
               <div className="sdsss" style={{ overflow:"hidden", width:"fit-content"}}>
-                <div className="d-flex gap-2 h84gf" style={{ transform: "translate(-930px, 20px)",}}>
+                <div className="d-flex gap-2 h84gf" style={{ transform: "translate(-930px, 20px)", position:"relative"}}>
                   <button className="btn btn_style active" data-filter="all"> 
                     <div className="btn_icon">
                       <img src="./svg/icon2.svg" className="w-100" />
-                    </div> Tesing
+                    </div> All
                   </button>
                   <button className="btn btn_style" data-filter="cat1"> 
                     <div className="btn_icon">
                       <img src="./svg/icon3.svg" className="w-100" />
-                    </div> Tesing
+                    </div> Geometrical
                   </button>
                   
                   <button className="btn btn_style" data-filter="cat2"> 
                     <div className="btn_icon">
                       <img src="./svg/icon4.svg" className="w-100" />
-                    </div> Tesing
+                    </div> Geometrical
                   </button>
                   <button className="btn btn_style" data-filter="cat3"> 
                     <div className="btn_icon">
                       <img src="./svg/icon2.svg" className="w-100" />
-                    </div> Tesing
+                    </div> Geometrical
                   </button>
                   <button className="btn btn_style" data-filter="cat4"> 
                     <div className="btn_icon">
                       <img src="./svg/icon3.svg" className="w-100" />
-                    </div> Tesing
+                    </div> Geometrical
                   </button>
                   <button className="btn btn_style" data-filter="cat5"> 
                     <div className="btn_icon">
                       <img src="./svg/icon4.svg" className="w-100" />
-                    </div> Tesing
+                    </div> Geometrical
                   </button>
                   <button className="btn btn_style" data-filter="cat6"> 
                     <div className="btn_icon">
                       <img src="./svg/icon2.svg" className="w-100" />
-                    </div> Tesing
+                    </div> Geometrical
                   </button>
                 </div>
               </div>
