@@ -1,4 +1,4 @@
-import React from "react";
+import React, {lazy} from "react";
 import ReactDOM from "react-dom/client";
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
@@ -7,15 +7,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import './index.css'
-import App from './App.jsx'
+
 import Header from './Header';
-import Page from './Page';
-import Work from './Work';
-import Services from './Services';
-import OurActivities from './OurActivities';
+const App = lazy(() => import('./App'));
+const Page = lazy(() => import('./Page'));
+const Work = lazy(() => import('./Work'));
+const Services = lazy(() => import('./Services'));
+const OurActivities = lazy(() => import('./OurActivities'));
+const ContactUs = lazy(() => import('./Contact-us'));
 import PageLoadAnimation from './PageLoadAnimation';
 import Footer from './Footer';
-import ContactUs from './Contact-us';
 gsap.registerPlugin(ScrollTrigger);
 const root = document.getElementById("root");
 

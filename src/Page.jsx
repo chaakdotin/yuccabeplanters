@@ -59,7 +59,6 @@ const ScrollSections = () => {
       }
     });
     
-
     let tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: ".kdjff",
@@ -179,51 +178,62 @@ const ScrollSections = () => {
       <div style={{  position: "relative" }}>
         
         <div className="stack-container">
-        <div >
-          <div className="sdsss" style={{ position: "fixed", top: "22%", left:"-500px", zIndex:"1" }}>
-            <div className="d-flex gap-2">
-              <button className="btn btn_style active" data-filter="all"> 
-                <div className="btn_icon">
-                  <img src="./svg/icon2.svg" className="w-100" />
-                </div> Tesing
-              </button>
-              <button className="btn btn_style" data-filter="cat1"> 
-                <div className="btn_icon">
-                  <img src="./svg/icon3.svg" className="w-100" />
-                </div> Tesing
-              </button>
-              
-              <button className="btn btn_style" data-filter="cat2"> 
-                <div className="btn_icon">
-                  <img src="./svg/icon4.svg" className="w-100" />
-                </div> Tesing
-              </button>
-              <button className="btn btn_style" data-filter="cat3"> 
-                <div className="btn_icon">
-                  <img src="./svg/icon2.svg" className="w-100" />
-                </div> Tesing
-              </button>
-              <button className="btn btn_style" data-filter="cat4"> 
-                <div className="btn_icon">
-                  <img src="./svg/icon3.svg" className="w-100" />
-                </div> Tesing
-              </button>
-              <button className="btn btn_style" data-filter="cat5"> 
-                <div className="btn_icon">
-                  <img src="./svg/icon4.svg" className="w-100" />
-                </div> Tesing
-              </button>
-              <button className="btn btn_style" data-filter="cat6"> 
-                <div className="btn_icon">
-                  <img src="./svg/icon2.svg" className="w-100" />
-                </div> Tesing
-              </button>
+          <div>
+            <div className="sdsss" style={{ position: "fixed", top: "22%", left:"-500px", zIndex:"1" }}>
+              <div className="d-flex gap-2">
+                <button className="btn btn_style active" data-filter="all"> 
+                  <div className="btn_icon">
+                    <img src="./svg/icon2.svg" className="w-100" />
+                  </div> Tesing
+                </button>
+                <button className="btn btn_style" data-filter="cat1"> 
+                  <div className="btn_icon">
+                    <img src="./svg/icon3.svg" className="w-100" />
+                  </div> Tesing
+                </button>
+                
+                <button className="btn btn_style" data-filter="cat2"> 
+                  <div className="btn_icon">
+                    <img src="./svg/icon4.svg" className="w-100" />
+                  </div> Tesing
+                </button>
+                <button className="btn btn_style" data-filter="cat3"> 
+                  <div className="btn_icon">
+                    <img src="./svg/icon2.svg" className="w-100" />
+                  </div> Tesing
+                </button>
+                <button className="btn btn_style" data-filter="cat4"> 
+                  <div className="btn_icon">
+                    <img src="./svg/icon3.svg" className="w-100" />
+                  </div> Tesing
+                </button>
+                <button className="btn btn_style" data-filter="cat5"> 
+                  <div className="btn_icon">
+                    <img src="./svg/icon4.svg" className="w-100" />
+                  </div> Tesing
+                </button>
+                <button className="btn btn_style" data-filter="cat6"> 
+                  <div className="btn_icon">
+                    <img src="./svg/icon2.svg" className="w-100" />
+                  </div> Tesing
+                </button>
+              </div>
+            </div>
+            <div className="kdjff" style={{ position: "fixed", top: "5%", fontSize: "225px",zIndex:'2', width:"28%", lineHeight:"1"}}>
+              <span style={{  fontWeight: "bold", backgroundColor: "rgb(255, 255, 255)" }}>Collections</span>
+            </div>
+            <div className="container-fluid" id="newcolum"  style={{ position: "fixed", top: "40%"}}>
+              <div className="row">
+                {[...Array(6)].map((_, index) => (
+                  <div className="col-2" key={index}>
+                    <div className="card w-100 p-0" style={{ height: "200px", width: "300px" }}>
+                      <img className="card-img-top" alt="" src="./img/YP.jpg" />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-          <div className="kdjff" style={{ position: "fixed", top: "5%", fontSize: "225px",zIndex:'2', width:"28%"}}>
-              <span style={{  fontWeight: "bold", backgroundColor: "rgb(255, 255, 255)" }}>Collections</span>
-          </div>
-        </div>
           <div className="small-section" >
             <div className="articles_header w-100 text-center">
               <section className="slider">
