@@ -93,7 +93,11 @@ const ScrollSections = () => {
     });
     tl2.to(".h84gf", { 
       x: 0,
-      duration: 1 
+      duration: 1,
+      // stagger: {
+      //   each: 0.2,
+      //   from: "start"
+      // } 
     });
     const tl3 = gsap.timeline({
       scrollTrigger:{
@@ -103,9 +107,13 @@ const ScrollSections = () => {
         scrub: true,
       }
     });
-    tl3.to("#newcolum .row", { 
+    tl3.to("#newcolum .card", { 
       y: "400px",
-      duration: 1 
+      duration: 1,
+      stagger: {
+        each: 0.2,       // 0.2s delay between each card
+        from: "start"    // animation starts from the first card
+      } 
     });
     let tl;
     function setupTimeline() {
@@ -251,7 +259,7 @@ const ScrollSections = () => {
                 <div className="row">
                   {[...Array(6)].map((_, index) => (
                     <div className="col-2" key={index}>
-                      <div className="card w-100 p-0">
+                      <div className="card w-100 p-0 border-0">
                         <img className="card-img-top" alt="" src="./img/Geometrical.png" />
                       </div>
                     </div>
