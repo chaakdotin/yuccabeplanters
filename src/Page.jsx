@@ -257,32 +257,36 @@ const ScrollSections = () => {
             <div className="container-fluid " id="newcolum"  style={{ position: "fixed",  transform: "translate(0px, 100px)"}}>
               <div className="w-100 h-100 " style={{overflow: "hidden",}}>
                 <div className="row">
-                    <div className="col-2 px-3">
+                    <div className="col-2 px-0">
                       <div className="card w-100 p-0 border-0">
                         <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                       </div>
                     </div>
-                    <div className="col-2 px-3">
+                    <div className="col-2 px-0">
                       <div className="card w-100 p-0 border-0">
                         <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                       </div>
                     </div>
-                    <div className="col-2 px-3">
+                    <div className="col-2 px-0">
                       <div className="card w-100 p-0 border-0">
                         <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                       </div>
                     </div>
-                    <div className="col-2 px-3">
+                    <div className="col-2 px-0">
                       <div className="card w-100 p-0 border-0">
                         <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                       </div>
                     </div>
-                    <div className="col-2 px-3">
+                    <div className="col-2 px-0">
                       <div className="card w-100 p-0 border-0">
                         <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                       </div>
                     </div>
-
+                    <div className="col-2 px-0">
+                      <div className="card w-100 p-0 border-0">
+                        <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
+                      </div>
+                    </div>
                 </div>
               </div>
             </div>
