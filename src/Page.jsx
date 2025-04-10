@@ -23,7 +23,17 @@ const ScrollSections = () => {
     imageUrl: `https://source.unsplash.com/random/300x300?sig=${i + 1}`,
     dataCategory: `cat${i + 1}`,
   }));
+  
   useEffect(() => {
+    const el = document.querySelector('.k8nd8');
+    const elWidth = el.clientWidth;
+    const screenWidth = window.innerWidth;
+
+    // Calculate left offset to center
+    const leftOffset = (screenWidth - elWidth) / 2;
+
+    // Apply styles
+    el.style.left = `${leftOffset}px`;
     // Get the current tag from URL
     var url = new URL(window.location.href);
     var c = url.searchParams.get('tags') || "all"; // default to 'all' if not present
@@ -65,13 +75,17 @@ const ScrollSections = () => {
         start: "top 25%",
         end: "+=200",
         scrub: true, 
-        
       },
-    })
-    tl1.to(".kdjff", { 
-      fontSize: "80px",
-      duration: 1 
     });
+    tl1.to(".k8nd8",{
+      left:0,
+      fontSize: "80px",
+      duration: 1
+    });
+    // tl1.to(".kdjff", { 
+    //   duration: 1
+    // });
+    
     const tl2 = gsap.timeline({
       scrollTrigger:{
         trigger:".sdsss",
@@ -192,8 +206,8 @@ const ScrollSections = () => {
         <div className="stack-container">
           <div style={{ position: "fixed", transform: "translate(0px, 21vh)", zIndex:'2', width:"100%", lineHeight:"1", height:"85px"}}>
             <div className="w-100 d-flex h-100">
-              <div className="kdjff" style={{ fontSize: "225px",width:"34%",position: "relative", lineHeight:"1"}}>
-                <span style={{position:"absolute",  fontWeight: "bold", backgroundColor: "rgb(255, 255, 255)" }}>Collections</span>
+              <div className="kdjff" style={{ width:"30%",position: "relative", lineHeight:"1"}}>
+                <span className="k8nd8" style={{position:"absolute", fontSize: "225px", fontWeight: "bold", backgroundColor: "rgb(255, 255, 255)" }}>Collections</span>
               </div>
               <div className="sdsss" style={{ overflow:"hidden", width:"fit-content"}}>
                 <div className="d-flex gap-2 h84gf" style={{ transform: "translate(-930px, 20px)",}}>
