@@ -82,9 +82,7 @@ const ScrollSections = () => {
       fontSize: "80px",
       duration: 1
     });
-    // tl1.to(".kdjff", { 
-    //   duration: 1
-    // });
+    // tl1.to(".kdjff", { duration: 1 });
     
     const tl2 = gsap.timeline({
       scrollTrigger:{
