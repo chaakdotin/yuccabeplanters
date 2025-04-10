@@ -6,7 +6,14 @@ import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
 import "./StackedSections.css"; // Make sure this file contains your CSS
 const ScrollSections = () => {
-  
+  const lenis = new Lenis();
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll', ScrollTrigger.update);
+    // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+    // This ensures Lenis's smooth scroll animation updates on each GSAP tick
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+    });
   
   const sections = Array.from({ length: 10 }, (_, i) => ({
     s_id: i + 1,
@@ -51,14 +58,7 @@ const ScrollSections = () => {
         item.style.display = "none";
       }
     });
-    const lenis = new Lenis();
-    gsap.registerPlugin(ScrollTrigger);
-    lenis.on('scroll', ScrollTrigger.update);
-    // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
-    // This ensures Lenis's smooth scroll animation updates on each GSAP tick
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000); // Convert time from seconds to milliseconds
-    });
+    
 
     let tl1 = gsap.timeline({
       scrollTrigger: {
@@ -90,7 +90,6 @@ const ScrollSections = () => {
     function setupTimeline() {
       let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
       let count = panels.length;
-      console.log(count * 200);
       tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".stack-container",
@@ -176,53 +175,55 @@ const ScrollSections = () => {
           }
         `}
       </style>
-      <div >
-        <div className="sdsss" style={{ position: "fixed", top: "22%", left:"-500px", zIndex:"1" }}>
-          <div className="d-flex gap-2">
-            <button className="btn btn_style active" data-filter="all"> 
-              <div className="btn_icon">
-                <i className="fa-solid fa-headphones"> </i>
-              </div> Tesing
-            </button>
-            <button className="btn btn_style" data-filter="cat1"> 
-              <div className="btn_icon">
-                <i className="fa-solid fa-headphones"> </i>
-              </div> Tesing
-            </button>
-            
-            <button className="btn btn_style" data-filter="cat2"> 
-              <div className="btn_icon">
-                <i className="fa-solid fa-headphones"> </i>
-              </div> Tesing
-            </button>
-            <button className="btn btn_style" data-filter="cat3"> 
-              <div className="btn_icon">
-                <i className="fa-solid fa-headphones"> </i>
-              </div> Tesing
-            </button>
-            <button className="btn btn_style" data-filter="cat4"> 
-              <div className="btn_icon">
-                <i className="fa-solid fa-headphones"> </i>
-              </div> Tesing
-            </button>
-            <button className="btn btn_style" data-filter="cat5"> 
-              <div className="btn_icon">
-                <i className="fa-solid fa-headphones"> </i>
-              </div> Tesing
-            </button>
-            <button className="btn btn_style" data-filter="cat6"> 
-              <div className="btn_icon">
-                <i className="fa-solid fa-headphones"> </i>
-              </div> Tesing
-            </button>
+      
+      <div style={{  position: "relative" }}>
+        
+        <div className="stack-container">
+        <div >
+          <div className="sdsss" style={{ position: "fixed", top: "22%", left:"-500px", zIndex:"1" }}>
+            <div className="d-flex gap-2">
+              <button className="btn btn_style active" data-filter="all"> 
+                <div className="btn_icon">
+                  <i className="fa-solid fa-headphones"> </i>
+                </div> Tesing
+              </button>
+              <button className="btn btn_style" data-filter="cat1"> 
+                <div className="btn_icon">
+                  <i className="fa-solid fa-headphones"> </i>
+                </div> Tesing
+              </button>
+              
+              <button className="btn btn_style" data-filter="cat2"> 
+                <div className="btn_icon">
+                  <i className="fa-solid fa-headphones"> </i>
+                </div> Tesing
+              </button>
+              <button className="btn btn_style" data-filter="cat3"> 
+                <div className="btn_icon">
+                  <i className="fa-solid fa-headphones"> </i>
+                </div> Tesing
+              </button>
+              <button className="btn btn_style" data-filter="cat4"> 
+                <div className="btn_icon">
+                  <i className="fa-solid fa-headphones"> </i>
+                </div> Tesing
+              </button>
+              <button className="btn btn_style" data-filter="cat5"> 
+                <div className="btn_icon">
+                  <i className="fa-solid fa-headphones"> </i>
+                </div> Tesing
+              </button>
+              <button className="btn btn_style" data-filter="cat6"> 
+                <div className="btn_icon">
+                  <i className="fa-solid fa-headphones"> </i>
+                </div> Tesing
+              </button>
+            </div>
+          </div>
+          <div className="kdjff" style={{ position: "fixed", top: "5%", fontSize: "225px",zIndex:'2', width:"28%"}}>
+              <span style={{  fontWeight: "bold", backgroundColor: "rgb(255, 255, 255)" }}>Collections</span>
           </div>
         </div>
-        <div className="kdjff" style={{ position: "fixed", top: "5%", fontSize: "225px",zIndex:'2', width:"28%"}}>
-            <span style={{  fontWeight: "bold", backgroundColor: "rgb(255, 255, 255)" }}>Collections</span>
-        </div>
-      </div>
-      <div style={{  position: "relative" }}>
-        <div className="stack-container">
           <div className="small-section" >
             <div className="articles_header w-100 text-center">
               <section className="slider">
