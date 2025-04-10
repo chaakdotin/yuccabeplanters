@@ -236,15 +236,17 @@ const ScrollSections = () => {
                 </div>
               </div>
             </div>
-            <div className="container-fluid " id="newcolum"  style={{ position: "fixed", overflow: "hidden", transform: "translate(0px, 100px)", }}>
-              <div className="row">
-                {[...Array(6)].map((_, index) => (
-                  <div className="col-2" key={index}>
-                    <div className="card w-100 p-0" style={{ height: "200px", width: "300px" }}>
-                      <img className="card-img-top" alt="" src="./img/YP.jpg" />
+            <div className="container-fluid " id="newcolum"  style={{ position: "fixed",  transform: "translate(0px, 100px)", height: '210px'}}>
+              <div className="w-100 h-100 " style={{overflow: "hidden",}}>
+                <div className="row">
+                  {[...Array(6)].map((_, index) => (
+                    <div className="col-2" key={index}>
+                      <div className="card w-100 p-0" style={{ height: "200px", width: "300px" }}>
+                        <img className="card-img-top" alt="" src="./img/YP.jpg" />
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
