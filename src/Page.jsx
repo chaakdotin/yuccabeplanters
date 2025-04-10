@@ -62,39 +62,38 @@ const ScrollSections = () => {
     let tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: ".kdjff",
-        start: "top 10%",
+        start: "top 25%",
         end: "+=200",
-        scrub: true 
+        scrub: true, 
+        
       },
     })
     tl1.to(".kdjff", { 
-      top: "22%", 
-      left: "1%",
       fontSize: "80px",
       duration: 1 
     });
     const tl2 = gsap.timeline({
       scrollTrigger:{
         trigger:".sdsss",
-        start:"top 10%",
+        start:"top 8%",
         end: "+=100",
         scrub: true,
       }
     });
-    tl2.to(".sdsss", { 
-      x: 500,
+    tl2.to(".h84gf", { 
+      x: 0,
       duration: 1 
     });
     const tl3 = gsap.timeline({
       scrollTrigger:{
         trigger:"#newcolum",
-        start:"top 30%",
+        start:"top 50%",
         end: "+=100",
         scrub: true,
       }
     });
-    tl3.to("#newcolum", { 
-      top: "100%",
+    tl3.to("#newcolum .row", { 
+      y: "400px",
       duration: 1 
     });
     
@@ -191,51 +190,53 @@ const ScrollSections = () => {
       <div style={{  position: "relative" }}>
         
         <div className="stack-container">
-          <div>
-            <div className="sdsss" style={{ position: "fixed",top:"1px", transform: "translate(-1000px, 220px)", zIndex:"1" }}>
-              <div className="d-flex gap-2">
-                <button className="btn btn_style active" data-filter="all"> 
-                  <div className="btn_icon">
-                    <img src="./svg/icon2.svg" className="w-100" />
-                  </div> Tesing
-                </button>
-                <button className="btn btn_style" data-filter="cat1"> 
-                  <div className="btn_icon">
-                    <img src="./svg/icon3.svg" className="w-100" />
-                  </div> Tesing
-                </button>
-                
-                <button className="btn btn_style" data-filter="cat2"> 
-                  <div className="btn_icon">
-                    <img src="./svg/icon4.svg" className="w-100" />
-                  </div> Tesing
-                </button>
-                <button className="btn btn_style" data-filter="cat3"> 
-                  <div className="btn_icon">
-                    <img src="./svg/icon2.svg" className="w-100" />
-                  </div> Tesing
-                </button>
-                <button className="btn btn_style" data-filter="cat4"> 
-                  <div className="btn_icon">
-                    <img src="./svg/icon3.svg" className="w-100" />
-                  </div> Tesing
-                </button>
-                <button className="btn btn_style" data-filter="cat5"> 
-                  <div className="btn_icon">
-                    <img src="./svg/icon4.svg" className="w-100" />
-                  </div> Tesing
-                </button>
-                <button className="btn btn_style" data-filter="cat6"> 
-                  <div className="btn_icon">
-                    <img src="./svg/icon2.svg" className="w-100" />
-                  </div> Tesing
-                </button>
+          <div style={{ position: "fixed", transform: "translate(0px, 21vh)", zIndex:'2', width:"100%", lineHeight:"1", height:"85px"}}>
+            <div className="w-100 d-flex h-100">
+              <div className="kdjff" style={{ fontSize: "225px",width:"34%",position: "relative", lineHeight:"1"}}>
+                <span style={{position:"absolute",  fontWeight: "bold", backgroundColor: "rgb(255, 255, 255)" }}>Collections</span>
+              </div>
+              <div className="sdsss" style={{ overflow:"hidden", width:"fit-content"}}>
+                <div className="d-flex gap-2 h84gf" style={{ transform: "translate(-930px, 20px)",}}>
+                  <button className="btn btn_style active" data-filter="all"> 
+                    <div className="btn_icon">
+                      <img src="./svg/icon2.svg" className="w-100" />
+                    </div> Tesing
+                  </button>
+                  <button className="btn btn_style" data-filter="cat1"> 
+                    <div className="btn_icon">
+                      <img src="./svg/icon3.svg" className="w-100" />
+                    </div> Tesing
+                  </button>
+                  
+                  <button className="btn btn_style" data-filter="cat2"> 
+                    <div className="btn_icon">
+                      <img src="./svg/icon4.svg" className="w-100" />
+                    </div> Tesing
+                  </button>
+                  <button className="btn btn_style" data-filter="cat3"> 
+                    <div className="btn_icon">
+                      <img src="./svg/icon2.svg" className="w-100" />
+                    </div> Tesing
+                  </button>
+                  <button className="btn btn_style" data-filter="cat4"> 
+                    <div className="btn_icon">
+                      <img src="./svg/icon3.svg" className="w-100" />
+                    </div> Tesing
+                  </button>
+                  <button className="btn btn_style" data-filter="cat5"> 
+                    <div className="btn_icon">
+                      <img src="./svg/icon4.svg" className="w-100" />
+                    </div> Tesing
+                  </button>
+                  <button className="btn btn_style" data-filter="cat6"> 
+                    <div className="btn_icon">
+                      <img src="./svg/icon2.svg" className="w-100" />
+                    </div> Tesing
+                  </button>
+                </div>
               </div>
             </div>
-            <div className="kdjff" style={{ position: "fixed", transform: "translate(0px, -5px)", fontSize: "225px",zIndex:'2', width:"28%", lineHeight:"1"}}>
-              <span style={{  fontWeight: "bold", backgroundColor: "rgb(255, 255, 255)" }}>Collections</span>
-            </div>
-            <div className="container-fluid" id="newcolum"  style={{ position: "fixed", top: "40%"}}>
+            <div className="container-fluid " id="newcolum"  style={{ position: "fixed", overflow: "hidden", transform: "translate(0px, 100px)", }}>
               <div className="row">
                 {[...Array(6)].map((_, index) => (
                   <div className="col-2" key={index}>
