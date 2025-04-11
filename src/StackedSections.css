@@ -176,6 +176,11 @@ header {
   top: 4%;
   width: 30%;
 }
+.sdsss .btn_icon .btn_icon_1{
+  position: relative;
+  top: 2px;
+  width: 46px!important;
+}
 .sdsss .btn_style .btn_icon_2{
   display: none;
 }
