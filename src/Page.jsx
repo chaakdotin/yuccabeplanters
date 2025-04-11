@@ -151,7 +151,7 @@ const ScrollSections = () => {
     setupTimeline();
     ScrollTrigger.refresh();
     if(c != 'all'){
-      const div = document.querySelector('.panel');
+      const div = document.querySelector('.small-section');
       const distanceFromDocumentTop = div.offsetTop;
       window.scrollBy(0, distanceFromDocumentTop);
     }
