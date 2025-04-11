@@ -37,7 +37,7 @@ const ScrollSections = () => {
     // Get the current tag from URL
     var url = new URL(window.location.href);
     var c = url.searchParams.get('tags') || "all"; // default to 'all' if not present
-
+    
     const filterButtons = document.querySelectorAll(".sdsss button");
     const productItems = document.querySelectorAll(".panel");
 
@@ -55,7 +55,6 @@ const ScrollSections = () => {
     
       if (c === filter || filter === c) {
         btn.classList.add("active");
-        console.log(c,filter)
       } else {
         btn.classList.remove("active");
       }
@@ -88,7 +87,7 @@ const ScrollSections = () => {
     const tl2 = gsap.timeline({
       scrollTrigger:{
         trigger:".sdsss",
-        start:"top 8%",
+        start:"top 12%",
         end: "+=100",
         scrub: true,
       }
@@ -151,6 +150,9 @@ const ScrollSections = () => {
     }
     setupTimeline();
     ScrollTrigger.refresh();
+    if(c != 'all'){
+      window.scrollBy(0,300);
+    }
   }, []);
   return (
     <>
