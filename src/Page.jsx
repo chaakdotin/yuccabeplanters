@@ -149,11 +149,14 @@ const ScrollSections = () => {
       });
     }
     setupTimeline();
-    ScrollTrigger.refresh();
+    
     if(c != 'all'){
+      ScrollTrigger.refresh();
       const div = document.querySelector('.small-section');
       const distanceFromDocumentTop = div.offsetTop;
       window.scrollBy(0, distanceFromDocumentTop);
+    }else{
+      ScrollTrigger.refresh();
     }
   }, []);
   return (
