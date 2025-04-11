@@ -184,6 +184,8 @@ header {
 }
 .sdsss .btn_style.active .btn_icon_2{
   display: inline-block;
-  width: 100%;
+  position: relative;
+  top: 2px;
+  width: 45px!important;
 
 }
