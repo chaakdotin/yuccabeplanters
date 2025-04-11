@@ -151,7 +151,9 @@ const ScrollSections = () => {
     setupTimeline();
     ScrollTrigger.refresh();
     if(c != 'all'){
-      window.scrollBy(0,300);
+      const div = document.querySelector('.panel');
+      const distanceFromDocumentTop = div.offsetTop;
+      window.scrollBy(0, distanceFromDocumentTop);
     }
   }, []);
   return (
