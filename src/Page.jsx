@@ -224,38 +224,38 @@ const ScrollSections = () => {
                   </button>
                   <button className="btn btn_style" data-filter="cat1"> 
                     <div className="btn_icon">
-                      <img src="./svg/icon3.svg" className="w-100" />
+                      <img src="./svg/icon2.svg" className="w-100 btn_icon_1" />
                       <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
                     </div> Geometrical
                   </button>
                   
                   <button className="btn btn_style" data-filter="cat2"> 
                     <div className="btn_icon">
-                      <img src="./svg/icon4.svg" className="w-100" />
+                      <img src="./svg/icon4.svg"  className="w-100 btn_icon_1" />
                       <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
                     </div> Geometrical
                   </button>
                   <button className="btn btn_style" data-filter="cat3"> 
                     <div className="btn_icon">
-                      <img src="./svg/icon2.svg" className="w-100" />
+                      <img src="./svg/icon2.svg"  className="w-100 btn_icon_1" />
                       <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
                     </div> Geometrical
                   </button>
                   <button className="btn btn_style" data-filter="cat4"> 
                     <div className="btn_icon">
-                      <img src="./svg/icon3.svg" className="w-100" />
+                      <img src="./svg/icon2.svg" className="w-100 btn_icon_1" />
                       <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
                     </div> Geometrical
                   </button>
                   <button className="btn btn_style" data-filter="cat5"> 
                     <div className="btn_icon">
-                      <img src="./svg/icon4.svg" className="w-100" />
+                      <img src="./svg/icon4.svg"  className="w-100 btn_icon_1" />
                       <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
                     </div> Geometrical
                   </button>
                   <button className="btn btn_style" data-filter="cat6"> 
                     <div className="btn_icon">
-                      <img src="./svg/icon2.svg" className="w-100" />
+                      <img src="./svg/icon2.svg"  className="w-100 btn_icon_1" />
                       <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
                     </div> Geometrical
                   </button>
