@@ -207,8 +207,7 @@ const ScrollSections = () => {
         `}
       </style>
       
-      <div style={{  position: "relative" }}>
-        
+      <div style={{ position: "relative" }}>
         <div className="stack-container">
           <div style={{ position: "fixed", transform: "translate(0px, 21vh)", zIndex:'2', width:"100%", lineHeight:"1", height:"85px"}}>
             <div className="w-100 d-flex h-100">
@@ -219,7 +218,8 @@ const ScrollSections = () => {
                 <div className="d-flex gap-2 h84gf" style={{ transform: "translate(-930px, 20px)", position:"relative"}}>
                   <button className="btn btn_style active" data-filter="all"> 
                     <div className="btn_icon">
-                      <img src="./svg/icon2.svg" className="w-100" />
+                      <img src="./svg/icon2.svg" className="w-100 btn_icon_1" />
+                      <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
                     </div> All
                   </button>
                   <button className="btn btn_style" data-filter="cat1"> 
@@ -262,6 +262,7 @@ const ScrollSections = () => {
                     <div className="col-2 px-0">
                       <div className="card w-100 p-0 border-0">
                         <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
+                        
                       </div>
                     </div>
                     <div className="col-2 px-0">

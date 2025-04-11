@@ -156,9 +156,9 @@ header {
   height: 52vh;
 }
 .panel-image-div{
-    height: 60vh;
+  height: 60vh;
 }
-.sdsss .active {
+.sdsss .btn_style.active {
   background-color: #d9d4c5;
 }
 .btn_style{
@@ -175,5 +175,15 @@ header {
   left: 2%;
   top: 4%;
   width: 30%;
-  
+}
+.sdsss .btn_style .btn_icon_2{
+  display: none;
+}
+.sdsss .btn_style.active .btn_icon_1{
+  display: none;
+}
+.sdsss .btn_style.active .btn_icon_2{
+  display: inline-block;
+  width: 100%;
+
 }
