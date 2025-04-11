@@ -1,241 +1,192 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stacked Sections with Image Scaling using GSAP</title>
-  <style>
-    /* Basic Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; overflow-x: hidden; }
-    header {
-      background: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    .intro {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: #f4f4f4;
-      text-align: center;
-    }
-    .intro img { max-width: 80%; margin-top: 20px; }
-    
-    /* Container for small-section & panels */
-    .stack-container {
-      position: relative;
-      /* Extra scroll space for all transitions */
-      height: 300vh;
-    }
-    
-    /* 5vh wale rectangular section */
-    .small-section {
-      position: fixed;
-      top: 30vh;
-      left: 0;
-      width: 100%;
-      height: 5vh;
-      background: #e74c3c;
-      z-index: 100;
-      /* Shuruat mein viewport ke bahar */
-      transform: translateY(100vh);
-    }
-    
-    /* Panels styling */
-    .panel {
-      position: absolute;
-      top: 30vh;
-      left: 0;
-      width: 100%;
-      height: 65vh; /* Active panel height */
-      transform: translateY(100%);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-      color: #fff;
-    }
-    /* Panel text styling */
-    .panel-text {
-      font-size: 2em;
-    }
-    /* Panel image styling */
-    .panel-image {
-      width: 200px;
-      transform-origin: center center;
-      /* Default scale for all images */
-      transform: scale(0.5);
-    }
-    /* Pehle panel ke image ko full scale par set karte hain */
-    .panel.panel1 .panel-image {
-      transform: scale(1);
-    }
-    
-    /* Alag alag background colors for each section */
-    .panel.panel1 { background: #1abc9c; }
-    .panel.panel2 { background: #2ecc71; }
-    .panel.panel3 { background: #3498db; }
-    .panel.panel4 { background: #9b59b6; }
-    .panel.panel5 { background: #34495e; }
-    .panel.panel6 { background: #f1c40f; }
-    .panel.panel7 { background: #e67e22; }
-    .panel.panel8 { background: #e74c3c; }
-    .panel.panel9 { background: #95a5a6; }
-    .panel.panel10 { background: #7f8c8d; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Scroll Section</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .initial-section {
+            height: 200vh;
+            background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .points-section {
+            height: 100vh;
+            background: #ffffff;
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .points-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .points-container {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: max-content;
+            padding: 0 10vw;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .points-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari */
+        }
+
+        .point {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50vw;
+            height: 100%;
+            padding: 20px;
+            scroll-snap-align: start;
+        }
+
+        .point-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .point p {
+            font-size: 1.2rem;
+            color: #333;
+            text-align: center;
+            max-width: 80%;
+        }
+
+        .dotted-line {
+            position: absolute;
+            bottom: 20vh;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: repeating-linear-gradient(
+                to right,
+                #333,
+                #333 10px,
+                transparent 10px,
+                transparent 20px
+            );
+        }
+
+        .after-section {
+            height: 100vh;
+            background: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Header Section</h1>
-  </header>
-  
-  <!-- Intro Section -->
-  <section class="intro">
-    <h2>Welcome to My Webpage</h2>
-    <p>Yahan par kuch text aur image dikh rahi hai.</p>
-    <img src="https://via.placeholder.com/400x300" alt="Placeholder Image">
-  </section>
-  
-  <!-- Stack Container with Small Section and 10 Panels -->
-  <div class="stack-container">
-    <div class="small-section"></div>
-    
-    <!-- Panel 1 -->
-    <div class="panel panel1">
-      <div class="panel-text">Section 1</div>
-      <img class="panel-image" src="https://images.unsplash.com/photo-1601758123927-6ecfc62865d5?auto=format&fit=crop&w=400&q=80" alt="Image 1">
-    </div>
-    <!-- Panel 2 -->
-    <div class="panel panel2">
-      <div class="panel-text">Section 2</div>
-      <img class="panel-image" src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=400&q=80" alt="Image 2">
-    </div>
-    <!-- Panel 3 -->
-    <div class="panel panel3">
-      <div class="panel-text">Section 3</div>
-      <img class="panel-image" src="https://images.unsplash.com/photo-1612832021251-7adfb0b6f8f3?auto=format&fit=crop&w=400&q=80" alt="Image 3">
-    </div>
-    <!-- Panel 4 -->
-    <div class="panel panel4">
-      <div class="panel-text">Section 4</div>
-      <img class="panel-image" src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=400&q=80" alt="Image 4">
-    </div>
-    <!-- Panel 5 -->
-    <div class="panel panel5">
-      <div class="panel-text">Section 5</div>
-      <img class="panel-image" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" alt="Image 5">
-    </div>
-    <!-- Panel 6 -->
-    <div class="panel panel6">
-      <div class="panel-text">Section 6</div>
-      <img class="panel-image" src="https://images.unsplash.com/photo-1581349482560-4ee1c53f21f2?auto=format&fit=crop&w=400&q=80" alt="Image 6">
-    </div>
-    <!-- Panel 7 -->
-    <div class="panel panel7">
-      <div class="panel-text">Section 7</div>
-      <img class="panel-image" src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80" alt="Image 7">
-    </div>
-    <!-- Panel 8 -->
-    <div class="panel panel8">
-      <div class="panel-text">Section 8</div>
-      <img class="panel-image" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80" alt="Image 8">
-    </div>
-    <!-- Panel 9 -->
-    <div class="panel panel9">
-      <div class="panel-text">Section 9</div>
-      <img class="panel-image" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=400&q=80" alt="Image 9">
-    </div>
-    <!-- Panel 10 -->
-    <div class="panel panel10">
-      <div class="panel-text">Section 10</div>
-      <img class="panel-image" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Image 10">
-    </div>
-  </div>
-  
-  <!-- GSAP & ScrollTrigger CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
+    <!-- Initial 200vh section -->
+    <section class="initial-section">
+        <h1>Scroll Down</h1>
+    </section>
 
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".stack-container",
-        start: "top top",
-        end: "+=2000", // Scroll distance adjust kar sakte hain
-        scrub: true,
-        pin: true,
-        // markers: true, // Debug ke liye markers enable karein
-      }
-    });
+    <!-- New 100vh section with points -->
+    <section class="points-section">
+        <div class="points-container">
+            <div class="point">
+                <span class="point-number">1.</span>
+                <p>First point with some descriptive text about the topic.</p>
+            </div>
+            <div class="point">
+                <span class="point-number">2.</span>
+                <p>Second point with additional information to display.</p>
+            </div>
+            <div class="point">
+                <span class="point-number">3.</span>
+                <p>Third point explaining another aspect clearly.</p>
+            </div>
+            <div class="point">
+                <span class="point-number">4.</span>
+                <p>Fourth point with relevant details included.</p>
+            </div>
+            <div class="point">
+                <span class="point-number">5.</span>
+                <p>Fifth point summarizing the final thoughts.</p>
+            </div>
+        </div>
+        <div class="dotted-line"></div>
+    </section>
 
-    // 1. Small-section slide in from neeche
-    tl.fromTo(".small-section", { y: "100vh" }, { y: "0", duration: 0.5 });
-    
-    // 2. Panel 1 slide in from neeche
-    tl.fromTo(".panel.panel1", { y: "100%" }, { y: "0%", duration: 1 }, "<");
+    <!-- Additional content after points section -->
+    <section class="after-section">
+        <h2>Continue Scrolling</h2>
+    </section>
 
-    // Transition: Panel 1 shrink + Image scale animation + Panel 2 slide in & image scale up
-    tl.to(".panel.panel1", { height: "5vh", y: "0%", duration: 1 });
-    tl.to(".panel.panel1 .panel-image", { scale: 0.5, duration: 1 }, "<");
-    tl.fromTo(".panel.panel2", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-    tl.fromTo(".panel.panel2 .panel-image", { scale: 0.5 }, { scale: 1, duration: 1 }, "<");
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pointsSection = document.querySelector('.points-section');
+            const pointsContainer = document.querySelector('.points-container');
+            let isHorizontalScrolling = false;
 
-    // Transition: Panel 2 shrink & Panel 3 slide in with image scale changes
-    tl.to(".panel.panel2", { height: "5vh", y: "0%", duration: 1 });
-    tl.to(".panel.panel2 .panel-image", { scale: 0.5, duration: 1 }, "<");
-    tl.fromTo(".panel.panel3", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-    tl.fromTo(".panel.panel3 .panel-image", { scale: 0.5 }, { scale: 1, duration: 1 }, "<");
+            window.addEventListener('scroll', () => {
+                const pointsSectionTop = pointsSection.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
 
-    // Transition: Panel 3 -> Panel 4
-    tl.to(".panel.panel3", { height: "5vh", y: "0%", duration: 1 });
-    tl.to(".panel.panel3 .panel-image", { scale: 0.5, duration: 1 }, "<");
-    tl.fromTo(".panel.panel4", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-    tl.fromTo(".panel.panel4 .panel-image", { scale: 0.5 }, { scale: 1, duration: 1 }, "<");
+                // Add visible class when section is in view
+                if (pointsSectionTop <= windowHeight * 0.8) {
+                    pointsSection.classList.add('visible');
+                }
 
-    // Transition: Panel 4 -> Panel 5
-    tl.to(".panel.panel4", { height: "5vh", y: "0%", duration: 1 });
-    tl.to(".panel.panel4 .panel-image", { scale: 0.5, duration: 1 }, "<");
-    tl.fromTo(".panel.panel5", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-    tl.fromTo(".panel.panel5 .panel-image", { scale: 0.5 }, { scale: 1, duration: 1 }, "<");
+                // Handle horizontal scrolling
+                if (pointsSectionTop <= 0 && pointsContainer.scrollLeft < pointsContainer.scrollWidth - pointsContainer.clientWidth) {
+                    isHorizontalScrolling = true;
+                    document.body.style.overflowY = 'hidden'; // Disable vertical scroll
+                } else {
+                    isHorizontalScrolling = false;
+                    document.body.style.overflowY = 'auto'; // Re-enable vertical scroll
+                }
+            });
 
-    // Transition: Panel 5 -> Panel 6
-    tl.to(".panel.panel5", { height: "5vh", y: "0%", duration: 1 });
-    tl.to(".panel.panel5 .panel-image", { scale: 0.5, duration: 1 }, "<");
-    tl.fromTo(".panel.panel6", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-    tl.fromTo(".panel.panel6 .panel-image", { scale: 0.5 }, { scale: 1, duration: 1 }, "<");
+            // Handle mouse wheel for horizontal scrolling
+            pointsContainer.addEventListener('wheel', (e) => {
+                if (isHorizontalScrolling) {
+                    e.preventDefault();
+                    pointsContainer.scrollLeft += e.deltaY;
+                }
+            });
 
-    // Transition: Panel 6 -> Panel 7
-    tl.to(".panel.panel6", { height: "5vh", y: "0%", duration: 1 });
-    tl.to(".panel.panel6 .panel-image", { scale: 0.5, duration: 1 }, "<");
-    tl.fromTo(".panel.panel7", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-    tl.fromTo(".panel.panel7 .panel-image", { scale: 0.5 }, { scale: 1, duration: 1 }, "<");
-
-    // Transition: Panel 7 -> Panel 8
-    tl.to(".panel.panel7", { height: "5vh", y: "0%", duration: 1 });
-    tl.to(".panel.panel7 .panel-image", { scale: 0.5, duration: 1 }, "<");
-    tl.fromTo(".panel.panel8", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-    tl.fromTo(".panel.panel8 .panel-image", { scale: 0.5 }, { scale: 1, duration: 1 }, "<");
-
-    // Transition: Panel 8 -> Panel 9
-    tl.to(".panel.panel8", { height: "5vh", y: "0%", duration: 1 });
-    tl.to(".panel.panel8 .panel-image", { scale: 0.5, duration: 1 }, "<");
-    tl.fromTo(".panel.panel9", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-    tl.fromTo(".panel.panel9 .panel-image", { scale: 0.5 }, { scale: 1, duration: 1 }, "<");
-
-    // Transition: Panel 9 -> Panel 10
-    tl.to(".panel.panel9", { height: "5vh", y: "0%", duration: 1 });
-    tl.to(".panel.panel9 .panel-image", { scale: 0.5, duration: 1 }, "<");
-    tl.fromTo(".panel.panel10", { y: "100%" }, { y: "0%", duration: 1 }, "<");
-    tl.fromTo(".panel.panel10 .panel-image", { scale: 0.5 }, { scale: 1, duration: 1 }, "<");
-    
-    // Agar chahein to aakhri panel par bhi shrink animation laga sakte hain.
-    // tl.to(".panel.panel10", { height: "5vh", y: "0%", duration: 1 });
-    // tl.to(".panel.panel10 .panel-image", { scale: 0.5, duration: 1 }, "<");
-  </script>
+            // Re-enable vertical scroll when horizontal scroll is complete
+            pointsContainer.addEventListener('scroll', () => {
+                if (pointsContainer.scrollLeft >= pointsContainer.scrollWidth - pointsContainer.clientWidth - 1) {
+                    isHorizontalScrolling = false;
+                    document.body.style.overflowY = 'auto';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

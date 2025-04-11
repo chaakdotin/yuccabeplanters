@@ -167,6 +167,9 @@ const ScrollSections = () => {
             margin: 0;
             padding: 0;
           }
+          .navbar{
+            background-color:#ffffff;
+          }
           /* Section with 8vh height */
           section.slider {
             overflow: hidden;
