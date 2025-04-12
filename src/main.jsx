@@ -39,7 +39,6 @@ const Data = () => {
   gsap.registerPlugin(ScrollTrigger);
   // Initialize a new Lenis instance for smooth scrollin
   // Disable lag smoothing in GSAP to prevent any delay in scroll animations
-  
 
   return (
     <>

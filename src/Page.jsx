@@ -1,20 +1,10 @@
-
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import Lenis from 'lenis'
-import 'lenis/dist/lenis.css'
 import "./StackedSections.css"; // Make sure this file contains your CSS
+
 const ScrollSections = () => {
-  const lenis = new Lenis();
-    gsap.registerPlugin(ScrollTrigger);
-    lenis.on('scroll', ScrollTrigger.update);
-    // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
-    // This ensures Lenis's smooth scroll animation updates on each GSAP tick
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000); // Convert time from seconds to milliseconds
-    });
-  
+
   const sections = Array.from({ length: 10 }, (_, i) => ({
     s_id: i + 1,
     id: `panel${i + 1}`,
@@ -23,36 +13,29 @@ const ScrollSections = () => {
     imageUrl: `https://source.unsplash.com/random/300x300?sig=${i + 1}`,
     dataCategory: `cat${i + 1}`,
   }));
-  
+
   useEffect(() => {
     const el = document.querySelector('.k8nd8');
     const elWidth = el.clientWidth;
     const screenWidth = window.innerWidth;
-
-    // Calculate left offset to center
     const leftOffset = (screenWidth - elWidth) / 2;
-
-    // Apply styles
     el.style.left = `${leftOffset}px`;
-    // Get the current tag from URL
+
     var url = new URL(window.location.href);
-    var c = url.searchParams.get('tags') || "all"; // default to 'all' if not present
-    
+    var c = url.searchParams.get('tags') || "all";
+
     const filterButtons = document.querySelectorAll(".sdsss button");
     const productItems = document.querySelectorAll(".panel");
 
-    // Add click events to each filter button
     filterButtons.forEach(btn => {
       btn.addEventListener("click", () => {
         const filter = btn.getAttribute("data-filter");
         window.location.href = "?tags=" + filter;
       });
     });
-    
-    // Set active button class and filter items
+
     filterButtons.forEach(btn => {
       const filter = btn.getAttribute("data-filter");
-    
       if (c === filter || filter === c) {
         btn.classList.add("active");
       } else {
@@ -60,7 +43,6 @@ const ScrollSections = () => {
       }
     });
 
-    // Show/hide items based on the filter
     productItems.forEach(item => {
       const category = item.getAttribute("data-category");
       if (c === "all" || category === c) {
@@ -69,53 +51,51 @@ const ScrollSections = () => {
         item.style.display = "none";
       }
     });
-    
+
     let tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: ".kdjff",
         start: "top 25%",
         end: "+=200",
-        scrub: true, 
+        scrub: true,
       },
     });
-    tl1.to(".k8nd8",{
-      left:0,
+    tl1.to(".k8nd8", {
+      left: 0,
       fontSize: "80px",
       duration: 1
     });
-    // tl1.to(".kdjff", { duration: 1 });
+
     const tl2 = gsap.timeline({
-      scrollTrigger:{
-        trigger:".sdsss",
-        start:"top 12%",
+      scrollTrigger: {
+        trigger: ".sdsss",
+        start: "top 12%",
         end: "+=100",
         scrub: true,
       }
     });
-    tl2.to(".h84gf", { 
+    tl2.to(".h84gf", {
       x: 0,
       duration: 1,
-      // stagger: {
-      //   each: 0.2,
-      //   from: "start"
-      // } 
     });
+
     const tl3 = gsap.timeline({
-      scrollTrigger:{
-        trigger:"#newcolum",
-        start:"top 50%",
+      scrollTrigger: {
+        trigger: "#newcolum",
+        start: "top 50%",
         end: "+=100",
         scrub: true,
       }
     });
-    tl3.to("#newcolum .card", { 
+    tl3.to("#newcolum .card", {
       y: "400px",
       duration: 1,
       stagger: {
-        each: 0.4,       // 0.2s delay between each card
-        from: "start"    // animation starts from the first card
-      } 
+        each: 0.4,
+        from: "start"
+      }
     });
+
     let tl;
     function setupTimeline() {
       let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
@@ -137,28 +117,90 @@ const ScrollSections = () => {
           duration: 0.5
         }
       );
-            
+
       panels.forEach((panel, i) => {
         let lastPanel = panels.length - 1;
         tl.fromTo(panel, { y: "100%" }, { y: "0%", duration: 1 }, "<");
-        if(i < lastPanel){
+        if (i < lastPanel) {
           tl.to(panel, { height: "5vh", y: "0%", duration: 1 });
           tl.to(panel.querySelector(".panel-image"), { scale: 0.5, duration: 1 }, "<");
         }
-       
       });
     }
     setupTimeline();
-    
-    if(c != 'all'){
+
+    if (c !== 'all') {
       ScrollTrigger.refresh();
       const div = document.querySelector('.small-section');
       const distanceFromDocumentTop = div.offsetTop;
       window.scrollBy(0, distanceFromDocumentTop);
-    }else{
+    } else {
       ScrollTrigger.refresh();
     }
+
+    // New slider logic
+    const imageSections = document.querySelectorAll('.image-section');
+    const imageHeight = 205.33; // Height of each image (616px / 3)
+    const containerHeight = 616; // Section height
+
+    imageSections.forEach(section => {
+      const clickableImages = section.querySelectorAll('.clickable');
+      const mainImage = section.querySelector('.main-image');
+      const slider = section.querySelector('.slider');
+
+      if (!clickableImages.length || !mainImage || !slider) return;
+
+      const totalImages = clickableImages.length;
+
+      function centerActiveImage(activeImg) {
+        if (!activeImg) return;
+        const index = Array.from(clickableImages).indexOf(activeImg);
+        if (index === -1) return;
+
+        const sliderHeight = totalImages * imageHeight;
+        let offset = index * imageHeight + imageHeight / 2 - containerHeight / 2;
+
+        offset = Math.max(0, Math.min(offset, sliderHeight - containerHeight));
+
+        slider.style.transform = `translateY(-${offset}px)`;
+      }
+
+      function handleImageClick(img) {
+        mainImage.src = img.src;
+        mainImage.alt = img.alt;
+
+        clickableImages.forEach(i => i.classList.remove('active'));
+        img.classList.add('active');
+
+        centerActiveImage(img);
+      }
+
+      clickableImages.forEach(img => {
+        const onClick = () => handleImageClick(img);
+        img.addEventListener('click', onClick);
+        img._onClick = onClick;
+      });
+
+      const initialActiveImage = section.querySelector('.clickable.active');
+      if (initialActiveImage) {
+        centerActiveImage(initialActiveImage);
+      }
+    });
+
+    // Cleanup event listeners
+    return () => {
+      imageSections.forEach(section => {
+        const clickableImages = section.querySelectorAll('.clickable');
+        clickableImages.forEach(img => {
+          if (img._onClick) {
+            img.removeEventListener('click', img._onClick);
+            delete img._onClick;
+          }
+        });
+      });
+    };
   }, []);
+
   return (
     <>
       <style>
@@ -167,40 +209,34 @@ const ScrollSections = () => {
             margin: 0;
             padding: 0;
           }
-          .navbar{
-            background-color:#ffffff;
+          .navbar {
+            background-color: #ffffff;
           }
-          /* Section with 8vh height */
-          section.slider {
+          section.sliders {
             overflow: hidden;
             position: relative;
           }
-          /* Slider wrapper with duplicated content for seamless looping */
           .slider-wrapper {
             display: flex;
             width: 200%;
             animation: marquee 20s linear infinite;
           }
-          /* Each slide takes full width of the section */
           .slide {
             display: inline-flex;
             align-items: center;
             white-space: nowrap;
             width: 100%;
           }
-          /* Text style */
           .slide span {
             font-size: 2.2rem;
             margin-right: 10px;
           }
-          /* Rotating SVG style */
           .rotating-svg {
             width: 30px;
             height: 30px;
             margin-right: 10px;
             animation: rotate 4s linear infinite;
           }
-          /* Marquee animation for continuous left-to-right sliding */
           @keyframes marquee {
             0% {
               transform: translateX(-50%);
@@ -209,112 +245,181 @@ const ScrollSections = () => {
               transform: translateX(0%);
             }
           }
-          /* SVG rotation animation */
           @keyframes rotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
           }
+          .image-section {
+            height: 616px;
+            width: 100%;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: flex-start;
+          }
+          .left-images {
+            height: 100%;
+            width: 25%;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+          }
+          .slider {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            transition: transform 0.3s ease;
+          }
+          .slider img {
+            width: 100%;
+            height: 205.33px;
+            object-fit: cover;
+            cursor: pointer;
+            aspect-ratio: 3/4;
+            border: none;
+          }
+          .slider img.active {
+            border: 2px solid white;
+          }
+          .right-image {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+          }
+          .right-image img {
+            width: 616px;
+            height: 616px;
+            object-fit: cover;
+          }
+          .row.no-gaps {
+            margin: 0;
+          }
+          .row.no-gaps > * {
+            padding: 0;
+          }
+          @media (max-width: 767.98px) {
+            .image-section {
+              height: auto;
+              flex-direction: column;
+              align-items: flex-start;
+            }
+            .left-images {
+              width: 100%;
+              height: 616px;
+            }
+            .slider img {
+              width: 50%;
+              height: 200px;
+              aspect-ratio: 3/4;
+            }
+            .right-image {
+              width: 100%;
+            }
+            .right-image img {
+              width: 300px;
+              height: 300px;
+            }
+          }
         `}
       </style>
-      
+
       <div style={{ position: "relative" }}>
         <div className="stack-container">
-          <div style={{ position: "fixed", transform: "translate(0px, 21vh)", zIndex:'2', width:"100%", lineHeight:"1", height:"85px"}}>
+          <div style={{ position: "fixed", transform: "translate(0px, 21vh)", zIndex: '2', width: "100%", lineHeight: "1", height: "85px" }}>
             <div className="w-100 d-flex h-100">
-              <div className="kdjff" style={{ width:"30%",position: "relative", lineHeight:"1"}}>
-                <span className="k8nd8" style={{position:"absolute", fontSize: "225px", fontWeight: "bold", backgroundColor: "rgb(255, 255, 255)", zIndex:1 }}>Collections</span>
+              <div className="kdjff" style={{ width: "30%", position: "relative", lineHeight: "1" }}>
+                <span className="k8nd8" style={{ position: "absolute", fontSize: "225px", fontWeight: "bold", backgroundColor: "rgb(255, 255, 255)", zIndex: 1 }}>Collections</span>
               </div>
-              <div className="sdsss" style={{ overflow:"hidden", width:"fit-content"}}>
-                <div className="d-flex gap-2 h84gf" style={{ transform: "translate(-930px, 20px)", position:"relative"}}>
-                  <button className="btn btn_style active" data-filter="all"> 
+              <div className="sdsss" style={{ overflow: "hidden", width: "fit-content" }}>
+                <div className="d-flex gap-2 h84gf" style={{ transform: "translate(-930px, 20px)", position: "relative" }}>
+                  <button className="btn btn_style active" data-filter="all">
                     <div className="btn_icon">
                       <img src="./svg/icon2.svg" className="w-100 btn_icon_1" />
                       <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
                     </div> All
                   </button>
-                  <button className="btn btn_style" data-filter="cat1"> 
+                  <button className="btn btn_style" data-filter="cat1">
                     <div className="btn_icon">
                       <img src="./svg/icon2.svg" className="w-100 btn_icon_1" />
                       <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
                     </div> Geometrical
                   </button>
-                  
-                  <button className="btn btn_style" data-filter="cat2"> 
+                  <button className="btn btn_style" data-filter="cat2">
                     <div className="btn_icon">
-                      <img src="./svg/icon4.svg"  className="w-100 btn_icon_1" />
+                      <img src="./svg/icon4.svg" className="w-100 btn_icon_1" />
                       <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
                     </div> Geometrical
                   </button>
-                  <button className="btn btn_style" data-filter="cat3"> 
-                    <div className="btn_icon">
-                      <img src="./svg/icon2.svg"  className="w-100 btn_icon_1" />
-                      <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
-                    </div> Geometrical
-                  </button>
-                  <button className="btn btn_style" data-filter="cat4"> 
+                  <button className="btn btn_style" data-filter="cat3">
                     <div className="btn_icon">
                       <img src="./svg/icon2.svg" className="w-100 btn_icon_1" />
                       <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
                     </div> Geometrical
                   </button>
-                  <button className="btn btn_style" data-filter="cat5"> 
+                  <button className="btn btn_style" data-filter="cat4">
                     <div className="btn_icon">
-                      <img src="./svg/icon4.svg"  className="w-100 btn_icon_1" />
+                      <img src="./svg/icon2.svg" className="w-100 btn_icon_1" />
                       <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
                     </div> Geometrical
                   </button>
-                  <button className="btn btn_style" data-filter="cat6"> 
+                  <button className="btn btn_style" data-filter="cat5">
                     <div className="btn_icon">
-                      <img src="./svg/icon2.svg"  className="w-100 btn_icon_1" />
+                      <img src="./svg/icon4.svg" className="w-100 btn_icon_1" />
+                      <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
+                    </div> Geometrical
+                  </button>
+                  <button className="btn btn_style" data-filter="cat6">
+                    <div className="btn_icon">
+                      <img src="./svg/icon2.svg" className="w-100 btn_icon_1" />
                       <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
                     </div> Geometrical
                   </button>
                 </div>
               </div>
             </div>
-            <div className="container-fluid " id="newcolum"  style={{ position: "fixed",  transform: "translate(0px, 100px)"}}>
-              <div className="w-100 h-100 " style={{overflow: "hidden",}}>
+            <div className="container-fluid" id="newcolum" style={{ position: "fixed", transform: "translate(0px, 100px)" }}>
+              <div className="w-100 h-100" style={{ overflow: "hidden" }}>
                 <div className="row">
-                    <div className="col-2 px-0">
-                      <div className="card w-100 p-0 border-0">
-                        <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
-                        
-                      </div>
+                  <div className="col-2 px-0">
+                    <div className="card w-100 p-0 border-0">
+                      <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                     </div>
-                    <div className="col-2 px-0">
-                      <div className="card w-100 p-0 border-0">
-                        <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
-                      </div>
+                  </div>
+                  <div className="col-2 px-0">
+                    <div className="card w-100 p-0 border-0">
+                      <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                     </div>
-                    <div className="col-2 px-0">
-                      <div className="card w-100 p-0 border-0">
-                        <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
-                      </div>
+                  </div>
+                  <div className="col-2 px-0">
+                    <div className="card w-100 p-0 border-0">
+                      <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                     </div>
-                    <div className="col-2 px-0">
-                      <div className="card w-100 p-0 border-0">
-                        <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
-                      </div>
+                  </div>
+                  <div className="col-2 px-0">
+                    <div className="card w-100 p-0 border-0">
+                      <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                     </div>
-                    <div className="col-2 px-0">
-                      <div className="card w-100 p-0 border-0">
-                        <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
-                      </div>
+                  </div>
+                  <div className="col-2 px-0">
+                    <div className="card w-100 p-0 border-0">
+                      <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                     </div>
-                    <div className="col-2 px-0">
-                      <div className="card w-100 p-0 border-0">
-                        <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
-                      </div>
+                  </div>
+                  <div className="col-2 px-0">
+                    <div className="card w-100 p-0 border-0">
+                      <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                     </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="small-section" >
+          <div className="small-section">
             <div className="articles_header w-100 text-center">
-              <section className="slider">
+              <section className="sliders">
                 <div className="slider-wrapper">
-
                   <div className="slide">
                     <span>Design Lives in Yuccabe Originals</span>
                     <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
@@ -343,8 +448,8 @@ const ScrollSections = () => {
               </section>
             </div>
           </div>
-          {sections.map(({ s_id, id, title, content, imageUrl, dataCategory}) => (
-            <div className={"panel p-0 "+id} key={id} data-category={dataCategory}>
+          {sections.map(({ s_id, id, title, content, imageUrl, dataCategory }) => (
+            <div className={"panel p-0 " + id} key={id} data-category={dataCategory}>
               <div className="container-fluid">
                 <div className="row px-1">
                   <div className="panel-body col-12" style={{ paddingTop: "25px" }}>
@@ -352,12 +457,25 @@ const ScrollSections = () => {
                       <div className="panel-text-div col-8">
                         <span style={{ color: "#000" }}>Panel {s_id}</span>
                       </div>
-                      <div className="panel-image-div col-4 overflow-hidden"> 
-                        <img
-                          className="panel-image"
-                          src="./img/YP.jpg"
-                          alt="Image 1"
-                        />
+                      <div className="panel-image-div col-4 overflow-hidden">
+                        <div className="image-section">
+                          <div className="row h-100 no-gaps">
+                            <div className="col-md-6 left-images">
+                              <div className="slider">
+                                <img src="./img/YP.jpg" alt="Man adjusting necklace" className="clickable active" />
+                                <img src="./img/YP.jpg" alt="Woman with braids" className="clickable" />
+                                <img src="./img/YP.jpg" alt="Model in embellished dress" className="clickable" />
+                                <img src="./img/YP.jpg" alt="Woman in jacket" className="clickable" />
+                                <img src="./img/YP.jpg" alt="Man in suit" className="clickable" />
+                                <img src="./img/YP.jpg" alt="Woman in scarf" className="clickable" />
+                                <img src="./img/YP.jpg" alt="Man in hat" className="clickable" />
+                              </div>
+                            </div>
+                            <div className="col-md-6 right-image">
+                              <img className="main-image panel-image" src="./img/YP.jpg" alt="Main Image" />
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -368,7 +486,6 @@ const ScrollSections = () => {
         </div>
       </div>
     </>
-
   );
 };
 
