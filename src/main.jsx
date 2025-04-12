@@ -17,19 +17,29 @@ const OurActivities = lazy(() => import('./OurActivities'));
 const ContactUs = lazy(() => import('./Contact-us'));
 import PageLoadAnimation from './PageLoadAnimation';
 import Footer from './Footer';
-gsap.registerPlugin(ScrollTrigger);
 const root = document.getElementById("root");
 
 const Data = () => {
-  // Initialize Lenis
+
   const lenis = new Lenis({
-    autoRaf: true,
+    // lerp: 0.1, // Add slight smoothing for better ScrollTrigger compatibility
+    // duration: 1, // Adjust duration for minimal smoothing
+    smooth: true, // Enable smooth scrolling
+    wheelMultiplier: 0.2,
   });
-  // Use requestAnimationFrame to continuously update the scroll
- 
   
+  // Sync Lenis with GSAP's ticker for better performance
+  lenis.on('scroll', () => ScrollTrigger.update());
+  
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+  gsap.registerPlugin(ScrollTrigger);
+  // Initialize a new Lenis instance for smooth scrollin
   // Disable lag smoothing in GSAP to prevent any delay in scroll animations
-  gsap.ticker.lagSmoothing(0);
+  
 
   return (
     <>
