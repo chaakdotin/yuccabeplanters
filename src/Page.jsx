@@ -4,7 +4,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import "./StackedSections.css"; // Make sure this file contains your CSS
 
 const ScrollSections = () => {
-
+  gsap.registerPlugin(ScrollTrigger);
   const sections = Array.from({ length: 10 }, (_, i) => ({
     s_id: i + 1,
     id: `panel${i + 1}`,
@@ -233,7 +233,11 @@ const ScrollSections = () => {
         centerActiveImage(initialActiveImage);
       }
     });
+   
 
+    window.addEventListener("resize", () => {
+      ScrollTrigger.refresh();
+    });
     // Cleanup event listeners
     return () => {
       imageSections.forEach(section => {
@@ -502,13 +506,13 @@ const ScrollSections = () => {
               <div className="container-fluid">
                 <div className="row px-1">
                   <div className="panel-body col-12" style={{ paddingTop: "25px" }}>
-                    <div className="d-flex">
-                      <div className="panel-text-div col-8">
+                    <div className="d-flex justify-content-between">
+                      <div className="panel-text-div col-6">
                         <span style={{ color: "#000" }}>Panel {s_id}</span>
                       </div>
-                      <div className="panel-image-div col-4 overflow-hidden">
+                      <div className="panel-image-div col-6 overflow-hidden">
                         <div className="image-section">
-                          <div className="row h-100 no-gaps">
+                          <div className="row h-100 no-gaps panel-image">
                             <div className="col-md-6 left-images">
                               <div className="slider">
                                 <img src="./img/YP.jpg" alt="Man adjusting necklace" className="clickable active" />
@@ -521,7 +525,7 @@ const ScrollSections = () => {
                               </div>
                             </div>
                             <div className="col-md-6 right-image">
-                              <img className="main-image panel-image" src="./img/YP.jpg" alt="Main Image" />
+                              <img className="main-image" src="./img/YP.jpg" alt="Main Image" />
                             </div>
                           </div>
                         </div>
