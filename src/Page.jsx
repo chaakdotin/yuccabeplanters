@@ -527,7 +527,7 @@ const ScrollSections = () => {
                     <div className="d-flex justify-content-between">
                       <div className="panel-text-div col-6 justify-content-between">
                         <div className="d-flex flex-column">
-                          <span style={{ color: "#000" }}>{title}</span>
+                          <span style={{ color: "#000", fontWeight:"600", fontSize:"25px" }}>{title}</span>
                           <span className="pt-3" style={{ color: "#000", fontSize:"14px" }}>{content}</span>
                         </div>
                         <div className="pt-4">
