@@ -489,8 +489,9 @@ const ScrollSections = () => {
               </div>
             </div>
           ))}
-          <ExpandBtn />
+         <ExpandBtn />
         </div>
+        
       </div>
     </>
   );

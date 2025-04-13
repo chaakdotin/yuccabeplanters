@@ -1,107 +1,111 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
-const ExpandButton = ({ id, title, contentText, isAnyExpanded, setAnyExpanded }) => {
+
+const ExpandButton = ({ id, contentTitle, contentText, position }) => {
+  const buttonRef = useRef(null);
+  const iconRef = useRef(null);
+  const contentsRef = useRef(null);
   const [isExpanded, setIsExpanded] = useState(false);
-  const contentRef = useRef();
 
-  const handleToggle = (e) => {
-    e.stopPropagation();
+  const toggle = () => {
     if (!isExpanded) {
-      setAnyExpanded(id);
+      closeAll();
+      expand();
     } else {
-      handleClose();
+      close();
     }
   };
 
-  const handleClose = () => {
-    if (contentRef.current) {
-      contentRef.current.style.opacity = '0';
+  const expand = () => {
+    const button = buttonRef.current;
+    const contents = contentsRef.current;
+
+    button.style.height = 'calc(100vh - 40px)';
+    setTimeout(() => {
+      button.style.width = 'calc(100vw - 40px)';
+      button.style.borderRadius = '12px';
+      button.classList.add('expanded');
       setTimeout(() => {
-        if (contentRef.current) {
-          contentRef.current.style.display = 'none';
-        }
-        setIsExpanded(false);
-        if (setAnyExpanded) setAnyExpanded(null);
+        contents.style.display = 'block';
+        setTimeout(() => {
+          contents.style.opacity = '1';
+        }, 100);
       }, 1500);
-    }
+    }, 1500);
+
+    setIsExpanded(true);
+  };
+
+  const close = () => {
+    const button = buttonRef.current;
+    const contents = contentsRef.current;
+
+    contents.style.opacity = '0';
+    setTimeout(() => {
+      contents.style.display = 'none';
+      button.style.width = '50px';
+      button.style.borderRadius = '8px';
+      button.classList.remove('expanded');
+      setTimeout(() => {
+        button.style.height = '50px';
+        setIsExpanded(false);
+      }, 1500);
+    }, 1500);
+  };
+
+  const closeAll = () => {
+    document.querySelectorAll('.expand-btn').forEach((btn) => {
+      if (btn !== buttonRef.current && btn.classList.contains('expanded')) {
+        btn.querySelector('.btn-icon').click();
+      }
+    });
   };
 
   useEffect(() => {
-    if (isAnyExpanded !== id && isExpanded) {
-      handleClose();
-    }
-
-    if (isAnyExpanded === id && !isExpanded) {
-      setIsExpanded(true);
-      setTimeout(() => {
-        if (contentRef.current) {
-          contentRef.current.style.display = 'block';
-          setTimeout(() => {
-            contentRef.current.style.opacity = '1';
-          }, 100);
-        }
-      }, 3000); // Wait for full expansion animation
-    }
-  }, [isAnyExpanded]);
+    const contents = contentsRef.current;
+    contents.addEventListener('click', (e) => e.stopPropagation());
+  }, []);
 
   return (
     <button
-      className={`expand-btn ${isExpanded ? 'expanded' : ''}`}
+      className="expand-btn"
       id={id}
-      style={{
-        bottom: '20px',
-        left: id === 'btn1' ? '20px' : id === 'btn2' ? '100px' : '180px',
-        height: isExpanded ? 'calc(80vh - 40px)' : '50px',
-        width: isExpanded ? 'calc(100vw - 40px)' : '50px',
-        borderRadius: isExpanded ? '12px' : '8px',
-        transition: 'width 1.5s ease, height 1.5s ease, border-radius 1.5s ease',
-      }}
+      ref={buttonRef}
+      style={position}
     >
-      <span className="btn-icon" onClick={handleToggle}>+</span>
-      <div
-        className="contents"
-        ref={contentRef}
-        onClick={(e) => e.stopPropagation()}
-        style={{ display: 'none', opacity: 0 }}
+      <span
+        className="btn-icon"
+        ref={iconRef}
+        onClick={(e) => {
+          e.stopPropagation();
+          toggle();
+        }}
       >
-        <h2>{title}</h2>
+        +
+      </span>
+      <div className="contents" ref={contentsRef}>
+        <h2>{contentTitle}</h2>
         <p>{contentText}</p>
       </div>
     </button>
   );
 };
 
-const ExpandingButtons = () => {
-  const [activeBtnId, setActiveBtnId] = useState(null);
+const ExpandBtn = () => {
+    
 
-  const handleBackgroundClick = () => {
-    setActiveBtnId(null);
-  };
 
   return (
     <>
-        <div
-            id="background"
-            onClick={handleBackgroundClick}
-            className={`background ${activeBtnId ? 'blurred' : ''}`}
-        />
-        <div style={{ position: 'relative', height: '100vh', overflow: 'auto', backgroundColor: '#0000' }}>
-        
-
-        <ExpandButton
-            id="btn1"
-            title="Content 1"
-            contentText="This is the content for button 1."
-            isAnyExpanded={activeBtnId}
-            setAnyExpanded={setActiveBtnId}
-        />
-        
-
-        <style>{`
+    <style>
+        {`
+            
             .background {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(0, 0, 0, 0);
             backdrop-filter: blur(0px);
             transition: background 1.5s ease, backdrop-filter 1.5s ease;
@@ -116,15 +120,19 @@ const ExpandingButtons = () => {
             }
 
             .expand-btn {
-            position: fixed;
-            background-color: #007bff;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-start;
-            padding: 0;
-            z-index: 1000;
+                position: fixed;
+                width: 50px;
+                height: 50px;
+                background-color: #007bff;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-start;
+                padding: 0;
+                transition: width 1.5s ease, height 1.5s ease, border-radius 1.5s ease;
+                z-index: 999999;
             }
 
             .btn-icon {
@@ -139,14 +147,16 @@ const ExpandingButtons = () => {
             }
 
             .contents {
+            display: none;
+            color: white;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 1.5s ease;
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 60px;
-            color: white;
-            padding: 20px;
-            transition: opacity 1.5s ease;
             }
 
             .contents h2 {
@@ -155,12 +165,23 @@ const ExpandingButtons = () => {
             }
 
             .expanded {
+            width: calc(100vw - 40px);
+            height: calc(100vh - 40px);
+            border-radius: 12px;
             z-index: 1100;
             }
-        `}</style>
-        </div>
+            
+        `}
+    </style>
+      <ExpandButton
+        id="btn1"
+        contentTitle="Content 1"
+        contentText="This is the content for button 1."
+        position={{ bottom: '20px', left: '20px' }}
+      />
+      
     </>
   );
 };
 
-export default ExpandingButtons;
+export default ExpandBtn;
