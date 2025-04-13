@@ -13,9 +13,9 @@ const ScrollSections = () => {
   const sections = Array.from({ length: 10 }, (_, i) => ({
     s_id: i + 1,
     id: `panel${i + 1}`,
-    title: `Section ${i + 1}`,
-    content: `This is the content for section ${i + 1}.`,
-    imageUrl: `https://source.unsplash.com/random/300x300?sig=${i + 1}`,
+    title: `CH CUP`,
+    content: `Elegant and versatile, this squarish bowl-like planter offers a sleek, low-profile design perfect for both indoor and outdoor spaces. Its wide, open top provides ample room for lush arrangements, while its modern silhouette adds a touch of sophistication to any décor.`,
+    imageUrl: `/img/CH_CUP.png`,
     dataCategory: `cat${i + 1}`,
   }));
   
@@ -525,8 +525,14 @@ const ScrollSections = () => {
                 <div className="row px-1">
                   <div className="panel-body col-12" style={{ paddingTop: "25px" }}>
                     <div className="d-flex justify-content-between">
-                      <div className="panel-text-div col-6">
-                        <span style={{ color: "#000" }}>Panel {s_id}</span>
+                      <div className="panel-text-div col-6 justify-content-between">
+                        <div className="d-flex flex-column">
+                          <span style={{ color: "#000" }}>{title}</span>
+                          <span className="pt-3" style={{ color: "#000", fontSize:"14px" }}>{content}</span>
+                        </div>
+                        <div className="pt-4">
+                          <img src={imageUrl} alt="" className="w-100"/>
+                        </div>
                       </div>
                       <div className="panel-image-div col-6 overflow-hidden">
                         <div className="image-section" data-section={s_id}>
