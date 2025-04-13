@@ -301,7 +301,7 @@ const ScrollSections = () => {
             to { transform: rotate(360deg); }
           }
           .image-section {
-            height: 616px;
+            height: 100%;
             width: 100%;
             background-color: #f8f9fa;
             display: flex;
@@ -325,7 +325,7 @@ const ScrollSections = () => {
           }
           .slider img {
             width: 100%;
-            height: 150px;
+            height: 200px;
             object-fit: cover;
             cursor: pointer;
             aspect-ratio: 3/4;
@@ -500,19 +500,18 @@ const ScrollSections = () => {
             </div>
             
           </div>
-          
           {sections.map(({ s_id, id, title, content, imageUrl, dataCategory }) => (
             <div className={"panel p-0 " + id} key={id} data-category={dataCategory}>
               <div className="container-fluid">
                 <div className="row px-1">
                   <div className="panel-body col-12" style={{ paddingTop: "25px" }}>
                     <div className="d-flex justify-content-between">
-                      <div className="panel-text-div col-7">
+                      <div className="panel-text-div col-6">
                         <span style={{ color: "#000" }}>Panel {s_id}</span>
                       </div>
-                      <div className="panel-image-div col-5 overflow-hidden">
-                        <div className="image-section">
-                          <div className="row h-100 no-gaps panel-image">
+                      <div className="panel-image-div col-6 overflow-hidden">
+                        <div className="image-section" data-section={s_id}>
+                          <div className="row h-100 no-gaps panel-image justify-content-end">
                             <div className="col-md-3 left-images">
                               <div className="slider">
                                 <img src="./img/YP.jpg" alt="Man adjusting necklace" className="clickable active" />
@@ -524,7 +523,7 @@ const ScrollSections = () => {
                                 <img src="./img/YP.jpg" alt="Man in hat" className="clickable" />
                               </div>
                             </div>
-                            <div className="col-md-9 right-image">
+                            <div className="col-md-8 right-image">
                               <img className="main-image" src="./img/YP.jpg" alt="Main Image" />
                             </div>
                           </div>

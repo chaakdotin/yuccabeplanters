@@ -3,189 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Scroll Section</title>
+    <title>Multiple Image Sections with Sliders</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            overflow-x: hidden;
-        }
-
-        .initial-section {
-            height: 200vh;
-            background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+        .image-section {
+            height: 616px;
+            width: 100%;
+            background-color: #f8f9fa; /* Light background */
             display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-            color: #333;
+            justify-content: flex-start; /* Align content to left */
+            margin-bottom: 20px; /* Space between sections */
         }
-
-        .points-section {
-            height: 100vh;
-            background: #ffffff;
-            position: relative;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .points-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .points-container {
-            display: flex;
-            position: absolute;
-            top: 0;
-            left: 0;
+        .left-images {
             height: 100%;
-            width: max-content;
-            padding: 0 10vw;
-            overflow-x: auto;
-            overflow-y: hidden;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: none; /* Firefox */
+            width: 25%; /* Narrow slider */
+            padding: 0; /* No padding */
+            margin: 0; /* No margin */
+            overflow: hidden; /* Hide out-of-view images */
+            position: relative;
         }
-
-        .points-container::-webkit-scrollbar {
-            display: none; /* Chrome, Safari */
-        }
-
-        .point {
+        .slider {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 50vw;
-            height: 100%;
-            padding: 20px;
-            scroll-snap-align: start;
-        }
-
-        .point-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #007bff;
-            margin-bottom: 10px;
-        }
-
-        .point p {
-            font-size: 1.2rem;
-            color: #333;
-            text-align: center;
-            max-width: 80%;
-        }
-
-        .dotted-line {
             position: absolute;
-            bottom: 20vh;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: repeating-linear-gradient(
-                to right,
-                #333,
-                #333 10px,
-                transparent 10px,
-                transparent 20px
-            );
+            top: 0;
+            width: 100%;
+            transition: transform 0.3s ease; /* Smooth scrolling */
         }
-
-        .after-section {
-            height: 100vh;
-            background: #f0f4f8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-            color: #333;
+        .slider img {
+            width: 100%;
+            height: 205.33px; /* 616px / 3 */
+            object-fit: cover;
+            cursor: pointer; /* Indicate clickability */
+            aspect-ratio: 3/4; /* Portrait resolution */
+            border: none; /* Default no border */
+        }
+        .slider img.active {
+            border: 2px solid white; /* White border for active image */
+        }
+        .right-image {
+            height: 100%;
+            padding: 0; /* No padding */
+            margin: 0; /* No margin */
+        }
+        .right-image img {
+            width: 616px; /* Full height of section */
+            height: 616px; /* Force square shape */
+            object-fit: cover;
+        }
+        /* Ensure no gaps between columns */
+        .row.no-gaps {
+            margin: 0;
+        }
+        .row.no-gaps > * {
+            padding: 0;
+        }
+        @media (max-width: 767.98px) {
+            .image-section {
+                height: auto;
+                flex-direction: column; /* Stack vertically */
+                align-items: flex-start; /* Align left */
+            }
+            .left-images {
+                width: 100%; /* Full width for stacking */
+                height: 616px; /* Maintain slider height */
+            }
+            .slider img {
+                width: 50%; /* Wider on mobile */
+                height: 200px; /* Fixed height */
+                aspect-ratio: 3/4; /* Maintain portrait */
+            }
+            .right-image {
+                width: 100%; /* Full width */
+            }
+            .right-image img {
+                width: 300px; /* Square on mobile */
+                height: 300px; /* Square */
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Initial 200vh section -->
-    <section class="initial-section">
-        <h1>Scroll Down</h1>
-    </section>
-
-    <!-- New 100vh section with points -->
-    <section class="points-section">
-        <div class="points-container">
-            <div class="point">
-                <span class="point-number">1.</span>
-                <p>First point with some descriptive text about the topic.</p>
+    <!-- Section 1 -->
+    <div class="image-section" data-section="1">
+        <div class="row h-100 no-gaps">
+            <!-- Left Section: Vertical Slider -->
+            <div class="col-md-6 left-images">
+                <div class="slider">
+                    <img src="https://images.pexels.com/photos/31023714/pexels-photo-31023714/free-photo-of-stylish-young-man-adjusting-necklace-outdoors.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Man adjusting necklace" class="clickable active">
+                    <img src="https://images.pexels.com/photos/18001360/pexels-photo-18001360/free-photo-of-woman-with-braids-in-black-t-shirt.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Woman with braids" class="clickable">
+                    <img src="https://images.pexels.com/photos/20423010/pexels-photo-20423010/free-photo-of-studio-shot-of-model-in-embellished-dress-and-hat.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Model in embellished dress" class="clickable">
+                    <img src="https://images.pexels.com/photos/1485031/pexels-photo-1485031.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Woman in jacket" class="clickable">
+                    <img src="https://images.pexels.com/photos/1855582/pexels-photo-1855582.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Man in suit" class="clickable">
+                    <img src="https://images.pexels.com/photos/5325840/pexels-photo-5325840.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Woman in scarf" class="clickable">
+                    <img src="https://images.pexels.com/photos/3775120/pexels-photo-3775120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Man in hat" class="clickable">
+                </div>
             </div>
-            <div class="point">
-                <span class="point-number">2.</span>
-                <p>Second point with additional information to display.</p>
-            </div>
-            <div class="point">
-                <span class="point-number">3.</span>
-                <p>Third point explaining another aspect clearly.</p>
-            </div>
-            <div class="point">
-                <span class="point-number">4.</span>
-                <p>Fourth point with relevant details included.</p>
-            </div>
-            <div class="point">
-                <span class="point-number">5.</span>
-                <p>Fifth point summarizing the final thoughts.</p>
+            <!-- Right Section: 1 Full-Height Square Image -->
+            <div class="col-md-6 right-image">
+                <img class="main-image" src="https://images.pexels.com/photos/31023714/pexels-photo-31023714/free-photo-of-stylish-young-man-adjusting-necklace-outdoors.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Main Image">
             </div>
         </div>
-        <div class="dotted-line"></div>
-    </section>
+    </div>
 
-    <!-- Additional content after points section -->
-    <section class="after-section">
-        <h2>Continue Scrolling</h2>
-    </section>
 
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript for Multiple Sliders -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const pointsSection = document.querySelector('.points-section');
-            const pointsContainer = document.querySelector('.points-container');
-            let isHorizontalScrolling = false;
+        const imageSections = document.querySelectorAll('.image-section');
+        const imageHeight = 205.33; // Height of each image (616px / 3)
+        const containerHeight = 616; // Section height
 
-            window.addEventListener('scroll', () => {
-                const pointsSectionTop = pointsSection.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
+        imageSections.forEach(section => {
+            const clickableImages = section.querySelectorAll('.clickable');
+            const mainImage = section.querySelector('.main-image');
+            const slider = section.querySelector('.slider');
+            const totalImages = clickableImages.length;
 
-                // Add visible class when section is in view
-                if (pointsSectionTop <= windowHeight * 0.8) {
-                    pointsSection.classList.add('visible');
+            function centerActiveImage(activeImg) {
+                const index = Array.from(clickableImages).indexOf(activeImg);
+                const sliderHeight = totalImages * imageHeight;
+
+                // Calculate ideal offset to center the active image
+                let offset = index * imageHeight + imageHeight / 2 - containerHeight / 2;
+
+                // Prevent scrolling too far up (keep 1st image at top)
+                if (offset < 0) {
+                    offset = 0;
                 }
 
-                // Handle horizontal scrolling
-                if (pointsSectionTop <= 0 && pointsContainer.scrollLeft < pointsContainer.scrollWidth - pointsContainer.clientWidth) {
-                    isHorizontalScrolling = true;
-                    document.body.style.overflowY = 'hidden'; // Disable vertical scroll
-                } else {
-                    isHorizontalScrolling = false;
-                    document.body.style.overflowY = 'auto'; // Re-enable vertical scroll
+                // Prevent scrolling too far down (keep last image at bottom)
+                const maxOffset = sliderHeight - containerHeight;
+                if (offset > maxOffset) {
+                    offset = maxOffset;
                 }
+
+                // Apply the transform
+                slider.style.transform = `translateY(-${offset}px)`;
+            }
+
+            clickableImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    // Update main image
+                    mainImage.src = img.src;
+                    mainImage.alt = img.alt;
+
+                    // Remove active class from all images in this section
+                    clickableImages.forEach(i => i.classList.remove('active'));
+                    // Add active class to clicked image
+                    img.classList.add('active');
+
+                    // Center the active image with constraints
+                    centerActiveImage(img);
+                });
             });
 
-            // Handle mouse wheel for horizontal scrolling
-            pointsContainer.addEventListener('wheel', (e) => {
-                if (isHorizontalScrolling) {
-                    e.preventDefault();
-                    pointsContainer.scrollLeft += e.deltaY;
-                }
-            });
-
-            // Re-enable vertical scroll when horizontal scroll is complete
-            pointsContainer.addEventListener('scroll', () => {
-                if (pointsContainer.scrollLeft >= pointsContainer.scrollWidth - pointsContainer.clientWidth - 1) {
-                    isHorizontalScrolling = false;
-                    document.body.style.overflowY = 'auto';
-                }
-            });
+            // Center the initial active image on load
+            centerActiveImage(section.querySelector('.clickable.active'));
         });
     </script>
 </body>
