@@ -211,9 +211,6 @@ const ScrollSections = () => {
     };
   }, []);
 
-
-
-
   const toggle = () => {
     if (!isExpanded) {
       closeAll();
@@ -326,7 +323,6 @@ const ScrollSections = () => {
           .image-section {
             height: 100%;
             width: 100%;
-            background-color: #f8f9fa;
             display: flex;
             justify-content: flex-start;
           }
