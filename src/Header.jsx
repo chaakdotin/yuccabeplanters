@@ -7,9 +7,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { gsap, ScrollTrigger } from "gsap/all";
 import './header.css';
-gsap.registerPlugin(ScrollTrigger);
+
 const Header = () => {
-  
+  gsap.registerPlugin(ScrollTrigger);
   const location = useLocation();
   const header = useRef(null);
   const cursor = useRef(null);

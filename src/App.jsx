@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import CubeEffectSwiper from './CubeEffectSwiper';
-import Navigation from './Navigation';//
+import Navigation from './Navigation';
 import { gsap, ScrollTrigger, ScrollToPlugin } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 const App = () => {

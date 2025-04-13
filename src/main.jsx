@@ -1,12 +1,11 @@
 import React, {lazy} from "react";
 import ReactDOM from "react-dom/client";
-import Lenis from 'lenis'
-import 'lenis/dist/lenis.css'
+
 import { BrowserRouter, Routes, Route } from "react-router";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+
 import './index.css'
+import lenis from "./LenisWrapper";
 
 import Header from './Header';
 const App = lazy(() => import('./App'));
@@ -20,26 +19,7 @@ import Footer from './Footer';
 const root = document.getElementById("root");
 
 const Data = () => {
-
-  const lenis = new Lenis({
-    // lerp: 0.1, // Add slight smoothing for better ScrollTrigger compatibility
-    // duration: 1, // Adjust duration for minimal smoothing
-    smooth: true, // Enable smooth scrolling
-    wheelMultiplier: 0.2,
-  });
-  
-  // Sync Lenis with GSAP's ticker for better performance
-  lenis.on('scroll', () => ScrollTrigger.update());
-  
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-  gsap.registerPlugin(ScrollTrigger);
-  // Initialize a new Lenis instance for smooth scrollin
-  // Disable lag smoothing in GSAP to prevent any delay in scroll animations
-
+  <lenis />
   return (
     <>
     <PageLoadAnimation>

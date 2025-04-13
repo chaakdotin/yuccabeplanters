@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 
-
-const ExpandButton = ({ id, contentTitle, contentText, position }) => {
+const ExpandButton = ({  position }) => {
   const buttonRef = useRef(null);
   const iconRef = useRef(null);
   const contentsRef = useRef(null);
@@ -11,8 +10,10 @@ const ExpandButton = ({ id, contentTitle, contentText, position }) => {
     if (!isExpanded) {
       closeAll();
       expand();
+
     } else {
       close();
+
     }
   };
 
@@ -69,9 +70,9 @@ const ExpandButton = ({ id, contentTitle, contentText, position }) => {
   return (
     <button
       className="expand-btn"
-      id={id}
+      id="btn1"
       ref={buttonRef}
-      style={position}
+      style={{ bottom: '20px', left: '20px' }}
     >
       <span
         className="btn-icon"
@@ -84,8 +85,8 @@ const ExpandButton = ({ id, contentTitle, contentText, position }) => {
         +
       </span>
       <div className="contents" ref={contentsRef}>
-        <h2>{contentTitle}</h2>
-        <p>{contentText}</p>
+        <h2>Content 1</h2>
+        <p>This is the content for button 1.</p>
       </div>
     </button>
   );
@@ -175,8 +176,7 @@ const ExpandBtn = () => {
     </style>
       <ExpandButton
         id="btn1"
-        contentTitle="Content 1"
-        contentText="This is the content for button 1."
+
         position={{ bottom: '20px', left: '20px' }}
       />
       
