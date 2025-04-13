@@ -109,6 +109,7 @@ header {
   padding: 0 20px;
   color: #fff;
   overflow: hidden;
+  z-index: 3;
 }
 
 .panel-text {

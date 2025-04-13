@@ -309,7 +309,7 @@ const ScrollSections = () => {
           }
           .left-images {
             height: 100%;
-            width: 25%;
+            width: 20%;
             padding: 0;
             margin: 0;
             overflow: hidden;
@@ -325,7 +325,7 @@ const ScrollSections = () => {
           }
           .slider img {
             width: 100%;
-            height: 205.33px;
+            height: 150px;
             object-fit: cover;
             cursor: pointer;
             aspect-ratio: 3/4;
@@ -340,8 +340,8 @@ const ScrollSections = () => {
             margin: 0;
           }
           .right-image img {
-            width: 616px;
-            height: 616px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
           }
           .row.no-gaps {
@@ -430,35 +430,35 @@ const ScrollSections = () => {
                 </div>
               </div>
             </div>
-            <div className="container-fluid" id="newcolum" style={{ position: "fixed", transform: "translate(0px, 100px)" }}>
+            <div className="container-fluid" id="newcolum" style={{ position: "fixed", transform: "translate(0px, 100px)", }}>
               <div className="w-100 h-100" style={{ overflow: "hidden" }}>
                 <div className="row">
-                  <div className="col-2 px-0">
+                  <div className="col-2 px-0 z-n1">
                     <div className="card w-100 p-0 border-0">
                       <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                     </div>
                   </div>
-                  <div className="col-2 px-0">
+                  <div className="col-2 px-0 z-n1">
                     <div className="card w-100 p-0 border-0">
                       <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                     </div>
                   </div>
-                  <div className="col-2 px-0">
+                  <div className="col-2 px-0 z-n1">
                     <div className="card w-100 p-0 border-0">
                       <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                     </div>
                   </div>
-                  <div className="col-2 px-0">
+                  <div className="col-2 px-0 z-n1">
                     <div className="card w-100 p-0 border-0">
                       <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                     </div>
                   </div>
-                  <div className="col-2 px-0">
+                  <div className="col-2 px-0 z-n1">
                     <div className="card w-100 p-0 border-0">
                       <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                     </div>
                   </div>
-                  <div className="col-2 px-0">
+                  <div className="col-2 px-0 z-n1">
                     <div className="card w-100 p-0 border-0">
                       <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
                     </div>
@@ -507,13 +507,13 @@ const ScrollSections = () => {
                 <div className="row px-1">
                   <div className="panel-body col-12" style={{ paddingTop: "25px" }}>
                     <div className="d-flex justify-content-between">
-                      <div className="panel-text-div col-6">
+                      <div className="panel-text-div col-7">
                         <span style={{ color: "#000" }}>Panel {s_id}</span>
                       </div>
-                      <div className="panel-image-div col-6 overflow-hidden">
+                      <div className="panel-image-div col-5 overflow-hidden">
                         <div className="image-section">
                           <div className="row h-100 no-gaps panel-image">
-                            <div className="col-md-6 left-images">
+                            <div className="col-md-3 left-images">
                               <div className="slider">
                                 <img src="./img/YP.jpg" alt="Man adjusting necklace" className="clickable active" />
                                 <img src="./img/YP.jpg" alt="Woman with braids" className="clickable" />
@@ -524,7 +524,7 @@ const ScrollSections = () => {
                                 <img src="./img/YP.jpg" alt="Man in hat" className="clickable" />
                               </div>
                             </div>
-                            <div className="col-md-6 right-image">
+                            <div className="col-md-9 right-image">
                               <img className="main-image" src="./img/YP.jpg" alt="Main Image" />
                             </div>
                           </div>
