@@ -13,6 +13,53 @@ const ScrollSections = () => {
     imageUrl: `https://source.unsplash.com/random/300x300?sig=${i + 1}`,
     dataCategory: `cat${i + 1}`,
   }));
+  useEffect(() => {
+    const btn = document.getElementById('expand-btn');
+    const btnIcon = document.getElementById('btn-icon');
+    const content = document.getElementById('contents');
+
+    let isExpanded = false;
+
+    btnIcon.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent button click interference
+        if (!isExpanded) {
+            // Step 1: Expand vertically
+            btn.style.height = 'calc(70vh - 40px)';
+            
+            // Step 2: Expand horizontally
+            setTimeout(() => {
+                btn.style.width = 'calc(100vw - 40px)';
+                btn.style.borderRadius = '12px';
+                
+                // Step 3: Show content
+                setTimeout(() => {
+                    content.style.display = 'block';
+                    setTimeout(() => {
+                        content.style.opacity = '1';
+                    }, 100);
+                }, 1500); // Wait for horizontal expansion
+            }, 1500); // Wait for vertical expansion
+            isExpanded = true;
+        } else {
+            // Step 1: Fade out content
+            content.style.opacity = '0';
+            
+            setTimeout(() => {
+                content.style.display = 'none';
+                
+                // Step 2: Shrink horizontally
+                btn.style.width = '50px';
+                btn.style.borderRadius = '8px';
+                
+                // Step 3: Shrink vertically
+                setTimeout(() => {
+                    btn.style.height = '50px';
+                    isExpanded = false;
+                }, 1500); // Wait for horizontal shrink
+            }, 1500); // Wait for content fade-out
+        }
+    });
+  });
 
   useEffect(() => {
     const el = document.querySelector('.k8nd8');
@@ -447,7 +494,9 @@ const ScrollSections = () => {
                 </div>
               </section>
             </div>
+            
           </div>
+          
           {sections.map(({ s_id, id, title, content, imageUrl, dataCategory }) => (
             <div className={"panel p-0 " + id} key={id} data-category={dataCategory}>
               <div className="container-fluid">
@@ -483,6 +532,13 @@ const ScrollSections = () => {
               </div>
             </div>
           ))}
+          <button className="expand-btn" id="expand-btn">
+            <span className="btn-icon" id="btn-icon">+</span>
+            <div className="contents" id="contents">
+                <h2>Expanded Content</h2>
+                <p>This is the content inside the expanded button.</p>
+            </div>
+          </button>
         </div>
       </div>
     </>
