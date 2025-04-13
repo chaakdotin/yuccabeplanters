@@ -20,9 +20,9 @@ const ExpandButton = ({ id, contentTitle, contentText, position }) => {
     const button = buttonRef.current;
     const contents = contentsRef.current;
 
-    button.style.height = 'calc(100vh - 40px)';
+    button.style.height = 'calc(64vh - 40px)';
     setTimeout(() => {
-      button.style.width = 'calc(100vw - 40px)';
+      button.style.width = 'calc(57vw - 40px)';
       button.style.borderRadius = '12px';
       button.classList.add('expanded');
       setTimeout(() => {
