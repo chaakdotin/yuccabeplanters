@@ -13,9 +13,10 @@ const ScrollSections = () => {
   const sections = Array.from({ length: 10 }, (_, i) => ({
     s_id: i + 1,
     id: `panel${i + 1}`,
-    title: `CH CUP`,
-    content: `Elegant and versatile, this squarish bowl-like planter offers a sleek, low-profile design perfect for both indoor and outdoor spaces. Its wide, open top provides ample room for lush arrangements, while its modern silhouette adds a touch of sophistication to any décor.`,
-    imageUrl: `/img/CH_CUP.png`,
+    title: `DCUT`,
+    subline:"the flared-top charm trough",
+    content: `Beauty,quality & timeless modern style. Our collection is designed to make every moment you spend feel like a weekend getaway.`,
+    imageUrl: `/img/YPYP.jpg`,
     dataCategory: `cat${i + 1}`,
   }));
   
@@ -454,32 +455,32 @@ const ScrollSections = () => {
                 <div className="row">
                   <div className="col-2 px-0 z-n1">
                     <div className="card w-100 p-0 border-0">
-                      <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
+                      <img className="card-img-top" alt="" src="./img/Geometrical111.png" />
                     </div>
                   </div>
                   <div className="col-2 px-0 z-n1">
                     <div className="card w-100 p-0 border-0">
-                      <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
+                      <img className="card-img-top" alt="" src="./img/Geometrical111.png" />
                     </div>
                   </div>
                   <div className="col-2 px-0 z-n1">
                     <div className="card w-100 p-0 border-0">
-                      <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
+                      <img className="card-img-top" alt="" src="./img/Geometrical111.png" />
                     </div>
                   </div>
                   <div className="col-2 px-0 z-n1">
                     <div className="card w-100 p-0 border-0">
-                      <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
+                      <img className="card-img-top" alt="" src="./img/Geometrical111.png" />
                     </div>
                   </div>
                   <div className="col-2 px-0 z-n1">
                     <div className="card w-100 p-0 border-0">
-                      <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
+                      <img className="card-img-top" alt="" src="./img/Geometrical111.png" />
                     </div>
                   </div>
                   <div className="col-2 px-0 z-n1">
                     <div className="card w-100 p-0 border-0">
-                      <img className="card-img-top" alt="" src="./img/Geometrical1.png" />
+                      <img className="card-img-top" alt="" src="./img/Geometrical111.png" />
                     </div>
                   </div>
                 </div>
@@ -519,16 +520,17 @@ const ScrollSections = () => {
             </div>
             
           </div>
-          {sections.map(({ s_id, id, title, content, imageUrl, dataCategory }) => (
+          {sections.map(({ s_id, id, title, subline, content, imageUrl, dataCategory }) => (
             <div className={"panel p-0 " + id} key={id} data-category={dataCategory}>
               <div className="container-fluid">
                 <div className="row px-1">
                   <div className="panel-body col-12" style={{ paddingTop: "25px" }}>
                     <div className="d-flex justify-content-between">
                       <div className="panel-text-div col-6 justify-content-between">
-                        <div className="d-flex flex-column">
+                        <div className="d-flex flex-column" style={{fontFamily: '"Poppins", sans-serif'}}>
                           <span style={{ color: "#000", fontWeight:"600", fontSize:"25px" }}>{title}</span>
-                          <span className="pt-3" style={{ color: "#000", fontSize:"14px" }}>{content}</span>
+                          <span style={{ color: "#000", fontSize:"14px", fontStyle:"italic",  }}>{subline}</span>
+                          <span className="pt-3" style={{ color: "#000", fontSize:"30px", fontWeight:"600" }}>{content}</span>
                         </div>
                         <div className="pt-4">
                           <img src={imageUrl} alt="" className="w-100"/>
@@ -539,17 +541,17 @@ const ScrollSections = () => {
                           <div className="row h-100 no-gaps panel-image justify-content-end">
                             <div className="col-md-3 left-images">
                               <div className="slider">
-                                <img src="./img/YP.jpg" alt="Man adjusting necklace" className="clickable active" />
-                                <img src="./img/YP.jpg" alt="Woman with braids" className="clickable" />
-                                <img src="./img/YP.jpg" alt="Model in embellished dress" className="clickable" />
-                                <img src="./img/YP.jpg" alt="Woman in jacket" className="clickable" />
-                                <img src="./img/YP.jpg" alt="Man in suit" className="clickable" />
-                                <img src="./img/YP.jpg" alt="Woman in scarf" className="clickable" />
-                                <img src="./img/YP.jpg" alt="Man in hat" className="clickable" />
+                                <img src="./img/30.jpg" alt="Man adjusting necklace" className="clickable active" />
+                                <img src="./img/29.jpg" alt="Woman with braids" className="clickable" />
+                                <img src="./img/28.jpg" alt="Model in embellished dress" className="clickable" />
+                                <img src="./img/30.jpg" alt="Woman in jacket" className="clickable" />
+                                <img src="./img/29.jpg" alt="Man in suit" className="clickable" />
+                                <img src="./img/28.jpg" alt="Woman in scarf" className="clickable" />
+                                <img src="./img/30.jpg" alt="Man in hat" className="clickable" />
                               </div>
                             </div>
                             <div className="col-md-8 right-image">
-                              <img className="main-image" src="./img/YP.jpg" alt="Main Image" />
+                              <img className="main-image" src="./img/30.jpg" alt="Main Image" />
                             </div>
                           </div>
                         </div>
