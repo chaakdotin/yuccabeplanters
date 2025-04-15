@@ -26,7 +26,7 @@ const Data = () => {
               <Route path="/explore" element={<Explore />} />
               <Route path="/services" element={<Services />} />
               <Route path="/collections" element={<Collections />} />
-              <Route path="/contact-us" element={<ContactUs />} />
+              <Route path="/contact" element={<ContactUs />} />
             </Route>
           </Routes>
           <Footer />

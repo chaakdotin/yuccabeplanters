@@ -7,13 +7,14 @@ import ResponsiveCard from './ResponsiveCard'
 import ScrollingTextSection from './ScrollingTextSection'
 import VideoReelsSection from './VideoReelsSection'
 import './Explore.css'
+import { a } from "framer-motion/client";
 const cards = [
-  { text: "About", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/65e172641da90916052bafbd_SCI_FI.webp" },
-  { text: "Services", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/667a25f57c4d9fe714639b49_THE_CONVERT_ALT_3.webp" },
-  { text: "Projects", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/65e172641da90916052bafbd_SCI_FI.webp" },
-  { text: "Collections", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/667a25f57c4d9fe714639b49_THE_CONVERT_ALT_3.webp" },
-  { text: "Blogs", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/65e172641da90916052bafbd_SCI_FI.webp" },
-  { text: "Contact", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/65e172641da90916052bafbd_SCI_FI.webp" },
+  { text: "About", link:"/about", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/65e172641da90916052bafbd_SCI_FI.webp" },
+  { text: "Services", link:"/services", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/667a25f57c4d9fe714639b49_THE_CONVERT_ALT_3.webp" },
+  { text: "Projects", link:"/projects", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/65e172641da90916052bafbd_SCI_FI.webp" },
+  { text: "Collections", link:"/collections", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/667a25f57c4d9fe714639b49_THE_CONVERT_ALT_3.webp" },
+  { text: "Blogs", link:"/blogs", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/65e172641da90916052bafbd_SCI_FI.webp" },
+  { text: "Contact", link:"/contact", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/65e172641da90916052bafbd_SCI_FI.webp" },
 ];
 
 const Work = () => {
@@ -23,7 +24,7 @@ const Work = () => {
       <div className="p-4 pt-5 update-card">
         <div style={{ width:"100%",gap: '20px' }} className="d-flex justify-content-center align-items-center">
             {cards.map((card, index) => (
-                <Card key={index} text={card.text} img={card.img} />
+              <Card key={index} text={card.text} img={card.img} link={card.link}/>
             ))}
         </div>
         <ResponsiveImageHoverEffect />
