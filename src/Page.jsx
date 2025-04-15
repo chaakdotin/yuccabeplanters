@@ -5,6 +5,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import "./StackedSections.css"; // Make sure this file contains your CSS
+import AnimatedTypingText from "./AnimatedTypingText";
 const ScrollSections = () => {
   gsap.registerPlugin(ScrollTrigger);
   const [show, setShow] = useState(false);
@@ -20,13 +21,13 @@ const ScrollSections = () => {
     imageUrl: `/img/YPYP.jpg`,
     dataCategory: `cat${i + 1}`,
   }));
-  
+
   let tl;
   useEffect(() => {
     const el = document.querySelector('.k8nd8');
     const elWidth = el.clientWidth;
     const screenWidth = window.innerWidth;
-    const leftOffset = (screenWidth - elWidth) / 2;
+    const leftOffset = (screenWidth - elWidth) / 1.15;
     el.style.left = `${leftOffset}px`;
 
     var url = new URL(window.location.href);
@@ -211,10 +212,15 @@ const ScrollSections = () => {
     };
 
   }, []);
-
- 
+  if(show){
+    lenis.stop()
+  }else{
+    lenis.start()
+  }
+  
   return (
     <>
+      {/* animation: marquee 20s linear infinite; */}
       <style>
         {`
           body {
@@ -231,7 +237,7 @@ const ScrollSections = () => {
           .slider-wrapper {
             display: flex;
             width: 200%;
-            animation: marquee 20s linear infinite;
+            
           }
           .slide {
             display: inline-flex;
@@ -401,34 +407,34 @@ const ScrollSections = () => {
             <div className="container-fluid" id="newcolum" style={{ position: "fixed", transform: "translate(0px, 100px)", }}>
               <div className="w-100 h-100" style={{ overflow: "hidden" }}>
                 <div className="row">
-                  <div className="col-2 px-0 z-n1">
+                  <div className="col-2 px-1 z-n1">
                     <div className="card w-100 p-0 border-0">
-                      <img className="card-img-top" alt="" src="./img/Geometrical111.png" />
+                      <img className="card-img-top" alt="" src="./img/6.png" />
                     </div>
                   </div>
-                  <div className="col-2 px-0 z-n1">
+                  <div className="col-2 px-1 z-n1">
                     <div className="card w-100 p-0 border-0">
-                      <img className="card-img-top" alt="" src="./img/Geometrical111.png" />
+                      <img className="card-img-top" alt="" src="./img/7.png" />
                     </div>
                   </div>
-                  <div className="col-2 px-0 z-n1">
+                  <div className="col-2 px-1 z-n1">
                     <div className="card w-100 p-0 border-0">
-                      <img className="card-img-top" alt="" src="./img/Geometrical111.png" />
+                      <img className="card-img-top" alt="" src="./img/8.png" />
                     </div>
                   </div>
-                  <div className="col-2 px-0 z-n1">
+                  <div className="col-2 px-1 z-n1">
                     <div className="card w-100 p-0 border-0">
-                      <img className="card-img-top" alt="" src="./img/Geometrical111.png" />
+                      <img className="card-img-top" alt="" src="./img/6.png" />
                     </div>
                   </div>
-                  <div className="col-2 px-0 z-n1">
+                  <div className="col-2 px-1 z-n1">
                     <div className="card w-100 p-0 border-0">
-                      <img className="card-img-top" alt="" src="./img/Geometrical111.png" />
+                      <img className="card-img-top" alt="" src="./img/7.png" />
                     </div>
                   </div>
-                  <div className="col-2 px-0 z-n1">
+                  <div className="col-2 px-1 z-n1">
                     <div className="card w-100 p-0 border-0">
-                      <img className="card-img-top" alt="" src="./img/Geometrical111.png" />
+                      <img className="card-img-top" alt="" src="./img/8.png" />
                     </div>
                   </div>
                 </div>
@@ -439,30 +445,7 @@ const ScrollSections = () => {
             <div className="articles_header w-100 text-center">
               <section className="sliders">
                 <div className="slider-wrapper">
-                  <div className="slide">
-                    <span>Design Lives in Yuccabe Originals</span>
-                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                    <span>Design Lives in Yuccabe Originals</span>
-                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                    <span>Design Lives in Yuccabe Originals</span>
-                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                    <span>Design Lives in Yuccabe Originals</span>
-                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                    <span>Design Lives in Yuccabe Originals</span>
-                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                  </div>
-                  <div className="slide">
-                    <span>Design Lives in Yuccabe Originals</span>
-                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                    <span>Design Lives in Yuccabe Originals</span>
-                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                    <span>Design Lives in Yuccabe Originals</span>
-                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                    <span>Design Lives in Yuccabe Originals</span>
-                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                    <span>Design Lives in Yuccabe Originals</span>
-                    <img className="rotating-svg" src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649531f111407d44a30fb06a_download1.avif" alt="" />
-                  </div>
+                 <AnimatedTypingText />
                 </div>
               </section>
             </div>
@@ -480,14 +463,12 @@ const ScrollSections = () => {
                           <span style={{ color: "rgb(118 118 118)", fontSize:"25px", fontStyle:"italic",  }}>{subline}</span>
                           <span className="pt-3" style={{ color: "#000", fontSize:"20px", fontWeight:"200" }}>{content}</span>
                         </div>
-                        <div className="pt-4 col-10">
+                        <div className="pt-4 col-12">
                           <img src={imageUrl} alt="" className="w-100"/>
                         </div>
-                        <div className="col-12 pt-4">
-                          <div className="d-flex justify-content-center">
-                            <Button variant="primary" onClick={handleShow}>
-                              Launch
-                            </Button>
+                        <div className="col-12 pt-5">
+                          <div className="d-flex justify-content-start">
+                            <Button variant="primary" onClick={handleShow} className="new_style">Explore Variants</Button>
                           </div>
                         </div>
                       </div>
