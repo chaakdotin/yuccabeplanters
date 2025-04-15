@@ -460,7 +460,7 @@ const Collections = () => {
                     <div className="d-flex justify-content-between">
                       <div className="panel-text-div col-5 justify-content-start">
                         <div className="d-flex flex-column" style={{fontFamily: '"Poppins", sans-serif'}}>
-                          <span style={{ color: "#000", fontWeight:"600", fontSize:"50px", lineHeight:0.9 }}>{title}</span>
+                          <span style={{ color: "#000", fontWeight:"700", fontSize:"50px", lineHeight:0.9 }}>{title}</span>
                           <span style={{ color: "rgb(118 118 118)", fontSize:"25px", fontStyle:"italic",  }}>{subline}</span>
                           <span className="pt-3" style={{ color: "#000", fontSize:"20px", fontWeight:"200" }}>{content}</span>
                         </div>
@@ -469,7 +469,7 @@ const Collections = () => {
                         </div>
                         <div className="col-12 pt-5">
                           <div className="d-flex justify-content-start">
-                            <Button variant="primary" onClick={handleShow} className="new_style">Explore Variants</Button>
+                            <Button variant="primary" onClick={handleShow} className="new_style fs-5">Explore Variants</Button>
                           </div>
                         </div>
                       </div>
