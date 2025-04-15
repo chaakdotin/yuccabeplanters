@@ -14,7 +14,7 @@ const Header = () => {
   const header = useRef(null);
   const cursor = useRef(null);
   window.addEventListener("mousemove", (e) => {
-    gsap.to(cursor.current, {
+    gsap.to('.cursor', {
       duration: 0,
       x: e.clientX,
       y: e.clientY,

@@ -2,14 +2,15 @@ import React, { useEffect,useRef,useState } from "react";
 import gsap from "gsap";
 import lenis  from './LenisWrapper'
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 import "./StackedSections.css"; // Make sure this file contains your CSS
 const ScrollSections = () => {
   gsap.registerPlugin(ScrollTrigger);
-  const contentsRef = useRef(null);
-  const buttonRef = useRef(null);
-    const iconRef = useRef(null);
-   
-    const [isExpanded, setIsExpanded] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const sections = Array.from({ length: 10 }, (_, i) => ({
     s_id: i + 1,
     id: `panel${i + 1}`,
@@ -89,7 +90,7 @@ const ScrollSections = () => {
     const tl3 = gsap.timeline({
       scrollTrigger: {
         trigger: "#newcolum",
-        start: "top 50%",
+        start: "top 40%",
         end: "+=100",
         scrub: true,
       }
@@ -103,7 +104,6 @@ const ScrollSections = () => {
       }
     });
 
-    
     function setupTimeline() {
       let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
       let count = panels.length;
@@ -139,7 +139,7 @@ const ScrollSections = () => {
     if (c !== 'all') {
       ScrollTrigger.refresh();
       const div = document.querySelector('.small-section');
-      const distanceFromDocumentTop = div.offsetTop;
+      const distanceFromDocumentTop = div.offsetTop+100;
       window.scrollBy(0, distanceFromDocumentTop);
     } else {
       ScrollTrigger.refresh();
@@ -193,7 +193,6 @@ const ScrollSections = () => {
         centerActiveImage(initialActiveImage);
       }
     });
-    
 
     window.addEventListener("resize", () => {
       ScrollTrigger.refresh();
@@ -210,69 +209,10 @@ const ScrollSections = () => {
         });
       });
     };
+
   }, []);
 
-  const toggle = () => {
-    if (!isExpanded) {
-      closeAll();
-      expand();
-      lenis.stop()
-
-    } else {
-      
-      close();
-      lenis.start(); 
-    }
-  };
-
-  const expand = () => {
-    const button = buttonRef.current;
-    const contents = contentsRef.current;
-
-    button.style.height = 'calc(64vh - 40px)';
-    setTimeout(() => {
-      button.style.width = 'calc(57vw - 40px)';
-      button.style.borderRadius = '12px';
-      button.classList.add('expanded');
-      setTimeout(() => {
-        contents.style.display = 'block';
-        setTimeout(() => {
-          contents.style.opacity = '1';
-        }, 100);
-      }, 1500);
-    }, 1500);
-
-    setIsExpanded(true);
-  };
-
-  const close = () => {
-    const button = buttonRef.current;
-    const contents = contentsRef.current;
-
-    contents.style.opacity = '0';
-    setTimeout(() => {
-      contents.style.display = 'none';
-      button.style.width = '50px';
-      button.style.borderRadius = '8px';
-      button.classList.remove('expanded');
-      setTimeout(() => {
-        button.style.height = '50px';
-        setIsExpanded(false);
-      }, 1500);
-    }, 1500);
-  };
-
-  const closeAll = () => {
-    document.querySelectorAll('.expand-btn').forEach((btn) => {
-      if (btn !== buttonRef.current && btn.classList.contains('expanded')) {
-        btn.querySelector('.btn-icon').click();
-      }
-    });
-  };
-  useEffect(() => {
-    const contents = contentsRef.current;
-    contents.addEventListener('click', (e) => e.stopPropagation());
-  }, []);
+ 
   return (
     <>
       <style>
@@ -395,7 +335,15 @@ const ScrollSections = () => {
           }
         `}
       </style>
-
+      <Offcanvas show={show} onHide={handleClose} placement="end">
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          Some text as placeholder. In real life you can have the elements you
+          have chosen. Like, text, images, lists, etc.
+        </Offcanvas.Body>
+      </Offcanvas>
       <div style={{ position: "relative" }}>
         <div className="stack-container">
           <div style={{ position: "fixed", transform: "translate(0px, 12vh)", zIndex: '2', width: "100%", lineHeight: "1", height: "85px" }}>
@@ -535,6 +483,13 @@ const ScrollSections = () => {
                         <div className="pt-4 col-10">
                           <img src={imageUrl} alt="" className="w-100"/>
                         </div>
+                        <div className="col-12 pt-4">
+                          <div className="d-flex justify-content-center">
+                            <Button variant="primary" onClick={handleShow}>
+                              Launch
+                            </Button>
+                          </div>
+                        </div>
                       </div>
                       <div className="panel-image-div col-7 overflow-hidden">
                         <div className="image-section" data-section={s_id}>
@@ -562,29 +517,7 @@ const ScrollSections = () => {
               </div>
             </div>
           ))}
-          <button
-            className="expand-btn"
-            id="btn1"
-            ref={buttonRef}
-            style={{ bottom: '20px', left: '20px' }}
-          >
-            <span
-              className="btn-icon"
-              ref={iconRef}
-              onClick={(e) => {
-                e.stopPropagation();
-                toggle();
-              }}
-            >
-              +
-            </span>
-            <div className="contents" ref={contentsRef}>
-              <h2>Content 1</h2>
-              <p>This is the content for button 1.</p>
-            </div>
-          </button>
         </div>
-        
       </div>
     </>
   );
