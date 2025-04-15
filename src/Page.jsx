@@ -71,6 +71,7 @@ const ScrollSections = () => {
     });
     tl1.to(".k8nd8", {
       left: 0,
+      color: "#d9d4c5",
       fontSize: "80px",
       duration: 1
     });
@@ -92,7 +93,7 @@ const ScrollSections = () => {
       scrollTrigger: {
         trigger: "#newcolum",
         start: "top 40%",
-        end: "+=100",
+        end: "+=160",
         scrub: true,
       }
     });
