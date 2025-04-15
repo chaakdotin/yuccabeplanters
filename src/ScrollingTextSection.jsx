@@ -6,8 +6,8 @@ const ScrollingTextSection = () => {
   return (
     <section className="animated-box">
       <div className="text-wrapper">
-        <span className="animated-text">Hello World</span>
-        <span className="animated-text">Hello World</span>
+        <span className="animated-text">Yuccabe Planters</span>
+        <span className="animated-text">Yuccabe Planters</span>
       </div>
     </section>
   );

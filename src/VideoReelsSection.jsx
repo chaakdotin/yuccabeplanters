@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
-import video from './assets/video/video1.mp4'
 
-const VideoBox = () => {
+const VideoBox = ({link}) => {
   const videoRef = useRef(null);
 
 
@@ -19,11 +18,11 @@ const VideoBox = () => {
   return (
     <div
       className="video-box"
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut} >
-      <video muted loop playsInline ref={videoRef}>
+      // onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}
+      >
+      <video muted loop playsInline autoPlay ref={videoRef}>
         <source
-          src={video}
+          src={link}
           type="video/mp4"
         />
         Your browser does not support HTML5 video.
@@ -68,12 +67,12 @@ const VideoReelsSection = () => {
             `}
         </style>
         <section className="video-row">
-            <VideoBox />
-            <VideoBox />
-            <VideoBox />
-            <VideoBox />
-            <VideoBox />
-            <VideoBox />
+            <VideoBox link="/videos/1.mp4" />
+            <VideoBox link="/videos/2.mp4" />
+            <VideoBox link="/videos/3.mp4" />
+            <VideoBox link="/videos/4.mp4" />
+            <VideoBox link="/videos/5.mp4" />
+            <VideoBox link="/videos/6.mp4" />
         </section>
     </>
   );
