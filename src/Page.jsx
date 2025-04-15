@@ -130,7 +130,7 @@ const ScrollSections = () => {
         tl.fromTo(panel, { y: "100%" }, { y: "0%", duration: 1 }, "<");
         if (i < lastPanel) {
           tl.to(panel, { height: "5vh", y: "0%", duration: 1 });
-          tl.to(panel.querySelector(".panel-image"), { scale: 0.5, duration: 1 }, "<");
+          tl.to(panel.querySelector(".panel-image"), { scale: 0.5,filter:"blur(6px)", duration: 1 }, "<");
         }
       });
     }
@@ -147,8 +147,8 @@ const ScrollSections = () => {
 
     // New slider logic
     const imageSections = document.querySelectorAll('.image-section');
-    const imageHeight = 205.33; // Height of each image (616px / 3)
-    const containerHeight = 616; // Section height
+    const imageHeight = 220; // Height of each image (616px / 3)
+    const containerHeight = 658.68; // Section height
 
     imageSections.forEach(section => {
       const clickableImages = section.querySelectorAll('.clickable');
@@ -345,7 +345,7 @@ const ScrollSections = () => {
           }
           .slider img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
             cursor: pointer;
             aspect-ratio: 3/4;
@@ -398,8 +398,8 @@ const ScrollSections = () => {
 
       <div style={{ position: "relative" }}>
         <div className="stack-container">
-          <div style={{ position: "fixed", transform: "translate(0px, 21vh)", zIndex: '2', width: "100%", lineHeight: "1", height: "85px" }}>
-            <div className="w-100 d-flex h-100">
+          <div style={{ position: "fixed", transform: "translate(0px, 12vh)", zIndex: '2', width: "100%", lineHeight: "1", height: "85px" }}>
+            <div className="w-100 d-flex h-100 justify-content-center">
               <div className="kdjff" style={{ width: "30%", position: "relative", lineHeight: "1" }}>
                 <span className="k8nd8" style={{ position: "absolute", fontSize: "225px", fontWeight: "bold", backgroundColor: "rgb(255, 255, 255)", zIndex: 1 }}>Collections</span>
               </div>
@@ -524,21 +524,21 @@ const ScrollSections = () => {
             <div className={"panel p-0 " + id} key={id} data-category={dataCategory}>
               <div className="container-fluid">
                 <div className="row px-1">
-                  <div className="panel-body col-12" style={{ paddingTop: "25px" }}>
+                  <div className="panel-body col-12 panel-image" style={{ paddingTop: "25px" }}>
                     <div className="d-flex justify-content-between">
-                      <div className="panel-text-div col-6 justify-content-between">
+                      <div className="panel-text-div col-5 justify-content-start">
                         <div className="d-flex flex-column" style={{fontFamily: '"Poppins", sans-serif'}}>
-                          <span style={{ color: "#000", fontWeight:"600", fontSize:"25px" }}>{title}</span>
-                          <span style={{ color: "#000", fontSize:"14px", fontStyle:"italic",  }}>{subline}</span>
-                          <span className="pt-3" style={{ color: "#000", fontSize:"30px", fontWeight:"600" }}>{content}</span>
+                          <span style={{ color: "#000", fontWeight:"600", fontSize:"50px", lineHeight:0.9 }}>{title}</span>
+                          <span style={{ color: "rgb(118 118 118)", fontSize:"25px", fontStyle:"italic",  }}>{subline}</span>
+                          <span className="pt-3" style={{ color: "#000", fontSize:"20px", fontWeight:"200" }}>{content}</span>
                         </div>
-                        <div className="pt-4">
+                        <div className="pt-4 col-10">
                           <img src={imageUrl} alt="" className="w-100"/>
                         </div>
                       </div>
-                      <div className="panel-image-div col-6 overflow-hidden">
+                      <div className="panel-image-div col-7 overflow-hidden">
                         <div className="image-section" data-section={s_id}>
-                          <div className="row h-100 no-gaps panel-image justify-content-end">
+                          <div className="row h-100 no-gaps  justify-content-center w-100">
                             <div className="col-md-3 left-images">
                               <div className="slider">
                                 <img src="./img/30.jpg" alt="Man adjusting necklace" className="clickable active" />
