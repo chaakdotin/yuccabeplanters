@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import "./StackedSections.css"; // Make sure this file contains your CSS
 import AnimatedTypingText from "./AnimatedTypingText";
-const ScrollSections = () => {
+const Collections = () => {
   gsap.registerPlugin(ScrollTrigger);
   const [show, setShow] = useState(false);
 
@@ -505,4 +505,4 @@ const ScrollSections = () => {
   );
 };
 
-export default ScrollSections;
+export default Collections;

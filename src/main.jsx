@@ -9,7 +9,7 @@ import lenis from "./LenisWrapper";
 
 import Header from './Header';
 const App = lazy(() => import('./App'));
-const Page = lazy(() => import('./Page'));
+const Collection = lazy(() => import('./Collections'));
 const Work = lazy(() => import('./Work'));
 const Services = lazy(() => import('./Services'));
 const OurActivities = lazy(() => import('./OurActivities'));
@@ -29,7 +29,7 @@ const Data = () => {
               <Route index element={<App />} />
               <Route path="/work" element={<Work />} />
               <Route path="/services" element={<Services />} />
-              <Route path="/page" element={<Page />} />
+              <Route path="/collections" element={<Collection />} />
               <Route path="/activities" element={<OurActivities />} />
               <Route path="/contact-us" element={<ContactUs />} />
             </Route>
