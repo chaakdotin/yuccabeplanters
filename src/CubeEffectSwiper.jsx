@@ -37,23 +37,22 @@ const CubeEffectSwiper = ({scrollToSection}) => {
         //     duration: .8,
         //     ease: "power2.inOut",
         // });
-        
+
         const lt = gsap.timeline({
             scrollTrigger: {
                 trigger: ".YUCCABE", // Element that triggers the animation
-                start: "top bottom",     // When the top of `.start-class` hits the center of the viewport/ Element that defines the end point
+                start: "top top",     // When the top of `.start-class` hits the center of the viewport/ Element that defines the end point
                 end: "bottom bottom",    // When the bottom of `.end-class` hits the center of the viewport
                 scrub: true,
+                markers:true,
             }
         });
 
-        // // tl.timeScale(0.5);
         lt.to(".textsdsdd", {
             position: "fixed",
             right: 100,
-            top:"-5%",
+            top:"-4%",
             duration: 10,
-            delay: 1,
             onComplete: function () {
                 document.querySelector(".textsdsdd").style.top = "73.6%";
                 document.querySelector(".textsdsdd").style.position = "absolute";
@@ -205,9 +204,9 @@ const styles = {
     },
     rectStyle: {
         color: "rgba(0, 0, 0, 0.2)",
-        top: "-5%",
+        top: "2%",
         backgroundColor: "transparent",
-        right: "-3700px",
+        right: "-2500px",
         position: "absolute",
     }
 };
