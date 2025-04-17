@@ -16,8 +16,6 @@ const CubeEffectSwiper = ({scrollToSection}) => {
     var i = 0;
     // const textEl = document.getElementById('.stagger1 h1');
 
-
-
     useEffect(() => {
      
         
@@ -57,7 +55,7 @@ const CubeEffectSwiper = ({scrollToSection}) => {
             duration: 10,
             delay: 1,
             onComplete: function () {
-                document.querySelector(".textsdsdd").style.top = "73.6%";
+                document.querySelector(".textsdsdd").style.top = "47%";
                 document.querySelector(".textsdsdd").style.position = "absolute";
             },
         });
@@ -125,7 +123,7 @@ const CubeEffectSwiper = ({scrollToSection}) => {
                 </div>
             </div>
             
-            <div className="YUCCABE overflow-hidden" style={{ position: 'relative'}}>
+            <div className="YUCCABE overflow-hidden" style={{ position: 'relative',background: "linear-gradient(168deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%)"}}>
                 <div style={{ ...styles.rectStyle, fontSize: '800px', backgroundColor: "transparent", zIndex: 1, opacity: 0.2 }} className="textsdsdd h-100vh d-flex flex-column align-items-center justify-content-center poppins-bold">Yuccabe</div>
                 <ScrollSections refs={refs}/>
             </div>
