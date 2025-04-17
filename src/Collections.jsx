@@ -9,59 +9,97 @@ import AnimatedTypingText from "./AnimatedTypingText";
 const Collections = () => {
   gsap.registerPlugin(ScrollTrigger);
   const [show, setShow] = useState(false);
-
+  const [sections, setSections] = useState([]);
+  const [loading, setLoading] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const sections = Array.from({ length: 10 }, (_, i) => ({
-    s_id: i + 1,
-    id: `panel${i + 1}`,
-    title: `DCUT`,
-    subline:"the flared-top charm trough",
-    content: `Beauty,quality & timeless modern style. Our collection is designed to make every moment you spend feel like a weekend getaway.`,
-    imageUrl: `/img/YPYP.jpg`,
-    dataCategory: `cat${i + 1}`,
-  }));
-
   let tl;
   useEffect(() => {
+    if (!loading) return;
+
     const el = document.querySelector('.k8nd8');
-    const elWidth = el.clientWidth;
+    const elWidth = el?.clientWidth;
     const screenWidth = window.innerWidth;
     const leftOffset = (screenWidth - elWidth) / 1.15;
-    el.style.left = `${leftOffset}px`;
-
-    var url = new URL(window.location.href);
-    var c = url.searchParams.get('tags') || "all";
-
+    if (el) el.style.left = `${leftOffset}px`;
+  
+    const url = new URL(window.location.href);
+    const c = url.searchParams.get('tags') || "all";
+  
     const filterButtons = document.querySelectorAll(".sdsss button");
     const productItems = document.querySelectorAll(".panel");
-
+  
     filterButtons.forEach(btn => {
       btn.addEventListener("click", () => {
         const filter = btn.getAttribute("data-filter");
         window.location.href = "?tags=" + filter;
       });
     });
-
+  
     filterButtons.forEach(btn => {
       const filter = btn.getAttribute("data-filter");
-      if (c === filter || filter === c) {
+      if (c == filter) {
         btn.classList.add("active");
       } else {
         btn.classList.remove("active");
       }
     });
-
+  
     productItems.forEach(item => {
       const category = item.getAttribute("data-category");
-      if (c === "all" || category === c) {
-        item.style.display = "";
-      } else {
-        item.style.display = "none";
-      }
+      item.style.display = (c == "all" || category == c) ? "" : "none";
     });
-
-    let tl1 = gsap.timeline({
+  
+    
+  
+    const imageSections = document.querySelectorAll('.image-section');
+    const imageHeight = 220;
+    const containerHeight = 658.68;
+  
+    imageSections.forEach(section => {
+      const clickableImages = section.querySelectorAll('.clickable');
+      const mainImage = section.querySelector('.main-image');
+      const slider = section.querySelector('.slider');
+  
+      if (!clickableImages.length || !mainImage || !slider) return;
+  
+      const totalImages = clickableImages.length;
+  
+      function centerActiveImage(activeImg) {
+        if (!activeImg) return;
+        const index = Array.from(clickableImages).indexOf(activeImg);
+        if (index === -1) return;
+  
+        const sliderHeight = totalImages * imageHeight;
+        let offset = index * imageHeight + imageHeight / 2 - containerHeight / 2;
+        offset = Math.max(0, Math.min(offset, sliderHeight - containerHeight));
+        slider.style.transform = `translateY(-${offset}px)`;
+      }
+  
+      function handleImageClick(img) {
+        mainImage.src = img.src;
+        mainImage.alt = img.alt;
+        clickableImages.forEach(i => i.classList.remove('active'));
+        img.classList.add('active');
+        centerActiveImage(img);
+      }
+  
+      clickableImages.forEach(img => {
+        const onClick = () => handleImageClick(img);
+        img.addEventListener('click', onClick);
+        img._onClick = onClick;
+      });
+  
+      const initialActiveImage = section.querySelector('.clickable.active');
+      if (initialActiveImage) centerActiveImage(initialActiveImage);
+    });
+  
+    window.addEventListener("resize", () => {
+      ScrollTrigger.refresh();
+    });
+  
+    // GSAP timelines
+    const tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: ".kdjff",
         start: "top 25%",
@@ -69,13 +107,14 @@ const Collections = () => {
         scrub: true,
       },
     });
+  
     tl1.to(".k8nd8", {
       left: 0,
       color: "#d9d4c5",
       fontSize: "80px",
       duration: 1
     });
-
+  
     const tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: ".sdsss",
@@ -84,11 +123,12 @@ const Collections = () => {
         scrub: true,
       }
     });
+  
     tl2.to(".h84gf", {
       x: 0,
       duration: 1,
     });
-
+  
     const tl3 = gsap.timeline({
       scrollTrigger: {
         trigger: "#newcolum",
@@ -97,6 +137,7 @@ const Collections = () => {
         scrub: true,
       }
     });
+  
     tl3.to("#newcolum .card", {
       y: "400px",
       duration: 1,
@@ -105,101 +146,41 @@ const Collections = () => {
         from: "start"
       }
     });
-
-    function setupTimeline() {
-      let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
-      let count = panels.length;
-      tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".stack-container",
-          start: "top top",
-          end: "+=" + (count * 200),
-          scrub: true,
-          pin: true,
-        }
-      });
-      tl.fromTo(".small-section",
-        {
-          y: "100vh"
-        }, {
-          y: "0",
-          duration: 0.5
-        }
-      );
-
-      panels.forEach((panel, i) => {
-        let lastPanel = panels.length - 1;
-        tl.fromTo(panel, { y: "100%" }, { y: "0%", duration: 1 }, "<");
-        if (i < lastPanel) {
-          tl.to(panel, { height: "5vh", y: "0%", duration: 1 });
-          tl.to(panel.querySelector(".panel-image"), { scale: 0.5,filter:"blur(6px)", duration: 1 }, "<");
-        }
-      });
-    }
-    setupTimeline();
-
+  
+    let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
+    const count = panels.length;
+  
+    const tlMain = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".stack-container",
+        start: "top top",
+        end: "+=" + (count * 200),
+        scrub: true,
+        pin: true,
+      }
+    });
+  
+    tlMain.fromTo(".small-section", { y: "100vh" }, { y: "0", duration: 0.5 });
+  
+    panels.forEach((panel, i) => {
+      let lastPanel = panels.length - 1;
+      tlMain.fromTo(panel, { y: "100%" }, { y: "0%", duration: 1 }, "<");
+      if (i < lastPanel) {
+        tlMain.to(panel, { height: "5vh", y: "0%", duration: 1 });
+        tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
+      }
+    });
     if (c !== 'all') {
       ScrollTrigger.refresh();
-      const div = document.querySelector('.small-section');
-      const distanceFromDocumentTop = div.offsetTop+100;
-      window.scrollBy(0, distanceFromDocumentTop);
-    } else {
-      ScrollTrigger.refresh();
+      setTimeout(() => {
+        const div = document.querySelector('.small-section');
+        if (div) {
+          const distanceFromDocumentTop = div.offsetTop + 100;
+          window.scrollBy(0, distanceFromDocumentTop);
+        }
+      }, 1000);
     }
-
-    // New slider logic
-    const imageSections = document.querySelectorAll('.image-section');
-    const imageHeight = 220; // Height of each image (616px / 3)
-    const containerHeight = 658.68; // Section height
-
-    imageSections.forEach(section => {
-      const clickableImages = section.querySelectorAll('.clickable');
-      const mainImage = section.querySelector('.main-image');
-      const slider = section.querySelector('.slider');
-
-      if (!clickableImages.length || !mainImage || !slider) return;
-
-      const totalImages = clickableImages.length;
-
-      function centerActiveImage(activeImg) {
-        if (!activeImg) return;
-        const index = Array.from(clickableImages).indexOf(activeImg);
-        if (index === -1) return;
-
-        const sliderHeight = totalImages * imageHeight;
-        let offset = index * imageHeight + imageHeight / 2 - containerHeight / 2;
-
-        offset = Math.max(0, Math.min(offset, sliderHeight - containerHeight));
-
-        slider.style.transform = `translateY(-${offset}px)`;
-      }
-
-      function handleImageClick(img) {
-        mainImage.src = img.src;
-        mainImage.alt = img.alt;
-
-        clickableImages.forEach(i => i.classList.remove('active'));
-        img.classList.add('active');
-
-        centerActiveImage(img);
-      }
-
-      clickableImages.forEach(img => {
-        const onClick = () => handleImageClick(img);
-        img.addEventListener('click', onClick);
-        img._onClick = onClick;
-      });
-
-      const initialActiveImage = section.querySelector('.clickable.active');
-      if (initialActiveImage) {
-        centerActiveImage(initialActiveImage);
-      }
-    });
-
-    window.addEventListener("resize", () => {
-      ScrollTrigger.refresh();
-    });
-    // Cleanup event listeners
+    // Cleanup
     return () => {
       imageSections.forEach(section => {
         const clickableImages = section.querySelectorAll('.clickable');
@@ -211,8 +192,22 @@ const Collections = () => {
         });
       });
     };
-
+    
+  }, [loading]);
+  useEffect(() => {
+    fetch('https://yuccabeplanters.chaak.in/api/collection.php')
+      .then((res) => res.json())
+      .then((result) => {
+        setSections(result);
+        setLoading(true);
+      }).catch((err) => {
+        setLoading(false);
+        console.error('API Error:', err);
+        alert('Failed to load collections. Please try again later.');
+      });
   }, []);
+ 
+  
   if(show){
     lenis.stop()
   }else{
@@ -452,20 +447,20 @@ const Collections = () => {
             </div>
             
           </div>
-          {sections.map(({ s_id, id, title, subline, content, imageUrl, dataCategory }) => (
-            <div className={"panel p-0 " + id} key={id} data-category={dataCategory}>
+          {sections.map(({ Entry_ID, Product_Name, Product_Subtitle, Product_Description, Sizes_Image_Link, Category_ID }) => (
+            <div className={"panel p-0 panel"+Entry_ID} key={Entry_ID} data-category={Category_ID}>
               <div className="container-fluid">
                 <div className="row px-1">
                   <div className="panel-body col-12 panel-image" style={{ paddingTop: "25px" }}>
                     <div className="d-flex justify-content-between">
                       <div className="panel-text-div col-5 justify-content-start">
                         <div className="d-flex flex-column" style={{fontFamily: '"Poppins", sans-serif'}}>
-                          <span style={{ color: "#000", fontWeight:"700", fontSize:"50px", lineHeight:0.9 }}>{title}</span>
-                          <span style={{ color: "rgb(118 118 118)", fontSize:"25px", fontStyle:"italic",  }}>{subline}</span>
-                          <span className="pt-3" style={{ color: "#000", fontSize:"20px", fontWeight:"200" }}>{content}</span>
+                          <span style={{ color: "#000", fontWeight:"700", fontSize:"50px", lineHeight:0.9 }}>{Product_Name}</span>
+                          <span style={{ color: "rgb(118 118 118)", fontSize:"25px", fontStyle:"italic",  }}>{Product_Subtitle}</span>
+                          <span className="pt-3" style={{ color: "#000", fontSize:"20px", fontWeight:"200" }}>{Product_Description}</span>
                         </div>
                         <div className="pt-4 col-12">
-                          <img src={imageUrl} alt="" className="w-100"/>
+                          <img src={Sizes_Image_Link} alt="" className="w-100"/>
                         </div>
                         <div className="col-12 pt-5">
                           <div className="d-flex justify-content-start">
@@ -474,7 +469,7 @@ const Collections = () => {
                         </div>
                       </div>
                       <div className="panel-image-div col-7 overflow-hidden">
-                        <div className="image-section" data-section={s_id}>
+                        <div className="image-section" data-section={Entry_ID}>
                           <div className="row h-100 no-gaps  justify-content-center w-100">
                             <div className="col-md-3 left-images">
                               <div className="slider">
