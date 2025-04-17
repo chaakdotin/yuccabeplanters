@@ -123,7 +123,7 @@ const CubeEffectSwiper = ({scrollToSection}) => {
                 </div>
             </div>
             
-            <div className="YUCCABE overflow-hidden" style={{ position: 'relative',background: "linear-gradient(168deg,#d9d4c5 0%,#b0aca6 100%)"}}>
+            <div className="YUCCABE overflow-hidden" style={{ position: 'relative',background: "linear-gradient(90deg,#d9d4c5 0%,#b0aca6 100%)"}}>
                 <div style={{ ...styles.rectStyle, fontSize: '800px', backgroundColor: "transparent", zIndex: 1, opacity: 0.2 }} className="textsdsdd h-100vh d-flex flex-column align-items-center justify-content-center poppins-bold">Yuccabe</div>
                 <ScrollSections refs={refs}/>
             </div>
