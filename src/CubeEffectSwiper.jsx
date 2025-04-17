@@ -55,7 +55,7 @@ const CubeEffectSwiper = ({scrollToSection}) => {
             duration: 10,
             delay: 1,
             onComplete: function () {
-                document.querySelector(".textsdsdd").style.top = "47%";
+                document.querySelector(".textsdsdd").style.top = "73.6%";
                 document.querySelector(".textsdsdd").style.position = "absolute";
             },
         });
