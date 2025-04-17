@@ -10,25 +10,25 @@ export default function ScrollSections({refs}) {
   const panelsRef = useRef([]);
   const navsRef = useRef([]);
   
-  // useEffect(() => {
+  useEffect(() => {
       
-  //   const panels = panelsRef.current;
-  //   const navs = navsRef.current;
-  //   panels.forEach((panel, i) => {
-  //     let trigger = ScrollTrigger.create({
-  //       trigger: panel,
-  //       start: "top top",
-  //       scrub:true,
-  //       pin: true,
-  //       pinSpacing: true,
-  //     });
+    const panels = panelsRef.current;
+    const navs = navsRef.current;
+    panels.forEach((panel, i) => {
+      let trigger = ScrollTrigger.create({
+        trigger: panel,
+        start: "top top",
+        scrub:true,
+        pin: true,
+        pinSpacing: true,
+      });
 
-  //   });
+    });
 
-  //   return () => {
-  //     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-  //   };
-  // }, []);
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
   const styles = {
     slide: {
         width: "100%",
