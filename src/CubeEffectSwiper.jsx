@@ -44,7 +44,6 @@ const CubeEffectSwiper = ({scrollToSection}) => {
                 start: "top top",     // When the top of `.start-class` hits the center of the viewport/ Element that defines the end point
                 end: "bottom bottom",    // When the bottom of `.end-class` hits the center of the viewport
                 scrub: true,
-                markers:true,
             }
         });
 
