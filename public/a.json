@@ -1,0 +1,35 @@
+[
+    {
+        "cat":[
+            {
+                "Entry_ID":"",
+                "Category_ID":"",
+                "Category_Name":""
+            }
+        ],
+        "product":[
+            {
+                "Entry_ID": "1",
+                "Product_ID": "P001",
+                "Category_ID": "C001",
+                "Product_Name": "Product A",
+                "Product_Subtitle": "Cool stuff",
+                "Product_Description": "This is a cool product.",
+                "Sizes_Image_Link": "https://example.com/size.jpg",
+                "Images": [
+                  {
+                    "Entry_ID": "101",
+                    "Image_ID": "IMG001",
+                    "Image_Link": "https://example.com/img1.jpg"
+                  },
+                  {
+                    "Entry_ID": "102",
+                    "Image_ID": "IMG002",
+                    "Image_Link": "https://example.com/img2.jpg"
+                  }
+                ]
+            }
+            ...
+        ]
+    }
+]

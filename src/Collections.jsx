@@ -6,10 +6,30 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import "./StackedSections.css"; // Make sure this file contains your CSS
 import AnimatedTypingText from "./AnimatedTypingText";
+gsap.registerPlugin(ScrollTrigger);
+
+const Image = ({ imageData }) => {
+  return (
+    <>
+      {
+        imageData.map((d) => (
+          <img
+            key={d.Entry_ID + "s"}
+            src={d.Image_Link}
+            alt="Man adjusting necklace"
+            className={`clickable ${d.Entry_ID == 1 ? 'active' : ''}`}
+          />
+        ))
+      }
+    </>
+    
+  )
+}
 const Collections = () => {
-  gsap.registerPlugin(ScrollTrigger);
+  
   const [show, setShow] = useState(false);
   const [sections, setSections] = useState([]);
+  const [FilterData, setFilterData] = useState([]);
   const [loading, setLoading] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -94,9 +114,8 @@ const Collections = () => {
       if (initialActiveImage) centerActiveImage(initialActiveImage);
     });
   
-    window.addEventListener("resize", () => {
-      ScrollTrigger.refresh();
-    });
+    const handleResize = () => ScrollTrigger.refresh();
+    window.addEventListener("resize", handleResize);
   
     // GSAP timelines
     const tl1 = gsap.timeline({
@@ -178,10 +197,11 @@ const Collections = () => {
           const distanceFromDocumentTop = div.offsetTop + 100;
           window.scrollBy(0, distanceFromDocumentTop);
         }
-      }, 1000);
+      }, 600);
     }
     // Cleanup
     return () => {
+      window.removeEventListener("resize", handleResize);
       imageSections.forEach(section => {
         const clickableImages = section.querySelectorAll('.clickable');
         clickableImages.forEach(img => {
@@ -195,16 +215,16 @@ const Collections = () => {
     
   }, [loading]);
   useEffect(() => {
-    fetch('https://yuccabeplanters.chaak.in/api/collection.php')
-      .then((res) => res.json())
-      .then((result) => {
-        setSections(result);
-        setLoading(true);
-      }).catch((err) => {
-        setLoading(false);
-        console.error('API Error:', err);
-        alert('Failed to load collections. Please try again later.');
-      });
+    fetch('https://yuccabeplanters.chaak.in/api/collection.php').then((res) => res.json())
+    .then((result) => {
+      setSections(JSON.parse(result[0]['json_result'])[0]['product']);
+      setFilterData(JSON.parse(result[0]['json_result'])[0]['cat']);
+      setLoading(true);
+    }).catch((err) => {
+      setLoading(false);
+      console.error('API Error:', err);
+      alert('Failed to load collections. Please try again later.');
+    });
   }, []);
  
   
@@ -213,10 +233,9 @@ const Collections = () => {
   }else{
     lenis.start()
   }
-  
   return (
     <>
-      {/* animation: marquee 20s linear infinite; */}
+    
       <style>
         {`
           body {
@@ -361,42 +380,15 @@ const Collections = () => {
                       <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
                     </div> All
                   </button>
-                  <button className="btn btn_style" data-filter="cat1">
-                    <div className="btn_icon">
-                      <img src="./svg/icon2.svg" className="w-100 btn_icon_1" />
-                      <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
-                    </div> Geometrical
-                  </button>
-                  <button className="btn btn_style" data-filter="cat2">
-                    <div className="btn_icon">
-                      <img src="./svg/icon4.svg" className="w-100 btn_icon_1" />
-                      <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
-                    </div> Geometrical
-                  </button>
-                  <button className="btn btn_style" data-filter="cat3">
-                    <div className="btn_icon">
-                      <img src="./svg/icon2.svg" className="w-100 btn_icon_1" />
-                      <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
-                    </div> Geometrical
-                  </button>
-                  <button className="btn btn_style" data-filter="cat4">
-                    <div className="btn_icon">
-                      <img src="./svg/icon2.svg" className="w-100 btn_icon_1" />
-                      <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
-                    </div> Geometrical
-                  </button>
-                  <button className="btn btn_style" data-filter="cat5">
-                    <div className="btn_icon">
-                      <img src="./svg/icon4.svg" className="w-100 btn_icon_1" />
-                      <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
-                    </div> Geometrical
-                  </button>
-                  <button className="btn btn_style" data-filter="cat6">
-                    <div className="btn_icon">
-                      <img src="./svg/icon2.svg" className="w-100 btn_icon_1" />
-                      <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
-                    </div> Geometrical
-                  </button>
+                  {FilterData.map((data) => (
+                    <button key={data.Category_ID} className="btn btn_style" data-filter={data.Category_ID}>
+                      <div className="btn_icon">
+                        <img src="./svg/icon2.svg" className="w-100 btn_icon_1" />
+                        <img src="./svg/icon-1.svg" className="w-100 btn_icon_2" />
+                      </div> 
+                      {data.Category_Name}
+                    </button>
+                  ))}
                 </div>
               </div>
             </div>
@@ -447,7 +439,7 @@ const Collections = () => {
             </div>
             
           </div>
-          {sections.map(({ Entry_ID, Product_Name, Product_Subtitle, Product_Description, Sizes_Image_Link, Category_ID }) => (
+          {sections.map(({ Entry_ID, Product_Name, Product_Subtitle, Product_Description, Sizes_Image_Link, Category_ID, Images }) => (
             <div className={"panel p-0 panel"+Entry_ID} key={Entry_ID} data-category={Category_ID}>
               <div className="container-fluid">
                 <div className="row px-1">
@@ -469,21 +461,15 @@ const Collections = () => {
                         </div>
                       </div>
                       <div className="panel-image-div col-7 overflow-hidden">
-                        <div className="image-section" data-section={Entry_ID}>
-                          <div className="row h-100 no-gaps  justify-content-center w-100">
+                        <div className="image-section" >
+                          <div className="row h-100 no-gaps justify-content-center w-100">
                             <div className="col-md-3 left-images">
                               <div className="slider">
-                                <img src="./img/30.jpg" alt="Man adjusting necklace" className="clickable active" />
-                                <img src="./img/29.jpg" alt="Woman with braids" className="clickable" />
-                                <img src="./img/28.jpg" alt="Model in embellished dress" className="clickable" />
-                                <img src="./img/30.jpg" alt="Woman in jacket" className="clickable" />
-                                <img src="./img/29.jpg" alt="Man in suit" className="clickable" />
-                                <img src="./img/28.jpg" alt="Woman in scarf" className="clickable" />
-                                <img src="./img/30.jpg" alt="Man in hat" className="clickable" />
+                                <Image key={Entry_ID} imageData={Images} />
                               </div>
                             </div>
                             <div className="col-md-8 right-image">
-                              <img className="main-image" src="./img/30.jpg" alt="Main Image" />
+                              <img className="main-image" src={Images[0]['Image_Link']} alt="Main Image" />
                             </div>
                           </div>
                         </div>
