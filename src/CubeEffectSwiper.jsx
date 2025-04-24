@@ -144,7 +144,7 @@ const CubeEffectSwiper = ({scrollToSection}) => {
                             <div className='text-white tagline'>
                                 <span className="poppins-medium">We collaborate with ambitious companies and aesthetes.</span>
                             </div>
-                            <div className='text-white tagline-1'>
+                            <div className='text-white tagline'>
                                 <span className="poppins-medium">Are you one?</span>
                             </div>
                             <div className='text-white py-2 lastline'>
@@ -158,30 +158,40 @@ const CubeEffectSwiper = ({scrollToSection}) => {
                                 <div className='px-5 poppins-medium' style={{textAlign:"left"}}>
                                     <div className="form-floatings mt-3 mb-3 form-group">
                                         <label for="your-name" className="form-label">Your name<span>*</span></label>
-                                        <input type="text" className="form-control" name="your-name" id="your-name" placeholder='Your name' />
+                                        <input type="text" className="form-control" name="your-name" id="your-name" placeholder='Name you’d like us to remember.' required/>
                                     </div>
                                     <div className="form-floatings mt-3 mb-3 form-group">
                                         <label for="email-address" className="form-label">Email Address<span>*</span></label>
-                                        <input type="text" className="form-control" name="email-address" id="email-address" placeholder='Email Addresse' />
+                                        <input type="text" className="form-control" name="email-address" id="email-address" placeholder='We promise — no spam, just style.' required/>
                                     </div>
                                     <div className="form-floatings mt-3 mb-3 form-group">
                                         <label for="contact-number" className="form-label">Contact Number<span>*</span></label>
-                                        <input type="text" className="form-control" name="contact-number" id="contact-number" placeholder='Contact number' />
+                                        <input type="text" className="form-control" name="contact-number" id="contact-number" placeholder='Prefer a call? Share your number.' required/>
                                     </div>
                                     <div className="form-floatings mt-3 mb-3 form-group">
                                         <label for="company" className="form-label">Company<span>*</span></label>
-                                        <input type="text" className="form-control" name="company" id="company" placeholder='Company' />
+                                        <input type="text" className="form-control" name="company" id="company" placeholder='Tell us where creativity is brewing.' required/>
                                     </div>
                                     <div className="form-floatings mt-3 mb-3 form-group">
                                         <label for="message" className="form-label">Message<span>*</span></label>
-                                        <input type="text" className="form-control" name="message" id="message" placeholder='Message' />
+                                        <input type="text" className="form-control" name="message" id="message" placeholder='Your thoughts, ideas, or questions...' required/>
                                     </div>
                                     <div>
-                                        <button className='btn btn-primary' style={{ borderRadius: '2px', paddingRight: '60px' }}> Submit</button>
+                                        <button className='btn btn-white' style={{ borderRadius: '30px', padding: '10px 30px', fontSize:14 }}> Send your Message</button>
                                     </div>
                                 </div>
                             </form>
-
+                            <style>
+                                {`
+                                    .btn-white {
+                                        background-color:#fff;
+                                    }
+                                    .btn-white:hover{
+                                        background-color:blue!important;
+                                        color:#fff!important;
+                                    }
+                                `}
+                            </style>
 
                         </div>
                         <Footer />

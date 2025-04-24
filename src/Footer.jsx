@@ -18,8 +18,6 @@ export default function Footer() {
                                     <a className="Link_default__VBYZf" href="#">Home</a>
                                     <a className="Link_default__VBYZf" href="#">Home</a>
                                     <a className="Link_default__VBYZf" href="#">Home</a>
-                                    <a className="Link_default__VBYZf" href="#">Home</a>
-                                    <a className="Link_default__VBYZf" href="#">Home</a>
                                 </div>
                             </div>
                         </div>
@@ -32,8 +30,6 @@ export default function Footer() {
                                     <a className="Link_default__VBYZf" href="#">Home</a>
                                     <a className="Link_default__VBYZf" href="#">Home</a>
                                     <a className="Link_default__VBYZf" href="#">Home</a>
-                                    <a className="Link_default__VBYZf" href="#">Home</a>
-                                    <a className="Link_default__VBYZf" href="#">Home</a>
                                 </div>
                             </div>
                         </div>
@@ -43,8 +39,6 @@ export default function Footer() {
                                     <h1 style={{fontSize: "25px"}}>More</h1>
                                 </div>
                                 <div className='d-flex flex-column align-items-center gap-1' style={{textAlign: 'left'}}>
-                                    <a className="Link_default__VBYZf" href="#">Home</a>
-                                    <a className="Link_default__VBYZf" href="#">Home</a>
                                     <a className="Link_default__VBYZf" href="#">Home</a>
                                     <a className="Link_default__VBYZf" href="#">Home</a>
                                     <a className="Link_default__VBYZf" href="#">Home</a>
