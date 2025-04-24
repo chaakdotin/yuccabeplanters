@@ -3,17 +3,18 @@
     display: flex;
     height: 80vh;
     overflow: hidden;
+    gap:22px;
   }
   
   /* Style for each box with dotted border and rounded corners */
   .box {
-    border: 2px dotted black;
+    /* border: 2px dotted black; */
     border-radius: 15px;
-    margin: 10px;
+    /* margin: 10px 7px; */
     position: relative;
     overflow: hidden;
     transition: flex 0.5s ease;
-    flex: .5; /* Default: 25% when there is an active box elsewhere */
+    flex: 1; /* Default: 25% when there is an active box elsewhere */
   }
   
   /* The active box expands to 50% (flex: 2) */
@@ -22,7 +23,7 @@
   }
   
   /* Ensure the image fills the box while maintaining its aspect ratio */
-  .box img {
+  .box video {
     width: 100%;
     height: 100%;
     object-fit: cover;

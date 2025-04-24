@@ -7,7 +7,10 @@ import ResponsiveCard from './ResponsiveCard'
 import ScrollingTextSection from './ScrollingTextSection'
 import VideoReelsSection from './VideoReelsSection'
 import './Explore.css'
-import { a } from "framer-motion/client";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import { FreeMode, Autoplay } from 'swiper/modules';
 const cards = [
   { text: "About", icon:"🪴", desc:"Rooted in vision, grown with craftsmanship—this is the Yuccabe story.", link:"/about", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/65e172641da90916052bafbd_SCI_FI.webp" },
   { text: "Services",icon:"🛠️", desc:"From design consultation to custom planters, we shape green experiences.", link:"/services", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/667a25f57c4d9fe714639b49_THE_CONVERT_ALT_3.webp" },
@@ -23,20 +26,34 @@ const Work = () => {
     <>
       <div className="p-4 pt-5 update-card">
         <div style={{ width:"100%", gap:20 }} className="d-flex justify-content-center align-items-center px-2">
+          <Swiper
+            spaceBetween={20}
+            slidesPerView={4}
+            freeMode={true}
+            loop={true} // <-- Enables infinite scroll
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            modules={[FreeMode, Autoplay]}
+            className="mySwiper"
+          >
           {cards.map((card, index) => (
-            // <Card  text={card.text} img={card.img} link={card.link}/>
-            <div className="card-0 p-4" key={index}>
-              <div className='text-center'>
-                  {/* <div className="debdj mx-auto"> */}
-                    <div className="fs-2">{card.icon}</div>
-                    <div className="cell_h4 mx-auto">
-                      <h4 className="h-h7 is-big" style={{fontSize:40}}>  {card.text}</h4>
-                    </div>
-                    <div className="pt-3 body_17" style={{height:70}}>{card.desc} </div>
-                  {/* </div> */}
-              </div>
-            </div>
+            <SwiperSlide  key={index}>
+             <a href={card.link} className="text-dark">
+              <div className="card-0 p-4">
+                  <div className='text-center'>
+                      <div className="fs-2">{card.icon}</div>
+                      <div className="cell_h4 mx-auto">
+                        <h4 className="h-h7 is-big" style={{fontSize:40}}>  {card.text}</h4>
+                      </div>
+                      <div className="pt-3 body_17" style={{height:70}}>{card.desc} </div>
+                  </div>
+                </div>
+             </a>
+            </SwiperSlide>
           ))}
+          </Swiper>
         </div>
         <ResponsiveImageHoverEffect />
         <ResponsiveCard />

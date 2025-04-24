@@ -1,22 +1,155 @@
-import { div } from 'framer-motion/client'
-import React from 'react'
 
+import React, { useState, useEffect, useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import { FreeMode, Autoplay } from 'swiper/modules';
 export default function ResponsiveCard() {
+    const headings = [
+        "Craft Detail", 
+        "Durability Fact", 
+        "Material Insight",
+        "Sustainability Fact", 
+        "Design Insight",
+        "Style Fact",
+        "Shape Insight", 
+        "Trust Factor", 
+        "Custom Fact", 
+        "Legacy Note"
+      ];
+      const lines = [
+        "Every planter is uniquely handcrafted, ensuring no two pieces are exactly alike.",
+        "Designed to endure all seasons—ideal for both indoor elegance and outdoor toughness.", 
+        "High-grade FRP and ceramics make each planter strong yet easy to handle.",
+        "Manufactured with materials and methods that reduce environmental impact.", 
+        "Built to enhance both visual appeal and plant health through intelligent design.",
+        "Choose from matte, glossy, textured, or natural stone finishes.",
+        "From sculptural centerpieces to sleek corner fits, there’s a shape for all aesthetics.", 
+        "A favorite among design professionals for residential, retail, and hospitality spaces.", 
+        "Get planters tailored to your brand, theme, or project dimensions.", 
+        "Years of expertise meet modern trends to create timeless planter solutions."
+      ];
+    
+      const [heading, setHeading] = useState('');
+      const [line, setLine] = useState('');
+      const [fading, setFading] = useState(false);
+      const idxRef = useRef(0);
+    
+      useEffect(() => {
+        let cancelled = false;
+        const typeSpeed = 100;
+        const pauseAfter = 2000;
+        const fadeDuration = 1000;
+    
+        const typeText = (text, setter) =>
+          new Promise(async resolve => {
+            let current = '';
+            for (let i = 0; i < text.length; i++) {
+              if (cancelled) return;
+              current += text[i];
+              setter(current);
+              await new Promise(r => setTimeout(r, typeSpeed));
+            }
+            resolve();
+          });
+    
+        const run = async () => {
+          while (!cancelled) {
+            const i = idxRef.current;
+            await typeText(headings[i], setHeading);
+            await typeText(lines[i], setLine);
+    
+            // pause before fade
+            await new Promise(r => setTimeout(r, pauseAfter));
+    
+            // trigger fade
+            setFading(true);
+            await new Promise(r => setTimeout(r, fadeDuration));
+    
+            // reset
+            if (cancelled) break;
+            setHeading('');
+            setLine('');
+            setFading(false);
+            idxRef.current = (i + 1) % headings.length;
+          }
+        };
+    
+        run();
+        return () => { cancelled = true; };
+      }, []);
+    
     return (
         <div className="row p-2">
+            <style>
+                {
+                    `
+                        .typing::after {
+                            content: '|';
+                            animation: blink 0.7s infinite;
+                        }
+                        @keyframes blink {
+                            50% { opacity: 0; }
+                        }
+
+                        /* fade out before clearing */
+                        .fade-out {
+                            animation: fadeOut 1s forwards;
+                        }
+                        @keyframes fadeOut {
+                            to { opacity: 0; }
+                        }
+                    `
+                }
+            </style>
             <div className="col-lg-5 ">
                 <div className="row">
                     <div className="col-lg-6">
-                        <div className="card-300">
-                            <img src="https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/67c51d401b2cdc6c975d3092_Sonatine_Thumbnail_03-p-2000.webp" alt="" className='w-100' />
-                        </div>
+                       
+                            <Swiper
+                                spaceBetween={20}
+                                slidesPerView={1}
+                                freeMode={true}
+                                loop={true} // <-- Enables infinite scroll
+                                autoplay={{
+                                    delay: 1500,       // 1.5 seconds delay between scrolls
+                                    disableOnInteraction: true,
+                                }}
+                                modules={[FreeMode, Autoplay]}
+                                className="mySwiper"
+                            >
+                
+                                <SwiperSlide>
+                                    <div className="card-300">
+                                        <img src="/img/Photu4/1.jpg" alt="" className='w-100' />
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className="card-300">
+                                        <img src="/img/Photu4/2.jpg" alt="" className='w-100' />
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className="card-300">
+                                        <img src="/img/Photu4/3.jpg" alt="" className='w-100' />
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className="card-300">
+                                        <img src="/img/Photu4/4.jpg" alt="" className='w-100' />
+                                    </div>
+                                </SwiperSlide>
+                            </Swiper>
+                       
                     </div>
                     <div className="col-lg-6">
                         <div className="card-300">
                             <div className='text-center'>
                                 <div className="cell_eyebrow mx-auto"><div className="eyebrow_14-4"><strong>FEATURED</strong></div></div>
-                                <div className="cell_h4 mx-auto"><h4 className="h-h4 is-big">OUT<br />Now</h4></div>
-                                <div className="cell_text-2 mx-auto"><div className="body_17">'Falling Out Of Time | True'<br /><br />Available on all streaming platforms. </div></div>
+                                <div className="cell_h4 mx-auto"><h4  className={`typing-heading h-h4 is-big ${fading ? 'fade' : ''}`}> {heading}
+                                {heading && <span className="cursor" />}</h4></div>
+                                <div className="cell_text-2 mx-auto"><div className={`typing-line body_17 ${fading ? 'fade' : ''}`} >{line}
+                                {line && <span className="cursor" />}</div></div>
                             </div>
                         </div>
                     </div>
@@ -24,7 +157,7 @@ export default function ResponsiveCard() {
                 <div className="row mt-3">
                     <div className="col-lg-12">
                         <div className="card-300">
-                            <img src="https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/67c507e1ec9198f05a211112_MilasMike_Pressshots_DeclanBlackallPhotography280124_0005%20(2).webp" alt="" className='w-100' />
+                            <video src="/videos/videoplayback.mp4" muted autoPlay loop className='w-10'></video>
                         </div>
                     </div>
                 </div>
@@ -41,7 +174,7 @@ export default function ResponsiveCard() {
                                     <div className="slant-7">the</div>
                                 </div>
                                 <div className="cell_des">
-                                    <h2 className="h-h2">Sound<br/></h2>
+                                    <h2 className="h-h2">Journey<br/></h2>
                                 </div>
                                 <div className="cell_slant is-right">
                                     <div className="slant-7">of</div>
@@ -49,11 +182,13 @@ export default function ResponsiveCard() {
                             </div>
                             <div className="cell_desc-row">
                                 <div className="cell_desc-row">
-                                    <h2 className="h-h2">Sonar Music</h2>
+                                    <h2 className="h-h2">Every Planter</h2>
                                 </div>
                             </div>
                         </div>
-                        <div className="cell_desc-text-2"><h6 className="h-h6">Sonar Music is a renowned music and sound studio based in Sydney, Australia that houses the nation's most distinguished composers and sound designers. A haven of sonic innovation, Sonar has become synonymous with premium original composition and sound design across Film, TV, Advertising and new media. Our approach is rooted in a deep understanding of the cinematic landscape, allowing us to seamlessly integrate music and sound to enhance the storytelling experience, while bringing a wealth of technical brilliance and artistic finesse to every project.</h6></div>
+                        <div className="cell_desc-text-2">
+                            <h6 className="h-h6">At Yuccabe, every planter is more than a product—it’s a statement of design, purpose, and nature working in harmony. The Explore page is your window into this world—where timeless craftsmanship meets modern aesthetics. Discover our finest collections, see how our planters transform real spaces, and experience the artistry, innovation, and intention behind every piece. This is where green living begins, beautifully.</h6>
+                        </div>
                     </div>
                 </div>
             </div>
