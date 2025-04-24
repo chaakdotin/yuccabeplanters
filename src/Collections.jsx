@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Image = ({ imageData }) => {
   return (
     <>
+    
       {imageData && imageData.map((d) => (
         <img
           key={d.Image_ID + "s"}
