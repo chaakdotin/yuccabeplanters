@@ -16,9 +16,7 @@ const CubeEffectSwiper = ({scrollToSection}) => {
     var i = 0;
     // const textEl = document.getElementById('.stagger1 h1');
 
-    useEffect(() => {
-     
-        
+    useEffect(() => {   
         // const tl1 = gsap.timeline({
         //     scrollTrigger: {
         //         trigger: ".stagger", // Element that triggers the animation
