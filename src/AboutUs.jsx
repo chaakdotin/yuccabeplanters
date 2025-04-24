@@ -147,14 +147,14 @@ export default function AboutUs() {
                                 <div className="ab-about-left-thumb">
                                     <img
                                         data-speed=".7"
-                                        src="https://algos.chaak.in/cdn/shop/files/fbfs.jpg?v=3328868266841230642"
+                                        src="/img/photu2.jpg"
                                         alt=""
                                         style={{
                                             translate: "none",
                                             rotate: "none",
                                             scale: "none",
                                             transform: "translate(0px, -134.551px)",
-                                            willChange: "transform"
+                                            willChange: "transform",
                                         }}
                                         data-lag={0}
                                     />
@@ -165,7 +165,7 @@ export default function AboutUs() {
                                     <img
                                         data-speed="1.1"
                                         className="inner-img z-index-5"
-                                        src="https://algos.chaak.in/cdn/shop/files/1_f917da3c-51c6-40e8-a04c-a0884211f813.jpg?v=693819276692712844"
+                                        src="/img/photu4.jpg"
                                         alt=""
                                         style={{
                                             translate: "none",
@@ -178,7 +178,7 @@ export default function AboutUs() {
                                     />
                                     <img
                                         data-speed="0.9"
-                                        src="https://algos.chaak.in/cdn/shop/files/2_133c2463-10b1-4a51-b4fd-bf893915f08c.jpg?v=1442111548030661666"
+                                        src="/img/Photu3.jpg"
                                         alt=""
                                         style={{
                                             translate: "none",
