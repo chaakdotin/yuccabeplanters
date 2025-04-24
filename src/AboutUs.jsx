@@ -7,8 +7,8 @@ export default function AboutUs() {
             <style>{css}</style>
             <div
                 className="ab-inner-hero-area ab-inner-hero-bg position-relative"
-                data-background="https://algos.chaak.in/cdn/shop/files/111.jpg?v=12177585195695976496"
-                style={{ backgroundImage: 'url("https://algos.chaak.in/cdn/shop/files/111.jpg?v=12177585195695976496")' }} >
+                data-background="/img/about1.jpg"
+                style={{ backgroundImage: 'url("/img/about1.jpg")' }} >
                 <div className="breadcurmb-site d-none">
                     <h6>About Us</h6>
                 </div>
@@ -55,7 +55,7 @@ export default function AboutUs() {
                                 }}
                                 data-speed={1} >
                                 <span className="ab-inner-hero-subtitle">
-                                    Digital <br /> creative agency
+                                    Premium <br />Planter Craftsmanship
                                 </span>
                                 <h1
                                     className="ab-inner-hero-title tp-char-animation"
@@ -88,7 +88,7 @@ export default function AboutUs() {
                                                 visibility: "inherit",
                                                 transform: "translate(0px, 0px)"
                                             }} >
-                                            ALGOS
+                                            Yuccabe
                                         </div>
                                     </div>
                                     <br />
@@ -108,7 +108,7 @@ export default function AboutUs() {
                                         </div>
                                     </div>
                                 </h1>
-                                <p>Born from the Streets. Built to Stand Out.</p>
+                                <p>Planters That Breathe Life Into Spaces.</p>
                             </div>
                         </div>
                     </div>
@@ -221,10 +221,7 @@ export default function AboutUs() {
                                         opacity: 1,
                                         transform: "translate(0px, 0px)"
                                     }} >
-                                    ALGOS isn’t just a brand — it’s a movement stitched together by
-                                    hustle, culture, and individuality. Founded in the heart of
-                                    Ludhiana, ALGOS was born out of a love for street fashion and
-                                    self-expression.{" "}
+                                    We’re Yuccabe.  We don’t just <br/> design planters—we craft experiences that grow with you. Rooted in a passion for form and functionality, Yuccabe Planters brings together timeless craftsmanship, sustainable materials, and design that elevates every space it touches.
                                 </p>
                             </div>
                         </div>

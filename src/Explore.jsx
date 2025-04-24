@@ -12,7 +12,7 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import { FreeMode, Autoplay } from 'swiper/modules';
 const cards = [
-  { text: "About", icon:"🪴", desc:"Rooted in vision, grown with craftsmanship—this is the Yuccabe story.", link:"/about", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/65e172641da90916052bafbd_SCI_FI.webp" },
+  { text: "About", icon:"🪴", desc:"Rooted in vision, grown with craftsmanship—this is the Yuccabe story.", link:"/about-us", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/65e172641da90916052bafbd_SCI_FI.webp" },
   { text: "Services",icon:"🛠️", desc:"From design consultation to custom planters, we shape green experiences.", link:"/services", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/667a25f57c4d9fe714639b49_THE_CONVERT_ALT_3.webp" },
   { text: "Projects", icon:"🏗️", desc:"See how Yuccabe transforms spaces—one planter at a time.", link:"/projects", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/65e172641da90916052bafbd_SCI_FI.webp" },
   { text: "Collections", icon:"🌿", desc:"Explore curated pieces that merge form, function, and finesse.", link:"/collections", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/667a25f57c4d9fe714639b49_THE_CONVERT_ALT_3.webp" },
