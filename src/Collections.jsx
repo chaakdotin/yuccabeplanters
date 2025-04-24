@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import jsdhsjd from "./StackedSections.css?raw";
 import AnimatedTypingText from "./AnimatedTypingText";
+import Footer from "./Footer"
 gsap.registerPlugin(ScrollTrigger);
 
 const Image = ({ imageData }) => {
@@ -484,6 +485,8 @@ const Collections = () => {
           ))}
         </div>
       </div>
+      <style>{`.footer-bg-color { background-color: #d9d4c5!important; margin-bottom:20px; }`}</style>
+      <Footer />
     </>
   );
 };

@@ -11,6 +11,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import { FreeMode, Autoplay } from 'swiper/modules';
+import Footer from "./Footer";
 const cards = [
   { text: "About", icon:"🪴", desc:"Rooted in vision, grown with craftsmanship—this is the Yuccabe story.", link:"/about-us", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/65e172641da90916052bafbd_SCI_FI.webp" },
   { text: "Services",icon:"🛠️", desc:"From design consultation to custom planters, we shape green experiences.", link:"/services", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/667a25f57c4d9fe714639b49_THE_CONVERT_ALT_3.webp" },
@@ -24,6 +25,7 @@ const Work = () => {
     
   return (
     <>
+    
       <div className="p-4 pt-5 update-card">
         <div style={{ width:"100%", gap:20 }} className="d-flex justify-content-center align-items-center px-2">
           <Swiper
@@ -60,6 +62,8 @@ const Work = () => {
         <ScrollingTextSection />
         <VideoReelsSection />
       </div>
+      <style>{`.footer-bg-color { background-color: #d9d4c5!important; margin-bottom:20px; }`}</style>
+      <Footer />
     </>
   );
 };

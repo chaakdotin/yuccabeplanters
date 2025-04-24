@@ -1,6 +1,7 @@
 import React from 'react'
 import css from './about-us.css?raw'
 import 'swiper/css';
+import Footer from './Footer';
 export default function AboutUs() {
     return (
         <>
@@ -962,6 +963,8 @@ export default function AboutUs() {
                     </div>
                 </div>
             </div>
+            <style>{`.footer-bg-color { background-color: #d9d4c5!important; margin-bottom:20px; }`}</style>
+                  <Footer />
         </>
 
     )

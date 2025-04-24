@@ -22,3 +22,40 @@ h1, h2, h3, h4, span, input{
     font-family: "Poppins", sans-serif;
     font-style: normal;
 }
+@font-face {
+    font-family: 'MarkPro';
+    src: url('/fonts/MarkPro-Medium.b3d53906.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'MarkPro-light';
+    src: url('/fonts/MarkPro-Medium.b3d53906.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MarkPro';
+    src: url('/fonts/MarkPro-Bold.405f2505.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'MarkPro';
+    src: url('/fonts/MarkPro-Heavy.192477bd.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MarkPro';
+    src: url('/fonts/MarkPro-Black.7207860d.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
