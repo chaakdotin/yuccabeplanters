@@ -10,6 +10,7 @@ const Collections = lazy(() => import('./Collections'));
 const Explore = lazy(() => import('./Explore'));
 const Services = lazy(() => import('./Services'));
 const ContactUs = lazy(() => import('./Contact-us'));
+const AboutUs = lazy(() => import('./AboutUs'));
 import PageLoadAnimation from './PageLoadAnimation';
 import Footer from './Footer';
 const root = document.getElementById("root");
@@ -26,6 +27,7 @@ const Data = () => {
               <Route path="/explore" element={<Explore />} />
               <Route path="/services" element={<Services />} />
               <Route path="/collections" element={<Collections />} />
+              <Route path="/about-us" element={<AboutUs />} />
               <Route path="/contact" element={<ContactUs />} />
             </Route>
           </Routes>
