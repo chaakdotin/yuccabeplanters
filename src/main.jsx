@@ -12,7 +12,6 @@ const Services = lazy(() => import('./Services'));
 const ContactUs = lazy(() => import('./Contact-us'));
 const AboutUs = lazy(() => import('./AboutUs'));
 import PageLoadAnimation from './PageLoadAnimation';
-import Footer from './Footer';
 const root = document.getElementById("root");
 
 const Data = () => {
@@ -31,7 +30,7 @@ const Data = () => {
               <Route path="/contact" element={<ContactUs />} />
             </Route>
           </Routes>
-          <Footer />
+          
       </BrowserRouter>
     </PageLoadAnimation>
   </>

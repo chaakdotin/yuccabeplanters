@@ -3,7 +3,7 @@ import './footer.css'
 export default function Footer() {
     return (
         <>
-            <div className='container justify-content-start my-4' style={{ backgroundColor: "rgb(222 222 222)", borderRadius: "30px" }}>
+            <div className='container justify-content-start' style={{ backgroundColor: "rgb(222 222 222)", borderRadius: "30px" }}>
                 <div className='row col-12'>
                     <div className='d-flex w-100 p-4'>
                         <div className='col-6 d-flex'>

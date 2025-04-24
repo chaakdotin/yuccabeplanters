@@ -3,6 +3,7 @@ import { gsap, ScrollTrigger, ScrollToPlugin } from "gsap/all";
 import ScrollSections from "./ScrollSections";
 import './new.css';
 import Carousel from './Carousel';
+import Footer from './Footer';
 
 // ..
 import AOS from 'aos';
@@ -131,7 +132,7 @@ const CubeEffectSwiper = ({scrollToSection}) => {
             <div style={{}} className="bg-color contact-us" ref={refs.contact}>
                 <div className="container h-100vh ">
                     <div className='row h-100 align-items-center'>
-                        <div className="col-lg-6 col-md-6 col-sm-12 contact-us-info ">
+                        <div className="col-lg-6 col-md-6 col-sm-12 contact-us-info " style={{textAlign:"left"}}>
                             <div className='py-5'>
                                 <div className='text-white'>
                                     <h1 className="poppins-medium">Have a vision for your space?</h1>
@@ -154,26 +155,26 @@ const CubeEffectSwiper = ({scrollToSection}) => {
                         </div>
                         <div className="col-lg-6 col-md-6 col-sm-12 px-5 form">
                             <form action="https://yuccabeplanters.chaak.in/api/contact.php" method='POST'>
-                                <div className='px-5 poppins-medium'>
-                                    <div className="form-floatings mt-3 mb-3">
+                                <div className='px-5 poppins-medium' style={{textAlign:"left"}}>
+                                    <div className="form-floatings mt-3 mb-3 form-group">
+                                        <label for="your-name" className="form-label">Your name<span>*</span></label>
                                         <input type="text" className="form-control" name="your-name" id="your-name" placeholder='Your name' />
-                                        {/* <label htmlFor="your-name">Your name</label> */}
                                     </div>
-                                    <div className="form-floatings mt-3 mb-3">
-                                        <input type="text" className="form-control" name="email-addresse" id="email-addresse" placeholder='Email Addresse' />
-                                        {/* <label htmlFor="email-addresse">Email Addresse</label> */}
+                                    <div className="form-floatings mt-3 mb-3 form-group">
+                                        <label for="email-address" className="form-label">Email Address<span>*</span></label>
+                                        <input type="text" className="form-control" name="email-address" id="email-address" placeholder='Email Addresse' />
                                     </div>
-                                    <div className="form-floatings mt-3 mb-3">
+                                    <div className="form-floatings mt-3 mb-3 form-group">
+                                        <label for="contact-number" className="form-label">Contact Number<span>*</span></label>
                                         <input type="text" className="form-control" name="contact-number" id="contact-number" placeholder='Contact number' />
-                                        {/* <label htmlFor="contact-number">Contact number</label> */}
                                     </div>
-                                    <div className="form-floatings mt-3 mb-3">
+                                    <div className="form-floatings mt-3 mb-3 form-group">
+                                        <label for="company" className="form-label">Company<span>*</span></label>
                                         <input type="text" className="form-control" name="company" id="company" placeholder='Company' />
-                                        {/* <label htmlFor="company">Company</label> */}
                                     </div>
-                                    <div className="form-floatings mt-3 mb-3">
+                                    <div className="form-floatings mt-3 mb-3 form-group">
+                                        <label for="message" className="form-label">Message<span>*</span></label>
                                         <input type="text" className="form-control" name="message" id="message" placeholder='Message' />
-                                        {/* <label htmlFor="message">Message</label> */}
                                     </div>
                                     <div>
                                         <button className='btn btn-primary' style={{ borderRadius: '2px', paddingRight: '60px' }}> Submit</button>
@@ -183,8 +184,11 @@ const CubeEffectSwiper = ({scrollToSection}) => {
 
 
                         </div>
+                        <Footer />
                     </div>
+                    
                 </div>
+                
             </div>
         </div>
     );
