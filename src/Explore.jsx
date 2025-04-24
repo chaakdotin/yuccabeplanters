@@ -24,7 +24,12 @@ const Work = () => {
       <div className="p-4 pt-5 update-card">
         <div style={{ width:"100%",gap: '20px' }} className="d-flex justify-content-center align-items-center">
             {cards.map((card, index) => (
-              <Card key={index} text={card.text} img={card.img} link={card.link}/>
+              // <Card  text={card.text} img={card.img} link={card.link}/>
+              <div className="card-0" key={index}>
+                <div className='text-center'>
+                    <div className="mx-auto "><div className="body_17">{card.text}</div></div>
+                </div>
+              </div>
             ))}
         </div>
         <ResponsiveImageHoverEffect />
