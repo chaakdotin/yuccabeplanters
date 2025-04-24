@@ -50,7 +50,7 @@ const Header = () => {
           </Container>
         </Navbar>
       </div>
-      <div className='w-100' style={{height: location.pathname == '/' ? '0px' : location.pathname == '/work' ? '70px' : '0px'}}></div>
+      <div className='w-100' style={{height: location.pathname == '/' ? '0px' : location.pathname == '/work' ? '70px' : '100px'}}></div>
       <div className='position-fixed ' style={{
         width: "50px",
         height: "50px",

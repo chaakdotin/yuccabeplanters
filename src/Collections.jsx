@@ -4,23 +4,21 @@ import lenis  from './LenisWrapper'
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import "./StackedSections.css"; // Make sure this file contains your CSS
+import jsdhsjd from "./StackedSections.css?raw";
 import AnimatedTypingText from "./AnimatedTypingText";
 gsap.registerPlugin(ScrollTrigger);
 
 const Image = ({ imageData }) => {
   return (
     <>
-      {
-        imageData.map((d) => (
-          <img
-            key={d.Entry_ID + "s"}
-            src={d.Image_Link}
-            alt="Man adjusting necklace"
-            className={`clickable ${d.Entry_ID == 1 ? 'active' : ''}`}
-          />
-        ))
-      }
+      {imageData && imageData.map((d) => (
+        <img
+          key={d.Image_ID + "s"}
+          src={d.Image_Link}
+          alt="Man adjusting necklace"
+          className={`clickable ${d.Entry_ID == 1 ? 'active' : ''}`}
+        />
+      ))}
     </>
     
   )
@@ -217,8 +215,8 @@ const Collections = () => {
   useEffect(() => {
     fetch('https://yuccabeplanters.chaak.in/api/collection.php').then((res) => res.json())
     .then((result) => {
-      setSections(JSON.parse(result[0]['json_result'])[0]['product']);
-      setFilterData(JSON.parse(result[0]['json_result'])[0]['cat']);
+      setSections(result[0]['product']);
+      setFilterData(result[0]['cat']);
       setLoading(true);
     }).catch((err) => {
       setLoading(false);
@@ -237,6 +235,7 @@ const Collections = () => {
     <>
     
       <style>
+        {jsdhsjd}
         {`
           body {
             margin: 0;
@@ -452,7 +451,9 @@ const Collections = () => {
                           <span className="pt-3" style={{ color: "#000", fontSize:"20px", fontWeight:"200" }}>{Product_Description}</span>
                         </div>
                         <div className="pt-4 col-12">
-                          <img src={Sizes_Image_Link} alt="" className="w-100"/>
+                          {Sizes_Image_Link ? (
+                            <img src={Sizes_Image_Link} alt="" className="w-100" />
+                          ) : null}
                         </div>
                         <div className="col-12 pt-5">
                           <div className="d-flex justify-content-start">
@@ -469,7 +470,7 @@ const Collections = () => {
                               </div>
                             </div>
                             <div className="col-md-8 right-image">
-                              <img className="main-image" src={Images[0]['Image_Link']} alt="Main Image" />
+                              <img className="main-image" src={Images[0].Image_Link} alt="Main Image" />
                             </div>
                           </div>
                         </div>
