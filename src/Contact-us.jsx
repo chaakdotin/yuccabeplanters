@@ -27,33 +27,35 @@ export default function ContactUs() {
                             Let’s talk!
                         </span>
                     </div>
-                </div>
+                </div>  
                 <div className="col-lg-6 col-md-6 col-sm-12 px-5 form">
-                    <div className='px-5 poppins-medium'>
-                        <div className="form-floatings mt-3 mb-3">
-                            <input type="text" className="form-control" name="" id="your-name" placeholder='Your name' />
-                            {/* <label htmlFor="your-name">Your name</label> */}
+                    <form action="https://yuccabeplanters.chaak.in/api/contact.php" method='POST'>
+                        <div className='px-5 poppins-medium'>
+                            <div className="form-floatings mt-3 mb-3">
+                                <input type="text" className="form-control" name="your-name" id="your-name" placeholder='Your name' />
+                                {/* <label htmlFor="your-name">Your name</label> */}
+                            </div>
+                            <div className="form-floatings mt-3 mb-3">
+                                <input type="text" className="form-control" name="email-addresse" id="email-addresse" placeholder='Email Addresse' />
+                                {/* <label htmlFor="email-addresse">Email Addresse</label> */}
+                            </div>
+                            <div className="form-floatings mt-3 mb-3">
+                                <input type="text" className="form-control" name="contact-number" id="contact-number" placeholder='Contact number' />
+                                {/* <label htmlFor="contact-number">Contact number</label> */}
+                            </div>
+                            <div className="form-floatings mt-3 mb-3">
+                                <input type="text" className="form-control" name="company" id="company" placeholder='Company' />
+                                {/* <label htmlFor="company">Company</label> */}
+                            </div>
+                            <div className="form-floatings mt-3 mb-3">
+                                <input type="text" className="form-control" name="message" id="message" placeholder='Message' />
+                                {/* <label htmlFor="message">Message</label> */}
+                            </div>
+                            <div>
+                                <button className='btn btn-primary' style={{ borderRadius: '2px', paddingRight: '60px' }}> Submit</button>
+                            </div>
                         </div>
-                        <div className="form-floatings mt-3 mb-3">
-                            <input type="text" className="form-control" name="" id="email-addresse" placeholder='Email Addresse' />
-                            {/* <label htmlFor="email-addresse">Email Addresse</label> */}
-                        </div>
-                        <div className="form-floatings mt-3 mb-3">
-                            <input type="text" className="form-control" name="" id="contact-number" placeholder='Contact number' />
-                            {/* <label htmlFor="contact-number">Contact number</label> */}
-                        </div>
-                        <div className="form-floatings mt-3 mb-3">
-                            <input type="text" className="form-control" name="" id="company" placeholder='Company' />
-                            {/* <label htmlFor="company">Company</label> */}
-                        </div>
-                        <div className="form-floatings mt-3 mb-3">
-                            <input type="text" className="form-control" name="" id="message" placeholder='Message' />
-                            {/* <label htmlFor="message">Message</label> */}
-                        </div>
-                        <div>
-                            <button className='btn btn-primary' style={{ borderRadius: '2px', paddingRight: '60px' }}> Submit</button>
-                        </div>
-                    </div>
+                    </form>
 
                 </div>
             </div>
