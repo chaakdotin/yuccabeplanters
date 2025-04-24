@@ -15,6 +15,7 @@
     "framer-motion": "^12.5.0",
     "gsap": "^3.12.7",
     "lenis": "^1.2.3",
+    "motion-utils": "^12.8.3",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.9",
     "react-dom": "^19.0.0",
