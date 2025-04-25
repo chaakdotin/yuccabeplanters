@@ -15,9 +15,9 @@ export default function Footer() {
                                     <h1 style={{fontSize: "25px"}}>Explore</h1>
                                 </div>
                                 <div className='d-flex flex-column align-items-center gap-1' style={{textAlign: 'left'}}>
-                                    <a className="Link_default__VBYZf" href="#">Services</a>
-                                    <a className="Link_default__VBYZf" href="#">Collections</a>
-                                    <a className="Link_default__VBYZf" href="#">Blogs</a>
+                                    <a className="Link_default__VBYZf" href="/services">Services</a>
+                                    <a className="Link_default__VBYZf" href="/collections">Collections</a>
+                                    <a className="Link_default__VBYZf" href="/blogs">Blogs</a>
                                 </div>
                             </div>
                         </div>
@@ -27,7 +27,7 @@ export default function Footer() {
                                     <h1 style={{fontSize: "25px"}}>Company</h1>
                                 </div>
                                 <div className='d-flex flex-column align-items-center gap-1' style={{textAlign: 'left'}}>
-                                    <a className="Link_default__VBYZf" href="#">About Us</a>
+                                    <a className="Link_default__VBYZf" href="/about-us">About Us</a>
                                     <a className="Link_default__VBYZf" href="#">Home</a>
                                     <a className="Link_default__VBYZf" href="#">Home</a>
                                 </div>
@@ -41,7 +41,7 @@ export default function Footer() {
                                 <div className='d-flex flex-column align-items-center gap-1' style={{textAlign: 'left'}}>
                                     <a className="Link_default__VBYZf" href="#">Privacy Policy</a>
                                     <a className="Link_default__VBYZf" href="#">Terms of Use</a>
-                                    <a className="Link_default__VBYZf" href="#">Contact Us</a>
+                                    <a className="Link_default__VBYZf" href="/contact">Contact Us</a>
                                 </div>
                             </div>
                         </div>
