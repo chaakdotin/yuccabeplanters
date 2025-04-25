@@ -1067,8 +1067,6 @@ export default function BlogsDetails() {
                                 )
                             })
                         }
-                        
-                        
                     </div>
                 </div>
             </div>
