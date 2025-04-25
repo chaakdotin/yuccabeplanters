@@ -68,7 +68,8 @@ export default function ContactUs() {
             </div>
             <div className='d-flex justify-content-center pt-2' style={{}}>
                 <p style={{fontSize:'max(1.043vw, 12px)',width:"calc((2.0848vw - 2.777vw*2/48)*22)", color:"#3e3e3e",fontFamily: "PPMori,Noto Sans JP,Noto Sans SC,sans-serif", fontWeight:100, lineHeight:1.2}}>
-                Have an idea, project, or vision? Let’s bring it to life together. We’re always excited to collaborate, create, and build something meaningful. Whether you need a website, a brand revamp, or a killer digital strategy—we’ve got you covered. Drop us a message, and our team will get back to you swiftly. No formalities, just real conversations that lead to real results. Let’s get in touch and make something extraordinary happen.
+                    We’d love to hear from you. Whether you’re an architect, a designer, a brand, or simply someone who loves beautiful spaces—let’s create something timeless together. 
+                    Have a project in mind? Need a custom piece? Or just curious about how our planters can elevate your space? Drop us a message, and we’ll be right there—ready to bring your green vision to life.
                 </p>
             </div>
             </div>

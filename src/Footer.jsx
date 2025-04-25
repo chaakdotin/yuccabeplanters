@@ -12,10 +12,22 @@ export default function Footer() {
                         <div className='col-2'>
                             <div className='d-grid justify-content-start'>
                                 <div className='' style={{textAlign: 'left'}}>
-                                    <h1 style={{fontSize: "25px"}}>More</h1>
+                                    <h1 style={{fontSize: "25px"}}>Explore</h1>
                                 </div>
                                 <div className='d-flex flex-column align-items-center gap-1' style={{textAlign: 'left'}}>
-                                    <a className="Link_default__VBYZf" href="#">Home</a>
+                                    <a className="Link_default__VBYZf" href="#">Services</a>
+                                    <a className="Link_default__VBYZf" href="#">Collections</a>
+                                    <a className="Link_default__VBYZf" href="#">Blogs</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='col-2'>
+                            <div className='d-grid justify-content-start'>
+                                <div style={{textAlign: 'left'}}>
+                                    <h1 style={{fontSize: "25px"}}>Company</h1>
+                                </div>
+                                <div className='d-flex flex-column align-items-center gap-1' style={{textAlign: 'left'}}>
+                                    <a className="Link_default__VBYZf" href="#">About Us</a>
                                     <a className="Link_default__VBYZf" href="#">Home</a>
                                     <a className="Link_default__VBYZf" href="#">Home</a>
                                 </div>
@@ -24,24 +36,12 @@ export default function Footer() {
                         <div className='col-2'>
                             <div className='d-grid justify-content-start'>
                                 <div style={{textAlign: 'left'}}>
-                                    <h1 style={{fontSize: "25px"}}>More</h1>
+                                    <h1 style={{fontSize: "25px"}}>Support</h1>
                                 </div>
                                 <div className='d-flex flex-column align-items-center gap-1' style={{textAlign: 'left'}}>
-                                    <a className="Link_default__VBYZf" href="#">Home</a>
-                                    <a className="Link_default__VBYZf" href="#">Home</a>
-                                    <a className="Link_default__VBYZf" href="#">Home</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='col-2'>
-                            <div className='d-grid justify-content-start'>
-                                <div style={{textAlign: 'left'}}>
-                                    <h1 style={{fontSize: "25px"}}>More</h1>
-                                </div>
-                                <div className='d-flex flex-column align-items-center gap-1' style={{textAlign: 'left'}}>
-                                    <a className="Link_default__VBYZf" href="#">Home</a>
-                                    <a className="Link_default__VBYZf" href="#">Home</a>
-                                    <a className="Link_default__VBYZf" href="#">Home</a>
+                                    <a className="Link_default__VBYZf" href="#">Privacy Policy</a>
+                                    <a className="Link_default__VBYZf" href="#">Terms of Use</a>
+                                    <a className="Link_default__VBYZf" href="#">Contact Us</a>
                                 </div>
                             </div>
                         </div>

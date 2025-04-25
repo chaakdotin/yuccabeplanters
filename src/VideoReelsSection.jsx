@@ -49,7 +49,6 @@ const VideoReelsSection = () => {
                     aspect-ratio: 9 / 16;
                     transition: transform 0.3s ease;
                     cursor: pointer;
-                    border: 1px dashed black;
                     border-radius: 15px;
                 }
                 .video-box video {
