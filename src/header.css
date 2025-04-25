@@ -2,8 +2,8 @@
     position: fixed;
     top: 0px;
     left: 3px;
-    width: 80px;
-    height: 30px;
+    width: 90px;
+    height: 50px;
     pointer-events: none;
     z-index: 9999;
     background-image: url('/img/Yuccabe_Pointer.png');

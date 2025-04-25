@@ -528,7 +528,7 @@ export default function Blogs() {
                                             <div className="tp-blog-thumb fix p-relative">
                                                 <img src="/img/BLOG1.jpg" alt="" />
                                                 <div className="tp-blog-meta">
-                                                    <span>01. FEB. 2022</span>
+                                                    <span>{data.Blog_Post_Date}. {data.Blog_Post_Month}. {data.Blog_Post_Year}</span>
                                                 </div>
                                             </div>
                                             <div className="tp-blog-content">
