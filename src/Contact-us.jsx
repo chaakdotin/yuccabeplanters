@@ -77,16 +77,16 @@ export default function ContactUs() {
             <div className="c-body">
             <div className="c-link-b c-link-ul">
                 <div className="c-link-li" data-d="8">
-                <a href="mailto:mail@socialshosha.com" onClick={(e) => {
+                <a href="hello@yuccabeplanters.com" onClick={(e) => {
                     e.preventDefault(); // prevent page jump
-                }} className="c-link-title c-link-copy h4 c-clip w-500 c-copy js-copy" data-str="mail@socialshosha.com">
+                }} className="c-link-title c-link-copy h4 c-clip w-500 c-copy js-copy" data-str="hello@yuccabeplanters.com">
                     <div className="o">
                     <div className="t" data-anim="0">
                         <div className="w w-flex">
                         <div className="w-label f-s">(mail)</div>
                         <div className="w-flip">
                             <div className='w-flips w-remove' style={{fontFamily:"PPMori,Noto Sans JP,Noto Sans SC,sans-serif"}}>
-                            <div>mail@socialshosha.com</div>
+                            <div>hello@yuccabeplanters.com</div>
                             <div onClick={shoot}>Copy to clipboard</div>
                             <div>Copied</div>
                             </div>						
@@ -105,8 +105,8 @@ export default function ContactUs() {
                         <div className="w-label f-s">(phone)</div>
                         <div className="w-flip">
                             <div className='w-flips' style={{fontFamily:"PPMori,Noto Sans JP,Noto Sans SC,sans-serif"}}>
-                            <div>+91-88727-27786</div>
-                            <div>91-88727-27786</div>
+                            <div>+91-99716-14948</div>
+                            <div>91-99716-14948</div>
                             </div>
                         </div>
                         </div>

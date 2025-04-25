@@ -11,6 +11,8 @@ const Explore = lazy(() => import('./Explore'));
 const Services = lazy(() => import('./Services'));
 const ContactUs = lazy(() => import('./Contact-us'));
 const AboutUs = lazy(() => import('./AboutUs'));
+const Blogs = lazy(() => import('./Blogs'));
+const BlogsDetails = lazy(() => import('./BlogsDetails'));
 import PageLoadAnimation from './PageLoadAnimation';
 const root = document.getElementById("root");
 
@@ -28,6 +30,8 @@ const Data = () => {
               <Route path="/collections" element={<Collections />} />
               <Route path="/about-us" element={<AboutUs />} />
               <Route path="/contact" element={<ContactUs />} />
+              <Route path="/blogs" element={<Blogs />} />
+              <Route path="/blogs-details" element={<BlogsDetails />} />
             </Route>
           </Routes>
           

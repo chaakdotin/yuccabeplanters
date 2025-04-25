@@ -1,0 +1,202 @@
+:root {
+    --tp-ff-body: 'Syne', sans-serif;
+    --tp-ff-heading: 'Syne', sans-serif;
+    --tp-ff-p: 'Syne', sans-serif;
+    --tp-ff-syne: 'Syne', sans-serif;
+    --tp-ff-gallery: 'gallery_modernregular', sans-serif;
+    --tp-ff-shoulders: 'Big Shoulders Display', cursive;
+    --tp-ff-marcellus: 'Marcellus', sans-serif;
+    --tp-ff-aladin: 'Aladin', system-ui;
+    --tp-ff-fontawesome: "Font Awesome 6 Pro";
+    --tp-common-white: #F5F7F5;
+    --tp-common-white-solid: #fff;
+    --tp-common-black: #1E1E1E;
+    --tp-common-black-2: #1E1E1E;
+    --tp-common-black-3: #141414;
+    --tp-common-dark: #121212;
+    --tp-common-orange: #EB5939;
+    --tp-grey-1: #262626;
+    --tp-grey-2: #F4F4F4;
+    --tp-grey-3: #5D5D63;
+    --tp-grey-4: #F7F7F7;
+    --tp-text-body: #5D5D63;
+    --tp-theme-1: #336EF9;
+    --tp-border-1: #EAEAEB;
+}
+
+.pb-70 {
+    padding-bottom: 70px;
+}
+.pb-80 {
+    padding-bottom: 80px;
+}
+.pt-120 {
+    padding-top: 120px;
+}
+.pt-170 {
+    padding-top: 170px;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.fix {
+    overflow: hidden;
+}
+.p-relative {
+    position: relative;
+}
+@media (min-width: 1400px) {
+    .container-1500 {
+        max-width: 1500px;
+    }
+    .container-1530 {
+        max-width: 1530px;
+    }
+}
+.tp-blog-standard-thumb-box {
+    overflow: hidden;
+    height: 750px;
+}
+
+.tp-blog-standard-thumb-box img {
+    margin-top: -180px;
+}
+.tp-blog-standard-title-box {
+    background-color: var(--tp-common-black);
+    display: inline-block;
+    padding: 45px;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+.tp-blog-standard-title {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -2.4px;
+    color: var(--tp-common-white);
+    margin-bottom: 0;
+}
+.tp-blog-standard-meta {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+.tp-blog-standard-meta span {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    display: inline-block;
+    text-align: center;
+    color: var(--tp-common-white);
+    background-color: var(--tp-common-black);
+}
+.tp-blog-thumb {
+    margin-bottom: 25px;
+}
+
+.tp-blog-thumb img {
+    width: 100%;
+    transition: 0.9s;
+}
+.tp-blog-meta {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    text-align: right;
+    margin: 25px;
+}
+.tp-blog-meta span {
+    font-size: 16px;
+    font-weight: 500;
+    height: 32px;
+    line-height: 32px;
+    padding: 0px 14px;
+    color: var(--tp-common-black);
+    background-color: var(--tp-common-white);
+    display: inline-block;
+}
+.tp-blog-content span {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    color: #5D5D63;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.tp-blog-title-sm {
+    font-size: 31px;
+    font-weight: 600;
+    line-height: 0.8;
+    letter-spacing: -0.62px;
+    color: var(--tp-common-black);
+}
+.tp-blog-title-sm a {
+    background-image: linear-gradient(#000, #000), linear-gradient(#000, #000);
+    background-size: 0% 1px, 0 1px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s linear;
+    color:#000;
+}
+.tp-blog-title-sm:hover a {
+    background-size: 0% 1px, 100% 1px;
+}
+.tp-blog-item:hover .tp-blog-thumb img {
+    transform: scale(1.2) rotate(-2deg);
+}
+.basic-pagination {
+    margin-bottom: 40px;
+}
+.basic-pagination ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 14px;
+}
+.basic-pagination ul li a {
+    height: 46px;
+    width: 30px;
+    border-radius: 200px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    color: var(--tp-common-black);
+}
+.basic-pagination ul li a .current {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    border-radius: 200px;
+    border: 2px solid var(--tp-common-black);
+}
+.sv-big-text {
+    /* display:flex; */
+    /* justify-content: center; */
+    font-size: 199px;
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -12px;
+    text-transform: uppercase;
+    color: var(--tp-common-black-2);
+    white-space: nowrap;
+    margin-bottom: 0;
+    transform: translateX(-12px);
+}
+.sv-big-text a{
+    color:#000;
+}
+a:focus, a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+a, a:hover {
+    
+    text-decoration: none !important;
+}
