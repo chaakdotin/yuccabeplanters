@@ -523,7 +523,7 @@ export default function Blogs() {
                         {
                             blogs.map((data) => {
                                 return ( 
-                                    <div className="col-xl-4 col-lg-6 col-md-6 mb-50" key={data.id}>
+                                    <div className="col-xl-4 col-lg-6 col-md-6 mb-50" key={data.Entry_ID}>
                                         <div className="tp-blog-item">
                                             <div className="tp-blog-thumb fix p-relative">
                                                 <img src="/img/BLOG1.jpg" alt="" />
@@ -532,7 +532,7 @@ export default function Blogs() {
                                                 </div>
                                             </div>
                                             <div className="tp-blog-content">
-                                                <span>Marketing / Strategy</span>
+                                                <span>{data.Category}</span>
                                                 <h4 className="tp-blog-title-sm fs-4" style={{lineHeight:1.1}}>
                                                     <a href={data.Blog_Link}>{data.Blog_Title}</a>
                                                 </h4>

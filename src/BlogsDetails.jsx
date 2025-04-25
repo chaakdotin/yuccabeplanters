@@ -7,10 +7,17 @@ import NotFound from './NotFound';
 export default function BlogsDetails() {
     const { title } = useParams();
     const [blogs, setBlogs] = useState([]);
+    const [Category, setCategory] = useState([]);
     const [loading, setLoading] = useState(true);
     const [blog, setBlog] = useState(null);
 
     useEffect(() => {
+        fetch('https://yuccabeplanters.chaak.in/api/RandomBlog.php').then((res) => res.json()).then((data) => {
+            setCategory(data);
+        }).catch((err) => {
+            console.error('API Error:', err);
+        });
+
         const data = [
             {
                 "Blog_Link":"How-to-Choose-the Perfect-Planter-for Your-Space"
@@ -1038,54 +1045,30 @@ export default function BlogsDetails() {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-xl-4 col-lg-6 col-md-6 mb-50">
-                            <div className="tp-blog-item">
-                                <div className="tp-blog-thumb fix p-relative">
-                                    <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/home-05/blog/blog-1.jpg" alt="" />
-                                    <div className="tp-blog-meta">
-                                        <span>01. FEB. 2022</span>
+                        {
+                            Category.map((data) => {
+                                return (
+                                    <div className="col-xl-4 col-lg-6 col-md-6 mb-50"  key={data.Entry_ID}>
+                                        <div className="tp-blog-item">
+                                            <div className="tp-blog-thumb fix p-relative">
+                                                <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/home-05/blog/blog-1.jpg" alt="" />
+                                                <div className="tp-blog-meta">
+                                                    <span>01. FEB. 2022</span>
+                                                </div>
+                                            </div>
+                                            <div className="tp-blog-content">
+                                                <span>{data.Category}</span>
+                                                <h4 className="tp-blog-title-sm fs-4" style={{lineHeight:1.1}}>
+                                                    <a href={data.Blog_Link}>{data.Blog_Title}</a>
+                                                </h4>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="tp-blog-content">
-                                    <span>Marketing / Strategy</span>
-                                    <h4 className="tp-blog-title-sm">
-                                        <a href="blog-details.html">Future Business Ideas.</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-4 col-lg-6 col-md-6 mb-50">
-                            <div className="tp-blog-item">
-                                <div className="tp-blog-thumb fix p-relative">
-                                    <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/home-05/blog/blog-2.jpg" alt="" />
-                                    <div className="tp-blog-meta">
-                                        <span>09. MAY. 2022</span>
-                                    </div>
-                                </div>
-                                <div className="tp-blog-content">
-                                    <span>Marketing / Strategy</span>
-                                    <h4 className="tp-blog-title-sm">
-                                        <a href="blog-details.html">Start Unique Experience.</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-4 col-lg-6 col-md-6 mb-50">
-                            <div className="tp-blog-item">
-                                <div className="tp-blog-thumb fix p-relative">
-                                    <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/home-05/blog/blog-3.jpg" alt="" />
-                                    <div className="tp-blog-meta">
-                                        <span>30. AUG. 2022</span>
-                                    </div>
-                                </div>
-                                <div className="tp-blog-content">
-                                    <span>Marketing / Strategy</span>
-                                    <h4 className="tp-blog-title-sm">
-                                        <a href="blog-details.html">Is It Time To Rebrand?</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
+                                )
+                            })
+                        }
+                        
+                        
                     </div>
                 </div>
             </div>
