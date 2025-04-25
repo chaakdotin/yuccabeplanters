@@ -11,20 +11,18 @@ export default function BlogsDetails() {
     const [blog, setBlog] = useState(null);
 
     useEffect(() => {
-        fetch('https://yuccabeplanters.chaak.in/api/blogs.php')
-            .then((res) => res.json())
-            .then((data) => {
-                setBlogs(data);
-                const matched = data.find((b) => b['Blog_Link'] == title);
-                if (matched) {
-                    setBlog(matched);
-                }
-                setLoading(false);
-            })
-            .catch((err) => {
-                console.error('API Error:', err);
-                setLoading(false);
-            });
+        const data = [
+            {
+                "Blog_Link":"How-to-Choose-the Perfect-Planter-for Your-Space"
+            }
+        ]
+        setBlogs(data);
+        const matched = data.find((b) => b['Blog_Link'] == title);
+        if (matched) {
+            setBlog(matched);
+        }
+        setLoading(false);
+            
     }, [title]);
 
     if (loading) return <p>Loading...</p>;
