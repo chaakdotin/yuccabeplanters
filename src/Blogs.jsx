@@ -534,7 +534,7 @@ export default function Blogs() {
                                             <div className="tp-blog-content">
                                                 <span>Marketing / Strategy</span>
                                                 <h4 className="tp-blog-title-sm fs-4" style={{lineHeight:1.1}}>
-                                                    <a href="blog-details.html">{data.Blog_Title}</a>
+                                                    <a href={data.Blog_Link}>{data.Blog_Title}</a>
                                                 </h4>
                                             </div>
                                         </div>
