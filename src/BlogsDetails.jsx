@@ -474,7 +474,7 @@ export default function BlogsDetails() {
                                             translate: "none",
                                             rotate: "none",
                                             scale: "none",
-                                            transform: "translate(0px, 267.75px)",
+                                            transform: "translate(0px, 0px)",
                                             willChange: "transform"
                                         }}
                                         data-lag={0}

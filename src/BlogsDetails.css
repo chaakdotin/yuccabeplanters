@@ -237,7 +237,9 @@ blockquote {
 .project-details-1-prev {
     line-height: 0;
 }
-
+.tp-text-black {
+    color: var(--tp-common-black);
+}
 a, button {
     color: inherit;
     outline: none;
