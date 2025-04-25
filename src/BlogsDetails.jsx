@@ -1051,7 +1051,7 @@ export default function BlogsDetails() {
                                     <div className="col-xl-4 col-lg-6 col-md-6 mb-50"  key={data.Entry_ID}>
                                         <div className="tp-blog-item">
                                             <div className="tp-blog-thumb fix p-relative">
-                                                <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/home-05/blog/blog-1.jpg" alt="" />
+                                                <img src={data.Main_Image} alt="" />
                                                 <div className="tp-blog-meta">
                                                     <span>01. FEB. 2022</span>
                                                 </div>

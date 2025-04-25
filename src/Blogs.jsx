@@ -526,7 +526,7 @@ export default function Blogs() {
                                     <div className="col-xl-4 col-lg-6 col-md-6 mb-50" key={data.Entry_ID}>
                                         <div className="tp-blog-item">
                                             <div className="tp-blog-thumb fix p-relative">
-                                                <img src="/img/BLOG1.jpg" alt="" />
+                                                <img src={data.Main_Image} alt="" />
                                                 <div className="tp-blog-meta">
                                                     <span>{data.Blog_Post_Date}. {data.Blog_Post_Month}. {data.Blog_Post_Year}</span>
                                                 </div>
