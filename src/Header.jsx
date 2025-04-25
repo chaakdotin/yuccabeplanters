@@ -40,7 +40,7 @@ const Header = () => {
           <Container fluid className="navbar-container-padding">
             <Navbar.Brand href="/" className="menu-logos" >
               <img
-                src="./yp.svg"
+                src="/yp.svg"
                 alt="Logo" width={'100%'} />
             </Navbar.Brand>
             <Nav className="w-100 d-flex justify-content-between">
@@ -59,7 +59,7 @@ const Header = () => {
         zIndex: "1000"
       }}>
         <a href="https://wa.link/m2jwc3">
-          <img src="./img/Whats App.png" alt="" className='w-100'/>
+          <img src="/img/Whats App.png" alt="" className='w-100'/>
         </a>
       </div>
       <Outlet />

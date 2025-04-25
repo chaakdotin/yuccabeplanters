@@ -1,8 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import Footer from './Footer';
-import css from './BlogsDetails.css?raw'
+import css from './BlogsDetails.css?raw';
+import { useParams } from 'react-router-dom';
+import NotFound from './NotFound';
 
 export default function BlogsDetails() {
+    const { title } = useParams();
+    const [blogs, setBlogs] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [blog, setBlog] = useState(null);
+
+    useEffect(() => {
+        fetch('https://yuccabeplanters.chaak.in/api/blogs.php')
+            .then((res) => res.json())
+            .then((data) => {
+                setBlogs(data);
+                const matched = data.find((b) => b['Blog_Link'] == title);
+                if (matched) {
+                    setBlog(matched);
+                }
+                setLoading(false);
+            })
+            .catch((err) => {
+                console.error('API Error:', err);
+                setLoading(false);
+            });
+    }, [title]);
+
+    if (loading) return <p>Loading...</p>;
+    if (!blog) return <NotFound />;
+
     return (
         <>
             <style>{css}</style>

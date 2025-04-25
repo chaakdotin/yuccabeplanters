@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import Footer from './Footer';
-import css from './Blogs.css?raw'
+import css from './Blogs.css?raw';
+
 export default function Blogs() {
+    const [blogs, setBlogs] = useState([]);
+     useEffect(() => {
+        fetch('https://yuccabeplanters.chaak.in/api/blogs.php')
+        .then((res) => res.json())
+        .then((data) => {
+            setBlogs(data);
+        })
+        .catch((err) => {
+            console.error('API Error:', err);
+            setLoading(false);
+        });
+    }, []);
+    
     return (
         <>
             <style>{css}</style>
@@ -506,288 +520,29 @@ export default function Blogs() {
             <div className="blog-details-realated-area pt-120 pb-70">
                 <div className="container">
                     <div className="row">
-                        <div className="col-xl-4 col-lg-6 col-md-6 mb-50">
-                            <div className="tp-blog-item">
-                                <div className="tp-blog-thumb fix p-relative">
-                                    <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-blog/blog-standard/blog-2.jpg" alt="" />
-                                    <div className="tp-blog-meta">
-                                        <span>01. FEB. 2022</span>
+                        {
+                            blogs.map((data) => {
+                                return ( 
+                                    <div className="col-xl-4 col-lg-6 col-md-6 mb-50" key={data.id}>
+                                        <div className="tp-blog-item">
+                                            <div className="tp-blog-thumb fix p-relative">
+                                                <img src="/img/BLOG1.jpg" alt="" />
+                                                <div className="tp-blog-meta">
+                                                    <span>01. FEB. 2022</span>
+                                                </div>
+                                            </div>
+                                            <div className="tp-blog-content">
+                                                <span>Marketing / Strategy</span>
+                                                <h4 className="tp-blog-title-sm fs-4" style={{lineHeight:1.1}}>
+                                                    <a href="blog-details.html">{data.Blog_Title}</a>
+                                                </h4>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="tp-blog-content">
-                                    <span>Marketing / Strategy</span>
-                                    <h4 className="tp-blog-title-sm">
-                                        <a href="blog-details.html">Future Business Ideas.</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-4 col-lg-6 col-md-6 mb-50">
-                            <div className="tp-blog-item">
-                                <div className="tp-blog-thumb fix p-relative">
-                                    <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-blog/blog-standard/blog-3.jpg" alt="" />
-                                    <div className="tp-blog-meta">
-                                        <span>09. MAY. 2022</span>
-                                    </div>
-                                </div>
-                                <div className="tp-blog-content">
-                                    <span>Branding / Creative</span>
-                                    <h4 className="tp-blog-title-sm">
-                                        <a href="blog-details.html">Start Unique Experience.</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-4 col-lg-6 col-md-6 mb-50">
-                            <div className="tp-blog-item">
-                                <div className="tp-blog-thumb fix p-relative">
-                                    <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-blog/blog-standard/blog-4.jpg" alt="" />
-                                    <div className="tp-blog-meta">
-                                        <span>30. MAY. 2022</span>
-                                    </div>
-                                </div>
-                                <div className="tp-blog-content">
-                                    <span>Marketing / Strategy</span>
-                                    <h4 className="tp-blog-title-sm">
-                                        <a href="blog-details.html">Is It Time To Rebrand?</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-4 col-lg-6 col-md-6 mb-50">
-                            <div className="tp-blog-item">
-                                <div className="tp-blog-thumb fix p-relative">
-                                    <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-blog/blog-standard/blog-5.jpg" alt="" />
-                                    <div className="tp-blog-meta">
-                                        <span>01. APR. 2022</span>
-                                    </div>
-                                </div>
-                                <div className="tp-blog-content">
-                                    <span>Branding / Creative</span>
-                                    <h4 className="tp-blog-title-sm">
-                                        <a href="blog-details.html">Setting up the creativity.</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-4 col-lg-6 col-md-6 mb-50">
-                            <div className="tp-blog-item">
-                                <div className="tp-blog-thumb fix p-relative">
-                                    <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-blog/blog-standard/blog-6.jpg" alt="" />
-                                    <div className="tp-blog-meta">
-                                        <span>09. MAY. 2022</span>
-                                    </div>
-                                </div>
-                                <div className="tp-blog-content">
-                                    <span>Marketing / Strategy</span>
-                                    <h4 className="tp-blog-title-sm">
-                                        <a href="blog-details.html">Design to remember</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-4 col-lg-6 col-md-6 mb-50">
-                            <div className="tp-blog-item">
-                                <div className="tp-blog-thumb fix p-relative">
-                                    <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-blog/blog-standard/blog-7.jpg" alt="" />
-                                    <div className="tp-blog-meta">
-                                        <span>30. JUN. 2022</span>
-                                    </div>
-                                </div>
-                                <div className="tp-blog-content">
-                                    <span>Branding / Creative</span>
-                                    <h4 className="tp-blog-title-sm">
-                                        <a href="blog-details.html">Endless Road Stories</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-12">
-                            <div className="basic-pagination mt-40 text-center">
-                                <nav>
-                                    <ul>
-                                        <li>
-                                            <a href="blog-modern.html">
-                                                <span className="current">1</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-modern.html">
-                                                <span>2</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-modern.html">
-                                                <i className="fa-regular fa-arrow-right icon" />
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="sv-big-text-area pb-80">
-                <div className="container container-1530">
-                    <div className="sv-small-text-box d-flex justify-content-between">
-                        <span>DIGITAL DESIGN EXPERIENCE</span>
-                        <span>CREATIVE STUDIO</span>
-                    </div>
-                    <div className="sv-big-text-box">
-                        <h4
-                            className="sv-big-text tp-char-animation"
-                            style={{ perspective: 300 }}
-                        >
-                            <a href="/contact">
-                                <div style={{ position: "relative", display: "inline-block" }}>
-                                    <div
-                                        style={{
-                                            position: "relative",
-                                            display: "inline-block",
-                                            translate: "none",
-                                            rotate: "none",
-                                            scale: "none",
-                                            opacity: 1,
-                                            visibility: "inherit",
-                                            transform: "translate(0px, 0px)"
-                                        }}
-                                    >
-                                        G
-                                    </div>
-                                    <div
-                                        style={{
-                                            position: "relative",
-                                            display: "inline-block",
-                                            translate: "none",
-                                            rotate: "none",
-                                            scale: "none",
-                                            opacity: 1,
-                                            visibility: "inherit",
-                                            transform: "translate(0px, 0px)"
-                                        }}
-                                    >
-                                        e
-                                    </div>
-                                    <div
-                                        style={{
-                                            position: "relative",
-                                            display: "inline-block",
-                                            translate: "none",
-                                            rotate: "none",
-                                            scale: "none",
-                                            opacity: 1,
-                                            visibility: "inherit",
-                                            transform: "translate(0px, 0px)"
-                                        }}
-                                    >
-                                        t
-                                    </div>
-                                </div>{" "}
-                                <div style={{ position: "relative", display: "inline-block" }}>
-                                    <div
-                                        style={{
-                                            position: "relative",
-                                            display: "inline-block",
-                                            translate: "none",
-                                            rotate: "none",
-                                            scale: "none",
-                                            opacity: 1,
-                                            visibility: "inherit",
-                                            transform: "translate(0px, 0px)"
-                                        }}
-                                    >
-                                        i
-                                    </div>
-                                    <div
-                                        style={{
-                                            position: "relative",
-                                            display: "inline-block",
-                                            translate: "none",
-                                            rotate: "none",
-                                            scale: "none",
-                                            opacity: 1,
-                                            visibility: "inherit",
-                                            transform: "translate(0px, 0px)"
-                                        }}
-                                    >
-                                        n
-                                    </div>
-                                </div>{" "}
-                                <div style={{ position: "relative", display: "inline-block" }}>
-                                    <div
-                                        style={{
-                                            position: "relative",
-                                            display: "inline-block",
-                                            translate: "none",
-                                            rotate: "none",
-                                            scale: "none",
-                                            opacity: 1,
-                                            visibility: "inherit",
-                                            transform: "translate(0px, 0px)"
-                                        }}
-                                    >
-                                        T
-                                    </div>
-                                    <div
-                                        style={{
-                                            position: "relative",
-                                            display: "inline-block",
-                                            translate: "none",
-                                            rotate: "none",
-                                            scale: "none",
-                                            opacity: 1,
-                                            visibility: "inherit",
-                                            transform: "translate(0px, 0px)"
-                                        }}
-                                    >
-                                        o
-                                    </div>
-                                    <div
-                                        style={{
-                                            position: "relative",
-                                            display: "inline-block",
-                                            translate: "none",
-                                            rotate: "none",
-                                            scale: "none",
-                                            opacity: 1,
-                                            visibility: "inherit",
-                                            transform: "translate(0px, 0px)"
-                                        }}
-                                    >
-                                        u
-                                    </div>
-                                    <div
-                                        style={{
-                                            position: "relative",
-                                            display: "inline-block",
-                                            translate: "none",
-                                            rotate: "none",
-                                            scale: "none",
-                                            opacity: 1,
-                                            visibility: "inherit",
-                                            transform: "translate(0px, 0px)"
-                                        }}
-                                    >
-                                        c
-                                    </div>
-                                    <div
-                                        style={{
-                                            position: "relative",
-                                            display: "inline-block",
-                                            translate: "none",
-                                            rotate: "none",
-                                            scale: "none",
-                                            opacity: 1,
-                                            visibility: "inherit",
-                                            transform: "translate(0px, 0px)"
-                                        }}
-                                    >
-                                        h
-                                    </div>
-                                </div>
-                            </a>
-                        </h4>
+                                );
+                            })
+                        }
+                        
                     </div>
                 </div>
             </div>
