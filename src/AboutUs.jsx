@@ -128,9 +128,7 @@ export default function AboutUs() {
                                 }}
                                 data-speed={1} >
                                 <p>
-                                    ALGOS is where art, music, and street culture collide. Whether
-                                    you’re vibing at a jam, skating the city, or just keeping it
-                                    lowkey — our fits are built to match your lifestyle.
+                                    Our journey began with a simple idea to bring nature closer to the spaces we live and work in, through design that speaks of elegance and endurance.
                                 </p>
                                 <a className="tp-btn-white-sm border-style" href="#">
                                     Our Story
