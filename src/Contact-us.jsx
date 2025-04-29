@@ -120,7 +120,7 @@ export default function ContactUs() {
             </div>
         </div>
     </div>
-     <div style={{}} className="bg-color  contact-us">
+    <div style={{}} className="bg-color  contact-us">
        <div className="container h-100vh ">
             <div className='row h-100 align-items-center'>
                 <div className="col-lg-6 col-md-6 col-sm-12 contact-us-info " style={{textAlign:"left"}}>
