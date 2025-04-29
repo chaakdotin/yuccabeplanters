@@ -1031,15 +1031,15 @@ const Services = () => {
           </div>
         </div>
       </div>
-      <div className="tp-line-text-wrap tp-line-text-wrap-2 pb-120 d-none">
+      <div className="tp-line-text-wrap tp-line-text-wrap-2 pb-120">
         <div className="swiper tp-img-slide swiper-initialized swiper-horizontal swiper-backface-hidden">
           <div
-            className="swiper-wrapper"
+            className="swiper-wrapper d-flex"
             id="swiper-wrapper-53827b936e10b23de"
             aria-live="off"
             style={{
-              transitionDuration: "5000ms",
-              transform: "translate3d(-1000px, 0px, 0px)"
+              // transitionDuration: "5000ms",
+              transform: "translate3d(10px, 0px, 0px)"
             }}
           >
             <div
