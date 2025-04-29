@@ -226,7 +226,7 @@ export default function Portfolios() {
                                         href="portfolio-details-1.html"
                                     >
                                         {/* <i className="fa-sharp fa-regular fa-arrow-left" /> */}
-                                        <i class="fa-solid fa-arrow-left"></i>
+                                        <i className="fa-solid fa-arrow-left"></i>
                                         <span>Prev</span>
                                     </a>
                                     <a href="#">
