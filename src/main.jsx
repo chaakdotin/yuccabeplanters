@@ -14,7 +14,7 @@ const AboutUs = lazy(() => import('./AboutUs'));
 const Blogs = lazy(() => import('./Blogs'));
 const BlogsDetails = lazy(() => import('./BlogsDetails'));
 const Portfolio = lazy(() => import('./Portfolio'));
-
+const Portfolio1 = lazy(() => import('./Portfolio1'));
 import NotFound from "./NotFound";
 
 import PageLoadAnimation from './PageLoadAnimation';
@@ -36,7 +36,9 @@ const Data = () => {
               <Route path="/contact" element={<ContactUs />} />
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/portfolio1" element={<Portfolio1 />} />
               <Route path="/:title" element={<BlogsDetails />} />
+              
               {/* 🔴 Catch-all route for undefined paths */}
               {/* <Route path="*" element={<NotFound />} /> */}
             </Route>
