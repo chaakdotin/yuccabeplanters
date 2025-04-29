@@ -1,3 +1,29 @@
+:root {
+    --tp-ff-body: 'Syne', sans-serif;
+    --tp-ff-heading: 'Syne', sans-serif;
+    --tp-ff-p: 'Syne', sans-serif;
+    --tp-ff-syne: 'Syne', sans-serif;
+    --tp-ff-gallery: 'gallery_modernregular', sans-serif;
+    --tp-ff-shoulders: 'Big Shoulders Display', cursive;
+    --tp-ff-marcellus: 'Marcellus', sans-serif;
+    --tp-ff-aladin: 'Aladin', system-ui;
+    --tp-ff-fontawesome: "Font Awesome 6 Pro";
+    --tp-common-white: #F5F7F5;
+    --tp-common-white-solid: #fff;
+    --tp-common-black: #1E1E1E;
+    --tp-common-black-2: #1E1E1E;
+    --tp-common-black-3: #141414;
+    --tp-common-dark: #121212;
+    --tp-common-orange: #EB5939;
+    --tp-grey-1: #262626;
+    --tp-grey-2: #F4F4F4;
+    --tp-grey-3: #5D5D63;
+    --tp-grey-4: #F7F7F7;
+    --tp-text-body: #5D5D63;
+    --tp-theme-1: #336EF9;
+    --tp-border-1: #EAEAEB;
+}
+
 .project-details-1-pt {
     padding-top: 107px;
 }
@@ -131,4 +157,8 @@ img {
     width: 60px;
     line-height: 60px;
     transform: translateX(-6px);
+}
+.project-details-1-next i {
+    margin-left: 10px;
+    transition: 0.3s;
 }

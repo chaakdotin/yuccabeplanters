@@ -225,7 +225,8 @@ export default function Portfolios() {
                                         className="project-details-1-prev"
                                         href="portfolio-details-1.html"
                                     >
-                                        <i className="fa-sharp fa-regular fa-arrow-left" />
+                                        {/* <i className="fa-sharp fa-regular fa-arrow-left" /> */}
+                                        <i class="fa-solid fa-arrow-left"></i>
                                         <span>Prev</span>
                                     </a>
                                     <a href="#">
@@ -249,7 +250,7 @@ export default function Portfolios() {
                                         href="portfolio-details-1.html"
                                     >
                                         <span>Next</span>
-                                        <i className="fa-sharp fa-regular fa-arrow-right" />
+                                        <i className="fa-solid fa-arrow-right" />
                                     </a>
                                 </div>
                             </div>
