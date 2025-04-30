@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react'
 import css from './about-us.css?raw'
-import 'swiper/css';
 import Footer from './Footer';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/autoplay';
+import { FreeMode, Autoplay } from 'swiper/modules';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -376,187 +380,163 @@ export default function AboutUs() {
                 </div>
             </div>
             <div className="tp-team-area pb-120 fix active">
-                <div className="container-fluid">
+                <div className="container-fluid p-0">
                     <div className="row">
                         <div className="col-xl-12">
                             <div className="tp-team-slider-wrapper">
-                                <div className="swiper-container tp-team-slider-active swiper-initialized swiper-horizontal swiper-backface-hidden">
-                                    <div className="swiper-wrapper">
-                                        <div
-                                            className="swiper-slide swiper-slide-active"
-                                            style={{ width: "375.167px", marginRight: 30 }}
-                                            data-swiper-slide-index={0}>
-                                            <div
-                                                className="tp-team-item tp-hover-btn-wrapper marque fix mb-30"
-                                                style={{
-                                                    translate: "none",
-                                                    rotate: "none",
-                                                    scale: "none",
-                                                    transform: "translate(25%, 0px)"
-                                                }}>
-                                                <div className="tp-hover-btn-item">
-                                                    <img
-                                                        src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <div className="tp-team-content d-none">
-                                                    <span>Art direction</span>
-                                                    <h4 className="tp-team-title-sm">
-                                                        <a href="#">JANE MILLS</a>
-                                                    </h4>
-                                                </div>
+                                <Swiper
+                                    direction="horizontal"         // optional, default is horizontal (left to right)
+                                    spaceBetween={20}
+                                    slidesPerView={'auto'}
+                                    freeMode={true}
+                                    loop={true}
+                                    autoplay={{
+                                        delay: 3000,
+                                        disableOnInteraction: false,
+                                        reverseDirection: false,     // makes sure it scrolls left to right
+                                    }}
+                                    modules={[FreeMode, Autoplay]}
+                                    className="mySwiper"
+                                >
+                                    <SwiperSlide style={{ width: 'auto' }}>
+                                        <div className="tp-team-item tp-hover-btn-wrapper marque fix mb-30"
+                                            style={{
+                                                translate: "none",
+                                                rotate: "none",
+                                                scale: "none",
+                                                transform: "translate(25%, 0px)"
+                                            }}>
+                                            <div className="tp-hover-btn-item">
+                                                <img
+                                                    src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
+                                                    alt=""
+                                                />
+                                            </div>
+                                            <div className="tp-team-content d-none">
+                                                <span>Art direction</span>
+                                                <h4 className="tp-team-title-sm">
+                                                    <a href="#">JANE MILLS</a>
+                                                </h4>
                                             </div>
                                         </div>
-                                        <div
-                                            className="swiper-slide swiper-slide-next"
-                                            style={{ width: "375.167px", marginRight: 30 }}
-                                            data-swiper-slide-index={1} >
-                                            <div
-                                                className="tp-team-item tp-hover-btn-wrapper marque fix mb-30"
-                                                style={{
-                                                    translate: "none",
-                                                    rotate: "none",
-                                                    scale: "none",
-                                                    transform: "translate(25%, 0px)"
-                                                }}
-                                            >
-                                                <div className="tp-hover-btn-item">
-                                                    <img
-                                                       src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <div className="tp-team-content d-none">
-                                                    <span>Art direction</span>
-                                                    <h4 className="tp-team-title-sm">
-                                                        <a href="#">JIMathis</a>
-                                                    </h4>
-                                                </div>
+                                        
+                                    </SwiperSlide>
+                                    <SwiperSlide style={{ width: 'auto' }}>
+                                        <div className="tp-team-item tp-hover-btn-wrapper marque fix mb-30"
+                                            style={{
+                                                translate: "none",
+                                                rotate: "none",
+                                                scale: "none",
+                                                transform: "translate(25%, 0px)"
+                                            }}>
+                                            <div className="tp-hover-btn-item">
+                                                <img
+                                                    src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
+                                                    alt=""
+                                                />
+                                            </div>
+                                            <div className="tp-team-content d-none">
+                                                <span>Art direction</span>
+                                                <h4 className="tp-team-title-sm">
+                                                    <a href="#">JANE MILLS</a>
+                                                </h4>
                                             </div>
                                         </div>
-                                        <div
-                                            className="swiper-slide"
-                                            style={{ width: "375.167px", marginRight: 30 }}
-                                            data-swiper-slide-index={2}
-                                        >
-                                            <div
-                                                className="tp-team-item tp-hover-btn-wrapper marque fix mb-30"
-                                                style={{
-                                                    translate: "none",
-                                                    rotate: "none",
-                                                    scale: "none",
-                                                    transform: "translate(25%, 0px)"
-                                                }}
-                                            >
-                                                <div className="tp-hover-btn-item">
-                                                    <img
-                                                        src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <div className="tp-team-content d-none">
-                                                    <span>Art direction</span>
-                                                    <h4 className="tp-team-title-sm">
-                                                        <a href="#">Randolph</a>
-                                                    </h4>
-                                                </div>
+                                        
+                                    </SwiperSlide>
+                                    <SwiperSlide style={{ width: 'auto' }}>
+                                        <div className="tp-team-item tp-hover-btn-wrapper marque fix mb-30"
+                                            style={{
+                                                translate: "none",
+                                                rotate: "none",
+                                                scale: "none",
+                                                transform: "translate(25%, 0px)"
+                                            }}>
+                                            <div className="tp-hover-btn-item">
+                                                <img
+                                                    src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
+                                                    alt=""
+                                                />
+                                            </div>
+                                            <div className="tp-team-content d-none">
+                                                <span>Art direction</span>
+                                                <h4 className="tp-team-title-sm">
+                                                    <a href="#">JANE MILLS</a>
+                                                </h4>
                                             </div>
                                         </div>
-                                        <div
-                                            className="swiper-slide"
-                                            style={{ width: "375.167px", marginRight: 30 }}
-                                            data-swiper-slide-index={3}
-                                        >
-                                            <div
-                                                className="tp-team-item tp-hover-btn-wrapper marque fix mb-30"
-                                                style={{
-                                                    translate: "none",
-                                                    rotate: "none",
-                                                    scale: "none",
-                                                    transform: "translate(25%, 0px)"
-                                                }}
-                                            >
-                                                <div
-                                                    className="tp-hover-btn-item"
-                                                    style={{
-                                                        translate: "none",
-                                                        rotate: "none",
-                                                        scale: "none",
-                                                        transform: "translate(0px, 0px)"
-                                                    }}
-                                                >
-                                                    <img
-                                                        src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <div className="tp-team-content d-none">
-                                                    <span>Art direction</span>
-                                                    <h4 className="tp-team-title-sm">
-                                                        <a href="#">Mullins</a>
-                                                    </h4>
-                                                </div>
+                                        
+                                    </SwiperSlide>
+                                    <SwiperSlide style={{ width: 'auto' }}>
+                                        <div className="tp-team-item tp-hover-btn-wrapper marque fix mb-30"
+                                            style={{
+                                                translate: "none",
+                                                rotate: "none",
+                                                scale: "none",
+                                                transform: "translate(25%, 0px)"
+                                            }}>
+                                            <div className="tp-hover-btn-item">
+                                                <img
+                                                    src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
+                                                    alt=""
+                                                />
+                                            </div>
+                                            <div className="tp-team-content d-none">
+                                                <span>Art direction</span>
+                                                <h4 className="tp-team-title-sm">
+                                                    <a href="#">JANE MILLS</a>
+                                                </h4>
                                             </div>
                                         </div>
-                                        <div
-                                            className="swiper-slide"
-                                            style={{ width: "375.167px", marginRight: 30 }}
-                                            data-swiper-slide-index={4}
-                                        >
-                                            <div
-                                                className="tp-team-item tp-hover-btn-wrapper marque fix mb-30"
-                                                style={{
-                                                    translate: "none",
-                                                    rotate: "none",
-                                                    scale: "none",
-                                                    transform: "translate(25%, 0px)"
-                                                }}
-                                            >
-                                                <div className="tp-hover-btn-item">
-                                                    <img
-                                                        src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <div className="tp-team-content d-none">
-                                                    <span>Art direction</span>
-                                                    <h4 className="tp-team-title-sm">
-                                                        <a href="#">Minor</a>
-                                                    </h4>
-                                                </div>
+                                        
+                                    </SwiperSlide>
+                                    <SwiperSlide style={{ width: 'auto' }}>
+                                        <div className="tp-team-item tp-hover-btn-wrapper marque fix mb-30"
+                                            style={{
+                                                translate: "none",
+                                                rotate: "none",
+                                                scale: "none",
+                                                transform: "translate(25%, 0px)"
+                                            }}>
+                                            <div className="tp-hover-btn-item">
+                                                <img
+                                                    src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
+                                                    alt=""
+                                                />
+                                            </div>
+                                            <div className="tp-team-content d-none">
+                                                <span>Art direction</span>
+                                                <h4 className="tp-team-title-sm">
+                                                    <a href="#">JANE MILLS</a>
+                                                </h4>
                                             </div>
                                         </div>
-                                        <div
-                                            className="swiper-slide"
-                                            style={{ width: "375.167px", marginRight: 30 }}
-                                            data-swiper-slide-index={5}
-                                        >
-                                            <div
-                                                className="tp-team-item tp-hover-btn-wrapper marque fix mb-30"
-                                                style={{
-                                                    translate: "none",
-                                                    rotate: "none",
-                                                    scale: "none",
-                                                    transform: "translate(25%, 0px)"
-                                                }}
-                                            >
-                                                <div className="tp-hover-btn-item">
-                                                    <img
-                                                        src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <div className="tp-team-content d-none">
-                                                    <span>Art direction</span>
-                                                    <h4 className="tp-team-title-sm">
-                                                        <a href="#">Lucas</a>
-                                                    </h4>
-                                                </div>
+                                        
+                                    </SwiperSlide>
+                                    <SwiperSlide style={{ width: 'auto' }}>
+                                        <div className="tp-team-item tp-hover-btn-wrapper marque fix mb-30"
+                                            style={{
+                                                translate: "none",
+                                                rotate: "none",
+                                                scale: "none",
+                                                transform: "translate(25%, 0px)"
+                                            }}>
+                                            <div className="tp-hover-btn-item">
+                                                <img
+                                                    src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
+                                                    alt=""
+                                                />
+                                            </div>
+                                            <div className="tp-team-content d-none">
+                                                <span>Art direction</span>
+                                                <h4 className="tp-team-title-sm">
+                                                    <a href="#">JANE MILLS</a>
+                                                </h4>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
+                                        
+                                    </SwiperSlide>
+                                </Swiper>
                             </div>
                         </div>
                     </div>
@@ -708,8 +688,7 @@ export default function AboutUs() {
                     </div>
                 </div>
             </div>
-            <div
-                className="ab-brand-area pt-120 pb-120 black-bg-2 d-none"
+            <div className="ab-brand-area pt-120 pb-120 black-bg-2 d-none"
                 data-background="assets/img/inner-about/brand/brand-bg-shape.png"
                 style={{
                     backgroundImage: 'url("assets/img/inner-about/brand/brand-bg-shape.png")'
@@ -1050,7 +1029,7 @@ export default function AboutUs() {
                 </div>
             </div>
             <style>{`.footer-bg-color { background-color: #d9d4c5!important; margin-bottom:20px; }`}</style>
-                  <Footer />
+            <Footer />
         </>
 
     )
