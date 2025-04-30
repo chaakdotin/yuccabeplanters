@@ -28,19 +28,29 @@ export default function Projects() {
         });
     
         // Background parallax effect
-        panels.forEach((panel) => {
+        // Animate each image inside the panels
+        // Animate each image inside the panels
+        // Animate each image inside the panels
+        // Animate each image inside the panels
+        panels.forEach((panel, index) => {
             const bg = panel.querySelector(".parallax-img");
-            gsap.to(bg, {
-                backgroundPosition: "100% 50%",
-                ease: "none",
-                scrollTrigger: {
-                    trigger: panel,
-                    containerAnimation: ScrollTrigger.getById(container), // optional linking
-                    start: "left center",
-                    scrub: true,
-                },
-            });
+
+            if (bg) {
+                gsap.to(bg, {
+                    x: -100,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: panel,
+                        containerAnimation: ScrollTrigger.getById("horizontalScroll"),
+                        start: "left 10%",
+                        end: "+=3800",
+                        scrub: true,
+                    },
+                });
+            }
         });
+        
+
     
         ScrollTrigger.refresh();
     }, []);
@@ -61,7 +71,7 @@ export default function Projects() {
                                     className="parallax-img"
                                     style={{
                                         backgroundImage:
-                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-1.jpg")'
+                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-1.jpg")',
                                     }}
                                 />
                             </a>
@@ -76,7 +86,7 @@ export default function Projects() {
                                     className="parallax-img"
                                     style={{
                                         backgroundImage:
-                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-2.jpg")'
+                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-2.jpg")',
                                     }}
                                 />
                             </a>
@@ -91,7 +101,7 @@ export default function Projects() {
                                     className="parallax-img"
                                     style={{
                                         backgroundImage:
-                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-3.jpg")'
+                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-3.jpg")',
                                     }}
                                 />
                             </a>
@@ -106,7 +116,7 @@ export default function Projects() {
                                     className="parallax-img"
                                     style={{
                                         backgroundImage:
-                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-4.jpg")'
+                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-4.jpg")',
                                     }}
                                 />
                             </a>
@@ -121,7 +131,7 @@ export default function Projects() {
                                     className="parallax-img"
                                     style={{
                                         backgroundImage:
-                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-5.jpg")'
+                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-5.jpg")',
                                     }}
                                 />
                             </a>
@@ -136,7 +146,7 @@ export default function Projects() {
                                     className="parallax-img"
                                     style={{
                                         backgroundImage:
-                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-6.jpg")'
+                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-6.jpg")',
                                     }}
                                 />
                             </a>
@@ -151,7 +161,7 @@ export default function Projects() {
                                     className="parallax-img"
                                     style={{
                                         backgroundImage:
-                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-7.jpg")'
+                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-7.jpg")',
                                     }}
                                 />
                             </a>
