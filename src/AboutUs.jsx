@@ -15,16 +15,17 @@ export default function AboutUs() {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: '.scrapbook',
-            start: 'top top',
-            end: `+=${images.length * 200}`,
+            start: 'top center',
+            end: `+=${images.length * 100}`,
             scrub: true,
-            pin: true,
+            // pin: true,
             anticipatePin: 1,
           }
         });
         tl.to(images, {
           opacity: 1,
           scale: 1,
+          y:0,
           duration: 0.5,
           ease: 'power2.out',
           stagger: 0.2,
@@ -33,7 +34,7 @@ export default function AboutUs() {
     return (
         <>
             <style>{`
-                .scrapbook { position: relative; height: 100vh; }
+                .scrapbook { position: relative; height: 120vh; }
                 .scrap-img {
                     position: absolute;
                     width: 250px;
@@ -229,7 +230,7 @@ export default function AboutUs() {
                 />
             </section>
 
-            <div className="ab-about-area ab-about-mt pb-90 z-index-5">
+            <div className="ab-about-area ab-about-mt pb-90 z-index-5 mb-90">
                 <div className="container container-1480">
                     <div className="ab-about-thumb-wrap mb-180 ">
                         <div className="row align-items-end d-none">
