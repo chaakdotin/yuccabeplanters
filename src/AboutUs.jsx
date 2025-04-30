@@ -1,10 +1,44 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import css from './about-us.css?raw'
 import 'swiper/css';
 import Footer from './Footer';
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 export default function AboutUs() {
+    useEffect(() => {
+        const images = gsap.utils.toArray('.scrap-img');
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.scrapbook',
+            start: 'top top',
+            end: `+=${images.length * 200}`,
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+          }
+        });
+        tl.to(images, {
+          opacity: 1,
+          scale: 1,
+          duration: 0.5,
+          ease: 'power2.out',
+          stagger: 0.2,
+        });
+    })
     return (
         <>
+            <style>{`
+                .scrapbook { position: relative; height: 100vh; }
+                .scrap-img {
+                    position: absolute;
+                    width: 250px;
+                    opacity: 0;
+                    transform: scale(0.9);
+                    border: 4px dashed #fff;
+                    border-radius: 12px;
+                }
+            `}</style>
             <style>{css}</style>
             <div
                 className="ab-inner-hero-area ab-inner-hero-bg position-relative"
@@ -138,10 +172,63 @@ export default function AboutUs() {
                     </div>
                 </div>
             </div>
+            <section className="scrapbook">
+                <img
+                    src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    className="scrap-img"
+                    style={{ top: "10%", left: "10%", transform: "rotate(-10deg) scale(0.9)" }}
+                />
+                <img
+                    src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    className="scrap-img"
+                    style={{ top: "15%", left: "40%", transform: "rotate(5deg) scale(0.9)" }}
+                />
+                <img
+                    src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    className="scrap-img"
+                    style={{ top: "40%", left: "20%", transform: "rotate(-5deg) scale(0.9)" }}
+                />
+                <img
+                    src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    className="scrap-img"
+                    style={{ top: "60%", left: "15%", transform: "rotate(8deg) scale(0.9)" }}
+                />
+                <img
+                    src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    className="scrap-img"
+                    style={{ top: "20%", left: "70%", transform: "rotate(-7deg) scale(0.9)" }}
+                />
+                <img
+                    src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    className="scrap-img"
+                    style={{ top: "50%", left: "60%", transform: "rotate(3deg) scale(0.9)" }}
+                />
+                <img
+                    src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    className="scrap-img"
+                    style={{ top: "70%", left: "30%", transform: "rotate(-3deg) scale(0.9)" }}
+                />
+                <img
+                    src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    className="scrap-img"
+                    style={{ top: "30%", left: "80%", transform: "rotate(10deg) scale(0.9)" }}
+                />
+                <img
+                    src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    className="scrap-img"
+                    style={{ top: "55%", left: "45%", transform: "rotate(-12deg) scale(0.9)" }}
+                />
+                <img
+                    src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    className="scrap-img"
+                    style={{ top: "80%", left: "60%", transform: "rotate(6deg) scale(0.9)" }}
+                />
+            </section>
+
             <div className="ab-about-area ab-about-mt pb-90 z-index-5">
                 <div className="container container-1480">
-                    <div className="ab-about-thumb-wrap mb-180">
-                        <div className="row align-items-end">
+                    <div className="ab-about-thumb-wrap mb-180 ">
+                        <div className="row align-items-end d-none">
                             <div className="col-xl-6 col-lg-6 col-md-6">
                                 <div className="ab-about-left-thumb">
                                     <img
@@ -154,12 +241,13 @@ export default function AboutUs() {
                                             scale: "none",
                                             transform: "translate(0px, -134.551px)",
                                             willChange: "transform",
+                                            display:"none"
                                         }}
                                         data-lag={0}
                                     />
                                 </div>
                             </div>
-                            <div className="col-xl-6 col-lg-6 col-md-6">
+                            <div className="col-xl-6 col-lg-6 col-md-6 ">
                                 <div className="ab-about-right-thumb position-relative">
                                     <img
                                         data-speed="1.1"
