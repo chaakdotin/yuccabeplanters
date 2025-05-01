@@ -59,6 +59,9 @@ const Services = () => {
         </div>
 
       </div>
+      <div style={{width:"100vw", height:"100vh", margin:"100px 0px"}} >
+        <video src="https://videos.pexels.com/video-files/29382467/12656960_2560_1440_25fps.mp4" autoPlay muted loop className="w-100 object-fit-cover"></video>
+      </div>
       <div className="ab-2-hero-area ab-2-hero-ptb  position-relative">
         <div className="ab-2-hero-social-wrap d-none d-lg-block">
           <div className="ab-2-hero-social">
