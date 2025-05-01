@@ -48,12 +48,11 @@ const Services = () => {
         <div className='container' style={{ paddingTop: 220 }}>
           <div className='d-flex flex-column justify-content-center col-12 pb-5'>
             <div className='text-center'>
-              <span style={{ fontSize: '8.68vw', fontWeight: 600, fontFamily: "Markpro", letterSpacing: -3 }}>Get In Touch</span>
+              <span style={{ fontSize: '7vw', fontWeight: 600, fontFamily: "Markpro", letterSpacing: -3 }}>Tailored by Yuccabe</span>
             </div>
             <div className='d-flex justify-content-center pt-2' style={{}}>
               <p style={{ fontSize: 'max(1.043vw, 12px)', width: "calc((2.0848vw - 2.777vw*2/48)*22)", color: "#3e3e3e", fontFamily: "PPMori,Noto Sans JP,Noto Sans SC,sans-serif", fontWeight: 100, lineHeight: 1.2 }}>
-                We’d love to hear from you. Whether you’re an architect, a designer, a brand, or simply someone who loves beautiful spaces—let’s create something timeless together.
-                Have a project in mind? Need a custom piece? Or just curious about how our planters can elevate your space? Drop us a message, and we’ll be right there—ready to bring your green vision to life.
+              Every space tells a story—let’s make yours unforgettable. At Yuccabe, we go beyond just offering planters. Our design service is built to help you visualize, plan, and transform your space using customized planter layouts, shapes, sizes, and finishes that suit your interiors or exteriors perfectly.
               </p>
             </div>
           </div>
