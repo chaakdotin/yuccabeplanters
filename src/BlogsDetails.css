@@ -112,10 +112,10 @@
     color: var(--tp-common-black);
     margin-bottom: 50px;
 }
-
+/* 
 .blog-details-left-content {
     margin-bottom: 70px;
-}
+} */
 .blog-details-left-content p {
     color: #5D5D63;
     font-size: 18px;
@@ -285,6 +285,13 @@ a, button {
 }
 .postbox__comment ul li {
     margin-bottom: 45px;
+    list-style: none;
+}
+.new_ul{
+    margin: 0;
+    padding: 0;
+}
+.new_ul li{
     list-style: none;
 }
 .postbox__comment-box {
