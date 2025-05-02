@@ -1,7 +1,9 @@
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useRef } from "react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import css from './Projects.css?raw'
+import Footer from "./Footer"
+
 gsap.registerPlugin(ScrollTrigger);
 export default function Projects() {
     const containerRef = useRef(null);
@@ -17,13 +19,13 @@ export default function Projects() {
         }
         // Main horizontal scroll
         gsap.to(container, {
-            xPercent: -(11 * (totalPanels - 1)),
+            xPercent: -(9 * (totalPanels - 1)),
             ease: "none",
             scrollTrigger: {
                 trigger: container,
                 pin: true,
                 scrub: 1,
-                end: () => `+=${container.scrollWidth}`,
+                end: () => `+=${container.scrollWidth} bottom`,
             },
         });
     
@@ -170,6 +172,8 @@ export default function Projects() {
                 </div>
             </div>
             <div ref={spacerRef}></div>
+            <style>{`.footer-bg-color { background-color: #d9d4c5!important; margin-bottom:20px; }`}</style>
+            <Footer />
         </>
     )
 }
