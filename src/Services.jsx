@@ -919,9 +919,9 @@ const Services = () => {
                 <div className="sv-service-content">
                   <div className="sv-service-title-box">
                     <span className="sv-service-subtitle">
-                      <i>01</i>Understand Your Space
+                      <i>01</i>Space Discovery
                     </span>
-                    <h4 className="sv-service-title"> Space Discovery</h4>
+                    <h4 className="sv-service-title">Understand Your Space</h4>
                   </div>
                   <div className="sv-service-space-wrap">
                     <div className="sv-service-text">
@@ -945,9 +945,9 @@ const Services = () => {
                 <div className="sv-service-content">
                   <div className="sv-service-title-box">
                     <span className="sv-service-subtitle">
-                      <i>02</i> Curate & Design
+                      <i>02</i> Design Curation
                     </span>
-                    <h4 className="sv-service-title">Design Curation</h4>
+                    <h4 className="sv-service-title">Curate & Design</h4>
                   </div>
                   <div className="sv-service-space-wrap">
                     <div className="sv-service-text">
@@ -971,9 +971,9 @@ const Services = () => {
                 <div className="sv-service-content">
                   <div className="sv-service-title-box">
                     <span className="sv-service-subtitle">
-                      <i>03</i>Deliver the Experience
+                      <i>03</i> Final Execution
                     </span>
-                    <h4 className="sv-service-title"> Final Execution</h4>
+                    <h4 className="sv-service-title">Deliver the Experience</h4>
                   </div>
                   <div className="sv-service-space-wrap">
                     <div className="sv-service-text">
