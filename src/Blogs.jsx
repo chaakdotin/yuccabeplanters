@@ -536,6 +536,9 @@ export default function Blogs() {
                                                 <h4 className="tp-blog-title-sm fs-4" style={{lineHeight:1.1}}>
                                                     <a href={data.Blog_Link}>{data.Blog_Title}</a>
                                                 </h4>
+                                                <p style={{fontFamily: "PPMori,Noto Sans JP,Noto Sans SC,sans-serif"}}>
+                                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est aspernatur atque sunt! Magnam iure, laudantium nesciunt tenetur saepe tempora libero Lorem ipsum
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
