@@ -291,6 +291,7 @@
   list-style-type: none;
   padding-left: 18px;
   margin-bottom: 18px;
+  font-family: PPMori,Noto Sans JP,Noto Sans SC,sans-serif;
 }
 
 .ab-about-category-list ul li::after {

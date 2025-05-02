@@ -2,6 +2,11 @@ import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import css from "./Services.css?raw";
 import Footer from "./Footer";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/autoplay';
+import { FreeMode, Autoplay } from 'swiper/modules';
 const Services = () => {
 
   useEffect(() => {
@@ -786,21 +791,49 @@ const Services = () => {
       <div className="ab-2-portfolio-area pb-115">
         <div className="container-fluid ab-2-portfolio-thumb-wrap">
           <div className="row gx-5">
-            <div className="col-xl-4 col-lg-4 col-md-6 mb-5">
+          <Swiper
+            spaceBetween={20}
+            slidesPerView={3}
+            freeMode={true}
+            loop={true}
+            autoplay={{
+              delay: 1500,       // 1.5 seconds delay between scrolls
+              disableOnInteraction: false,
+            }}
+            modules={[FreeMode, Autoplay]}
+            className="mySwiper"
+          >
+            <SwiperSlide>
               <div className="ab-2-portfolio-thumb fix">
                 <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-about/portfolio/portfolio-1.jpg" alt="" />
               </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-6 mb-5">
+            </SwiperSlide>
+            <SwiperSlide>
               <div className="ab-2-portfolio-thumb fix">
                 <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-about/portfolio/portfolio-2.jpg" alt="" />
               </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-6 mb-5">
+            </SwiperSlide>
+            <SwiperSlide>
               <div className="ab-2-portfolio-thumb fix">
                 <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-about/portfolio/portfolio-3.jpg" alt="" />
               </div>
-            </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="ab-2-portfolio-thumb fix">
+                <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-about/portfolio/portfolio-1.jpg" alt="" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="ab-2-portfolio-thumb fix">
+                <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-about/portfolio/portfolio-2.jpg" alt="" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="ab-2-portfolio-thumb fix">
+                <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-about/portfolio/portfolio-3.jpg" alt="" />
+              </div>
+            </SwiperSlide>
+          </Swiper>
           </div>
         </div>
       </div>
@@ -826,7 +859,7 @@ const Services = () => {
                       opacity: 1
                     }}
                   >
-                    Work{" "}
+                   Our
                   </div>
                   <div
                     style={{
@@ -842,7 +875,7 @@ const Services = () => {
                     }}
                   >
                     {" "}
-                    Experience
+                    Process
                   </div>
                 </h4>
                 <span
@@ -862,7 +895,7 @@ const Services = () => {
                       opacity: 1
                     }}
                   >
-                    About My Biography
+                    Vision to Verdant Reality
                   </div>
                 </span>
                 <img
@@ -886,15 +919,14 @@ const Services = () => {
                 <div className="sv-service-content">
                   <div className="sv-service-title-box">
                     <span className="sv-service-subtitle">
-                      <i>01</i>Design Studio
+                      <i>01</i>Understand Your Space
                     </span>
-                    <h4 className="sv-service-title">Product Designer</h4>
+                    <h4 className="sv-service-title"> Space Discovery</h4>
                   </div>
                   <div className="sv-service-space-wrap">
                     <div className="sv-service-text">
                       <p>
-                        Write modern, perform ant, maintainable code for a diverse
-                        array of client and internal projects
+                      We begin by understanding your layout, lifestyle, and the feeling you want your space to hold—laying the foundation for a meaningful design.
                       </p>
                     </div>
                   </div>
@@ -913,15 +945,14 @@ const Services = () => {
                 <div className="sv-service-content">
                   <div className="sv-service-title-box">
                     <span className="sv-service-subtitle">
-                      <i>01</i>Design Studio
+                      <i>02</i> Curate & Design
                     </span>
-                    <h4 className="sv-service-title">Modern Designer</h4>
+                    <h4 className="sv-service-title">Design Curation</h4>
                   </div>
                   <div className="sv-service-space-wrap">
                     <div className="sv-service-text">
                       <p>
-                        Write modern, perform ant, maintainable code for a diverse
-                        array of client and internal projects
+                      We handpick the right planters, finishes, and placements that align with your aesthetic and create visual harmony in your space.
                       </p>
                     </div>
                   </div>
@@ -940,15 +971,14 @@ const Services = () => {
                 <div className="sv-service-content">
                   <div className="sv-service-title-box">
                     <span className="sv-service-subtitle">
-                      <i>01</i>Design Studio
+                      <i>03</i>Deliver the Experience
                     </span>
-                    <h4 className="sv-service-title">Creative Technologist</h4>
+                    <h4 className="sv-service-title"> Final Execution</h4>
                   </div>
                   <div className="sv-service-space-wrap">
                     <div className="sv-service-text">
                       <p>
-                        Write modern, perform ant, maintainable code for a diverse
-                        array of client and internal projects
+                      From coordination to placement, we ensure each detail is executed with care—bringing your space to life, just as envisioned.
                       </p>
                     </div>
                   </div>
@@ -958,7 +988,7 @@ const Services = () => {
           </div>
         </div>
       </div>
-      <div className="tp-brand-4-area pt-120 pb-120">
+      <div className="tp-brand-4-area pt-120 pb-120 d-none">
         <div className="container">
           <div className="row gx-0">
             <div className="col-xl-3 col-lg-3 col-md-6">
@@ -1068,90 +1098,53 @@ const Services = () => {
           </div>
         </div>
       </div>
-      <div className="tp-line-text-wrap tp-line-text-wrap-2 pb-120">
-        <div className="swiper tp-img-slide swiper-initialized swiper-horizontal swiper-backface-hidden">
-          <div
-            className="swiper-wrapper d-flex"
-            id="swiper-wrapper-53827b936e10b23de"
-            aria-live="off"
-            style={{
-              // transitionDuration: "5000ms",
-              transform: "translate3d(10px, 0px, 0px)"
+      <div className="tp-line-text-wrap tp-line-text-wrap-2 pt-120 pb-120">
+
+          <Swiper
+            spaceBetween={20}
+            slidesPerView={'auto'}
+            freeMode={true}
+            loop={true}
+            speed={2500} // slow transition speed (in ms)
+            autoplay={{
+              delay: 0,       // 1.5 seconds delay between scrolls
+              disableOnInteraction: false,
+              reverseDirection: true, 
             }}
+            modules={[FreeMode, Autoplay]}
+            className="mySwiper  tp-img-slide "
           >
-            <div
-              className="swiper-slide"
-              role="group"
-              aria-label="4 / 6"
-              data-swiper-slide-index={3}
-              style={{ marginRight: 40 }}
-            >
+            <SwiperSlide >
               <div className="sv-port-thumb port-thumb-2">
                 <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-service/portfolio/port-4.jpg" alt="" />
               </div>
-            </div>
-            <div
-              className="swiper-slide swiper-slide-prev"
-              role="group"
-              aria-label="5 / 6"
-              data-swiper-slide-index={4}
-              style={{ marginRight: 40 }}
-            >
+            </SwiperSlide>
+            <SwiperSlide >
               <div className="sv-port-thumb port-thumb-1">
                 <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-service/portfolio/port-2.jpg" alt="" />
               </div>
-            </div>
-            <div
-              className="swiper-slide swiper-slide-active"
-              role="group"
-              aria-label="6 / 6"
-              data-swiper-slide-index={5}
-              style={{ marginRight: 40 }}
-            >
+              </SwiperSlide>
+              <SwiperSlide >
               <div className="sv-port-thumb port-thumb-2">
                 <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-service/portfolio/port-1.jpg" alt="" />
               </div>
-            </div>
-            <div
-              className="swiper-slide swiper-slide-next"
-              role="group"
-              aria-label="1 / 6"
-              data-swiper-slide-index={0}
-              style={{ marginRight: 40 }}
-            >
+              </SwiperSlide>
+              <SwiperSlide >
               <div className="sv-port-thumb port-thumb-1">
                 <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-service/portfolio/port-2.jpg" alt="" />
               </div>
-            </div>
-            <div
-              className="swiper-slide"
-              role="group"
-              aria-label="2 / 6"
-              data-swiper-slide-index={1}
-              style={{ marginRight: 40 }}
-            >
+              </SwiperSlide>
+              <SwiperSlide >
               <div className="sv-port-thumb port-thumb-2">
                 <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-service/portfolio/port-2.jpg" alt="" />
               </div>
-            </div>
-            <div
-              className="swiper-slide"
-              role="group"
-              aria-label="3 / 6"
-              data-swiper-slide-index={2}
-              style={{ marginRight: 40 }}
-            >
+              </SwiperSlide>
+              <SwiperSlide >
               <div className="sv-port-thumb port-thumb-1">
                 <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-service/portfolio/port-3.jpg" alt="" />
               </div>
-            </div>
-          </div>
-          <span
-            className="swiper-notification"
-            aria-live="assertive"
-            aria-atomic="true"
-          />
-        </div>
+              </SwiperSlide>
+          </Swiper>
       </div>
 
       <style>{`.footer-bg-color { background-color: #d9d4c5!important; margin-bottom:20px; }`}</style>
