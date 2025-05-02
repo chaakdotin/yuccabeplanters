@@ -675,7 +675,7 @@ const Services = () => {
                   transform: "translate(0px, 0px)"
                 }}
               >
-                <span className="d-none">
+                <span>
                   <svg
                     width={41}
                     height={46}
@@ -694,7 +694,7 @@ const Services = () => {
                   Hi!
                 </span>
                 <p className="tp-dropcap">
-                  Hi, I’m really glad you’re here.
+                  I’m really glad you’re here.
                   You have a space—something personal, something you’re shaping—and you want it to feel alive, thoughtful, and beautifully balanced. That’s exactly where I come in.
                 </p>
                 <div class="col-12 pt-4">
