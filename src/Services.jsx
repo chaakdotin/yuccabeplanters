@@ -1112,7 +1112,7 @@ const Services = () => {
               reverseDirection: true, 
             }}
             modules={[FreeMode, Autoplay]}
-            className="mySwiper  tp-img-slide "
+            className="mySwiper tp-img-slide "
           >
             <SwiperSlide >
               <div className="sv-port-thumb port-thumb-2">
