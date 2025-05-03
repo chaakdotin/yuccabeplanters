@@ -16,6 +16,8 @@ const BlogsDetails = lazy(() => import('./BlogsDetails'));
 const BlogsDetails1 = lazy(() => import('./BlogsDetails1'));
 const BlogsDetails2 = lazy(() => import('./BlogsDetails2'));
 const BlogsDetails3 = lazy(() => import('./BlogsDetails3'));
+const BlogsDetails4 = lazy(() => import('./BlogsDetails4'));
+const BlogsDetails5 = lazy(() => import('./BlogsDetails5'));
 const Portfolio = lazy(() => import('./Portfolio'));
 const Portfolio1 = lazy(() => import('./Portfolio1'));
 const Projects = lazy(() => import('./Projects'));
@@ -46,6 +48,8 @@ const Data = () => {
               <Route path="/terrace-garden-ideas-how-to-style-your-outdoors-with-yuccabe-planters" element={<BlogsDetails1 />} />
               <Route path="/how-plants-improve-mental-health-and-why-your-home-needs-more-greenery" element={<BlogsDetails2 />} />
               <Route path="/the-ultimate-guide-to-choosing-the-right-planter-for-every-space" element={<BlogsDetails3 />} />
+              <Route path="/why-designer-pots-are-the-new-statement-pieces-for-luxury-homes" element={<BlogsDetails4 />} />
+              <Route path="/balcony-makeover-ideas-using-yuccabe-s-modern-planter-designs" element={<BlogsDetails5 />} />
               {/* 🔴 Catch-all route for undefined paths */}
               <Route path="*" element={<NotFound />} />
             </Route>
