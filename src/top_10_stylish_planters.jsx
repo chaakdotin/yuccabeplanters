@@ -24,7 +24,7 @@ export default function top_10_stylish_planters() {
                         </div>
                     </div>
                 </div>
-                <div className="container container-1800 d-none">
+                <div className="container container-1800 ">
                     <div className="blog-details-thumb-wrap">
                         <div className="row">
                             <div className="col-md-4">
@@ -199,7 +199,7 @@ export default function top_10_stylish_planters() {
 
 
                                 <div
-                                    className="blog-details-thumb-box tp_fade_bottom d-none"
+                                    className="blog-details-thumb-box tp_fade_bottom "
                                     style={{
                                         translate: "none",
                                         rotate: "none",

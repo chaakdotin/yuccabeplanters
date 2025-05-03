@@ -39,10 +39,10 @@ const Data = () => {
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/portfolio1" element={<Portfolio1 />} />
               <Route path="/projects" element={<Projects />} />
-              <Route path="/:title" element={<BlogsDetails />} />
+              <Route path="/top-10-stylish-planters-to-elevate-your-home-decor-in-2025" element={<BlogsDetails />} />
               
               {/* 🔴 Catch-all route for undefined paths */}
-              {/* <Route path="*" element={<NotFound />} /> */}
+              <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
           
