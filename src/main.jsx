@@ -16,7 +16,7 @@ const BlogsDetails = lazy(() => import('./BlogsDetails'));
 const BlogsDetails1 = lazy(() => import('./BlogsDetails1'));
 const BlogsDetails2 = lazy(() => import('./BlogsDetails2'));
 const BlogsDetails3 = lazy(() => import('./BlogsDetails3'));
-const BlogsDetails4 = lazy(() => import('./BlogsDetails4'));
+const BlogsDetails4 = lazy(() => import('./BlogsDetailss4'));
 const BlogsDetails5 = lazy(() => import('./BlogsDetails5'));
 const Portfolio = lazy(() => import('./Portfolio'));
 const Portfolio1 = lazy(() => import('./Portfolio1'));
