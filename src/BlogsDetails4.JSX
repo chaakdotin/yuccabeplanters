@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Footer from './Footer';
 import css from './BlogsDetails.css?raw';
 
-export default function BlogsDetails5() {
+export default function BlogsDetails4() {
     const [Category, setCategory] = useState([]);
     useEffect(() => {
         // Load random blogs
