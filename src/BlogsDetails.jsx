@@ -7,8 +7,6 @@ import NotFound from './NotFound';
 export default function BlogsDetails() {
 
     const [Category, setCategory] = useState([]);
-
-
     useEffect(() => {
         // Load random blogs
         fetch('https://yuccabeplanters.chaak.in/api/RandomBlog.php')
