@@ -42,17 +42,17 @@ export default function BlogsDetails4() {
                         <div className="row">
                             <div className="col-md-4">
                                 <div className="blog-details-top-meta text-center">
-                                    <span>Mark Hopkins</span>
+                                    <span>Tanya Bhasin</span>
                                 </div>
                             </div>
                             <div className="col-md-4">
                                 <div className="blog-details-top-meta text-center">
-                                    <span>01 October, 2022</span>
+                                    <span>8 April 2025</span>
                                 </div>
                             </div>
                             <div className="col-md-4">
                                 <div className="blog-details-top-meta text-center">
-                                    <span>7 mins</span>
+                                    <span>6 min</span>
                                 </div>
                             </div>
                         </div>

@@ -48,17 +48,17 @@ export default function BlogsDetails1() {
                         <div className="row">
                             <div className="col-md-4">
                                 <div className="blog-details-top-meta text-center">
-                                    <span>Mark Hopkins</span>
+                                    <span>Kabir Malhotra</span>
                                 </div>
                             </div>
                             <div className="col-md-4">
                                 <div className="blog-details-top-meta text-center">
-                                    <span>01 October, 2022</span>
+                                    <span>17 March 2025</span>
                                 </div>
                             </div>
                             <div className="col-md-4">
                                 <div className="blog-details-top-meta text-center">
-                                    <span>7 mins</span>
+                                    <span>8 min</span>
                                 </div>
                             </div>
                         </div>
