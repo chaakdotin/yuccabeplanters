@@ -26,7 +26,7 @@ export default function BlogsDetails() {
         // Simulated blog data
         const data = [
             {
-                Blog_Link: "How-to-Choose-the Perfect-Planter-for Your-Space",
+                Blog_Link: "top-10-stylish-planters-to-elevate-your-home-decor-in-2025",
                 file: "top_10_stylish_planters",
                 title: "top_10_stylish_planters"
             }
