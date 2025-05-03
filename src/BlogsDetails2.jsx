@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Footer from './Footer';
 import css from './BlogsDetails.css?raw';
-export default function BlogsDetails() {
+export default function BlogsDetails1() {
 
     const [Category, setCategory] = useState([]);
     useEffect(() => {
@@ -16,9 +16,6 @@ export default function BlogsDetails() {
             });
 
         // Simulated blog data
-
-
-
     }, []);
 
 
@@ -37,7 +34,7 @@ export default function BlogsDetails() {
                                         style={{ perspective: 300 }}
                                     >
                                         <div style={{ position: "relative", display: "inline-block" }}>
-                                            Top 10 Stylish Planters to Elevate Your Home Decor in 2025
+                                            How Plants Improve Mental Health and Why Your Home Needs More Greenery
                                         </div>
                                        
                                     </h4>
@@ -96,124 +93,35 @@ export default function BlogsDetails() {
                                 <div className="row justify-content-center">
                                     <div className="col-xl-8">
                                         {/* 1. Matte Black FRP Cylindrical Planter */}
-                                        <div className="blog-details-top-text">
+                                        {/* <div className="blog-details-top-text">
                                             <h4 className="blog-details-left-title">🌿 1. Matte Black FRP Cylindrical Planter</h4>
-                                        </div>
+                                        </div> */}
                                         <div className="blog-details-left-content">
                                             <p>
-                                            Why it works: Clean, modern, and endlessly versatile. Matte black finishes are on-trend and make a powerful contrast against lush green foliage.<br/>
-                                            Perfect for: Monstera, fiddle leaf fig, or rubber plants in living rooms and home offices.<br/>
-                                            Pro tip: Pair with light wooden furniture or marble floors for a bold, monochrome look.
+                                                In a world filled with screens, deadlines, and noise, the idea of peace has become a luxury. But what if that calm wasn’t far away? What if it could start with something as simple and powerful as a plant?
                                             </p>
+                                            <p>
+                                                Studies have consistently shown that introducing plants into our indoor spaces can significantly impact mental health. The presence of greenery can reduce anxiety, lower blood pressure, and even improve focus and memory. Whether it’s a leafy monstera by your desk or a line of small herbs on your kitchen shelf, these living elements offer real, measurable calm.
+                                            </p>
+                                            <p>
+                                                Plants provide a sense of connection to nature—a grounding force that reminds us to breathe, slow down, and reconnect. Their presence isn’t just aesthetic; it’s therapeutic. Watching something grow, thrive, and evolve in your care can quietly shift your mindset from stress to serenity.
+                                            </p>
+                                            <p>
+                                                Beyond psychological benefits, there’s a biological connection too. Plants help purify indoor air, reduce toxins, and maintain better humidity levels—creating an environment that’s not just prettier but healthier. That improved air quality can mean better sleep, fewer headaches, and clearer thinking.
+                                            </p>
+                                            <p>
+                                                The beauty of this green therapy is how easily it fits into your life. You don’t need a sprawling garden. A few carefully placed planters—on your windowsill, shelf, or entryway—can make a remarkable difference. Choose calming varieties like lavender, aloe vera, or peace lily for added sensory comfort.
+                                            </p>
+                                            <p>
+                                                At Yuccabe, we believe that planters aren’t just accessories—they’re vessels of wellbeing. Our designs are crafted not only to elevate interiors but to help you bring intentional calm into your life. Whether it’s a meditative corner, a plant-lined work desk, or simply one statement planter by the bed, we help you build space that breathes back into you.
+                                            </p>
+                                            <p>
+                                                Greenery isn’t a luxury—it’s a need. And in 2025, mental health is just as much about the space you live in as it is about your thoughts. More plants mean more peace, and your home deserves that harmony.
+                                            </p>
+                                            
                                         </div>
 
-                                        {/* 2. Textured Concrete Bowl Planter */}
-                                        <div className="blog-details-top-text">
-                                            <h4 className="blog-details-left-title">🪨 2. Textured Concrete Bowl Planter</h4>
-                                        </div>
-                                        <div className="blog-details-left-content">
-                                            <p>
-                                            Why it works: The raw, industrial finish of concrete adds a rugged yet artistic touch. The bowl shape feels sculptural and inviting.<br/>
-                                            Perfect for: Succulent arrangements, snake plants, or bonsai centerpieces on coffee tables or outdoor patios.<br/>
-                                            Pro tip: Choose one with a smooth base or metallic rim for a balanced contrast.
-                                            </p>
-                                        </div>
-
-                                        {/* 3. Glossy Ceramic in Sage Green */}
-                                        <div className="blog-details-top-text">
-                                            <h4 className="blog-details-left-title">🍃 3. Glossy Ceramic in Sage Green</h4>
-                                        </div>
-                                        <div className="blog-details-left-content">
-                                            <p>
-                                            Why it works: Sage green is dominating color trends this year—offering a fresh, calming tone that suits both minimal and eclectic interiors.<br/>
-                                            Perfect for: Ferns, peace lilies, or trailing ivy on shelves or bedroom corners.<br/>
-                                            Pro tip: Go with a rounded shape for a soft, spa-like ambiance in personal spaces.
-                                            </p>
-                                        </div>
-
-                                        {/* 4. Dual-Tone Metallic Planter with Stand */}
-                                        <div className="blog-details-top-text">
-                                            <h4 className="blog-details-left-title">✨ 4. Dual-Tone Metallic Planter with Stand</h4>
-                                        </div>
-                                        <div className="blog-details-left-content">
-                                            <p>
-                                            Why it works: Metallic finishes like bronze, copper, and champagne gold add a hint of luxury, while stands elevate the planter—both literally and visually.<br/>
-                                            Perfect for: Statement plants like bird of paradise, areca palm, or rubber plant in lounges and entrances.<br/>
-                                            Pro tip: Choose contrasting legs—black or matte gold—for a bolder impact.
-                                            </p>
-                                        </div>
-
-                                        {/* 5. Sculptural Terracotta Planter */}
-                                        <div className="blog-details-top-text">
-                                            <h4 className="blog-details-left-title">🌾 5. Sculptural Terracotta Planter</h4>
-                                        </div>
-                                        <div className="blog-details-left-content">
-                                            <p>
-                                            Why it works: Natural and timeless, terracotta brings an earthy grounding energy to interiors. The sculptural silhouette modernizes this traditional material.<br/>
-                                            Perfect for: Cactus, alocasia, or even dried pampas arrangements in boho or rustic-themed spaces.<br/>
-                                            Pro tip: Mix with woven textures and linen fabrics for a true nature-inspired setup.
-                                            </p>
-                                        </div>
-
-                                        {/* 6. FRP Tall Tapered Planter in Ivory White */}
-                                        <div className="blog-details-top-text">
-                                            <h4 className="blog-details-left-title">🏛 6. FRP Tall Tapered Planter in Ivory White</h4>
-                                        </div>
-                                        <div className="blog-details-left-content">
-                                            <p>
-                                            Why it works: Tall and sleek, this planter adds vertical elegance without overwhelming the space. The ivory finish adds a sense of calm and purity.<br/>
-                                            Perfect for: Corners, entryways, and narrow passageways with plants like areca palm or dracaena.<br/>
-                                            Pro tip: Place in pairs for symmetry near doorways or open living spaces.
-                                            </p>
-                                        </div>
-
-                                        {/* 7. Geometric Fiberglass Planter in Charcoal */}
-                                        <div className="blog-details-top-text">
-                                            <h4 className="blog-details-left-title">🔲 7. Geometric Fiberglass Planter in Charcoal</h4>
-                                        </div>
-                                        <div className="blog-details-left-content">
-                                            <p>
-                                            Why it works: Geometry is trending in both furniture and decor. This planter’s edgy design and dark charcoal tone offer a perfect modern contrast.<br/>
-                                            Perfect for: Low-maintenance plants like ZZ plant or sansevieria in modern or industrial homes.<br/>
-                                            Pro tip: Use on stair landings or against concrete walls for high visual impact.
-                                            </p>
-                                        </div>
-
-                                        {/* 8. Rattan-Wrapped Indoor Planter */}
-                                        <div className="blog-details-top-text">
-                                            <h4 className="blog-details-left-title">🌿 8. Rattan-Wrapped Indoor Planter</h4>
-                                        </div>
-                                        <div className="blog-details-left-content">
-                                            <p>
-                                            Why it works: Rattan brings in warmth, texture, and a natural touch—perfect for cozy homes and organic modern interiors.<br/>
-                                            Perfect for: Snake plant, rubber plant, or bamboo palm in bedrooms, sunrooms, or reading corners.<br/>
-                                            Pro tip: Blend with soft fabrics, beige tones, and diffused lighting for a serene space.
-                                            </p>
-                                        </div>
-
-                                        {/* 9. Gloss White Ripple Planter */}
-                                        <div className="blog-details-top-text">
-                                            <h4 className="blog-details-left-title">💧 9. Gloss White Ripple Planter</h4>
-                                        </div>
-                                        <div className="blog-details-left-content">
-                                            <p>
-                                            Why it works: Gloss finishes reflect light and add elegance, while ripple patterns give subtle texture that plays with depth.<br/>
-                                            Perfect for: Orchids, calathea, or philodendron in bathrooms or dressing areas.<br/>
-                                            Pro tip: Use in minimal interiors with glass or chrome accents for a soft, upscale effect.
-                                            </p>
-                                        </div>
-
-                                        {/* 10. Yuccabe Signature Custom Planter */}
-                                        <div className="blog-details-top-text">
-                                            <h4 className="blog-details-left-title">🛠 10. Yuccabe Signature Custom Planter</h4>
-                                        </div>
-                                        <div className="blog-details-left-content">
-                                            <p>
-                                            Why it works: A custom-designed planter tailored to your space, style, and plant choice ensures the perfect harmony of form and function.<br/>
-                                            Perfect for: Literally any room, project, or layout—from residential to hospitality.<br/>
-                                            Pro tip: Yuccabe’s team helps you design the planter from scratch—material, shape, finish, and placement included.
-                                            </p>
-                                        </div>
+                                        
                                     </div>
 
                                     
@@ -251,95 +159,6 @@ export default function BlogsDetails() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="row justify-content-center d-none">
-                                    <div className="col-xl-8">
-                                        <div
-                                            className="blog-details-left-content tp_fade_bottom"
-                                            style={{
-                                                translate: "none",
-                                                rotate: "none",
-                                                scale: "none",
-                                                opacity: 1,
-                                                transform: "translate(0px, 0px)"
-                                            }}
-                                        >
-                                            <h4 className="blog-details-left-title">
-                                                Relationship &amp; Communication
-                                            </h4>
-                                            <p>
-                                                But, like most politicians, he promised more than he could
-                                                deliver. Why not indeed! Daylight and everything. And then the
-                                                battle’s not so bad? Hello, little man. I will destroy you!
-                                                No, I’m Santa Claus! Kif might! Man, I’m sore all over. I feel
-                                                like I just went ten rounds with mighty Thor. I found what I
-                                                need. And it’s not friends, it’s things. Then we’ll go with
-                                                that data file!
-                                            </p>
-                                        </div>
-                                        <div
-                                            className="blog-details-blockquote tp_fade_bottom"
-                                            style={{
-                                                translate: "none",
-                                                rotate: "none",
-                                                scale: "none",
-                                                opacity: 1,
-                                                transform: "translate(0px, 0px)"
-                                            }}
-                                        >
-                                            <blockquote>
-                                                <span className="quote-icon">
-                                                    <svg
-                                                        width={90}
-                                                        height={66}
-                                                        viewBox="0 0 90 66"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M0 42.6672C0 27.2282 7.2986 14.2644 21.8957 3.77586C25.3156 1.25862 27.8597 0 29.528 0C30.6957 0 31.2796 0.755172 31.2796 2.26552C31.2796 3.69195 31.0294 4.7408 30.5289 5.41207C30.1118 5.99943 29.5697 6.54483 28.9024 7.04828C28.2351 7.55172 27.5678 8.01322 26.9005 8.43276C26.2332 8.8523 25.4408 9.48161 24.5232 10.3207C16.3488 17.369 12.2616 24.2494 12.2616 30.9621C12.2616 34.5701 13.7213 36.3741 16.6408 36.3741C28.9024 36.3741 35.0332 41.4506 35.0332 51.6034C35.0332 55.5471 33.5317 58.9034 30.5289 61.6724C27.5261 64.3575 24.2313 65.7 20.6445 65.7C14.055 65.7 8.96682 63.1408 5.3801 58.0224C1.79337 52.8201 0 47.7017 0 42.6672ZM55.0919 42.6672C55.0919 26.9764 62.182 14.1385 76.3621 4.15345C79.6986 1.38448 82.2009 0 83.8692 0C85.5374 0 86.3716 0.755172 86.3716 2.26552C86.3716 3.69195 86.1213 4.69885 85.6208 5.28621C85.2038 5.87356 84.6616 6.46092 83.9943 7.04827C83.327 7.55172 82.6597 8.01322 81.9924 8.43276C81.3251 8.8523 80.5744 9.48161 79.7403 10.3207C71.3156 17.8724 67.1033 24.7529 67.1033 30.9621C67.1033 34.5701 68.6464 36.3741 71.7327 36.3741C83.9109 36.3741 90 41.4086 90 51.4776C90 55.3374 88.4986 58.6937 85.4957 61.5465C82.5763 64.3155 79.2815 65.7 75.6114 65.7C69.1886 65.7 64.1422 63.1828 60.472 58.1483C56.8853 53.0299 55.0919 47.8695 55.0919 42.6672Z"
-                                                            fill="#19191A"
-                                                            fillOpacity="0.1"
-                                                        />
-                                                    </svg>
-                                                </span>
-                                                <p>Don't watch the clock; do what it does. keep going.</p>
-                                                <span className="blockquote-info">Sam Levenson</span>
-                                            </blockquote>
-                                        </div>
-                                        <div
-                                            className="blog-details-left-content tp_fade_bottom"
-                                            style={{
-                                                translate: "none",
-                                                rotate: "none",
-                                                scale: "none",
-                                                opacity: 1,
-                                                transform: "translate(0px, 0px)"
-                                            }}
-                                        >
-                                            <p>
-                                                With any accomplished project, great time management is an
-                                                essential component. We business owners hire product
-                                                designers, they expect them to not only perform well, but also
-                                                on time. At Stan Vision, we provide you with an experienced
-                                                design team, led by an expert PM who knows how to prioritise
-                                                your platform and product.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="blog-details-thumb-box d-none">
-                                    <div className="row">
-                                        <div className="col-xl-12">
-                                            <div className="blog-details-thumb">
-                                                <img
-                                                    className="w-100"
-                                                    src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-blog/blog-details/blog-details-4.jpg"
-                                                    alt=""
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div className="row justify-content-center">
                                     <div className="col-xl-8">
                                         <div
@@ -356,10 +175,7 @@ export default function BlogsDetails() {
                                                 ✨ Final Thoughts
                                             </h4>
                                             <p>
-                                                Planters in 2025 are no longer just pots—they’re functional sculptures that reflect your style, support your plants, and shape the vibe of your home. Whether you’re after bold, luxurious statements or soft, natural textures, there’s a perfect planter waiting to elevate your space.
-                                            </p>
-                                            <p>
-                                                Choose pieces that don’t just fit—but feel right. Let your greens thrive, and let your home breathe design.
+                                            Your home should feel like a retreat—not a reminder of rush. Adding plants isn’t about decor, it’s about care—both for your space and yourself. Start small, go green, and let nature do the healing it’s always been meant to do.
                                             </p>
                                         </div>
                                         <div className="blog-details-share-wrap mb-40">

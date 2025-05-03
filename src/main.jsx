@@ -13,6 +13,8 @@ const ContactUs = lazy(() => import('./Contact-us'));
 const AboutUs = lazy(() => import('./AboutUs'));
 const Blogs = lazy(() => import('./Blogs'));
 const BlogsDetails = lazy(() => import('./BlogsDetails'));
+const BlogsDetails1 = lazy(() => import('./BlogsDetails1'));
+const BlogsDetails2 = lazy(() => import('./BlogsDetails2'));
 const Portfolio = lazy(() => import('./Portfolio'));
 const Portfolio1 = lazy(() => import('./Portfolio1'));
 const Projects = lazy(() => import('./Projects'));
@@ -40,7 +42,8 @@ const Data = () => {
               <Route path="/portfolio1" element={<Portfolio1 />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/top-10-stylish-planters-to-elevate-your-home-decor-in-2025" element={<BlogsDetails />} />
-              
+              <Route path="/terrace-garden-ideas-how-to-style-your-outdoors-with-yuccabe-planters" element={<BlogsDetails1 />} />
+              <Route path="/how-plants-improve-mental-health-and-why-your-home-needs-more-greenery" element={<BlogsDetails2 />} />
               {/* 🔴 Catch-all route for undefined paths */}
               <Route path="*" element={<NotFound />} />
             </Route>

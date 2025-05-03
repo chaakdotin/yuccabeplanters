@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Footer from './Footer';
 import css from './BlogsDetails.css?raw';
-export default function BlogsDetails() {
+export default function BlogsDetails1() {
 
     const [Category, setCategory] = useState([]);
     useEffect(() => {
@@ -16,9 +16,6 @@ export default function BlogsDetails() {
             });
 
         // Simulated blog data
-
-
-
     }, []);
 
 
@@ -37,7 +34,7 @@ export default function BlogsDetails() {
                                         style={{ perspective: 300 }}
                                     >
                                         <div style={{ position: "relative", display: "inline-block" }}>
-                                            Top 10 Stylish Planters to Elevate Your Home Decor in 2025
+                                        Terrace Garden Ideas: How to Style Your Outdoors with Yuccabe Planters
                                         </div>
                                        
                                     </h4>
@@ -96,124 +93,37 @@ export default function BlogsDetails() {
                                 <div className="row justify-content-center">
                                     <div className="col-xl-8">
                                         {/* 1. Matte Black FRP Cylindrical Planter */}
-                                        <div className="blog-details-top-text">
+                                        {/* <div className="blog-details-top-text">
                                             <h4 className="blog-details-left-title">🌿 1. Matte Black FRP Cylindrical Planter</h4>
-                                        </div>
+                                        </div> */}
                                         <div className="blog-details-left-content">
                                             <p>
-                                            Why it works: Clean, modern, and endlessly versatile. Matte black finishes are on-trend and make a powerful contrast against lush green foliage.<br/>
-                                            Perfect for: Monstera, fiddle leaf fig, or rubber plants in living rooms and home offices.<br/>
-                                            Pro tip: Pair with light wooden furniture or marble floors for a bold, monochrome look.
+                                                <b>Terrace Garden Ideas</b>: How to Style Your Outdoors with Yuccabe Planters Start by creating natural zones. A few tall planters placed intentionally can softly separate your seating area from your greens without blocking light or view. If you enjoy hosting, try adding a dining nook with planters on either side that offer both privacy and personality.
+                                            </p>
+                                            <p>
+                                                For smaller terraces, vertical gardening is your best friend. Yuccabe’s wall-mounted and sleek FRP planters can help you build a green wall that adds visual height and saves floor space. You’ll be surprised how even a single wall of cascading greens can change the mood of your terrace.
+                                            </p>
+                                            <p>
+                                                Mixing planter heights and materials is another simple but effective trick. Pair a wide, low bowl planter with a tall, slim one in a contrasting finish. For instance, a concrete-textured pot next to a glossy ceramic creates depth and keeps the layout visually interesting.
+                                            </p>
+                                            <p>
+                                                Don’t ignore the corners—they often hold the most potential. A sculptural terracotta planter with a large-leaf plant like monstera can instantly soften a sharp edge. Add a floor lantern next to it, and you’ve got a cozy little evening reading corner.
+                                            </p>
+                                            <p>
+                                                Movement matters too. Incorporating grasses or hanging plants introduces softness and rhythm. Pampas grass, spider plants, or even ivy can dance in the wind, adding a soothing element to the space.
+                                            </p>
+                                            <p>
+                                            If you have the room, design a plant-led lounge area. Combine low seating with oversized planters behind or around it. Think of it as a frame of green that wraps around your unwind zone. It’s ideal for slow mornings or late-night conversations.
+                                            </p>
+                                            <p>
+                                                Want to keep things practical? Grow your own herbs. Edible greens like basil, mint, or rosemary thrive in Yuccabe’s deep, breathable planters. Place them close to your kitchen entrance for convenience and a fresh burst of scent every time you pass.
+                                            </p>
+                                            <p>
+                                                Finally, customization is key. No two terraces are the same—your style, sunlight, layout, and preferences all play a role. Yuccabe offers custom planter solutions that fit perfectly into your space, visually and functionally. Whether it’s a specific material, height, or finish, we help you get exactly what your space needs.
                                             </p>
                                         </div>
 
-                                        {/* 2. Textured Concrete Bowl Planter */}
-                                        <div className="blog-details-top-text">
-                                            <h4 className="blog-details-left-title">🪨 2. Textured Concrete Bowl Planter</h4>
-                                        </div>
-                                        <div className="blog-details-left-content">
-                                            <p>
-                                            Why it works: The raw, industrial finish of concrete adds a rugged yet artistic touch. The bowl shape feels sculptural and inviting.<br/>
-                                            Perfect for: Succulent arrangements, snake plants, or bonsai centerpieces on coffee tables or outdoor patios.<br/>
-                                            Pro tip: Choose one with a smooth base or metallic rim for a balanced contrast.
-                                            </p>
-                                        </div>
-
-                                        {/* 3. Glossy Ceramic in Sage Green */}
-                                        <div className="blog-details-top-text">
-                                            <h4 className="blog-details-left-title">🍃 3. Glossy Ceramic in Sage Green</h4>
-                                        </div>
-                                        <div className="blog-details-left-content">
-                                            <p>
-                                            Why it works: Sage green is dominating color trends this year—offering a fresh, calming tone that suits both minimal and eclectic interiors.<br/>
-                                            Perfect for: Ferns, peace lilies, or trailing ivy on shelves or bedroom corners.<br/>
-                                            Pro tip: Go with a rounded shape for a soft, spa-like ambiance in personal spaces.
-                                            </p>
-                                        </div>
-
-                                        {/* 4. Dual-Tone Metallic Planter with Stand */}
-                                        <div className="blog-details-top-text">
-                                            <h4 className="blog-details-left-title">✨ 4. Dual-Tone Metallic Planter with Stand</h4>
-                                        </div>
-                                        <div className="blog-details-left-content">
-                                            <p>
-                                            Why it works: Metallic finishes like bronze, copper, and champagne gold add a hint of luxury, while stands elevate the planter—both literally and visually.<br/>
-                                            Perfect for: Statement plants like bird of paradise, areca palm, or rubber plant in lounges and entrances.<br/>
-                                            Pro tip: Choose contrasting legs—black or matte gold—for a bolder impact.
-                                            </p>
-                                        </div>
-
-                                        {/* 5. Sculptural Terracotta Planter */}
-                                        <div className="blog-details-top-text">
-                                            <h4 className="blog-details-left-title">🌾 5. Sculptural Terracotta Planter</h4>
-                                        </div>
-                                        <div className="blog-details-left-content">
-                                            <p>
-                                            Why it works: Natural and timeless, terracotta brings an earthy grounding energy to interiors. The sculptural silhouette modernizes this traditional material.<br/>
-                                            Perfect for: Cactus, alocasia, or even dried pampas arrangements in boho or rustic-themed spaces.<br/>
-                                            Pro tip: Mix with woven textures and linen fabrics for a true nature-inspired setup.
-                                            </p>
-                                        </div>
-
-                                        {/* 6. FRP Tall Tapered Planter in Ivory White */}
-                                        <div className="blog-details-top-text">
-                                            <h4 className="blog-details-left-title">🏛 6. FRP Tall Tapered Planter in Ivory White</h4>
-                                        </div>
-                                        <div className="blog-details-left-content">
-                                            <p>
-                                            Why it works: Tall and sleek, this planter adds vertical elegance without overwhelming the space. The ivory finish adds a sense of calm and purity.<br/>
-                                            Perfect for: Corners, entryways, and narrow passageways with plants like areca palm or dracaena.<br/>
-                                            Pro tip: Place in pairs for symmetry near doorways or open living spaces.
-                                            </p>
-                                        </div>
-
-                                        {/* 7. Geometric Fiberglass Planter in Charcoal */}
-                                        <div className="blog-details-top-text">
-                                            <h4 className="blog-details-left-title">🔲 7. Geometric Fiberglass Planter in Charcoal</h4>
-                                        </div>
-                                        <div className="blog-details-left-content">
-                                            <p>
-                                            Why it works: Geometry is trending in both furniture and decor. This planter’s edgy design and dark charcoal tone offer a perfect modern contrast.<br/>
-                                            Perfect for: Low-maintenance plants like ZZ plant or sansevieria in modern or industrial homes.<br/>
-                                            Pro tip: Use on stair landings or against concrete walls for high visual impact.
-                                            </p>
-                                        </div>
-
-                                        {/* 8. Rattan-Wrapped Indoor Planter */}
-                                        <div className="blog-details-top-text">
-                                            <h4 className="blog-details-left-title">🌿 8. Rattan-Wrapped Indoor Planter</h4>
-                                        </div>
-                                        <div className="blog-details-left-content">
-                                            <p>
-                                            Why it works: Rattan brings in warmth, texture, and a natural touch—perfect for cozy homes and organic modern interiors.<br/>
-                                            Perfect for: Snake plant, rubber plant, or bamboo palm in bedrooms, sunrooms, or reading corners.<br/>
-                                            Pro tip: Blend with soft fabrics, beige tones, and diffused lighting for a serene space.
-                                            </p>
-                                        </div>
-
-                                        {/* 9. Gloss White Ripple Planter */}
-                                        <div className="blog-details-top-text">
-                                            <h4 className="blog-details-left-title">💧 9. Gloss White Ripple Planter</h4>
-                                        </div>
-                                        <div className="blog-details-left-content">
-                                            <p>
-                                            Why it works: Gloss finishes reflect light and add elegance, while ripple patterns give subtle texture that plays with depth.<br/>
-                                            Perfect for: Orchids, calathea, or philodendron in bathrooms or dressing areas.<br/>
-                                            Pro tip: Use in minimal interiors with glass or chrome accents for a soft, upscale effect.
-                                            </p>
-                                        </div>
-
-                                        {/* 10. Yuccabe Signature Custom Planter */}
-                                        <div className="blog-details-top-text">
-                                            <h4 className="blog-details-left-title">🛠 10. Yuccabe Signature Custom Planter</h4>
-                                        </div>
-                                        <div className="blog-details-left-content">
-                                            <p>
-                                            Why it works: A custom-designed planter tailored to your space, style, and plant choice ensures the perfect harmony of form and function.<br/>
-                                            Perfect for: Literally any room, project, or layout—from residential to hospitality.<br/>
-                                            Pro tip: Yuccabe’s team helps you design the planter from scratch—material, shape, finish, and placement included.
-                                            </p>
-                                        </div>
+                                        
                                     </div>
 
                                     
@@ -356,10 +266,7 @@ export default function BlogsDetails() {
                                                 ✨ Final Thoughts
                                             </h4>
                                             <p>
-                                                Planters in 2025 are no longer just pots—they’re functional sculptures that reflect your style, support your plants, and shape the vibe of your home. Whether you’re after bold, luxurious statements or soft, natural textures, there’s a perfect planter waiting to elevate your space.
-                                            </p>
-                                            <p>
-                                                Choose pieces that don’t just fit—but feel right. Let your greens thrive, and let your home breathe design.
+                                                Your terrace deserves to be more than just a forgotten open patch. With the right styling and the right planters, it can become your favorite space in the entire home. Whether you want it calm, cozy, bold, or functional, Yuccabe’s planters are designed to help you build a terrace that reflects your lifestyle—with intention, elegance, and natural charm.
                                             </p>
                                         </div>
                                         <div className="blog-details-share-wrap mb-40">
