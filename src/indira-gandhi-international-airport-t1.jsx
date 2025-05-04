@@ -141,7 +141,7 @@ export default function indiragandhiinternationalairportt1() {
                                             </p>
                                         </div>
                                     </div> 
-                                    <div className="project-details-1-social">
+                                    <div className="project-details-1-social d-none">
                                         <div className="project-details-1-social-inner">
                                             <a href="#">
                                                 <span>
