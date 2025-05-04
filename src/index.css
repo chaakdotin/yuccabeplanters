@@ -113,7 +113,7 @@ h1, h2, h3, h4, span, input{
 
 @media screen and (max-width:480px) {
     section h1, .bg-color h1{
-      font-size: 17px!important;
+      font-size: 20px!important;
     }
     .contact-us {
       height: 100%!important;
