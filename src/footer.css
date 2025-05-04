@@ -1,9 +1,10 @@
-.Link_default__VBYZf{
+.Link_default__VBYZf {
     text-decoration: transparent !important;
     width: 100%;
     font-size: 1rem;
     color: #000;
 }
+
 .Typography_variant-bodyLarge__q0OzA {
     --font-family-text: '__haasGrotText_7ea857', '__haasGrotText_Fallback_7ea857';
     --font-family-disp: '__haasGrotDisp_332926', '__haasGrotDisp_Fallback_332926';
@@ -14,18 +15,107 @@
     font-size: calc(var(--font-size-body-large)*0);
     line-height: 1.2;
 }
-.SiteFooter_socials__TI9kV{
+
+.SiteFooter_socials__TI9kV {
     display: flex;
     justify-content: end;
     align-items: center;
     gap: 20px;
 }
+
 .SiteFooter_socials__TI9kV svg {
-   height: 1em;
+    height: 1em;
 }
-.SiteFooter_socials__TI9kV a{
+
+.SiteFooter_socials__TI9kV a {
     color: #d9d4c5;
 }
-.copright-div{
+
+.copright-div {
     justify-content: start;
+}
+@media screen and (max-width:4000px) {
+    .copyright-socialmedia {
+        flex-wrap: nowrap!important;
+    }
+    .navbar-container-padding span{
+        /* font-size: 20px; */
+    }
+  }
+@media screen and (max-width:768px) {
+    .Link_default__VBYZf {
+        font-size: 13px!important;
+    }
+    .footer-bg-color .row {
+        justify-content: center;
+        gap:20px;
+    }
+    .contact-us .description {
+        width: 100%;
+    }
+    .contact-us .tagline {
+        width: 100%;
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: 700;
+    }
+    .contact-us .lastline {
+        width: 100%;
+    }
+    .form{
+        padding: 20px 10px!important
+    }
+    .footer-bg-color{
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width:480px) {
+    .footer-bg-color{
+        justify-content: center!important;
+        max-width: 400px;
+       
+    }
+   
+    .contact-us .contact-us-info{
+        text-align: center!important;
+    }
+    .Typography_variant-monoCaption__CtFq-1{
+        font-size: 13px;
+    }
+    .copyright-div, .SiteFooter_socials__TI9kV {
+        justify-content: center!important;
+    }
+    .copyright-socialmedia{
+        flex-wrap: wrap!important;
+    }
+    .stagger1 h1{
+        font-size:40px!important;
+    }
+    .gjhdsf{
+        justify-content: start!important;
+        padding-top:150px;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .footer-bg-color {
+        justify-content: center !important;
+        max-width: 350px;
+    }
+
+    .Typography_variant-monoCaption__CtFq-1 {
+        padding: 0 !important;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .footer-bg-color {
+        justify-content: center !important;
+        max-width: 300px;
+    }
+
+    .footer-bg-color .row {
+        padding: 15px 5px !important;
+    }
+
 }

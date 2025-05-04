@@ -64,10 +64,10 @@ export default function ContactUs() {
         <div className='container' style={{paddingTop:220}}>
             <div className='d-flex flex-column justify-content-center col-12 pb-5'>
             <div className='text-center'>
-                <span style={{fontSize: '8.68vw', fontWeight:600,fontFamily: "Markpro",letterSpacing:-3}}>Get In Touch</span>
+                <span className="getintouch" style={{fontSize: '8.68vw', fontWeight:600,fontFamily: "Markpro",letterSpacing:-3}}>Get In Touch</span>
             </div>
             <div className='d-flex justify-content-center pt-2' style={{}}>
-                <p style={{fontSize:'max(1.043vw, 12px)',width:"calc((2.0848vw - 2.777vw*2/48)*22)", color:"#3e3e3e",fontFamily: "PPMori,Noto Sans JP,Noto Sans SC,sans-serif", fontWeight:100, lineHeight:1.2}}>
+                <p className='getintouch-para' style={{fontSize:'max(1.043vw, 12px)',width:"calc((2.0848vw - 2.777vw*2/48)*22)", color:"#3e3e3e",fontFamily: "PPMori,Noto Sans JP,Noto Sans SC,sans-serif", fontWeight:100, lineHeight:1.2}}>
                     We’d love to hear from you. Whether you’re an architect, a designer, a brand, or simply someone who loves beautiful spaces—let’s create something timeless together. 
                     Have a project in mind? Need a custom piece? Or just curious about how our planters can elevate your space? Drop us a message, and we’ll be right there—ready to bring your green vision to life.
                 </p>

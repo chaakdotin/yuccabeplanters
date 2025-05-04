@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { gsap, ScrollTrigger, ScrollToPlugin } from "gsap/all";
 import ScrollSections from "./ScrollSections";
-import './new.css';
+import css from './new.css?raw';
 import Carousel from './Carousel';
 import Footer from './Footer';
 
@@ -108,99 +108,102 @@ const CubeEffectSwiper = ({scrollToSection}) => {
     }, []);
     
     return (
-        <div className="scroll-container" style={{ width: "100vw", overflow: "hidden" }} >
-            <Carousel data={{refs, setCurrentPage}} />
-            <div style={{ zIndex: 1 }} className="h-100vh bg-color position-relative h-100vh stagger"  ref={refs.about}>
-                <div className='d-flex flex-column gap-5 align-items-center justify-content-center h-100 border-reduis'>
-                    <div className="stagger1">
-                        <h1 className='text-white secrion-3-font poppins-medium' data-aos="fade-up" data-aos-offset="200" data-aos-anchor-placement="top-bottom">co-create </h1>
-                        <h1 className='text-white secrion-3-font poppins-medium' data-aos="fade-up" data-aos-offset="200" data-aos-anchor-placement="top-bottom">your green</h1>
-                        <h1 className='text-white secrion-3-font poppins-medium' data-aos="fade-up" data-aos-offset="200" data-aos-anchor-placement="top-bottom">spaces with us</h1>
+        <>
+            <style>{css}</style>
+            <div className="scroll-container" style={{ width: "100vw", overflow: "hidden" }} >
+                <Carousel data={{refs, setCurrentPage}} />
+                <div style={{ zIndex: 1 }} className="h-100vh bg-color position-relative h-100vh stagger"  ref={refs.about}>
+                    <div className='d-flex flex-column gap-5 align-items-center justify-content-center h-100 border-reduis'>
+                        <div className="stagger1">
+                            <h1 className='text-white secrion-3-font poppins-medium' data-aos="fade-up" data-aos-offset="200" data-aos-anchor-placement="top-bottom">co-create </h1>
+                            <h1 className='text-white secrion-3-font poppins-medium' data-aos="fade-up" data-aos-offset="200" data-aos-anchor-placement="top-bottom">your green</h1>
+                            <h1 className='text-white secrion-3-font poppins-medium' data-aos="fade-up" data-aos-offset="200" data-aos-anchor-placement="top-bottom">spaces with us</h1>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div className="YUCCABE overflow-hidden" style={{ position: 'relative',background: "linear-gradient(0deg,#d9d4c5 0%,#b0aca6 100%)"}}>
-                <div style={{ ...styles.rectStyle, fontSize: '800px', backgroundColor: "transparent", zIndex: 1, opacity: 0.2 }} className="textsdsdd h-100vh d-flex flex-column align-items-center justify-content-center poppins-bold">Yuccabe</div>
-                <ScrollSections refs={refs}/>
-            </div>
-            <div className="sdf overflow-hidden" ref={refs.clients}>
-                <div className='d-flex flex-column align-items-center justify-content-center h-100vh w-100' >
-                    <img src="1.jpg" alt="" style={{ width: '40%', borderRadius:'20px' }} className="sdf-img" />
+                
+                <div className="YUCCABE overflow-hidden" style={{ position: 'relative',background: "linear-gradient(0deg,#d9d4c5 0%,#b0aca6 100%)"}}>
+                    <div style={{ ...styles.rectStyle, fontSize: '800px', backgroundColor: "transparent", zIndex: 1, opacity: 0.2 }} className="textsdsdd h-100vh d-flex flex-column align-items-center justify-content-center poppins-bold">Yuccabe</div>
+                    <ScrollSections refs={refs}/>
                 </div>
-            </div>
-            <div style={{}} className="bg-color contact-us" ref={refs.contact}>
-                <div className="container h-100vh ">
-                    <div className='row h-100 align-items-center'>
-                        <div className="col-lg-6 col-md-6 col-sm-12 contact-us-info " style={{textAlign:"left"}}>
-                            <div className='py-5'>
-                                <div className='text-white'>
-                                    <h1 className="poppins-medium">Have a vision for your space?</h1>
-                                </div>
-                                <div className='text-white description'>
-                                    <span className="poppins-medium">We’re here to make it a reality. Whether you’re looking for innovative planters, custom designs, or expert advice, we’re just a call or click away</span>
-                                </div>
-                            </div>
-                            <div className='text-white tagline'>
-                                <span className="poppins-medium">We collaborate with ambitious companies and aesthetes.</span>
-                            </div>
-                            <div className='text-white tagline'>
-                                <span className="poppins-medium">Are you one?</span>
-                            </div>
-                            <div className='text-white py-2 lastline'>
-                                <span className="poppins-medium">Making a change starts with one conversation.
-                                    Let’s talk!
-                                </span>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 col-md-6 col-sm-12 px-5 form">
-                            <form action="https://yuccabeplanters.chaak.in/api/contact.php" method='POST'>
-                                <div className='px-5 poppins-medium' style={{textAlign:"left"}}>
-                                    <div className="form-floatings mt-3 mb-3 form-group">
-                                        <label for="your-name" className="form-label">Your name<span>*</span></label>
-                                        <input type="text" className="form-control" name="your-name" id="your-name" placeholder='Name you’d like us to remember.' required/>
+                <div className="sdf overflow-hidden" ref={refs.clients}>
+                    <div className='d-flex flex-column align-items-center justify-content-center h-100vh w-100' >
+                        <img src="1.jpg" alt="" style={{ width: '40%', borderRadius:'20px' }} className="sdf-img" />
+                    </div>
+                </div>
+                <div style={{}} className="bg-color contact-us" ref={refs.contact}>
+                    <div className="container h-100vh ">
+                        <div className='row h-100 align-items-center'>
+                            <div className="col-lg-6 col-md-6 col-sm-12 contact-us-info " style={{textAlign:"left"}}>
+                                <div className='py-5'>
+                                    <div className='text-white'>
+                                        <h1 className="poppins-medium">Have a vision for your space?</h1>
                                     </div>
-                                    <div className="form-floatings mt-3 mb-3 form-group">
-                                        <label for="email-address" className="form-label">Email Address<span>*</span></label>
-                                        <input type="text" className="form-control" name="email-address" id="email-address" placeholder='We promise — no spam, just style.' required/>
-                                    </div>
-                                    <div className="form-floatings mt-3 mb-3 form-group">
-                                        <label for="contact-number" className="form-label">Contact Number<span>*</span></label>
-                                        <input type="text" className="form-control" name="contact-number" id="contact-number" placeholder='Prefer a call? Share your number.' required/>
-                                    </div>
-                                    <div className="form-floatings mt-3 mb-3 form-group">
-                                        <label for="company" className="form-label">Company<span>*</span></label>
-                                        <input type="text" className="form-control" name="company" id="company" placeholder='Tell us where creativity is brewing.' required/>
-                                    </div>
-                                    <div className="form-floatings mt-3 mb-3 form-group">
-                                        <label for="message" className="form-label">Message<span>*</span></label>
-                                        <input type="text" className="form-control" name="message" id="message" placeholder='Your thoughts, ideas, or questions...' required/>
-                                    </div>
-                                    <div>
-                                        <button className='btn btn-white' style={{ borderRadius: '30px', padding: '10px 30px', fontSize:14 }}> Send your Message</button>
+                                    <div className='text-white description'>
+                                        <span className="poppins-medium">We’re here to make it a reality. Whether you’re looking for innovative planters, custom designs, or expert advice, we’re just a call or click away</span>
                                     </div>
                                 </div>
-                            </form>
-                            <style>
-                                {`
-                                    .btn-white {
-                                        background-color:#fff;
-                                    }
-                                    .btn-white:hover{
-                                        background-color:blue!important;
-                                        color:#fff!important;
-                                    }
-                                `}
-                            </style>
+                                <div className='text-white tagline'>
+                                    <span className="poppins-medium">We collaborate with ambitious companies and aesthetes.</span>
+                                </div>
+                                <div className='text-white tagline'>
+                                    <span className="poppins-medium">Are you one?</span>
+                                </div>
+                                <div className='text-white py-2 lastline'>
+                                    <span className="poppins-medium">Making a change starts with one conversation.
+                                        Let’s talk!
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="col-lg-6 col-md-6 col-sm-12 px-5 form">
+                                <form action="https://yuccabeplanters.chaak.in/api/contact.php" method='POST'>
+                                    <div className='px-5 poppins-medium' style={{textAlign:"left"}}>
+                                        <div className="form-floatings mt-3 mb-3 form-group">
+                                            <label for="your-name" className="form-label">Your name<span>*</span></label>
+                                            <input type="text" className="form-control" name="your-name" id="your-name" placeholder='Name you’d like us to remember.' required/>
+                                        </div>
+                                        <div className="form-floatings mt-3 mb-3 form-group">
+                                            <label for="email-address" className="form-label">Email Address<span>*</span></label>
+                                            <input type="text" className="form-control" name="email-address" id="email-address" placeholder='We promise — no spam, just style.' required/>
+                                        </div>
+                                        <div className="form-floatings mt-3 mb-3 form-group">
+                                            <label for="contact-number" className="form-label">Contact Number<span>*</span></label>
+                                            <input type="text" className="form-control" name="contact-number" id="contact-number" placeholder='Prefer a call? Share your number.' required/>
+                                        </div>
+                                        <div className="form-floatings mt-3 mb-3 form-group">
+                                            <label for="company" className="form-label">Company<span>*</span></label>
+                                            <input type="text" className="form-control" name="company" id="company" placeholder='Tell us where creativity is brewing.' required/>
+                                        </div>
+                                        <div className="form-floatings mt-3 mb-3 form-group">
+                                            <label for="message" className="form-label">Message<span>*</span></label>
+                                            <input type="text" className="form-control" name="message" id="message" placeholder='Your thoughts, ideas, or questions...' required/>
+                                        </div>
+                                        <div>
+                                            <button className='btn btn-white' style={{ borderRadius: '30px', padding: '10px 30px', fontSize:14 }}> Send your Message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <style>
+                                    {`
+                                        .btn-white {
+                                            background-color:#fff;
+                                        }
+                                        .btn-white:hover{
+                                            background-color:blue!important;
+                                            color:#fff!important;
+                                        }
+                                    `}
+                                </style>
 
+                            </div>
+                            <Footer />
                         </div>
-                        <Footer />
+                        
                     </div>
                     
                 </div>
-                
             </div>
-        </div>
+        </>
     );
 };
 
