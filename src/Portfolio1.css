@@ -34,12 +34,9 @@ img {
     max-width: 100%;
 }
 .project-details-1-right {
-    padding: 70px 90px;
-    height: 725px;
-    overflow: hidden;
-    overflow-y: scroll;
-    overscroll-behavior-y: contain;
-    scrollbar-width: thin;
+    padding: 30px 30px;
+    height: 100%;
+    /* overflow: hidden; */
 }
 .project-details-1-title-box {
     margin-bottom: 40px;
