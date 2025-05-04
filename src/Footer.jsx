@@ -4,12 +4,12 @@ export default function Footer() {
     return (
         <>
             <div className='container justify-content-start footer-bg-color' style={{ backgroundColor: "#fff", borderRadius: "30px" }}>
-                <div className='row col-12'>
-                    <div className='d-flex w-100 p-4'>
-                        <div className='col-6 d-flex'>
-                            <img src="./yp.svg" alt="" style={{ width: "185px", height: "90px", position: "relative", top: "-25px"}}/>
-                        </div>
-                        <div className='col-2'>
+                <div className='row col-12 p-4'>
+                    <div className='col-lg-6 col-sm-12 d-flex content-center'>
+                        <img src="./yp.svg" alt="" style={{ width: "185px", height: "90px", position: "relative", top: "-25px"}}/>
+                    </div>
+                    <div className='col-lg-6 col-sm-12 d-flex justify-content-between'>
+                        <div className='col-lg-2'>
                             <div className='d-grid justify-content-start'>
                                 <div className='' style={{textAlign: 'left'}}>
                                     <h1 style={{fontSize: "25px"}}>Explore</h1>
@@ -21,7 +21,7 @@ export default function Footer() {
                                 </div>
                             </div>
                         </div>
-                        <div className='col-2'>
+                        <div className='col-lg-2'>
                             <div className='d-grid justify-content-start'>
                                 <div style={{textAlign: 'left'}}>
                                     <h1 style={{fontSize: "25px"}}>Company</h1>
@@ -33,7 +33,7 @@ export default function Footer() {
                                 </div>
                             </div>
                         </div>
-                        <div className='col-2'>
+                        <div className='col-lg-2'>
                             <div className='d-grid justify-content-start'>
                                 <div style={{textAlign: 'left'}}>
                                     <h1 style={{fontSize: "25px"}}>Support</h1>
@@ -46,14 +46,15 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
-                    <div className='d-flex justify-content-space-between'>
-                        <div className='col-6 d-flex justify-content-start'>
+
+                    <div className='row gap-1 copyright-socialmedia'>
+                        <div className='col-lg-6 col-md-6 d-flex  copyright-div'>
                             <p className="Typography_variant-monoCaption__CtFq1 Typography_variant-mono__xLZrF Typography_weight-normal__omiiB my-2 px-3" data-variant-name="monoCaption">
                                 © 2025 
                                 <a className="Link_default__VBYZf Link_discreet__Qrwpa" href="#"  rel="noopener"> Yuccabe.</a>
                             </p>
                         </div>
-                        <div className="SiteFooter_socials__TI9kV col-6 d-flex justify-content-end my-2">
+                        <div className="SiteFooter_socials__TI9kV col-lg-6 col-md-6 d-flex my-2">
                             <a href="#" aria-label="YouTube">
                                 <svg viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M25.2369 2.81657C24.9488 1.7152 24.1044 0.847011 23.0335 0.550447C21.0772 0 13.2517 0 13.2517 0C13.2517 0 5.42649 0 3.47016 0.529578C2.41989 0.825828 1.55487 1.71536 1.26679 2.81657C0.751953 4.82818 0.751953 9 0.751953 9C0.751953 9 0.751953 13.1928 1.26679 15.1834C1.55518 16.2846 2.3993 17.1528 3.47031 17.4494C5.44709 18 13.252 18 13.252 18C13.252 18 21.0772 18 23.0335 17.4704C24.1045 17.174 24.9488 16.3058 25.2372 15.2046C25.7518 13.1928 25.7518 9.02118 25.7518 9.02118C25.7518 9.02118 25.7724 4.82818 25.2369 2.81657ZM10.7602 12.8541V5.14593L17.2675 9L10.7602 12.8541Z" fill="#000"></path>

@@ -16,7 +16,7 @@
 }
 .SiteFooter_socials__TI9kV{
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     gap: 20px;
 }
@@ -25,4 +25,7 @@
 }
 .SiteFooter_socials__TI9kV a{
     color: #d9d4c5;
+}
+.copright-div{
+    justify-content: start;
 }
