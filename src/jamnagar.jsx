@@ -25,26 +25,30 @@ export default function jamnagar() {
                             <div className="project-details-1-left">
                                 <div className="project-details-1-thumb mb-10">
                                     <img
-                                        src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-project/portfolio-details/port-details-1.jpg"
+                                        src="/img/projects/Project_1.jpg"
                                         alt=""
+                                        className='w-100'
                                     />
                                 </div>
                                 <div className="project-details-1-thumb mb-10">
                                     <img
-                                        src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-project/portfolio-details/port-details-2.jpg"
+                                        src="/img/projects/1.jpg"
                                         alt=""
+                                         className='w-100'
                                     />
                                 </div>
                                 <div className="project-details-1-thumb mb-10">
                                     <img
-                                        src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-project/portfolio-details/port-details-3.jpg"
+                                        src="/img/projects/2.jpg"
                                         alt=""
+                                         className='w-100'
                                     />
                                 </div>
                                 <div className="project-details-1-thumb mb-10">
                                     <img
-                                        src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-project/portfolio-details/port-details-4.jpg"
+                                        src="/img/projects/3.jpg"
                                         alt=""
+                                         className='w-100'
                                     />
                                 </div>
                             </div>

@@ -66,8 +66,8 @@ export default function Projects() {
                         <div className="parallax-item not-hide-cursor" data-cursor="View<br>Demo">
                             <a className="cursor-hide" href="/parliament-of-india">
                                 <div className="parallax-content">
-                                    <span>branding</span>
-                                    <h4>Brand some</h4>
+                                    <span>India Parliament</span>
+                                    <h4>Greens of Governance</h4>
                                 </div>
                                 <div
                                     className="parallax-img"
@@ -81,8 +81,8 @@ export default function Projects() {
                         <div className="parallax-item not-hide-cursor" data-cursor="View<br>Demo">
                             <a className="cursor-hide" href="/jamnagar">
                                 <div className="parallax-content">
-                                    <span>Digital</span>
-                                    <h4>Digital Thinker</h4>
+                                    <span>Jamnagar</span>
+                                    <h4>Desert Bloom | Jamnagar Installation</h4>
                                 </div>
                                 <div
                                     className="parallax-img"
@@ -96,8 +96,8 @@ export default function Projects() {
                         <div className="parallax-item not-hide-cursor" data-cursor="View<br>Demo">
                             <a className="cursor-hide" href="/indira-gandhi-international-airport-t1">
                                 <div className="parallax-content">
-                                    <span>Markus</span>
-                                    <h4>Markus Erickson</h4>
+                                    <span>Indira Gandhi International Airport T1</span>
+                                    <h4>Terminal Tranquility</h4>
                                 </div>
                                 <div
                                     className="parallax-img"
@@ -111,8 +111,8 @@ export default function Projects() {
                         <div className="parallax-item not-hide-cursor" data-cursor="View<br>Demo">
                             <a className="cursor-hide" href="/residential-space">
                                 <div className="parallax-content">
-                                    <span>Emko</span>
-                                    <h4>Emko Furniture</h4>
+                                    <span>Residential Space</span>
+                                    <h4>A Home in Harmony</h4>
                                 </div>
                                 <div
                                     className="parallax-img"
