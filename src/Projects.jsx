@@ -73,7 +73,7 @@ export default function Projects() {
                                     className="parallax-img"
                                     style={{
                                         backgroundImage:
-                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-1.jpg")',
+                                            'url("/img/Project_1.jpg")',
                                     }}
                                 />
                             </a>
@@ -88,7 +88,7 @@ export default function Projects() {
                                     className="parallax-img"
                                     style={{
                                         backgroundImage:
-                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-2.jpg")',
+                                            'url("img/Project_1.jpg")',
                                     }}
                                 />
                             </a>
@@ -103,7 +103,7 @@ export default function Projects() {
                                     className="parallax-img"
                                     style={{
                                         backgroundImage:
-                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-3.jpg")',
+                                            'url("img/Project_1.jpg")',
                                     }}
                                 />
                             </a>
@@ -118,7 +118,7 @@ export default function Projects() {
                                     className="parallax-img"
                                     style={{
                                         backgroundImage:
-                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-4.jpg")',
+                                            'url("img/Project_1.jpg")',
                                     }}
                                 />
                             </a>
