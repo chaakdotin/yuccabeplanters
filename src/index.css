@@ -63,6 +63,12 @@ h1, h2, h3, h4, span, input{
     .copyright-socialmedia {
         flex-wrap: nowrap!important;
     }
+    .nav-link{
+        font-size: 25px;
+    }
+    .navbar-container-padding span{
+        font-size: 20px;
+    }
 }
 @media screen and (max-width:1024px) {
     .stagger h1{
@@ -107,6 +113,9 @@ h1, h2, h3, h4, span, input{
     }
     .footer-bg-color{
         margin-bottom: 20px;
+    }
+    .navbar-container-padding span{
+        font-size: 15px;
     }
 }
 
@@ -179,6 +188,9 @@ h1, h2, h3, h4, span, input{
     .gjhdsf{
         justify-content: start!important;
         padding-top:150px;
+    }
+    .navbar-container-padding span{
+        font-size: 10px;
     }
 }
 
