@@ -20,6 +20,10 @@ const BlogsDetails4 = lazy(() => import('./BlogsDetailss4'));
 const BlogsDetails5 = lazy(() => import('./BlogsDetails5'));
 const Portfolio = lazy(() => import('./Portfolio'));
 const Portfolio1 = lazy(() => import('./Portfolio1'));
+const Parliamentofindia = lazy(() => import('./parliament-of-india'));
+const Jamnagar = lazy(() => import('./jamnagar'));
+const Indiragandhiinternationalairportt1 = lazy(() => import('./indira-gandhi-international-airport-t1'));
+const Residentialspace = lazy(() => import('./residential-space'));
 const Projects = lazy(() => import('./Projects'));
 import NotFound from "./NotFound";
 
@@ -44,12 +48,18 @@ const Data = () => {
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/portfolio1" element={<Portfolio1 />} />
               <Route path="/projects" element={<Projects />} />
+              
               <Route path="/top-10-stylish-planters-to-elevate-your-home-decor-in-2025" element={<BlogsDetails />} />
               <Route path="/terrace-garden-ideas-how-to-style-your-outdoors-with-yuccabe-planters" element={<BlogsDetails1 />} />
               <Route path="/how-plants-improve-mental-health-and-why-your-home-needs-more-greenery" element={<BlogsDetails2 />} />
               <Route path="/the-ultimate-guide-to-choosing-the-right-planter-for-every-space" element={<BlogsDetails3 />} />
               <Route path="/why-designer-pots-are-the-new-statement-pieces-for-luxury-homes" element={<BlogsDetails4 />} />
               <Route path="/balcony-makeover-ideas-using-yuccabe-s-modern-planter-designs" element={<BlogsDetails5 />} />
+
+              <Route path="/parliament-of-india" element={<Parliamentofindia />} />
+              <Route path="/jamnagar" element={<Jamnagar />} />
+              <Route path="/indira-gandhi-international-airport-t1" element={<Indiragandhiinternationalairportt1 />} />
+              <Route path="/residential-space" element={<Residentialspace />} />
               {/* 🔴 Catch-all route for undefined paths */}
               <Route path="*" element={<NotFound />} />
             </Route>

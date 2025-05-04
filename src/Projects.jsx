@@ -19,7 +19,7 @@ export default function Projects() {
         }
         // Main horizontal scroll
         gsap.to(container, {
-            xPercent: -(9 * (totalPanels - 1)),
+            xPercent: -(11 * (totalPanels - 1)),
             ease: "none",
             scrollTrigger: {
                 trigger: container,
@@ -64,7 +64,7 @@ export default function Projects() {
                 <div className="parallax-slider" ref={containerRef} >
                     <div className="parallax-slider-inner">
                         <div className="parallax-item not-hide-cursor" data-cursor="View<br>Demo">
-                            <a className="cursor-hide" href="#">
+                            <a className="cursor-hide" href="/parliament-of-india">
                                 <div className="parallax-content">
                                     <span>branding</span>
                                     <h4>Brand some</h4>
@@ -79,7 +79,7 @@ export default function Projects() {
                             </a>
                         </div>
                         <div className="parallax-item not-hide-cursor" data-cursor="View<br>Demo">
-                            <a className="cursor-hide" href="#">
+                            <a className="cursor-hide" href="/jamnagar">
                                 <div className="parallax-content">
                                     <span>Digital</span>
                                     <h4>Digital Thinker</h4>
@@ -94,7 +94,7 @@ export default function Projects() {
                             </a>
                         </div>
                         <div className="parallax-item not-hide-cursor" data-cursor="View<br>Demo">
-                            <a className="cursor-hide" href="#">
+                            <a className="cursor-hide" href="/indira-gandhi-international-airport-t1">
                                 <div className="parallax-content">
                                     <span>Markus</span>
                                     <h4>Markus Erickson</h4>
@@ -109,7 +109,7 @@ export default function Projects() {
                             </a>
                         </div>
                         <div className="parallax-item not-hide-cursor" data-cursor="View<br>Demo">
-                            <a className="cursor-hide" href="#">
+                            <a className="cursor-hide" href="/residential-space">
                                 <div className="parallax-content">
                                     <span>Emko</span>
                                     <h4>Emko Furniture</h4>
@@ -123,51 +123,7 @@ export default function Projects() {
                                 />
                             </a>
                         </div>
-                        <div className="parallax-item not-hide-cursor" data-cursor="View<br>Demo">
-                            <a className="cursor-hide" href="#">
-                                <div className="parallax-content">
-                                    <span>branding</span>
-                                    <h4>Brand some</h4>
-                                </div>
-                                <div
-                                    className="parallax-img"
-                                    style={{
-                                        backgroundImage:
-                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-5.jpg")',
-                                    }}
-                                />
-                            </a>
-                        </div>
-                        <div className="parallax-item not-hide-cursor" data-cursor="View<br>Demo">
-                            <a className="cursor-hide" href="#">
-                                <div className="parallax-content">
-                                    <span>Craig</span>
-                                    <h4>Craig Reynolds</h4>
-                                </div>
-                                <div
-                                    className="parallax-img"
-                                    style={{
-                                        backgroundImage:
-                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-6.jpg")',
-                                    }}
-                                />
-                            </a>
-                        </div>
-                        <div className="parallax-item not-hide-cursor" data-cursor="View<br>Demo">
-                            <a className="cursor-hide" href="#">
-                                <div className="parallax-content">
-                                    <span>Green</span>
-                                    <h4>Green Reel</h4>
-                                </div>
-                                <div
-                                    className="parallax-img"
-                                    style={{
-                                        backgroundImage:
-                                            'url("https://html.hixstudio.net/liko-prev/liko/assets/img/home-12/portfolio/port-7.jpg")',
-                                    }}
-                                />
-                            </a>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
