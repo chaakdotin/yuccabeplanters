@@ -41,10 +41,13 @@
     .navbar-container-padding span{
         /* font-size: 20px; */
     }
+    .footer_menu{
+        justify-content: end;
+    }
   }
 @media screen and (max-width:768px) {
     .Link_default__VBYZf {
-        font-size: 13px!important;
+        font-size: 12px!important;
     }
     .footer-bg-color .row {
         justify-content: center;
@@ -67,6 +70,9 @@
     }
     .footer-bg-color{
         margin-bottom: 20px;
+    }
+    .footer_menu{
+        justify-content: space-between;
     }
 }
 @media screen and (max-width:480px) {

@@ -8,7 +8,7 @@ export default function Footer() {
                     <div className='col-lg-4 col-sm-12 d-flex content-center'>
                         <img src="./yp.svg" alt="" style={{ width: "185px", height: "90px", position: "relative", top: "-25px"}}/>
                     </div>
-                    <div className='col-lg-8 col-sm-12 d-flex justify-content-end'>
+                    <div className='col-lg-8 col-sm-12 d-flex footer_menu'>
                         <div className='col-lg-3'>
                             <div className='d-grid justify-content-start'>
                                 <div className='' style={{textAlign: 'left'}}>
