@@ -1,33 +1,17 @@
 import React, { useRef } from 'react';
 
 const VideoBox = ({link}) => {
-  const videoRef = useRef(null);
-
-
-  const handleMouseOver = () => {
-    videoRef.current?.play();
-  };
-
-  const handleMouseOut = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
-  };
-
   return (
-    <div
-      className="video-box"
-      // onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}
-      >
-      <video muted loop playsInline autoPlay ref={videoRef}>
-        <source
-          src={link}
-          type="video/mp4"
-        />
-        Your browser does not support HTML5 video.
-      </video>
-    </div>
+    // <div className="video-box">
+      
+    // </div>
+    <video muted loop playsInline autoPlay>
+    <source
+      src={link}
+      type="video/mp4"
+    />
+    Your browser does not support HTML5 video.
+  </video>
   );
 };
 
@@ -38,30 +22,57 @@ const VideoReelsSection = () => {
         <style>
             {`
                 .video-row {
-                    display: flex;
-                    gap: 10px;
-                    padding: 20px;
+                  display: flex;
+                  flex: 1;
+                  gap: 10px;
+                  margin: 20px auto;
+                  padding: 0px 10px;
+                  
                 }
-                .video-box {
-                    flex: 1;
-                    position: relative;
+                .video-row video {
+                  width: 16.2%;
+                  height: 100%;
+                  object-fit: cover;
+                  display: block;
+                  transition: transform 0.3s ease;
+                  cursor: pointer;
+                  border-radius: 15px;
+                }
+                .video-row video:hover {
+                  transform: scale(1.1);
+                  border:none;
+                  z-index:9;
+                }
+                @media (max-width:  1024px) {
+                  .video-row {
+                    padding: 0px 20px;
+                  }
+                  .video-row video{
+                    width: 16%;
+                  } 
+                }
+                @media (max-width: 768px) {
+                  .update-card{
+                    padding:0px!important;
+                  }
+                  .video-row video{
+                    width: 24%;
+                  }
+                  .video-row {
                     overflow: hidden;
-                    aspect-ratio: 9 / 16;
-                    transition: transform 0.3s ease;
-                    cursor: pointer;
-                    border-radius: 15px;
+                    padding: 0px 10px;
+                  }
                 }
-                .video-box video {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    display: block;
-                    border-radius: inherit;
-                }
-                .video-box:hover {
-                    transform: scale(1.2);
-                    border:none;
-                    z-index:9;
+                @media (max-width: 480px) {
+                  .video-row video:hover {
+                    transform: scale(1);
+                  }
+                  .video-row {
+                    padding: 0px 20px;
+                  }
+                  .video-row  video{
+                    width: 50%;
+                  }
                 }
             `}
         </style>

@@ -28,7 +28,7 @@ const Work = () => {
     <>
 
       <div className="p-4 pt-5 update-card">
-        <div style={{ width:"100%", gap:20 }} className="d-flex justify-content-center align-items-center px-2 d-none">
+        {/* <div style={{ width:"100%", gap:20 }} className="d-flex justify-content-center align-items-center px-2 d-none">
           <Swiper
             spaceBetween={20}
             slidesPerView={4}
@@ -58,13 +58,12 @@ const Work = () => {
           ))}
           </Swiper>
           
-        </div>
-        <div style={{ width:"100%", gap:20 }} className="d-flex justify-content-center align-items-center px-4">
+        </div> */}
+        <div style={{ width:"100%", gap:20 }} className=" justify-content-center align-items-center px-4 d-none d-lg-flex">
           <div className=" d-flex col-lg-3 px-2 py-2 justify-content-start poppins-bold" style={{borderRadius:15, textTransform:"uppercase",backgroundColor:"#d9d4c5"}}>
             <Swiper
               spaceBetween={1}
-              slidesPerView="auto"
-              freeMode={false}
+              slidesPerView={1}
               loop={true}
               speed={6000}
               autoplay={{
@@ -72,32 +71,38 @@ const Work = () => {
                 disableOnInteraction: true,
               }}
               allowTouchMove={false}
-              modules={[FreeMode, Autoplay]}
+              modules={[ Autoplay]}
               className="mySwiper2 text-dark" >
-                <SwiperSlide  >
-                  <div className="w-100 py-1 " style={{fontSize:19}}>Lorem ipsum dolor sit amet </div>
+                <SwiperSlide >
+                  <div className="py-1 " >Lorem ipsum dolor sit amet </div>
                 </SwiperSlide>
-                <SwiperSlide  >
-                  <div className="w-100 py-1 " style={{fontSize:19}}>Lorem ipsum dolor sit amet </div>
+                <SwiperSlide >
+                  <div className="py-1 " >Lorem ipsum dolor sit amet </div>
                 </SwiperSlide>
-                <SwiperSlide  >
-                  <div className="w-100 py-1 " style={{fontSize:19}}>Lorem ipsum dolor sit amet</div>
-                </SwiperSlide>
-                <SwiperSlide  >
-                  <div className="w-100 py-1 " style={{fontSize:19}}>Lorem ipsum dolor sit amet</div>
-                </SwiperSlide>
+
                 
             </Swiper>
           </div>
           <div className=" d-flex col-lg-6 px-2 py-2 justify-content-center" style={{borderRadius:15,backgroundColor:"#d9d4c5"}}>
             <Swiper
-              spaceBetween={0}
+              spaceBetween={5}
               slidesPerView={4}
               freeMode={true}
               loop={true} // <-- Enables infinite scroll
               autoplay={{
                 delay: 3000,
                 disableOnInteraction: false,
+              }}
+              breakpoints={{
+                768: {
+                  slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 2,
+                },
+                1400: {
+                  slidesPerView: 4,
+                },
               }}
               modules={[FreeMode, Autoplay]}
               className="mySwiperjdf" >
@@ -114,8 +119,7 @@ const Work = () => {
           <div className=" d-flex col-lg-3 px-2 py-2 justify-content-start poppins-bold" style={{borderRadius:15, textTransform:"uppercase", backgroundColor:"#d9d4c5"}}>
             <Swiper
               spaceBetween={1}
-              slidesPerView="auto"
-              freeMode={false}
+              slidesPerView={1}
               loop={true}
               speed={6000}
               autoplay={{
@@ -124,19 +128,13 @@ const Work = () => {
                 reverseDirection: true
               }}
               allowTouchMove={false}
-              modules={[FreeMode, Autoplay]}
+              modules={[Autoplay]}
               className="mySwiper2 text-dark " >
-                <SwiperSlide  >
-                  <div className="w-100 py-1" style={{fontSize:19}}>Lorem ipsum dolor sit amet </div>
+                 <SwiperSlide >
+                  <div className="py-1 ">Lorem ipsum dolor sit amet </div>
                 </SwiperSlide>
-                <SwiperSlide  >
-                  <div className="w-100 py-1" style={{fontSize:19}}>Lorem ipsum dolor sit amet </div>
-                </SwiperSlide>
-                <SwiperSlide  >
-                  <div className="w-100 py-1" style={{fontSize:19}}>Lorem ipsum dolor sit amet</div>
-                </SwiperSlide>
-                <SwiperSlide  >
-                  <div className="w-100 py-1" style={{fontSize:19}}>Lorem ipsum dolor sit amet</div>
+                <SwiperSlide >
+                  <div className="py-1 ">Lorem ipsum dolor sit amet </div>
                 </SwiperSlide>
                 
             </Swiper>

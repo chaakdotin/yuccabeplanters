@@ -276,25 +276,6 @@
     transform: translateY(-50%);
   }
 
-
-  @media (max-width: 768px) {
-    
-    .box {
-      margin: 5px;
-      height: 60vh;
-    }
-  }
-  @media (max-width: 768px) {
-    .card {
-      width: calc(50% - 20px);
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .card {
-      width: 100%;
-    }
-  }
   .btn--bg {
     border: 1px solid #000;
     border-radius: 8.5rem;
@@ -307,8 +288,8 @@
   .btn {
     align-items: center;
     display: flex;
-    min-width: 10vw;
-    width: 11vw!important;
+    /* min-width: 10vw; */
+    width: 95%!important;
   }
   .btn--bg:hover{
     color: #fff;
@@ -347,4 +328,27 @@
 }
 .mySwiper2 .swiper-wrapper {
   transition-timing-function: linear !important;
+}
+.mySwiper2 .swiper-slide{
+  width:400px;
+  font-size:19px;
+}
+
+
+@media (max-width: 768px) {
+    
+  .box {
+    margin: 5px;
+    height: 60vh;
+  }
+  
+  .card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
 }

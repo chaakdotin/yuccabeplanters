@@ -80,32 +80,42 @@ export default function ResponsiveCard() {
       }, []);
     
     return (
-        <div className="row p-2">
-            <style>
-                {
-                    `
-                        .typing::after {
-                            content: '|';
-                            animation: blink 0.7s infinite;
-                        }
-                        @keyframes blink {
-                            50% { opacity: 0; }
-                        }
+       <>
+        <div className='w-100'>
+            <div className="row m-0 p-0 ">
+                <style>
+                    {
+                        `
+                            .typing::after {
+                                content: '|';
+                                animation: blink 0.7s infinite;
+                            }
+                            @keyframes blink {
+                                50% { opacity: 0; }
+                            }
 
-                        /* fade out before clearing */
-                        .fade-out {
-                            animation: fadeOut 1s forwards;
-                        }
-                        @keyframes fadeOut {
-                            to { opacity: 0; }
-                        }
-                    `
-                }
-            </style>
-            <div className="col-lg-5 ">
-                <div className="row">
-                    <div className="col-lg-6">
-                       
+                            /* fade out before clearing */
+                            .fade-out {
+                                animation: fadeOut 1s forwards;
+                            }
+                            @keyframes fadeOut {
+                                to { opacity: 0; }
+                            }
+                            @media (max-width: 768px) {
+                                .introduction {
+                                    margin:10px 0px 
+                                }
+                                .introduction .card-100{
+                                    padding:30px 0px;
+                                }
+                            }
+                        `
+                    }
+                </style>
+                <div className="col-lg-5 ">
+                    <div className="row">
+                        <div className="col-lg-6 col-md-6">
+                        
                             <Swiper
                                 spaceBetween={20}
                                 slidesPerView={1}
@@ -140,58 +150,60 @@ export default function ResponsiveCard() {
                                     </div>
                                 </SwiperSlide>
                             </Swiper>
-                       
+                        
+                        </div>
+                        <div className="col-lg-6 col-md-6">
+                            <div className="card-300">
+                                <div className='text-center'>
+                                    <div className="cell_eyebrow mx-auto"><div className="eyebrow_14-4"><strong>FEATURED</strong></div></div>
+                                    <div className="cell_h4 mx-auto"><h4  className={`typing-heading h-h4 is-big ${fading ? 'fade' : ''}`}> {heading}
+                                    {heading && <span className="cursor" />}</h4></div>
+                                    <div className="cell_text-2 mx-auto"><div className={`typing-line body_17 ${fading ? 'fade' : ''}`} >{line}
+                                    {line && <span className="cursor" />}</div></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="col-lg-6">
-                        <div className="card-300">
-                            <div className='text-center'>
-                                <div className="cell_eyebrow mx-auto"><div className="eyebrow_14-4"><strong>FEATURED</strong></div></div>
-                                <div className="cell_h4 mx-auto"><h4  className={`typing-heading h-h4 is-big ${fading ? 'fade' : ''}`}> {heading}
-                                {heading && <span className="cursor" />}</h4></div>
-                                <div className="cell_text-2 mx-auto"><div className={`typing-line body_17 ${fading ? 'fade' : ''}`} >{line}
-                                {line && <span className="cursor" />}</div></div>
+                    <div className="row mt-3">
+                        <div className="col-lg-12">
+                            <div className="card-300">
+                                <video src="/videos/videoplayback.mp4" muted autoPlay loop className='w-10'></video>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="row mt-3">
-                    <div className="col-lg-12">
-                        <div className="card-300">
-                            <video src="/videos/videoplayback.mp4" muted autoPlay loop className='w-10'></video>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="col-lg-7">
-                <div className='w-100 h-100 radius'>
-                    <div className="card-100 mx-auto" >
-                        <div className="cell_desc-wrap">
-                            <div className="cell_desc-eyebrow">
-                                <div className="eyebrow_22-5">The Introduction</div>
-                            </div>
-                            <div className="cell_desc-row">
-                                <div className="cell_slant">
-                                    <div className="slant-7">the</div>
+                <div className="col-lg-7 introduction">
+                    <div className='w-100 h-100 radius'>
+                        <div className="card-100 mx-auto" >
+                            <div className="cell_desc-wrap">
+                                <div className="cell_desc-eyebrow">
+                                    <div className="eyebrow_22-5">The Introduction</div>
                                 </div>
-                                <div className="cell_des">
-                                    <h2 className="h-h2">Journey<br/></h2>
-                                </div>
-                                <div className="cell_slant is-right">
-                                    <div className="slant-7">of</div>
-                                </div>
-                            </div>
-                            <div className="cell_desc-row">
                                 <div className="cell_desc-row">
-                                    <h2 className="h-h2">Every Planter</h2>
+                                    <div className="cell_slant">
+                                        <div className="slant-7">the</div>
+                                    </div>
+                                    <div className="cell_des">
+                                        <h2 className="h-h2">Journey<br/></h2>
+                                    </div>
+                                    <div className="cell_slant is-right">
+                                        <div className="slant-7">of</div>
+                                    </div>
+                                </div>
+                                <div className="cell_desc-row">
+                                    <div className="cell_desc-row">
+                                        <h2 className="h-h2">Every Planter</h2>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="cell_desc-text-2">
-                            <h6 className="h-h6">At Yuccabe, every planter is more than a product—it’s a statement of design, purpose, and nature working in harmony. The Explore page is your window into this world—where timeless craftsmanship meets modern aesthetics. Discover our finest collections, see how our planters transform real spaces, and experience the artistry, innovation, and intention behind every piece. This is where green living begins, beautifully.</h6>
+                            <div className="cell_desc-text-2">
+                                <h6 className="h-h6">At Yuccabe, every planter is more than a product—it’s a statement of design, purpose, and nature working in harmony. The Explore page is your window into this world—where timeless craftsmanship meets modern aesthetics. Discover our finest collections, see how our planters transform real spaces, and experience the artistry, innovation, and intention behind every piece. This is where green living begins, beautifully.</h6>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+       </>
     )
 }
