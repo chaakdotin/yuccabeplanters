@@ -544,18 +544,18 @@ summary {
 
 .contact-us .description {
     /* font-size: 20px; */
-    width: 55%;
+    width: 100%;
 }
 
 .contact-us .tagline {
-    width: 55%;
+    width: 100%;
     font-size: 30px;
     line-height: 30px;
     font-weight: 700;
 }
 
 .contact-us .tagline-1 {
-    width: 55%;
+    width: 100%;
     font-size: 30px;
     line-height: 30px;
     font-weight: 700;
@@ -563,7 +563,7 @@ summary {
 }
 
 .contact-us .lastline {
-    width: 55%;
+    width: 100%;
 }
 
 .form-floatings label{
