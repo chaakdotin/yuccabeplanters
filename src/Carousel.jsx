@@ -10,15 +10,20 @@ export default function Carousel({data}) {
     const [isScrollingDisabled, setIsScrollingDisabled] = useState(true);
     const getGreeting = () => {
         const hour = new Date().getHours();
-        if (hour < 12) return "Good Morning!";
-        if (hour < 18) return "Good Afternoon!";
-        return "Good Evening!";
-    };
-
-    const texts = [
-        getGreeting(),
-        "Hello, World!",
-        "Welcome to Typing Effect",
+      
+        if (hour >= 5 && hour < 12) {
+          return ["नमस्ते! शुभ प्रभात", "Hello! Good Morning"];
+        }
+        if (hour >= 12 && hour < 16) {
+          return ["नमस्ते! शुभ अपराह्न", "Hello! Good Afternoon"];
+        }
+        if (hour >= 16 && hour < 20) {
+          return ["नमस्ते! शुभ संध्या", "Hello! Good Evening"];
+        }
+        return ["नमस्ते! शुभ रात्रि", "Hello! Good Night"];
+    }
+      const texts = [
+        ...getGreeting(), // Merged greeting
     ];
     
     useEffect(() => {
