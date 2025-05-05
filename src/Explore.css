@@ -295,3 +295,18 @@
       width: 100%;
     }
   }
+  .btn--bg {
+    background-color: #000;
+    border-radius: 8.5rem;
+    height: 2.5rem;
+    padding: 0 1rem 0 1rem;
+}
+.btn--yellow-blue {
+  color: #e6ff75;
+}
+.btn {
+  align-items: center;
+  display: flex;
+  min-width: 10vw;
+  width: 13vw;
+}

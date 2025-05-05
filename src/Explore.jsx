@@ -12,6 +12,7 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import { FreeMode, Autoplay } from 'swiper/modules';
 import Footer from "./Footer";
+import { a, div } from "framer-motion/client";
 const cards = [
   { text: "About", icon:"🪴", desc:"Rooted in vision, grown with craftsmanship—this is the Yuccabe story.", link:"/about-us", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/65e172641da90916052bafbd_SCI_FI.webp" },
   { text: "Services",icon:"🛠️", desc:"From design consultation to custom planters, we shape green experiences.", link:"/services", img: "https://cdn.prod.website-files.com/64edd229801d8ebadf19ed58/667a25f57c4d9fe714639b49_THE_CONVERT_ALT_3.webp" },
@@ -25,7 +26,7 @@ const Work = () => {
     
   return (
     <>
-    
+
       <div className="p-4 pt-5 update-card">
         <div style={{ width:"100%", gap:20 }} className="d-flex justify-content-center align-items-center px-2">
           <Swiper
@@ -38,7 +39,7 @@ const Work = () => {
               disableOnInteraction: false,
             }}
             modules={[FreeMode, Autoplay]}
-            className="mySwiper"
+            className="mySwiper d-none"
           >
           {cards.map((card, index) => (
             <SwiperSlide  key={index}>
@@ -56,6 +57,11 @@ const Work = () => {
             </SwiperSlide>
           ))}
           </Swiper>
+          <div className="d-flex gap-2 col-12 px-2 py-2 justify-content-between" style={{borderRadius:30,backgroundColor:"#fbffe9",border: ".05rem solid rgba(0, 0, 0, .2)"}}>
+            {cards.map((card, index) => (
+              <a href="" className="btn btn--bg btn--yellow-blue justify-content-between" ><span>{card.text}</span> <span className="fs-5">{card.icon}</span></a>
+            ))}
+          </div>
         </div>
         <ResponsiveImageHoverEffect />
         <ResponsiveCard />
