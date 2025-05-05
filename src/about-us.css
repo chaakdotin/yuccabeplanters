@@ -693,3 +693,62 @@ button {
   left: 0;
   right: 0;
 }
+
+@media (max-width: 767px) {
+  .ab-inner-hero-title {
+    font-size: 85px;
+    transform: translateX(-3px);
+  }
+  .ab-inner-hero-title-box p {
+    font-size: 20px;
+  }
+  .ab-inner-hero-content p {
+    font-size: 30px;
+  }
+  .ab-inner-hero-scroll {
+    top: 55%;
+  }
+  .ab-about-content P {
+    font-size: 30px;
+    padding-top: 15px;
+  }
+  .ab-about-content span{
+    top: -55px;
+      left: 20px;
+  }
+  .ab-about-content {
+    margin-top: 80px;
+  }
+}
+@media (max-width: 320px) {
+  .ab-inner-hero-title {
+      font-size: 80px;
+      transform: translateX(-3px);
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ab-inner-hero-bg {
+      padding-top: 160px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ab-inner-hero-title {
+    font-size: 115px;
+  }
+  .ab-inner-hero-content p {
+    font-size: 33px;
+  }
+  .ab-about-content P {
+    font-size: 33px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .tp-team-slider-active {
+      margin: 0;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .tp-team-title-sm {
+      font-size: 30px;
+  }
+}
