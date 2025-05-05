@@ -361,8 +361,12 @@ summary {
 }
 
 @media screen and (max-width:768px) {
+  
   section h1, .bg-color h1{
     font-size: 25px!important;
+  }
+  .stagger1 h1{
+    font-size: 40px!important;
   }
   .contact-us {
     height: 100%!important;
@@ -401,6 +405,9 @@ summary {
 @media screen and (max-width:480px) {
   section h1, .bg-color h1{
     font-size: 20px!important;
+  }
+  .stagger1 h1{
+    font-size: 40px!important;
   }
   .contact-us {
     height: 100%!important;
