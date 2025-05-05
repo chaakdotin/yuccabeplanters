@@ -5,11 +5,11 @@ export default function Footer() {
         <>
             <div className='container justify-content-start footer-bg-color' style={{ backgroundColor: "#fff", borderRadius: "30px" }}>
                 <div className='row col-12 p-4'>
-                    <div className='col-lg-6 col-sm-12 d-flex content-center'>
+                    <div className='col-lg-4 col-sm-12 d-flex content-center'>
                         <img src="./yp.svg" alt="" style={{ width: "185px", height: "90px", position: "relative", top: "-25px"}}/>
                     </div>
-                    <div className='col-lg-6 col-sm-12 d-flex justify-content-between'>
-                        <div className='col-lg-2'>
+                    <div className='col-lg-8 col-sm-12 d-flex justify-content-end'>
+                        <div className='col-lg-3'>
                             <div className='d-grid justify-content-start'>
                                 <div className='' style={{textAlign: 'left'}}>
                                     <h1 style={{fontSize: "25px"}}>Explore</h1>
@@ -21,7 +21,7 @@ export default function Footer() {
                                 </div>
                             </div>
                         </div>
-                        <div className='col-lg-2'>
+                        <div className='col-lg-3'>
                             <div className='d-grid justify-content-start'>
                                 <div style={{textAlign: 'left'}}>
                                     <h1 style={{fontSize: "25px"}}>Company</h1>
@@ -33,7 +33,7 @@ export default function Footer() {
                                 </div>
                             </div>
                         </div>
-                        <div className='col-lg-2'>
+                        <div className='col-lg-3'>
                             <div className='d-grid justify-content-start'>
                                 <div style={{textAlign: 'left'}}>
                                     <h1 style={{fontSize: "25px"}}>Support</h1>
