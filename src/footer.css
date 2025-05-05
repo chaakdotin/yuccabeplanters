@@ -121,6 +121,9 @@
     .Typography_variant-monoCaption__CtFq-1 {
         padding: 0 !important;
     }
+    .footer-bg-color .row {
+        padding: 15px 0px !important;
+    }
 }
 
 @media screen and (max-width:320px) {
@@ -129,8 +132,6 @@
         max-width: 300px;
     }
 
-    .footer-bg-color .row {
-        padding: 15px 5px !important;
-    }
+   
 
 }
