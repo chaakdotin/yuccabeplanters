@@ -26,9 +26,9 @@ const Header = () => {
       let scrollPosition = window.scrollY;
       let triggerPoint = window.innerHeight * 0.9; // 200vh
       if (scrollPosition >= triggerPoint) {
-        header.current.classList.remove("d-none");
+        document.getElementById('header').classList.remove("d-none");
       } else {
-        header.current.classList.add("d-none");
+        document.getElementById('header').classList.add("d-none");
       }
     });
   }
