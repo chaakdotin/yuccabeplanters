@@ -75,16 +75,16 @@ const Work = () => {
               modules={[FreeMode, Autoplay]}
               className="mySwiper2 text-dark" >
                 <SwiperSlide  >
-                  <div className="w-100 py-1" style={{fontSize:19}}>Lorem ipsum dolor sit amet consectetur</div>
+                  <div className="w-100 py-1 " style={{fontSize:19}}>Lorem ipsum dolor sit amet </div>
                 </SwiperSlide>
                 <SwiperSlide  >
-                  <div className="w-100 py-1" style={{fontSize:19}}>Lorem ipsum dolor sit amet consectetur</div>
+                  <div className="w-100 py-1 " style={{fontSize:19}}>Lorem ipsum dolor sit amet </div>
                 </SwiperSlide>
                 <SwiperSlide  >
-                  <div className="w-100 py-1" style={{fontSize:19}}>Lorem ipsum dolor sit amet consectetur</div>
+                  <div className="w-100 py-1 " style={{fontSize:19}}>Lorem ipsum dolor sit amet</div>
                 </SwiperSlide>
                 <SwiperSlide  >
-                  <div className="w-100 py-1" style={{fontSize:19}}>Lorem ipsum dolor sit amet consectetur</div>
+                  <div className="w-100 py-1 " style={{fontSize:19}}>Lorem ipsum dolor sit amet</div>
                 </SwiperSlide>
                 
             </Swiper>
@@ -127,16 +127,16 @@ const Work = () => {
               modules={[FreeMode, Autoplay]}
               className="mySwiper2 text-dark " >
                 <SwiperSlide  >
-                  <div className="w-100 py-1 " style={{fontSize:19}}>Lorem ipsum dolor sit amet consectetur</div>
+                  <div className="w-100 py-1" style={{fontSize:19}}>Lorem ipsum dolor sit amet </div>
                 </SwiperSlide>
                 <SwiperSlide  >
-                  <div className="w-100 py-1 " style={{fontSize:19}}>Lorem ipsum dolor sit amet consectetur</div>
+                  <div className="w-100 py-1" style={{fontSize:19}}>Lorem ipsum dolor sit amet </div>
                 </SwiperSlide>
                 <SwiperSlide  >
-                  <div className="w-100 py-1 " style={{fontSize:19}}>Lorem ipsum dolor sit amet consectetur</div>
+                  <div className="w-100 py-1" style={{fontSize:19}}>Lorem ipsum dolor sit amet</div>
                 </SwiperSlide>
                 <SwiperSlide  >
-                  <div className="w-100 py-1 " style={{fontSize:19}}>Lorem ipsum dolor sit amet consectetur</div>
+                  <div className="w-100 py-1" style={{fontSize:19}}>Lorem ipsum dolor sit amet</div>
                 </SwiperSlide>
                 
             </Swiper>
