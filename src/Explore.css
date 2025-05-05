@@ -296,26 +296,53 @@
     }
   }
   .btn--bg {
-    background-color: #fff;
+   
+    border: 1px solid #fff;
     border-radius: 8.5rem;
     height: 2.5rem;
     padding: 0 1rem 0 1rem;
   }
   .btn--yellow-blue {
-    color: #000;
+    color: #fff;
   }
   .btn {
     align-items: center;
     display: flex;
     min-width: 10vw;
-    width: 11vw;
+    width: 11vw!important;
   }
   .btn--bg:hover{
     color: #fff;
+    background-color: #000;
     border: 1px solid #fff;
   }
-  @media (min-width: 1200px) {
-    .container-1200 {
-        max-width: 1200px;
-    }
+@media (min-width: 1200px) {
+  .container-1200 {
+    max-width: 810px;
+  }
+}
+
+@media (hover: hover) {
+  .btn:hover .btn__arrow {
+    color: #e6ff75;
+    transform: rotate(-45deg);
+  }
+  .btn__arrow {
+    transition: transform .8s cubic-bezier(.32,.94,.6,1), color .6s cubic-bezier(.32,.94,.6,1);
+  }
+}
+
+.btn--yellow-blue .btn__arrow {
+    color: #829aff;
+}
+.btn__arrow {
+  height: 1.5rem;
+  margin-left: auto;
+  position: relative;
+  width: 1.5rem;
+  z-index: 1;
+}
+.mySwiperjdf .swiper-slide{
+  flex-shrink:1;
+  margin:0px 5px;
 }

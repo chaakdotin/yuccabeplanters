@@ -42,9 +42,9 @@ const Work = () => {
             className="mySwiper d-none"
           >
           {cards.map((card, index) => (
-            <SwiperSlide  key={index}>
-             <a href={card.link} className="text-dark">
-              <div className="card-0 p-4">
+            <SwiperSlide key={index}>
+               <a href={card.link} className="text-dark">
+                <div className="card-0 p-4">
                   <div className='text-center'>
                       <div className="fs-2">{card.icon}</div>
                       <div className="cell_h4 mx-auto">
@@ -53,15 +53,33 @@ const Work = () => {
                       <div className="pt-3 body_17" style={{height:70}}>{card.desc} </div>
                   </div>
                 </div>
-             </a>
+              </a>
             </SwiperSlide>
           ))}
           </Swiper>
-          <div className="container container-1200 d-flex gap-2 col-12 px-2 py-2 justify-content-center" style={{borderRadius:15,backgroundColor:"#000",border: ".05rem solid rgba(0, 0, 0, .2)"}}>
+          
+        </div>
+        <div className="container container-1200 d-flex col-12 px-2 py-2 justify-content-center" style={{borderRadius:15,backgroundColor:"#000",border: ".05rem solid rgba(0, 0, 0, .2)"}}>
+          <Swiper
+            spaceBetween={0}
+            slidesPerView={4}
+            freeMode={true}
+            loop={true} // <-- Enables infinite scroll
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            modules={[FreeMode, Autoplay]}
+            className="mySwiperjdf" >
             {cards.map((card, index) => (
-              <a key={index+"sdfdsf"} href={card.link} className="btn btn--bg btn--yellow-blue justify-content-between" ><span>{card.text}</span> <span className="fs-5">{card.icon}</span></a>
+              <SwiperSlide  key={index+"sdfdsf"} className="d-flex " >
+                <a href={card.link} className="btn btn--bg btn--yellow-blue justify-content-between" >
+                  <span>{card.text}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 26" class="btn__arrow"><path stroke="currentColor" stroke-width="1.5" d="M17.868 8.073v9.795H8.073"></path><path stroke="currentColor" stroke-width="1.5" d="M17.868 17.868 8.073 8.073"></path><path stroke="currentColor" stroke-width="1.5" d="M24.97 12.97c0-6.627-5.372-12-12-12-6.626 0-12 5.373-12 12 0 6.628 5.374 12 12 12 6.628 0 12-5.372 12-12Z"></path><path stroke="currentColor" stroke-width="1.5" d="M24.97 12.97c0-6.627-5.372-12-12-12-6.626 0-12 5.373-12 12 0 6.628 5.374 12 12 12 6.628 0 12-5.372 12-12Z"></path></svg>
+                </a>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
         <ResponsiveImageHoverEffect />
         <ResponsiveCard />
