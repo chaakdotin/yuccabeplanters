@@ -60,8 +60,8 @@ const Work = () => {
           
         </div>
         <div style={{ width:"100%", gap:20 }} className="d-flex justify-content-center align-items-center px-4">
-          <div className=" d-flex col-lg-3 px-2 py-2 justify-content-start" style={{borderRadius:15,backgroundColor:"#000",border: ".05rem solid rgba(0, 0, 0, .2)"}}>
-          <Swiper
+          <div className=" d-flex col-lg-3 px-2 py-2 justify-content-start poppins-bold" style={{borderRadius:15, textTransform:"uppercase",backgroundColor:"#d9d4c5"}}>
+            <Swiper
               spaceBetween={1}
               slidesPerView="auto"
               freeMode={false}
@@ -73,23 +73,23 @@ const Work = () => {
               }}
               allowTouchMove={false}
               modules={[FreeMode, Autoplay]}
-              className="mySwiper2 text-white" >
+              className="mySwiper2 text-dark" >
                 <SwiperSlide  >
-                  <div className="w-100">Lorem ipsum dolor sit amet consectetur</div>
+                  <div className="w-100 py-1" style={{fontSize:19}}>Lorem ipsum dolor sit amet consectetur</div>
                 </SwiperSlide>
                 <SwiperSlide  >
-                  <div className="w-100">Lorem ipsum dolor sit amet consectetur</div>
+                  <div className="w-100 py-1" style={{fontSize:19}}>Lorem ipsum dolor sit amet consectetur</div>
                 </SwiperSlide>
                 <SwiperSlide  >
-                  <div className="w-100">Lorem ipsum dolor sit amet consectetur</div>
+                  <div className="w-100 py-1" style={{fontSize:19}}>Lorem ipsum dolor sit amet consectetur</div>
                 </SwiperSlide>
                 <SwiperSlide  >
-                  <div className="w-100">Lorem ipsum dolor sit amet consectetur</div>
+                  <div className="w-100 py-1" style={{fontSize:19}}>Lorem ipsum dolor sit amet consectetur</div>
                 </SwiperSlide>
                 
             </Swiper>
           </div>
-          <div className=" d-flex col-lg-6 px-2 py-2 justify-content-center" style={{borderRadius:15,backgroundColor:"#000",border: ".05rem solid rgba(0, 0, 0, .2)"}}>
+          <div className=" d-flex col-lg-6 px-2 py-2 justify-content-center" style={{borderRadius:15,backgroundColor:"#d9d4c5"}}>
             <Swiper
               spaceBetween={0}
               slidesPerView={4}
@@ -111,7 +111,7 @@ const Work = () => {
               ))}
             </Swiper>
           </div>
-          <div className=" d-flex col-lg-3 px-2 py-2 justify-content-start" style={{borderRadius:15,backgroundColor:"#000",border: ".05rem solid rgba(0, 0, 0, .2)"}}>
+          <div className=" d-flex col-lg-3 px-2 py-2 justify-content-start poppins-bold" style={{borderRadius:15, textTransform:"uppercase", backgroundColor:"#d9d4c5"}}>
             <Swiper
               spaceBetween={1}
               slidesPerView="auto"
@@ -125,18 +125,18 @@ const Work = () => {
               }}
               allowTouchMove={false}
               modules={[FreeMode, Autoplay]}
-              className="mySwiper2 text-white" >
+              className="mySwiper2 text-dark " >
                 <SwiperSlide  >
-                  <div className="w-100">Lorem ipsum dolor sit amet consectetur</div>
+                  <div className="w-100 py-1 " style={{fontSize:19}}>Lorem ipsum dolor sit amet consectetur</div>
                 </SwiperSlide>
                 <SwiperSlide  >
-                  <div className="w-100">Lorem ipsum dolor sit amet consectetur</div>
+                  <div className="w-100 py-1 " style={{fontSize:19}}>Lorem ipsum dolor sit amet consectetur</div>
                 </SwiperSlide>
                 <SwiperSlide  >
-                  <div className="w-100">Lorem ipsum dolor sit amet consectetur</div>
+                  <div className="w-100 py-1 " style={{fontSize:19}}>Lorem ipsum dolor sit amet consectetur</div>
                 </SwiperSlide>
                 <SwiperSlide  >
-                  <div className="w-100">Lorem ipsum dolor sit amet consectetur</div>
+                  <div className="w-100 py-1 " style={{fontSize:19}}>Lorem ipsum dolor sit amet consectetur</div>
                 </SwiperSlide>
                 
             </Swiper>
