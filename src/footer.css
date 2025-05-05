@@ -74,6 +74,12 @@
     .footer_menu{
         justify-content: space-between;
     }
+    .content-center {
+        justify-content: center;
+    }
+    .content-center img{
+        top: 0!important;
+    }
 }
 @media screen and (max-width:480px) {
     .footer-bg-color{
@@ -81,7 +87,7 @@
         max-width: 400px;
        
     }
-   
+    
     .contact-us .contact-us-info{
         text-align: center!important;
     }
@@ -100,6 +106,9 @@
     .gjhdsf{
         justify-content: start!important;
         padding-top:150px;
+    }
+    .footer_menu h1{
+        font-size: 17px!important;
     }
 }
 

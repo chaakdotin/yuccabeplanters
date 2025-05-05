@@ -440,12 +440,7 @@ summary {
   .contact-us .h-100vh{
     height: 100%!important;
   }
-  .content-center {
-      justify-content: center;
-  }
-  .content-center img{
-      top: 0!important;
-  }
+ 
  
   .navbar-container-padding span{
     font-size: 10px;
