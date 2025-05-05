@@ -57,7 +57,7 @@ const Work = () => {
             </SwiperSlide>
           ))}
           </Swiper>
-          <div className="d-flex gap-2 col-12 px-2 py-2 justify-content-between" style={{borderRadius:30,backgroundColor:"#fbffe9",border: ".05rem solid rgba(0, 0, 0, .2)"}}>
+          <div className="container container-1200 d-flex gap-2 col-12 px-2 py-2 justify-content-center" style={{borderRadius:15,backgroundColor:"#000",border: ".05rem solid rgba(0, 0, 0, .2)"}}>
             {cards.map((card, index) => (
               <a key={index+"sdfdsf"} href={card.link} className="btn btn--bg btn--yellow-blue justify-content-between" ><span>{card.text}</span> <span className="fs-5">{card.icon}</span></a>
             ))}

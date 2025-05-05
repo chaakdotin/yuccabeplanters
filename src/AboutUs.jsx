@@ -180,54 +180,54 @@ export default function AboutUs() {
             <div className='w-100 overflow-hidden'>
                 <section className="scrapbook">
                     <img
-                        src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        src="/img/Phtoototf.jpg"
                         className="scrap-img"
-                        style={{ top: "10%", left: "10%", transform: "rotate(-10deg) scale(0.9)" }}
+                        style={{ top: "10%", left: "10%", transform: "rotate(-10deg) scale(0.9)", border:"1px solid #000"}}
                     />
                     <img
-                        src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        src="/img/Phtoototf.jpg"
                         className="scrap-img"
-                        style={{ top: "15%", left: "40%", transform: "rotate(5deg) scale(0.9)" }}
+                        style={{ top: "15%", left: "40%", transform: "rotate(5deg) scale(0.9)", border:"1px solid #000"}}
                     />
                     <img
-                        src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        src="/img/Phtoototf.jpg"
                         className="scrap-img"
-                        style={{ top: "40%", left: "20%", transform: "rotate(-5deg) scale(0.9)" }}
+                        style={{ top: "40%", left: "20%", transform: "rotate(-5deg) scale(0.9)", border:"1px solid #000"}}
                     />
                     <img
-                        src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        src="/img/Phtoototf.jpg"
                         className="scrap-img"
-                        style={{ top: "60%", left: "15%", transform: "rotate(8deg) scale(0.9)" }}
+                        style={{ top: "60%", left: "15%", transform: "rotate(8deg) scale(0.9)", border:"1px solid #000"}}
                     />
                     <img
-                        src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        src="/img/Phtoototf.jpg"
                         className="scrap-img"
-                        style={{ top: "20%", left: "70%", transform: "rotate(-7deg) scale(0.9)" }}
+                        style={{ top: "20%", left: "70%", transform: "rotate(-7deg) scale(0.9)", border:"1px solid #000"}}
                     />
                     <img
-                        src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        src="/img/Phtoototf.jpg"
                         className="scrap-img"
-                        style={{ top: "50%", left: "60%", transform: "rotate(3deg) scale(0.9)" }}
+                        style={{ top: "50%", left: "60%", transform: "rotate(3deg) scale(0.9)", border:"1px solid #000"}}
                     />
                     <img
-                        src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        src="/img/Phtoototf.jpg"
                         className="scrap-img"
-                        style={{ top: "70%", left: "30%", transform: "rotate(-3deg) scale(0.9)" }}
+                        style={{ top: "70%", left: "30%", transform: "rotate(-3deg) scale(0.9)", border:"1px solid #000"}}
                     />
                     <img
-                        src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        src="/img/Phtoototf.jpg"
                         className="scrap-img"
-                        style={{ top: "30%", left: "80%", transform: "rotate(10deg) scale(0.9)" }}
+                        style={{ top: "30%", left: "80%", transform: "rotate(10deg) scale(0.9)", border:"1px solid #000"}}
                     />
                     <img
-                        src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        src="/img/Phtoototf.jpg"
                         className="scrap-img"
-                        style={{ top: "55%", left: "45%", transform: "rotate(-12deg) scale(0.9)" }}
+                        style={{ top: "55%", left: "45%", transform: "rotate(-12deg) scale(0.9)", border:"1px solid #000"}}
                     />
                     <img
-                        src="https://images.pexels.com/photos/18711559/pexels-photo-18711559/free-photo-of-portrait-of-elderly-man-in-turban.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        src="/img/Phtoototf.jpg"
                         className="scrap-img"
-                        style={{ top: "80%", left: "60%", transform: "rotate(6deg) scale(0.9)" }}
+                        style={{ top: "80%", left: "60%", transform: "rotate(6deg) scale(0.9)", border:"1px solid #000"}}
                     />
                 </section>
 

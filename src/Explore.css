@@ -296,17 +296,26 @@
     }
   }
   .btn--bg {
-    background-color: #000;
+    background-color: #fff;
     border-radius: 8.5rem;
     height: 2.5rem;
     padding: 0 1rem 0 1rem;
-}
-.btn--yellow-blue {
-  color: #e6ff75;
-}
-.btn {
-  align-items: center;
-  display: flex;
-  min-width: 10vw;
-  width: 11vw;
+  }
+  .btn--yellow-blue {
+    color: #000;
+  }
+  .btn {
+    align-items: center;
+    display: flex;
+    min-width: 10vw;
+    width: 11vw;
+  }
+  .btn--bg:hover{
+    color: #fff;
+    border: 1px solid #fff;
+  }
+  @media (min-width: 1200px) {
+    .container-1200 {
+        max-width: 1200px;
+    }
 }
