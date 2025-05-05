@@ -3,9 +3,7 @@ import gsap from "gsap";
 import "./contact.css"
 import Footer from './Footer'
 export default function ContactUs() {
-
   const shoot = () => {
-    
     const element = document.querySelector('.js-copy');
     const value = element.getAttribute('data-str');
     // Copy to clipboard
