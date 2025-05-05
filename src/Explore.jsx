@@ -28,7 +28,7 @@ const Work = () => {
     <>
 
       <div className="p-4 pt-5 update-card">
-        <div style={{ width:"100%", gap:20 }} className="d-flex justify-content-center align-items-center px-2">
+        <div style={{ width:"100%", gap:20 }} className="d-flex justify-content-center align-items-center px-2 d-none">
           <Swiper
             spaceBetween={20}
             slidesPerView={4}
@@ -39,7 +39,7 @@ const Work = () => {
               disableOnInteraction: false,
             }}
             modules={[FreeMode, Autoplay]}
-            className="mySwiper d-none"
+            className="mySwiper"
           >
           {cards.map((card, index) => (
             <SwiperSlide key={index}>
@@ -59,27 +59,88 @@ const Work = () => {
           </Swiper>
           
         </div>
-        <div className="container container-1200 d-flex col-12 px-2 py-2 justify-content-center" style={{borderRadius:15,backgroundColor:"#000",border: ".05rem solid rgba(0, 0, 0, .2)"}}>
+        <div style={{ width:"100%", gap:20 }} className="d-flex justify-content-center align-items-center px-4">
+          <div className=" d-flex col-lg-3 px-2 py-2 justify-content-start" style={{borderRadius:15,backgroundColor:"#000",border: ".05rem solid rgba(0, 0, 0, .2)"}}>
           <Swiper
-            spaceBetween={0}
-            slidesPerView={4}
-            freeMode={true}
-            loop={true} // <-- Enables infinite scroll
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-            modules={[FreeMode, Autoplay]}
-            className="mySwiperjdf" >
-            {cards.map((card, index) => (
-              <SwiperSlide  key={index+"sdfdsf"} className="d-flex " >
-                <a href={card.link} className="btn btn--bg btn--yellow-blue justify-content-between" >
-                  <span>{card.text}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 26" class="btn__arrow"><path stroke="currentColor" stroke-width="1.5" d="M17.868 8.073v9.795H8.073"></path><path stroke="currentColor" stroke-width="1.5" d="M17.868 17.868 8.073 8.073"></path><path stroke="currentColor" stroke-width="1.5" d="M24.97 12.97c0-6.627-5.372-12-12-12-6.626 0-12 5.373-12 12 0 6.628 5.374 12 12 12 6.628 0 12-5.372 12-12Z"></path><path stroke="currentColor" stroke-width="1.5" d="M24.97 12.97c0-6.627-5.372-12-12-12-6.626 0-12 5.373-12 12 0 6.628 5.374 12 12 12 6.628 0 12-5.372 12-12Z"></path></svg>
-                </a>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+              spaceBetween={1}
+              slidesPerView="auto"
+              freeMode={false}
+              loop={true}
+              speed={6000}
+              autoplay={{
+                delay:0,
+                disableOnInteraction: true,
+              }}
+              allowTouchMove={false}
+              modules={[FreeMode, Autoplay]}
+              className="mySwiper2 text-white" >
+                <SwiperSlide  >
+                  <div className="w-100">Lorem ipsum dolor sit amet consectetur</div>
+                </SwiperSlide>
+                <SwiperSlide  >
+                  <div className="w-100">Lorem ipsum dolor sit amet consectetur</div>
+                </SwiperSlide>
+                <SwiperSlide  >
+                  <div className="w-100">Lorem ipsum dolor sit amet consectetur</div>
+                </SwiperSlide>
+                <SwiperSlide  >
+                  <div className="w-100">Lorem ipsum dolor sit amet consectetur</div>
+                </SwiperSlide>
+                
+            </Swiper>
+          </div>
+          <div className=" d-flex col-lg-6 px-2 py-2 justify-content-center" style={{borderRadius:15,backgroundColor:"#000",border: ".05rem solid rgba(0, 0, 0, .2)"}}>
+            <Swiper
+              spaceBetween={0}
+              slidesPerView={4}
+              freeMode={true}
+              loop={true} // <-- Enables infinite scroll
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              modules={[FreeMode, Autoplay]}
+              className="mySwiperjdf" >
+              {cards.map((card, index) => (
+                <SwiperSlide  key={index+"sdfdsf"} className="d-flex " >
+                  <a href={card.link} className="btn btn--bg btn--yellow-blue justify-content-between" >
+                    <span>{card.text}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 26" class="btn__arrow"><path stroke="currentColor" stroke-width="1.5" d="M17.868 8.073v9.795H8.073"></path><path stroke="currentColor" stroke-width="1.5" d="M17.868 17.868 8.073 8.073"></path><path stroke="currentColor" stroke-width="1.5" d="M24.97 12.97c0-6.627-5.372-12-12-12-6.626 0-12 5.373-12 12 0 6.628 5.374 12 12 12 6.628 0 12-5.372 12-12Z"></path><path stroke="currentColor" stroke-width="1.5" d="M24.97 12.97c0-6.627-5.372-12-12-12-6.626 0-12 5.373-12 12 0 6.628 5.374 12 12 12 6.628 0 12-5.372 12-12Z"></path></svg>
+                  </a>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+          <div className=" d-flex col-lg-3 px-2 py-2 justify-content-start" style={{borderRadius:15,backgroundColor:"#000",border: ".05rem solid rgba(0, 0, 0, .2)"}}>
+            <Swiper
+              spaceBetween={1}
+              slidesPerView="auto"
+              freeMode={false}
+              loop={true}
+              speed={6000}
+              autoplay={{
+                delay:0,
+                disableOnInteraction: true,
+                reverseDirection: true
+              }}
+              allowTouchMove={false}
+              modules={[FreeMode, Autoplay]}
+              className="mySwiper2 text-white" >
+                <SwiperSlide  >
+                  <div className="w-100">Lorem ipsum dolor sit amet consectetur</div>
+                </SwiperSlide>
+                <SwiperSlide  >
+                  <div className="w-100">Lorem ipsum dolor sit amet consectetur</div>
+                </SwiperSlide>
+                <SwiperSlide  >
+                  <div className="w-100">Lorem ipsum dolor sit amet consectetur</div>
+                </SwiperSlide>
+                <SwiperSlide  >
+                  <div className="w-100">Lorem ipsum dolor sit amet consectetur</div>
+                </SwiperSlide>
+                
+            </Swiper>
+          </div>
         </div>
         <ResponsiveImageHoverEffect />
         <ResponsiveCard />
