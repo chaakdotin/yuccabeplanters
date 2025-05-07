@@ -23,7 +23,7 @@ const ResponsiveImageHoverEffect = () => {
             className={`box ${activeIndex === index ? "active" : ""}`}
             onMouseEnter={() => setActiveIndex(index)}
             >
-            <video src={src} alt={`Image ${index + 1}`}  autoPlay muted loop />
+            <video src={src} alt={`Image ${index + 1}`}  autoPlay muted loop controls={false} />
             </div>
         ))}
         </div>
