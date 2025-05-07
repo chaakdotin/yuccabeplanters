@@ -156,10 +156,17 @@ export default function ResponsiveCard() {
                             <div className="card-300">
                                 <div className='text-center'>
                                     <div className="cell_eyebrow mx-auto"><div className="eyebrow_14-4"><strong>FEATURED</strong></div></div>
-                                    <div className="cell_h4 mx-auto"><h4  className={`typing-heading h-h4 is-big ${fading ? 'fade' : ''}`}> {heading}
-                                    {heading && <span className="cursor" />}</h4></div>
-                                    <div className="cell_text-2 mx-auto"><div className={`typing-line body_17 ${fading ? 'fade' : ''}`} >{line}
-                                    {line && <span className="cursor" />}</div></div>
+                                    <div className="cell_h4 mx-auto">
+                                        <h4  className={`typing-heading h-h4 is-big ${fading ? 'fade' : ''}`}> {heading}
+                                            {heading && <span className="cursor" />}
+                                        </h4>
+                                    </div>
+                                    <div className="cell_text-2 mx-auto">
+                                        <div className={`typing-line body_17 ${fading ? 'fade' : ''}`} >
+                                            {line}
+                                            {line && <span className="cursor" />}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
