@@ -38,10 +38,20 @@ const Collections = () => {
     if (!loading) return;
 
     const el = document.querySelector('.k8nd8');
-    const elWidth = el?.clientWidth;
-    const screenWidth = window.innerWidth;
-    const leftOffset = (screenWidth - elWidth) / 1.15;
-    if (el) el.style.left = `${leftOffset}px`;
+    if (el) {
+      const elWidth = el.clientWidth;
+      const screenWidth = window.innerWidth;
+    
+      if (screenWidth <= 768) {
+        // Mobile
+        el.style.left = '30px';
+      } else {
+        // Desktop/tablet - center it
+        const leftOffset = (screenWidth - elWidth) / 1.5;
+
+        el.style.left = `${leftOffset}px`;
+      }
+    }
   
     const url = new URL(window.location.href);
     const c = url.searchParams.get('tags') || "all";
@@ -90,10 +100,23 @@ const Collections = () => {
         const index = Array.from(clickableImages).indexOf(activeImg);
         if (index === -1) return;
   
-        const sliderHeight = totalImages * imageHeight;
-        let offset = index * imageHeight + imageHeight / 2 - containerHeight / 2;
-        offset = Math.max(0, Math.min(offset, sliderHeight - containerHeight));
-        slider.style.transform = `translateY(-${offset}px)`;
+        
+        const screenWidth = window.innerWidth;
+        if (screenWidth <= 768) {
+          const imageWidth = 120;
+          const containerWidth = 780;
+          const sliderHeight = totalImages * imageWidth;
+          let offset = index * imageWidth + imageWidth / 2 - containerWidth / 2;
+          offset = Math.max(0, Math.min(offset, sliderHeight - containerWidth));
+          
+          slider.style.transform = `translateX(-${offset}px)`;
+        }else{
+          const sliderHeight = totalImages * imageHeight;
+          let offset = index * imageHeight + imageHeight / 2 - containerHeight / 2;
+          offset = Math.max(0, Math.min(offset, sliderHeight - containerHeight));
+          slider.style.transform = `translateY(-${offset}px)`;
+        }
+        
       }
   
       function handleImageClick(img) {
@@ -114,91 +137,184 @@ const Collections = () => {
       if (initialActiveImage) centerActiveImage(initialActiveImage);
     });
   
+   
+    
+  
+
     const handleResize = () => ScrollTrigger.refresh();
     window.addEventListener("resize", handleResize);
-  
-    // GSAP timelines
-    const tl1 = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".kdjff",
-        start: "top 25%",
-        end: "+=200",
-        scrub: true,
-      },
-    });
-  
-    tl1.to(".k8nd8", {
-      left: 0,
-      color: "#d9d4c5",
-      fontSize: "80px",
-      duration: 1
-    });
-  
-    const tl2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".sdsss",
-        start: "top 12%",
-        end: "+=100",
-        scrub: true,
+      if (c !== 'all') {
+        ScrollTrigger.refresh();
+        setTimeout(() => {
+          const div = document.querySelector('.small-section');
+          if (div) {
+            const distanceFromDocumentTop = div.offsetTop + 100;
+            window.scrollBy(0, distanceFromDocumentTop);
+          }
+        }, 600);
       }
-    });
+      
+      if(window.innerWidth <= 770){
+        const tl1 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".kdjff",
+            start: "top 25%",
+            end: "+=200",
+            scrub: true,
+          },
+        });
   
-    tl2.to(".h84gf", {
-      x: 0,
-      duration: 1,
-    });
+        tl1.to(".k8nd8", {
+          left: 30,
+          color: "#d9d4c5",
+          fontSize:60,
+          duration: 1
+        });
   
-    const tl3 = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#newcolum",
-        start: "top 40%",
-        end: "+=160",
-        scrub: true,
+        const tl2 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".sdsss",
+            start: "top 27%",
+            end: "+=100",
+            scrub: true,
+
+          }
+        });
+  
+        tl2.to(".h84gf", {
+          x: 10,
+          duration: 1,
+        });
+  
+        // const tl3 = gsap.timeline({
+        //   scrollTrigger: {
+        //     trigger: "#newcolum",
+        //     start: "top 40%",
+        //     end: "+=160",
+        //     scrub: true,
+        //     // markers:true,
+        //   }
+
+        // });
+        gsap.to("#newcolum .card", {
+          y: "400px",
+          duration: 1,
+          scrollTrigger: {
+            trigger: "#newcolum",
+            start: "top 30%",
+            end: "+=160",
+            scrub: true,
+
+          },
+        })
+
+        
+        
+        let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
+        const count = panels.length;
+      
+        const tlMain = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".stack-container",
+            start: "top top",
+            end: "+=" + (count * 200),
+            scrub: true,
+            pin: true,
+            // markers:true,
+          }
+        });
+        tlMain.fromTo(".small-section", { y: "100vh" }, { y: 80, duration: 0.5 });
+        panels.forEach((panel, i) => {
+          let lastPanel = panels.length - 1;
+          tlMain.fromTo(panel, { y: "100%" }, { y: 80, duration: 1 }, "<");
+          if (i < lastPanel) {
+            tlMain.to(panel, { height: "5vh", y: 80, duration: 1 });
+            tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
+          }
+        });
+      }else{
+        const tl1 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".kdjff",
+            start: "top 25%",
+            end: "+=200",
+            scrub: true,
+          },
+        });
+
+        tl1.to(".k8nd8", {
+          left: 0,
+          color: "#d9d4c5",
+          fontSize:80,
+          duration: 1
+        });
+
+        const tl2 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".sdsss",
+            start: "top 12%",
+            end: "+=100",
+            scrub: true,
+          }
+        });
+
+        tl2.to(".h84gf", {
+          x: 0,
+          duration: 1,
+        });
+
+        const tl3 = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#newcolum",
+            start: "30% -40%",
+            end: "+=160",
+            scrub: true,
+            // markers:true,
+            
+          }
+        });
+
+        tl3.to("#newcolum .card", {
+          y: "400px",
+          duration: 1,
+          // ease: "power1.inOut",
+          // stagger: {
+          //   grid: [2,3],
+          //   each: 0.4,
+          //   from: "center",
+          //   axis: "y",
+          //   amount: 1.5
+          // }
+        });
+        let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
+        const count = panels.length;
+      
+        const tlMain = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".stack-container",
+            start: "top top",
+            end: "+=" + (count * 200),
+            scrub: true,
+            pin: true,
+            // markers: true
+          }
+        });
+        tlMain.fromTo(".small-section", { y: "100vh" }, { y: 0, duration: 0.5 });
+        panels.forEach((panel, i) => {
+          let lastPanel = panels.length - 1;
+          tlMain.fromTo(panel, { y: "100%" }, { y: 0, duration: 1 }, "<");
+          if (i < lastPanel) {
+            tlMain.to(panel, { height: "5vh", y: 0, duration: 1 });
+            tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
+          }
+        });
       }
-    });
+    
+
   
-    tl3.to("#newcolum .card", {
-      y: "400px",
-      duration: 1,
-      stagger: {
-        each: 0.4,
-        from: "start"
-      }
-    });
+    
   
-    let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
-    const count = panels.length;
-  
-    const tlMain = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".stack-container",
-        start: "top top",
-        end: "+=" + (count * 200),
-        scrub: true,
-        pin: true,
-      }
-    });
-  
-    tlMain.fromTo(".small-section", { y: "100vh" }, { y: "0", duration: 0.5 });
-  
-    panels.forEach((panel, i) => {
-      let lastPanel = panels.length - 1;
-      tlMain.fromTo(panel, { y: "100%" }, { y: "0%", duration: 1 }, "<");
-      if (i < lastPanel) {
-        tlMain.to(panel, { height: "5vh", y: "0%", duration: 1 });
-        tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
-      }
-    });
-    if (c !== 'all') {
-      ScrollTrigger.refresh();
-      setTimeout(() => {
-        const div = document.querySelector('.small-section');
-        if (div) {
-          const distanceFromDocumentTop = div.offsetTop + 100;
-          window.scrollBy(0, distanceFromDocumentTop);
-        }
-      }, 600);
-    }
+    
     // Cleanup
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -368,8 +484,8 @@ const Collections = () => {
       </Offcanvas>
       <div style={{ position: "relative" }}>
         <div className="stack-container">
-          <div style={{ position: "fixed", transform: "translate(0px, 12vh)", zIndex: '2', width: "100%", lineHeight: "1", height: "85px" }}>
-            <div className="w-100 d-flex h-100 justify-content-center">
+          <div className="mobile_view_frist_section" style={{ position: "fixed", transform: "translate(0px, 12vh)", zIndex: '2', width: "100%", lineHeight: "1", height: "85px" }}>
+            <div className="w-100 d-flex h-100 justify-content-center mobile_view">
               <div className="kdjff" style={{ width: "30%", position: "relative", lineHeight: "1" }}>
                 <span className="k8nd8" style={{ position: "absolute", fontSize: "225px", fontWeight: "bold", backgroundColor: "rgb(255, 255, 255)", zIndex: 1 }}>Collections</span>
               </div>
@@ -396,32 +512,32 @@ const Collections = () => {
             <div className="container-fluid" id="newcolum" style={{ position: "fixed", transform: "translate(0px, 100px)", }}>
               <div className="w-100 h-100" style={{ overflow: "hidden" }}>
                 <div className="row px-2">
-                  <div className="col-2 px-1 z-n1">
+                  <div className="col-lg-2 col-md-4 px-1 py-1 z-n1">
                     <div className="card w-100 p-0 border-0">
                       <img className="card-img-top" alt="" src="./img/6.png" />
                     </div>
                   </div>
-                  <div className="col-2 px-1 z-n1">
+                  <div className="col-lg-2 col-md-4 px-1 py-1 z-n1">
                     <div className="card w-100 p-0 border-0">
                       <img className="card-img-top" alt="" src="./img/7.png" />
                     </div>
                   </div>
-                  <div className="col-2 px-1 z-n1">
+                  <div className="col-lg-2 col-md-4 px-1 py-1 z-n1">
                     <div className="card w-100 p-0 border-0">
                       <img className="card-img-top" alt="" src="./img/8.png" />
                     </div>
                   </div>
-                  <div className="col-2 px-1 z-n1">
+                  <div className="col-lg-2 col-md-4 px-1 py-1 z-n1">
                     <div className="card w-100 p-0 border-0">
                       <img className="card-img-top" alt="" src="./img/6.png" />
                     </div>
                   </div>
-                  <div className="col-2 px-1 z-n1">
+                  <div className="col-lg-2 col-md-4 px-1 py-1 z-n1">
                     <div className="card w-100 p-0 border-0">
                       <img className="card-img-top" alt="" src="./img/7.png" />
                     </div>
                   </div>
-                  <div className="col-2 px-1 z-n1">
+                  <div className="col-lg-2 col-md-4 px-1 py-1 z-n1">
                     <div className="card w-100 p-0 border-0">
                       <img className="card-img-top" alt="" src="./img/8.png" />
                     </div>
@@ -465,14 +581,15 @@ const Collections = () => {
                       </div>
                       <div className="panel-image-div col-7 overflow-hidden">
                         <div className="image-section" >
-                          <div className="row h-100 no-gaps justify-content-center w-100">
-                            <div className="col-md-3 left-images">
+                          <div className="row h-100 no-gaps justify-content-center w-100 flex-column">
+                            
+                            <div className=" right-image">
+                              <img className="main-image" src={Images[0].Image_Link} alt="Main Image" />
+                            </div>
+                            <div className=" left-images">
                               <div className="slider">
                                 <Image key={Entry_ID} imageData={Images} />
                               </div>
-                            </div>
-                            <div className="col-md-8 right-image">
-                              <img className="main-image" src={Images[0].Image_Link} alt="Main Image" />
                             </div>
                           </div>
                         </div>

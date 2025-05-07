@@ -52,7 +52,7 @@
   font-weight: 500; /* Medium weight */
   font-style: italic;
 }
-  @font-face {
+@font-face {
   font-family: 'HK Guise';
   src: url('https://cdn.prod.website-files.com/64e6091972f5864e5b3e6f9e/64edc766c94ccd9b981e44a4_HKGuiseSemiBold.woff2') format('woff2');
   font-weight: 600; /* Adjust if needed */
