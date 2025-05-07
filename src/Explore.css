@@ -48,7 +48,7 @@
 }
   @font-face {
   font-family: 'Ayer';
-  src: url('https://cdn.prod.website-files.com/64e6091972f5864e5b3e6f9e/64edc165b8df7487049b22dd_Ayer-MediumItalic.woff2') format('woff2');
+  src: url('/fonts/AyerMediumItalic.woff2') format('woff2');
   font-weight: 500; /* Medium weight */
   font-style: italic;
 }
