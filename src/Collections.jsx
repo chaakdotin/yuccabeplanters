@@ -562,7 +562,7 @@ const Collections = () => {
                 <div className="row px-1">
                   <div className="panel-body col-12 panel-image" style={{ paddingTop: "25px" }}>
                     <div className="d-flex justify-content-between">
-                      <div className="panel-text-div col-5 justify-content-start">
+                      <div className="panel-text-div col-lg-6 col-md-5 justify-content-start">
                         <div className="d-flex flex-column" style={{fontFamily: '"Poppins", sans-serif'}}>
                           <span style={{ color: "#000", fontWeight:"700", fontSize:"50px", lineHeight:0.9 }}>{Product_Name}</span>
                           <span style={{ color: "rgb(118 118 118)", fontSize:"25px", fontStyle:"italic",  }}>{Product_Subtitle}</span>
@@ -579,11 +579,11 @@ const Collections = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="panel-image-div col-7 overflow-hidden">
+                      <div className="panel-image-div col-lg-5 col-md-7 overflow-hidden">
                         <div className="image-section" >
                           <div className="row h-100 no-gaps justify-content-center w-100 flex-column">
                             
-                            <div className=" right-image">
+                            <div className="col-lg-10 right-image">
                               <img className="main-image" src={Images[0].Image_Link} alt="Main Image" />
                             </div>
                             <div className=" left-images">
