@@ -1,6 +1,5 @@
 
 import React from "react";
-import './Explore'
 import Card from './Card'
 import ResponsiveImageHoverEffect from './ResponsiveImageHoverEffect'
 import ResponsiveCard from './ResponsiveCard'
@@ -27,7 +26,7 @@ const Work = () => {
   return (
     <>
 
-      <div className="p-4 pt-5 update-card">
+      <div className="p-4 mt-4 update-card">
         {/* <div style={{ width:"100%", gap:20 }} className="d-flex justify-content-center align-items-center px-2 d-none">
           <Swiper
             spaceBetween={20}
@@ -59,8 +58,8 @@ const Work = () => {
           </Swiper>
           
         </div> */}
-        <div style={{ width:"100%", gap:20 }} className=" justify-content-center align-items-center px-4 d-none d-lg-flex">
-          <div className=" d-flex col-lg-3 px-2 py-2 justify-content-start poppins-bold" style={{borderRadius:15, textTransform:"uppercase",backgroundColor:"#d9d4c5"}}>
+        <div style={{ width:"100%", gap:20 }} className="jkskdfd d-flex px-2">
+          <div className="d-none d-lg-flex col-lg-3 px-2 py-2 justify-content-start poppins-bold" style={{borderRadius:15, textTransform:"uppercase",backgroundColor:"#d9d4c5"}}>
             <Swiper
               spaceBetween={1}
               slidesPerView={1}
@@ -73,17 +72,15 @@ const Work = () => {
               allowTouchMove={false}
               modules={[ Autoplay]}
               className="mySwiper2 text-dark" >
-                <SwiperSlide >
-                  <div className="py-1 " >Lorem ipsum dolor sit amet </div>
+               <SwiperSlide>
+                  <div className="py-1 ">Lorem Ipsum es simplemente el texto de.</div>
                 </SwiperSlide>
-                <SwiperSlide >
-                  <div className="py-1 " >Lorem ipsum dolor sit amet </div>
+                <SwiperSlide>
+                  <div className="py-1 ">Lorem Ipsum es simplemente el texto de.</div>
                 </SwiperSlide>
-
-                
             </Swiper>
           </div>
-          <div className=" d-flex col-lg-6 px-2 py-2 justify-content-center" style={{borderRadius:15,backgroundColor:"#d9d4c5"}}>
+          <div className="d-flex col-lg-6 col-md-12 col-sm-12 px-2 py-2 justify-content-center" style={{borderRadius:15, backgroundColor:"#d9d4c5"}}>
             <Swiper
               spaceBetween={5}
               slidesPerView={4}
@@ -94,8 +91,11 @@ const Work = () => {
                 disableOnInteraction: false,
               }}
               breakpoints={{
+                320: {
+                  slidesPerView:2,
+                },
                 768: {
-                  slidesPerView: 2,
+                  slidesPerView: 3,
                 },
                 1024: {
                   slidesPerView: 2,
@@ -107,8 +107,8 @@ const Work = () => {
               modules={[FreeMode, Autoplay]}
               className="mySwiperjdf" >
               {cards.map((card, index) => (
-                <SwiperSlide  key={index+"sdfdsf"} className="d-flex " >
-                  <a href={card.link} className="btn btn--bg btn--yellow-blue justify-content-between" >
+                <SwiperSlide  key={index+"sdfdsf"} style={{width:"auto"}} >
+                  <a href={card.link} className="btns btn--bg btn--yellow-blue justify-content-between" >
                     <span>{card.text}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 26" class="btn__arrow"><path stroke="currentColor" stroke-width="1.5" d="M17.868 8.073v9.795H8.073"></path><path stroke="currentColor" stroke-width="1.5" d="M17.868 17.868 8.073 8.073"></path><path stroke="currentColor" stroke-width="1.5" d="M24.97 12.97c0-6.627-5.372-12-12-12-6.626 0-12 5.373-12 12 0 6.628 5.374 12 12 12 6.628 0 12-5.372 12-12Z"></path><path stroke="currentColor" stroke-width="1.5" d="M24.97 12.97c0-6.627-5.372-12-12-12-6.626 0-12 5.373-12 12 0 6.628 5.374 12 12 12 6.628 0 12-5.372 12-12Z"></path></svg>
                   </a>
@@ -116,7 +116,7 @@ const Work = () => {
               ))}
             </Swiper>
           </div>
-          <div className=" d-flex col-lg-3 px-2 py-2 justify-content-start poppins-bold" style={{borderRadius:15, textTransform:"uppercase", backgroundColor:"#d9d4c5"}}>
+          <div className="d-none d-lg-flex col-lg-3 px-2 py-2 justify-content-start poppins-bold" style={{borderRadius:15, textTransform:"uppercase", backgroundColor:"#d9d4c5"}}>
             <Swiper
               spaceBetween={1}
               slidesPerView={1}
@@ -130,16 +130,17 @@ const Work = () => {
               allowTouchMove={false}
               modules={[Autoplay]}
               className="mySwiper2 text-dark " >
-                 <SwiperSlide >
-                  <div className="py-1 ">Lorem ipsum dolor sit amet </div>
+                <SwiperSlide >
+                  <div className="py-1 ">Lorem Ipsum es simplemente el texto de relleno de.</div>
                 </SwiperSlide>
                 <SwiperSlide >
-                  <div className="py-1 ">Lorem ipsum dolor sit amet </div>
+                  <div className="py-1 ">Lorem Ipsum es simplemente el texto de relleno de.</div>
                 </SwiperSlide>
                 
             </Swiper>
           </div>
         </div>
+       
         <ResponsiveImageHoverEffect />
         <ResponsiveCard />
         <ScrollingTextSection />
