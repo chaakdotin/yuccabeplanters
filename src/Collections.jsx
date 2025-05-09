@@ -102,7 +102,14 @@ const Collections = () => {
   
         
         const screenWidth = window.innerWidth;
-        if (screenWidth <= 768) {
+        if (screenWidth <= 480) {
+          const imageHeights = 100;
+          const containerHeights = 300;
+          const sliderHeight = totalImages * imageHeights;
+          let offset = index * imageHeights + imageHeights / 2 - containerHeights / 2;
+          offset = Math.max(0, Math.min(offset, sliderHeight - containerHeights));
+          slider.style.transform = `translateY(-${offset}px)`;
+        }else if (screenWidth <= 768) {
           const imageWidth = 120;
           const containerWidth = 780;
           const sliderHeight = totalImages * imageWidth;
@@ -223,12 +230,12 @@ const Collections = () => {
             // markers:true,
           }
         });
-        tlMain.fromTo(".small-section", { y: "100vh" }, { y: 80, duration: 0.5 });
+        tlMain.fromTo(".small-section", { y: "100vh" }, { y: 40, duration: 0.5 });
         panels.forEach((panel, i) => {
           let lastPanel = panels.length - 1;
-          tlMain.fromTo(panel, { y: "100%" }, { y: 80, duration: 1 }, "<");
+          tlMain.fromTo(panel, { y: "100%" }, { y: 40, duration: 1 }, "<");
           if (i < lastPanel) {
-            tlMain.to(panel, { height: "5vh", y: 80, duration: 1 });
+            tlMain.to(panel, { height: "5vh", y: 40, duration: 1 });
             tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
           }
         });
@@ -568,7 +575,7 @@ const Collections = () => {
                 <span className="k8nd8" style={{ position: "absolute", fontSize: "225px", fontWeight: "bold", backgroundColor: "rgb(255, 255, 255)", zIndex: 1 }}>Collections</span>
               </div>
               <div className="sdsss" style={{ overflow: "hidden", width: "fit-content" }}>
-                <div className="d-flex gap-2 h84gf" style={{ transform: "translate(-930px, 20px)", position: "relative" }}>
+                <div className="d-flex gap-2 h84gf" style={{ transform: "translate(-955px, 20px)", position: "relative" }}>
                   <button className="btn btn_style active" data-filter="all">
                     <div className="btn_icon">
                       <img src="./svg/icon2.svg" className="w-100 btn_icon_1" />
@@ -642,9 +649,9 @@ const Collections = () => {
                     <div className="d-flex justify-content-between">
                       <div className="panel-text-div col-lg-6 col-md-5 justify-content-start">
                         <div className="d-flex flex-column" style={{fontFamily: '"Poppins", sans-serif'}}>
-                          <span style={{ color: "#000", fontWeight:"700", fontSize:"50px", lineHeight:0.9 }}>{Product_Name}</span>
-                          <span style={{ color: "rgb(118 118 118)", fontSize:"25px", fontStyle:"italic",  }}>{Product_Subtitle}</span>
-                          <span className="pt-3" style={{ color: "#000", fontSize:"20px", fontWeight:"200" }}>{Product_Description}</span>
+                          <span className="panel-title" style={{ color: "#000", fontWeight:"700", fontSize:"50px", lineHeight:0.9 }}>{Product_Name}</span>
+                          <span className="panel-subtitle" style={{ color: "rgb(118 118 118)", fontSize:"25px", fontStyle:"italic",  }}>{Product_Subtitle}</span>
+                          <span className="panel-description pt-3" style={{ color: "#000", fontSize:"20px", fontWeight:"200" }}>{Product_Description}</span>
                         </div>
                         <div className="pt-4 col-12">
                           {Sizes_Image_Link ? (
