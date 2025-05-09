@@ -143,396 +143,385 @@ const Collections = () => {
       const initialActiveImage = section.querySelector('.clickable.active');
       if (initialActiveImage) centerActiveImage(initialActiveImage);
     });
-  
-   
-    
-  
 
     const handleResize = () => ScrollTrigger.refresh();
     window.addEventListener("resize", handleResize);
-      if (c !== 'all') {
-        ScrollTrigger.refresh();
-        setTimeout(() => {
-          const div = document.querySelector('.small-section');
-          if (div) {
-            const distanceFromDocumentTop = div.offsetTop + 100;
-            window.scrollBy(0, distanceFromDocumentTop);
-          }
-        }, 600);
-      }
-      if(window.innerWidth <= 330){
-        const tl1 = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".kdjff",
-            start: "top 22%",
-            end: "+=200",
-            scrub: true,
-            
-          },
-        });
-  
-        tl1.to(".k8nd8", {
-          left: 20,
-          color: "#d9d4c5",
-          fontSize:40,
-          duration: 1
-        });
-  
-        const tl2 = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".sdsss",
-            start: "top 15%",
-            end: "+=100",
-            scrub: true,
-            markers:true,
-          }
-        });
-        gsap.set(".h84gf", {
-          y:15,
-          duration: 1,
-        });
-        tl2.to(".h84gf", {
-          x: 10,
-          duration: 1,
+    if (c !== 'all') {
+      ScrollTrigger.refresh();
+      setTimeout(() => {
+        const div = document.querySelector('.small-section');
+        if (div) {
+          const distanceFromDocumentTop = div.offsetTop + 100;
+          window.scrollBy(0, distanceFromDocumentTop);
+        }
+      }, 600);
+    }
+    if(window.innerWidth <= 330){
+      const tl1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".kdjff",
+          start: "top 22%",
+          end: "+=200",
+          scrub: true,
           
-        });
-        gsap.to("#newcolum .card", {
-          y: "400px",
-          duration: 1,
-          scrollTrigger: {
-            trigger: "#newcolum",
-            start: "top 25%",
-            end: "+=160",
-            scrub: true,
-            
-          },
-        });
-        let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
-        const count = panels.length;
-      
-        const tlMain = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".stack-container",
-            start: "top top",
-            end: "+=" + (count * 200),
-            scrub: true,
-            pin: true,
-            // markers:true,
-          }
-        });
-        tlMain.fromTo(".small-section", { y: "100vh" }, { y: 0, duration: 0.5 });
-        panels.forEach((panel, i) => {
-          let lastPanel = panels.length - 1;
-          tlMain.fromTo(panel, { y: "102%" }, { y: 0, duration: 1 }, "<");
-          if (i < lastPanel) {
-            tlMain.to(panel, { height: "5vh", y: 0, duration: 1 });
-            tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
-          }
-        });
-      }else if(window.innerWidth <= 375){
-        const tl1 = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".kdjff",
-            start: "top 22%",
-            end: "+=200",
-            scrub: true,
-            
-          },
-        });
-  
-        tl1.to(".k8nd8", {
-          left: 20,
-          color: "#d9d4c5",
-          fontSize:40,
-          duration: 1
-        });
-  
-        const tl2 = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".sdsss",
-            start: "top 20%",
-            end: "+=100",
-            scrub: true,
-            
-          }
-        });
-  
-        tl2.to(".h84gf", {
-          x: 10,
-          duration: 1,
-        });
-        gsap.to("#newcolum .card", {
-          y: "400px",
-          duration: 1,
-          scrollTrigger: {
-            trigger: "#newcolum",
-            start: "top 25%",
-            end: "+=160",
-            scrub: true,
-            markers:true,
-          },
-        })
+        },
+      });
 
+      tl1.to(".k8nd8", {
+        left: 20,
+        color: "#d9d4c5",
+        fontSize:40,
+        duration: 1
+      });
+
+      const tl2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".sdsss",
+          start: "top 15%",
+          end: "+=100",
+          scrub: true,
+        }
+      });
+      gsap.set(".h84gf", {
+        y:15,
+        duration: 1,
+      });
+      tl2.to(".h84gf", {
+        x: 10,
+        duration: 1,
         
-        
-        let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
-        const count = panels.length;
-      
-        const tlMain = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".stack-container",
-            start: "top top",
-            end: "+=" + (count * 200),
-            scrub: true,
-            pin: true,
-            // markers:true,
-          }
-        });
-        tlMain.fromTo(".small-section", { y: "100vh" }, { y: 20, duration: 0.5 });
-        panels.forEach((panel, i) => {
-          let lastPanel = panels.length - 1;
-          tlMain.fromTo(panel, { y: "102%" }, { y: 20, duration: 1 }, "<");
-          if (i < lastPanel) {
-            tlMain.to(panel, { height: "5vh", y: 20, duration: 1 });
-            tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
-          }
-        });
-      }else if(window.innerWidth <= 480){
-        const tl1 = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".kdjff",
-            start: "top 25%",
-            end: "+=200",
-            scrub: true,
-          },
-        });
-  
-        tl1.to(".k8nd8", {
-          left: 30,
-          color: "#d9d4c5",
-          fontSize:60,
-          duration: 1
-        });
-  
-        const tl2 = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".sdsss",
-            start: "top 27%",
-            end: "+=100",
-            scrub: true,
-
-          }
-        });
-  
-        tl2.to(".h84gf", {
-          x: 10,
-          duration: 1,
-        });
-        // const tl3 = gsap.timeline({
-        //   scrollTrigger: {
-        //     trigger: "#newcolum",
-        //     start: "top 40%",
-        //     end: "+=160",
-        //     scrub: true,
-        //     // markers:true,
-        // });
-        gsap.to("#newcolum .card", {
-          y: "400px",
-          duration: 1,
-          scrollTrigger: {
-            trigger: "#newcolum",
-            start: "top 30%",
-            end: "+=160",
-            scrub: true,
-
-          },
-        })
-
-        
-        
-        let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
-        const count = panels.length;
-      
-        const tlMain = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".stack-container",
-            start: "top top",
-            end: "+=" + (count * 200),
-            scrub: true,
-            pin: true,
-            // markers:true,
-          }
-        });
-        tlMain.fromTo(".small-section", { y: "100vh" }, { y: 40, duration: 0.5 });
-        panels.forEach((panel, i) => {
-          let lastPanel = panels.length - 1;
-          tlMain.fromTo(panel, { y: "102%" }, { y: 40, duration: 1 }, "<");
-          if (i < lastPanel) {
-            tlMain.to(panel, { height: "5vh", y: 40, duration: 1 });
-            tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
-          }
-        });
-      }else if(window.innerWidth <= 770){
-        const tl1 = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".kdjff",
-            start: "top 25%",
-            end: "+=200",
-            scrub: true,
-          },
-        });
-  
-        tl1.to(".k8nd8", {
-          left: 30,
-          color: "#d9d4c5",
-          fontSize:60,
-          duration: 1
-        });
-  
-        const tl2 = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".sdsss",
-            start: "top 27%",
-            end: "+=100",
-            scrub: true,
-
-          }
-        });
-  
-        tl2.to(".h84gf", {
-          x: 10,
-          duration: 1,
-        });
-  
-        // const tl3 = gsap.timeline({
-        //   scrollTrigger: {
-        //     trigger: "#newcolum",
-        //     start: "top 40%",
-        //     end: "+=160",
-        //     scrub: true,
-        //     // markers:true,
-        //   }
-
-        // });
-        gsap.to("#newcolum .card", {
-          y: "400px",
-          duration: 1,
-          scrollTrigger: {
-            trigger: "#newcolum",
-            start: "top 30%",
-            end: "+=160",
-            scrub: true,
-
-          },
-        })
-
-        
-        
-        let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
-        const count = panels.length;
-      
-        const tlMain = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".stack-container",
-            start: "top top",
-            end: "+=" + (count * 200),
-            scrub: true,
-            pin: true,
-            // markers:true,
-          }
-        });
-        tlMain.fromTo(".small-section", { y: "100vh" }, { y: 80, duration: 0.5 });
-        panels.forEach((panel, i) => {
-          let lastPanel = panels.length - 1;
-          tlMain.fromTo(panel, { y: "100%" }, { y: 80, duration: 1 }, "<");
-          if (i < lastPanel) {
-            tlMain.to(panel, { height: "5vh", y: 80, duration: 1 });
-            tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
-          }
-        });
-      }else{
-        const tl1 = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".kdjff",
-            start: "top 25%",
-            end: "+=200",
-            scrub: true,
-          },
-        });
-
-        tl1.to(".k8nd8", {
-          left: 0,
-          color: "#d9d4c5",
-          fontSize:80,
-          duration: 1
-        });
-
-        const tl2 = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".sdsss",
-            start: "top 12%",
-            end: "+=100",
-            scrub: true,
-          }
-        });
-
-        tl2.to(".h84gf", {
-          x: 0,
-          duration: 1,
-        });
-
-        const tl3 = gsap.timeline({
-          scrollTrigger: {
-            trigger: "#newcolum",
-            start: "30% -40%",
-            end: "+=160",
-            scrub: true,
-            // markers:true,
-            
-          }
-        });
-
-        tl3.to("#newcolum .card", {
-          y: "400px",
-          duration: 1,
-          // ease: "power1.inOut",
-          // stagger: {
-          //   grid: [2,3],
-          //   each: 0.4,
-          //   from: "center",
-          //   axis: "y",
-          //   amount: 1.5
-          // }
-        });
-        let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
-        const count = panels.length;
-      
-        const tlMain = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".stack-container",
-            start: "top top",
-            end: "+=" + (count * 200),
-            scrub: true,
-            pin: true,
-            // markers: true
-          }
-        });
-        tlMain.fromTo(".small-section", { y: "100vh" }, { y: 0, duration: 0.5 });
-        panels.forEach((panel, i) => {
-          let lastPanel = panels.length - 1;
-          tlMain.fromTo(panel, { y: "100%" }, { y: 0, duration: 1 }, "<");
-          if (i < lastPanel) {
-            tlMain.to(panel, { height: "5vh", y: 0, duration: 1 });
-            tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
-          }
-        });
-      }
+      });
+      gsap.to("#newcolum .card", {
+        y: "400px",
+        duration: 1,
+        scrollTrigger: {
+          trigger: "#newcolum",
+          start: "top 25%",
+          end: "+=160",
+          scrub: true,
+          
+        },
+      });
+      let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
+      const count = panels.length;
     
+      const tlMain = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".stack-container",
+          start: "top top",
+          end: "+=" + (count * 200),
+          scrub: true,
+          pin: true,
+          // markers:true,
+        }
+      });
+      tlMain.fromTo(".small-section", { y: "100vh" }, { y: 0, duration: 0.5 });
+      panels.forEach((panel, i) => {
+        let lastPanel = panels.length - 1;
+        tlMain.fromTo(panel, { y: "102%" }, { y: 0, duration: 1 }, "<");
+        if (i < lastPanel) {
+          tlMain.to(panel, { height: "5vh", y: 0, duration: 1 });
+          tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
+        }
+      });
+    }else if(window.innerWidth <= 375){
+      const tl1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".kdjff",
+          start: "top 22%",
+          end: "+=200",
+          scrub: true,
+          
+        },
+      });
 
-  
+      tl1.to(".k8nd8", {
+        left: 20,
+        color: "#d9d4c5",
+        fontSize:40,
+        duration: 1
+      });
+
+      const tl2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".sdsss",
+          start: "top 20%",
+          end: "+=100",
+          scrub: true,
+          
+        }
+      });
+
+      tl2.to(".h84gf", {
+        x: 10,
+        duration: 1,
+      });
+      gsap.to("#newcolum .card", {
+        y: "400px",
+        duration: 1,
+        scrollTrigger: {
+          trigger: "#newcolum",
+          start: "top 25%",
+          end: "+=160",
+          scrub: true,
+        },
+      })
+
+      
+      
+      let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
+      const count = panels.length;
     
-  
+      const tlMain = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".stack-container",
+          start: "top top",
+          end: "+=" + (count * 200),
+          scrub: true,
+          pin: true,
+          // markers:true,
+        }
+      });
+      tlMain.fromTo(".small-section", { y: "100vh" }, { y: 20, duration: 0.5 });
+      panels.forEach((panel, i) => {
+        let lastPanel = panels.length - 1;
+        tlMain.fromTo(panel, { y: "102%" }, { y: 20, duration: 1 }, "<");
+        if (i < lastPanel) {
+          tlMain.to(panel, { height: "5vh", y: 20, duration: 1 });
+          tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
+        }
+      });
+    }else if(window.innerWidth <= 480){
+      const tl1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".kdjff",
+          start: "top 25%",
+          end: "+=200",
+          scrub: true,
+        },
+      });
+
+      tl1.to(".k8nd8", {
+        left: 30,
+        color: "#d9d4c5",
+        fontSize:60,
+        duration: 1
+      });
+
+      const tl2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".sdsss",
+          start: "top 27%",
+          end: "+=100",
+          scrub: true,
+
+        }
+      });
+
+      tl2.to(".h84gf", {
+        x: 10,
+        duration: 1,
+      });
+      // const tl3 = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: "#newcolum",
+      //     start: "top 40%",
+      //     end: "+=160",
+      //     scrub: true,
+      //     // markers:true,
+      // });
+      gsap.to("#newcolum .card", {
+        y: "400px",
+        duration: 1,
+        scrollTrigger: {
+          trigger: "#newcolum",
+          start: "top 30%",
+          end: "+=160",
+          scrub: true,
+
+        },
+      })
+
+      
+      
+      let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
+      const count = panels.length;
     
+      const tlMain = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".stack-container",
+          start: "top top",
+          end: "+=" + (count * 200),
+          scrub: true,
+          pin: true,
+          // markers:true,
+        }
+      });
+      tlMain.fromTo(".small-section", { y: "100vh" }, { y: 40, duration: 0.5 });
+      panels.forEach((panel, i) => {
+        let lastPanel = panels.length - 1;
+        tlMain.fromTo(panel, { y: "102%" }, { y: 40, duration: 1 }, "<");
+        if (i < lastPanel) {
+          tlMain.to(panel, { height: "5vh", y: 40, duration: 1 });
+          tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
+        }
+      });
+    }else if(window.innerWidth <= 770){
+      const tl1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".kdjff",
+          start: "top 25%",
+          end: "+=200",
+          scrub: true,
+        },
+      });
+
+      tl1.to(".k8nd8", {
+        left: 30,
+        color: "#d9d4c5",
+        fontSize:60,
+        duration: 1
+      });
+
+      const tl2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".sdsss",
+          start: "top 27%",
+          end: "+=100",
+          scrub: true,
+
+        }
+      });
+
+      tl2.to(".h84gf", {
+        x: 10,
+        duration: 1,
+      });
+
+      // const tl3 = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: "#newcolum",
+      //     start: "top 40%",
+      //     end: "+=160",
+      //     scrub: true,
+      //     // markers:true,
+      //   }
+
+      // });
+      gsap.to("#newcolum .card", {
+        y: "400px",
+        duration: 1,
+        scrollTrigger: {
+          trigger: "#newcolum",
+          start: "top 30%",
+          end: "+=160",
+          scrub: true,
+
+        },
+      })
+
+      
+      
+      let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
+      const count = panels.length;
+    
+      const tlMain = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".stack-container",
+          start: "top top",
+          end: "+=" + (count * 200),
+          scrub: true,
+          pin: true,
+          // markers:true,
+        }
+      });
+      tlMain.fromTo(".small-section", { y: "100vh" }, { y: 80, duration: 0.5 });
+      panels.forEach((panel, i) => {
+        let lastPanel = panels.length - 1;
+        tlMain.fromTo(panel, { y: "100%" }, { y: 80, duration: 1 }, "<");
+        if (i < lastPanel) {
+          tlMain.to(panel, { height: "5vh", y: 80, duration: 1 });
+          tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
+        }
+      });
+    }else{
+      const tl1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".kdjff",
+          start: "top 25%",
+          end: "+=200",
+          scrub: true,
+        },
+      });
+
+      tl1.to(".k8nd8", {
+        left: 0,
+        color: "#d9d4c5",
+        fontSize:80,
+        duration: 1
+      });
+
+      const tl2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".sdsss",
+          start: "top 12%",
+          end: "+=100",
+          scrub: true,
+        }
+      });
+
+      tl2.to(".h84gf", {
+        x: 0,
+        duration: 1,
+      });
+
+      const tl3 = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#newcolum",
+          start: "30% -40%",
+          end: "+=160",
+          scrub: true,
+          // markers:true,
+          
+        }
+      });
+
+      tl3.to("#newcolum .card", {
+        y: "400px",
+        duration: 1,
+        // ease: "power1.inOut",
+        // stagger: {
+        //   grid: [2,3],
+        //   each: 0.4,
+        //   from: "center",
+        //   axis: "y",
+        //   amount: 1.5
+        // }
+      });
+      let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
+      const count = panels.length;
+    
+      const tlMain = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".stack-container",
+          start: "top top",
+          end: "+=" + (count * 200),
+          scrub: true,
+          pin: true,
+          // markers: true
+        }
+      });
+      tlMain.fromTo(".small-section", { y: "100vh" }, { y: 0, duration: 0.5 });
+      panels.forEach((panel, i) => {
+        let lastPanel = panels.length - 1;
+        tlMain.fromTo(panel, { y: "100%" }, { y: 0, duration: 1 }, "<");
+        if (i < lastPanel) {
+          tlMain.to(panel, { height: "5vh", y: 0, duration: 1 });
+          tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
+        }
+      });
+    }
+
     // Cleanup
     return () => {
       window.removeEventListener("resize", handleResize);
