@@ -372,6 +372,10 @@ header {
   .slider{
     flex-direction: row!important;
   }
+  .typings .text{
+    font-size: 1.1rem;
+    left: 0%;
+  }
 }
 
 @media (max-width:480px){
@@ -442,5 +446,39 @@ header {
   }
   .offcanvas{
     width: 100%!important;
+  }
+  .typings .text{
+    font-size: 1.2rem;
+    left: 0%;
+  }
+}
+@media (max-width: 375px) {
+  
+  .k8nd8 {
+    font-size: 60px !important;
+    left: 15px!important;
+  }
+  .kdjff {
+    height: 48px !important;
+  }
+  .new_style {
+    width: 40%;
+  }
+  
+}
+@media (max-width: 320px) {
+  .mobile_view_frist_section {
+    transform: translate(0px, 6vh)!important;
+  }
+  .k8nd8 {
+    font-size: 50px !important;
+    left: 15px!important;
+  }
+  .new_style {
+    width: 45%;
+  }
+  .typings .text{
+    font-size: 1.1rem;
+    left: 0%;
   }
 }
