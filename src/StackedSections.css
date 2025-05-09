@@ -373,3 +373,9 @@ header {
     flex-direction: row!important;
   }
 }
+
+@media (max-width:480px){
+  .k8nd8{
+    font-size: 60px!important;
+  }
+}

@@ -154,7 +154,85 @@ const Collections = () => {
         }, 600);
       }
       
-      if(window.innerWidth <= 770){
+      if(window.innerWidth <= 480){
+        const tl1 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".kdjff",
+            start: "top 25%",
+            end: "+=200",
+            scrub: true,
+          },
+        });
+  
+        tl1.to(".k8nd8", {
+          left: 30,
+          color: "#d9d4c5",
+          fontSize:60,
+          duration: 1
+        });
+  
+        const tl2 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".sdsss",
+            start: "top 27%",
+            end: "+=100",
+            scrub: true,
+
+          }
+        });
+  
+        tl2.to(".h84gf", {
+          x: 10,
+          duration: 1,
+        });
+  
+        // const tl3 = gsap.timeline({
+        //   scrollTrigger: {
+        //     trigger: "#newcolum",
+        //     start: "top 40%",
+        //     end: "+=160",
+        //     scrub: true,
+        //     // markers:true,
+        //   }
+
+        // });
+        gsap.to("#newcolum .card", {
+          y: "400px",
+          duration: 1,
+          scrollTrigger: {
+            trigger: "#newcolum",
+            start: "top 30%",
+            end: "+=160",
+            scrub: true,
+
+          },
+        })
+
+        
+        
+        let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
+        const count = panels.length;
+      
+        const tlMain = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".stack-container",
+            start: "top top",
+            end: "+=" + (count * 200),
+            scrub: true,
+            pin: true,
+            // markers:true,
+          }
+        });
+        tlMain.fromTo(".small-section", { y: "100vh" }, { y: 80, duration: 0.5 });
+        panels.forEach((panel, i) => {
+          let lastPanel = panels.length - 1;
+          tlMain.fromTo(panel, { y: "100%" }, { y: 80, duration: 1 }, "<");
+          if (i < lastPanel) {
+            tlMain.to(panel, { height: "5vh", y: 80, duration: 1 });
+            tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
+          }
+        });
+      }else if(window.innerWidth <= 770){
         const tl1 = gsap.timeline({
           scrollTrigger: {
             trigger: ".kdjff",
@@ -512,32 +590,32 @@ const Collections = () => {
             <div className="container-fluid" id="newcolum" style={{ position: "fixed", transform: "translate(0px, 100px)", }}>
               <div className="w-100 h-100" style={{ overflow: "hidden" }}>
                 <div className="row px-2">
-                  <div className="col-lg-2 col-md-4 px-1 py-1 z-n1">
+                  <div className="col-lg-2 col-md-4 col-sm-4 px-1 py-1 z-n1">
                     <div className="card w-100 p-0 border-0">
                       <img className="card-img-top" alt="" src="./img/6.png" />
                     </div>
                   </div>
-                  <div className="col-lg-2 col-md-4 px-1 py-1 z-n1">
+                  <div className="col-lg-2 col-md-4 col-sm-4 px-1 py-1 z-n1">
                     <div className="card w-100 p-0 border-0">
                       <img className="card-img-top" alt="" src="./img/7.png" />
                     </div>
                   </div>
-                  <div className="col-lg-2 col-md-4 px-1 py-1 z-n1">
+                  <div className="col-lg-2 col-md-4 col-sm-4 px-1 py-1 z-n1">
                     <div className="card w-100 p-0 border-0">
                       <img className="card-img-top" alt="" src="./img/8.png" />
                     </div>
                   </div>
-                  <div className="col-lg-2 col-md-4 px-1 py-1 z-n1">
+                  <div className="col-lg-2 col-md-4 col-sm-4 px-1 py-1 z-n1">
                     <div className="card w-100 p-0 border-0">
                       <img className="card-img-top" alt="" src="./img/6.png" />
                     </div>
                   </div>
-                  <div className="col-lg-2 col-md-4 px-1 py-1 z-n1">
+                  <div className="col-lg-2 col-md-4 col-sm-4 px-1 py-1 z-n1">
                     <div className="card w-100 p-0 border-0">
                       <img className="card-img-top" alt="" src="./img/7.png" />
                     </div>
                   </div>
-                  <div className="col-lg-2 col-md-4 px-1 py-1 z-n1">
+                  <div className="col-lg-2 col-md-4 col-sm-4 px-1 py-1 z-n1">
                     <div className="card w-100 p-0 border-0">
                       <img className="card-img-top" alt="" src="./img/8.png" />
                     </div>
