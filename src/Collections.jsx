@@ -206,10 +206,7 @@ const Collections = () => {
             scrub: true,
             
           },
-        })
-
-        
-        
+        });
         let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
         const count = panels.length;
       
