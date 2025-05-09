@@ -233,7 +233,7 @@ const Collections = () => {
         tlMain.fromTo(".small-section", { y: "100vh" }, { y: 40, duration: 0.5 });
         panels.forEach((panel, i) => {
           let lastPanel = panels.length - 1;
-          tlMain.fromTo(panel, { y: "100%" }, { y: 40, duration: 1 }, "<");
+          tlMain.fromTo(panel, { y: "102%" }, { y: 40, duration: 1 }, "<");
           if (i < lastPanel) {
             tlMain.to(panel, { height: "5vh", y: 40, duration: 1 });
             tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
