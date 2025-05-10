@@ -696,8 +696,9 @@ button {
 
 @media (max-width: 767px) {
   .ab-inner-hero-title {
-    font-size: 85px;
+    font-size: 70px;
     transform: translateX(-3px);
+    letter-spacing: .1px;
   }
   .ab-inner-hero-title-box p {
     font-size: 20px;
@@ -722,8 +723,9 @@ button {
 }
 @media (max-width: 320px) {
   .ab-inner-hero-title {
-      font-size: 80px;
-      transform: translateX(-3px);
+    font-size: 64px;
+    transform: translateX(-3px);
+    letter-spacing: .1px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {

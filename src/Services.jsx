@@ -77,10 +77,10 @@ const Services = () => {
         <div className='container' style={{ paddingTop: 220 }}>
           <div className='d-flex flex-column justify-content-center col-12 pb-5'>
             <div className='text-center'>
-              <span style={{ fontSize: '7vw', fontWeight: 600, fontFamily: "Markpro", letterSpacing: -3 }}>Tailored by Yuccabe</span>
+              <span className="main-title" style={{ fontSize: '7vw', fontWeight: 600, fontFamily: "Markpro", letterSpacing: -3 }}>Tailored by Yuccabe</span>
             </div>
             <div className='d-flex justify-content-center pt-2' style={{}}>
-              <p style={{ fontSize: 'max(1.043vw, 12px)', width: "calc((2.0848vw - 2.777vw*2/48)*22)", color: "#3e3e3e", fontFamily: "PPMori,Noto Sans JP,Noto Sans SC,sans-serif", fontWeight: 100, lineHeight: 1.2,  textAlign:"center" }}>
+              <p className="main-subtitle" style={{ fontSize: 'max(1.043vw, 12px)', width: "calc((2.0848vw - 2.777vw*2/48)*22)", color: "#3e3e3e", fontFamily: "PPMori,Noto Sans JP,Noto Sans SC,sans-serif", fontWeight: 100, lineHeight: 1.2,  textAlign:"center" }}>
                 Every space tells a story—let’s make yours unforgettable. At Yuccabe, we go beyond just offering planters. Our design service is built to help you visualize, plan, and transform your space using customized planter layouts, shapes, sizes, and finishes that suit your interiors or exteriors perfectly.
               </p>
             </div>
@@ -93,8 +93,8 @@ const Services = () => {
         </div>
 
       </div>
-      <div style={{ width: "100vw", height: "100vh", margin: "100px 0px" }} >
-        <video src="https://videos.pexels.com/video-files/29382467/12656960_2560_1440_25fps.mp4" autoPlay muted loop className="w-100 object-fit-cover"></video>
+      <div className="video-section" style={{ width: "100vw", height: "100vh", margin: "100px 0px" }} >
+        <video src="videos/12656960_2560_1440_25fps.mp4" autoPlay muted loop className="w-100 object-fit-cover"></video>
       </div>
       <div className="ab-2-hero-area  position-relative " style={{paddingBottom:300}}>
         <div className="ab-2-hero-social-wrap d-none ">
@@ -800,6 +800,20 @@ const Services = () => {
               delay: 1500,       // 1.5 seconds delay between scrolls
               disableOnInteraction: false,
             }}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+              },
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 2,
+              },
+              1440:{
+                slidesPerView: 3,
+              }
+            }}
             modules={[FreeMode, Autoplay]}
             className="mySwiper"
           >
@@ -1103,15 +1117,15 @@ const Services = () => {
           <Swiper
             spaceBetween={20}
             slidesPerView={'auto'}
-            freeMode={true}
             loop={true}
-            speed={2500} // slow transition speed (in ms)
+            speed={3000} // slow transition speed (in ms)
+           
             autoplay={{
               delay: 0,       // 1.5 seconds delay between scrolls
-              disableOnInteraction: false,
               reverseDirection: true, 
             }}
-            modules={[FreeMode, Autoplay]}
+            
+            modules={[ Autoplay]}
             className="mySwiper tp-img-slide "
           >
             <SwiperSlide >
