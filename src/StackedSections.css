@@ -633,6 +633,7 @@ header {
     justify-content: center!important;
     flex-direction: row!important;
     direction: rtl;
+    padding-top: 5px;
   }
   .two-colum-div{
     gap:10px;
@@ -642,7 +643,7 @@ header {
   }
   .slider img {
     width: 100%!important;
-    height: 94px!important;
+    height: 85px!important;
   }
   .right-image img {
     width: 100%!important;
