@@ -486,7 +486,7 @@ header {
   }
   .kdjff {
     width: 100% !important;
-    height: 70px !important;
+    height: 65px !important;
   }
   .sdsss {
     width: 100% !important;
@@ -501,6 +501,9 @@ header {
   .col-sm-4 {
     flex:0 0 auto;
     width: 33.33333333%
+  }
+  .panel-text-div {
+    padding-left: 15px;
   }
   .panel-title {
     font-size: 30px!important;
@@ -599,6 +602,10 @@ header {
   }
   .k8nd8 {
     font-size: 60px!important;
+    left: 15px!important;
+  }
+  .panel-text-div {
+    padding-left: 15px;
   }
   .h84gf{
     flex-wrap: wrap;

@@ -397,7 +397,7 @@ const Collections = () => {
         duration: 1,
       });
       tl2.to(".h84gf", {
-        x: 10,
+        x: 20,
         duration: 1,
       });
       
