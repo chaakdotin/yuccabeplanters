@@ -209,10 +209,10 @@ const Collections = () => {
         scrollTrigger: {
           trigger: ".stack-container",
           start: "top top",
-          end: "+=" + (count * 200),
+          end: "+=" + (count * 75),
           scrub: true,
           pin: true,
-          // markers:true,
+          //
         }
       });
       tlMain.fromTo(".small-section", { y: "100vh" }, { y: 0, duration: 0.5 });
@@ -295,9 +295,10 @@ const Collections = () => {
       const tl1 = gsap.timeline({
         scrollTrigger: {
           trigger: ".kdjff",
-          start: "top 25%",
+          start: "top 20%",
           end: "+=200",
           scrub: true,
+          
         },
       });
 
@@ -335,10 +336,10 @@ const Collections = () => {
         duration: 1,
         scrollTrigger: {
           trigger: "#newcolum",
-          start: "top 30%",
+          start: "top 40%",
           end: "+=160",
           scrub: true,
-
+          markers:true,
         },
       })
 
@@ -351,18 +352,18 @@ const Collections = () => {
         scrollTrigger: {
           trigger: ".stack-container",
           start: "top top",
-          end: "+=" + (count * 200),
+          end: "+=" + (count * 100),
           scrub: true,
           pin: true,
           // markers:true,
         }
       });
-      tlMain.fromTo(".small-section", { y: "100vh" }, { y: 40, duration: 0.5 });
+      tlMain.fromTo(".small-section", { y: "100vh" }, { y: 60, duration: 0.5 });
       panels.forEach((panel, i) => {
         let lastPanel = panels.length - 1;
-        tlMain.fromTo(panel, { y: "102%" }, { y: 40, duration: 1 }, "<");
+        tlMain.fromTo(panel, { y: "102%" }, { y: 60, duration: 1 }, "<");
         if (i < lastPanel) {
-          tlMain.to(panel, { height: "5vh", y: 40, duration: 1 });
+          tlMain.to(panel, { height: "5vh", y: 60, duration: 1 });
           tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
         }
       });
@@ -768,7 +769,7 @@ const Collections = () => {
               <div className="container-fluid">
                 <div className="row px-1">
                   <div className="panel-body col-12 panel-image" style={{ paddingTop: "25px" }}>
-                    <div className="d-flex justify-content-between">
+                    <div className="d-flex justify-content-between two-colum-div">
                       <div className="panel-text-div col-lg-6 col-md-5 justify-content-start">
                         <div className="d-flex flex-column" style={{fontFamily: '"Poppins", sans-serif'}}>
                           <span className="panel-title" style={{ color: "#000", fontWeight:"700", fontSize:"50px", lineHeight:0.9 }}>{Product_Name}</span>

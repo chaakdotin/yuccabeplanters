@@ -114,8 +114,10 @@ header {
   
   .new_style:hover {
     color: var(--hover-text);
+    -webkit-transform: translate(-0.25rem, -0.25rem);
     transform: translate(-0.25rem, -0.25rem);
     background: var(--hover-bg);
+    -webkit-box-shadow: 0.25rem 0.25rem var(--bg);
     box-shadow: 0.25rem 0.25rem var(--bg);
   }
   
@@ -132,6 +134,7 @@ header {
   left: 0;
   width: 100vw;
   height: 73vh; /* Active panel height */
+  -webkit-transform: translateY(100%);
   transform: translateY(100%);
   display: block;
   justify-content:space-between; 
@@ -231,6 +234,7 @@ header {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0);
+  -webkit-backdrop-filter: blur(0px);
   backdrop-filter: blur(0px);
   transition: background 1.5s ease, backdrop-filter 1.5s ease;
   z-index: 500;
@@ -363,7 +367,7 @@ header {
   }
   .right-image {
     width: 100%!important;
-    height: 73%!important
+    height: 73%!important;
    
   }
   .slider img{
@@ -388,7 +392,7 @@ header {
     padding-top:12px!important;
   }
   .mobile_view_frist_section {
-    transform: translate(0px, 8vh)!important;
+    transform: translate(0px, 9vh)!important;
   }
   .k8nd8 {
     font-size: 60px!important;
@@ -413,7 +417,7 @@ header {
   }
   .left-images {
     width: 20% !important;
-    height: 300px!important
+    height: 280px!important;
   }
   .right-image {
     width: 76% !important;
@@ -421,8 +425,11 @@ header {
   }
   .image-section .row{
     flex-direction: row!important;
-
+    
     direction: rtl;
+  }
+  .two-colum-div{
+    gap:10px;
   }
   .slider{
     flex-direction: column !important;
@@ -433,10 +440,10 @@ header {
   }
   .right-image img {
     width: 100%!important;
-    height: 300px;
+    height: 100%!important;
   }
   .panel-image-div{
-    height: 36vh;
+    height: 35vh;
   }
   .panel-text-div .pt-4{
     padding-top: 0rem!important;
@@ -450,6 +457,12 @@ header {
   .typings .text{
     font-size: 1.2rem;
     left: 0%;
+  }
+  .btn_style .btn_icon{
+    display: none;
+  }
+  .btn_style {
+    padding: 0.5rem 1.2rem .5rem 1.2rem;
   }
 }
 @media (max-width: 375px) {
