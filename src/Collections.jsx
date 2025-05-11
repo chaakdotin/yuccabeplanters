@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import Lenis from 'lenis'
 import lenis  from './LenisWrapper'
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Button from 'react-bootstrap/Button';
@@ -36,7 +37,12 @@ const Collections = () => {
   let tl;
   useEffect(() => {
     if (!loading) return;
-
+    const Leniss = new Lenis({
+        // lerp: 0.1, // Add slight smoothing for better ScrollTrigger compatibility
+        // duration: 1, // Adjust duration for minimal smoothing
+        smooth: true, // Enable smooth scrolling
+        wheelMultiplier: 0.2,
+    });
     const el = document.querySelector('.k8nd8');
     if (el) {
       const elWidth = el.clientWidth;
