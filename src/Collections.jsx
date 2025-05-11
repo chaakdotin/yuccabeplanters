@@ -436,6 +436,77 @@ const Collections = () => {
           tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
         }
       });
+    }else if(window.innerWidth <= 470){
+      const tl1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".kdjff",
+          start: "top 20%",
+          end: "+=200",
+          scrub: true,
+          
+        },
+      });
+
+      tl1.to(".k8nd8", {
+        left: 20,
+        color: "#d9d4c5",
+        fontSize:60,
+        duration: 1
+      });
+
+      const tl2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".sdsss",
+          start: "top 27%",
+          end: "+=100",
+          scrub: true,
+          
+        }
+      });
+      gsap.set(".h84gf", {
+        y:0,
+        duration: 1,
+      });
+      tl2.to(".h84gf", {
+        x: 20,
+        duration: 1,
+      });
+      
+      gsap.to("#newcolum .card", {
+        y: "400px",
+        duration: 1,
+        scrollTrigger: {
+          trigger: "#newcolum",
+          start: "top 40%",
+          end: "+=160",
+          scrub: true,
+          
+        },
+
+      })
+
+      
+      
+      let panels = Array.from(document.querySelectorAll(".panel")).filter(p => getComputedStyle(p).display !== "none");
+      const count = panels.length;
+      const tlMain = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".stack-container",
+          start: "top top",
+          end: "+=" + (count * 100),
+          scrub: true,
+          pin: true,
+        }
+      });
+      tlMain.fromTo(".small-section", { y: "100vh" }, { y: 60, duration: 0.5 });
+      panels.forEach((panel, i) => {
+        let lastPanel = panels.length - 1;
+        tlMain.fromTo(panel, { y: "102%" }, { y: 60, duration: 1 }, "<");
+        if (i < lastPanel) {
+          tlMain.to(panel, { height: "5vh", y: 60, duration: 1 });
+          tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
+        }
+      });
     }else if(window.innerWidth <= 480){
       const tl1 = gsap.timeline({
         scrollTrigger: {
@@ -481,10 +552,10 @@ const Collections = () => {
         duration: 1,
         scrollTrigger: {
           trigger: "#newcolum",
-          start: "top 40%",
+          start: "top 35%",
           end: "+=160",
           scrub: true,
-          markers:true,
+          // markers:true,
         },
       })
 
