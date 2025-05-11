@@ -569,9 +569,11 @@ header {
   .panel-body .d-flex {
     flex-direction: column-reverse;
   }
+
   #newcolum {
     transform: translate(0px, 15px) !important;
   }
+  
   .panel-body{
     padding-left:0px!important;
     padding-right:0px!important;
