@@ -37,9 +37,9 @@ const Collections = () => {
   let tl;
   useEffect(() => {
     if (!loading) return;
-    const Leniss = new Lenis({
-        // lerp: 0.1, // Add slight smoothing for better ScrollTrigger compatibility
-        // duration: 1, // Adjust duration for minimal smoothing
+    const Lenis2 = new Lenis({
+        lerp: 0.2, // Add slight smoothing for better ScrollTrigger compatibility
+        duration: 1, // Adjust duration for minimal smoothing
         smooth: true, // Enable smooth scrolling
         wheelMultiplier: 0.2,
     });
@@ -302,12 +302,11 @@ const Collections = () => {
           start: "top 20%",
           end: "+=200",
           scrub: true,
-          
         },
       });
 
       tl1.to(".k8nd8", {
-        left: 30,
+        left: 20,
         color: "#d9d4c5",
         fontSize:60,
         duration: 1
@@ -378,7 +377,7 @@ const Collections = () => {
       });
 
       tl1.to(".k8nd8", {
-        left: 30,
+        left: 20,
         color: "#d9d4c5",
         fontSize:60,
         duration: 1
