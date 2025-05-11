@@ -465,6 +465,7 @@ header {
   }
 }
 @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+  /* iPhone 12–15 */
   .panel-body .d-flex {
     flex-direction: column-reverse;
   }
@@ -562,10 +563,12 @@ header {
     display: none;
   }
   .btn_style {
+    font-size: 11.5px;
     padding: 0.5rem 1rem .5rem 1rem;
   }
 }
 @media only screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) {
+  /* iPhone 14/15 Pro */
   .panel-body .d-flex {
     flex-direction: column-reverse;
   }
@@ -573,18 +576,18 @@ header {
   #newcolum {
     transform: translate(0px, 15px) !important;
   }
-  
+
   .panel-body{
     padding-left:0px!important;
     padding-right:0px!important;
     padding-top:12px!important;
   }
   .mobile_view_frist_section {
-    transform: translate(0px, 9vh)!important;
+    transform: translate(0px, 10vh)!important;
   }
   .mobile_view {
     flex-direction: column !important;
-    height: 170px !important;
+    height: 160px !important;
   }
   .kdjff {
     width: 100% !important;
@@ -592,7 +595,7 @@ header {
   }
   .sdsss {
     width: 100% !important;
-    height: 90px !important;
+    height: 80px !important;
   }
   .k8nd8 {
     font-size: 60px!important;
@@ -665,11 +668,12 @@ header {
     display: none;
   }
   .btn_style {
-    padding: 0.5rem 1rem .5rem 1rem;
+    font-size: 10px;
+    padding: 0.4rem 1rem .4rem 1rem;
   }
 }
 @media only screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) {
-
+ /* iPhone Pro Max */
 }
 @media (max-width: 375px) {
   
