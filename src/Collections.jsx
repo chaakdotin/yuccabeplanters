@@ -334,15 +334,21 @@ const Collections = () => {
         duration: 1,
       });
       
-      gsap.to("#newcolum .card", {
-        y: "400px",
-        duration: 1,
+     const tl3 = gsap.timeline({
         scrollTrigger: {
           trigger: "#newcolum",
           start: "top 40%",
           end: "+=160",
           scrub: true,
           
+        },
+      });
+      tl3.to("#newcolum .card", {
+        y: "400px",
+        duration: 1,
+        stagger: function(index) {
+          // Group cards as (1,4), (2,5), (3,6)
+          return Math.floor(index % 3) * 0.3; // 0s for group 1, 0.3s for group 2, 0.6s for group 3
         },
 
       })
@@ -404,10 +410,7 @@ const Collections = () => {
         x: 20,
         duration: 1,
       });
-      
-      gsap.to("#newcolum .card", {
-        y: "400px",
-        duration: 1,
+      const tl3 = gsap.timeline({
         scrollTrigger: {
           trigger: "#newcolum",
           start: "top 40%",
@@ -415,6 +418,18 @@ const Collections = () => {
           scrub: true,
           
         },
+      });
+      tl3.to("#newcolum .card", {
+        y: "400px",
+        duration: 1,
+        // stagger: function(index) {
+        //   // Group cards as (1,4), (2,5), (3,6)
+        //   return Math.floor(index % 3) * 0.3; // 0s for group 1, 0.3s for group 2, 0.6s for group 3
+        // },
+        stagger: {
+          each: 0.4,
+          from: "start"
+        }
 
       })
 
