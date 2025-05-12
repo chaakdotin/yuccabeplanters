@@ -557,6 +557,10 @@ const Collections = () => {
         x: 10,
         duration: 1,
       });
+       gsap.set(".h84gf", {
+        y:3,
+        duration: 1,
+      });
       // const tl3 = gsap.timeline({
       //   scrollTrigger: {
       //     trigger: "#newcolum",
