@@ -1,11 +1,12 @@
 
-import React,{ useState, useEffect, useRef } from 'react'
+import React,{ useState, useEffect, useLayoutEffect, useRef } from 'react'
 import { gsap, ScrollTrigger, ScrollToPlugin } from "gsap/all";
 export default function Carousel({data}) {
     const { refs, setCurrentPage } = data;
     const [textIndex, setTextIndex] = useState(0);
     const [charIndex, setCharIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
+    const arrowRef = useRef([]);
 
     const [isScrollingDisabled, setIsScrollingDisabled] = useState(true);
     const getGreeting = () => {
@@ -25,7 +26,18 @@ export default function Carousel({data}) {
       const texts = [
         ...getGreeting(), // Merged greeting
     ];
-    
+    useLayoutEffect(() => {
+        arrowRef.current.forEach((arrow, index) => {
+            gsap.to(arrow, {
+                y: 10,
+                duration: 0.8,
+                ease: "power1.inOut",
+                yoyo: true,
+                repeat: -1,
+                delay: index * 0.3, // stagger each arrow animation by 0.3s
+            });
+        });
+    }, []);
     useEffect(() => {
         const timer = setTimeout(() => {
             if (refs.home.current) {
@@ -313,9 +325,35 @@ export default function Carousel({data}) {
                             </div>
                         </div>
                     </div>
+                     <div className="scroll-down" style={{ textAlign: "center", paddingTop: 50 }}>
+                        <p style={{ color: "rgb(0, 0, 0)", fontFamily: "sans-serif" }}>scroll down</p>
+                        <div className="arrows">
+                            <div
+                                ref={(el) => (arrowRef.current[0] = el)}
+                                className="arrow"
+                                style={{
+                                    translate: "none",
+                                    rotate: "none",
+                                    scale: "none",
+                                    transform: "translate3d(0px, 8.2398px, 0px) rotate(45deg)"
+                                }}
+                            />
+                            <div
+                                className="arrow"
+                                ref={(el) => (arrowRef.current[1] = el)}
+                                style={{
+                                    translate: "none",
+                                    rotate: "none",
+                                    scale: "none",
+                                    transform: "translate3d(0px, 6.302px, 0px) rotate(45deg)"
+                                }}
+                            />
+                        </div>
+                    </div>
+
                 </div>
                 <div ref={refs.home} >
-                    <div className=' carousel-img d-flex justify-content-center align-items-end h-100vh' style={{padding:"2rem"}}>
+                    <div className='carousel-img d-flex justify-content-center align-items-end h-100vh' style={{padding:"2rem"}}>
                         <div className='h-90vh bg-image border-reduis w-100 d-flex justify-content-start align-items-center text-white' >
                             <div style={{width: "60%", display:"flex", flexDirection:"column", gap:"1rem", textAlign:"left"}} className='navbar-container-padding'>
                                 <span>[yu-ka-bey]</span>
@@ -333,6 +371,7 @@ export default function Carousel({data}) {
                             </div>
                         </div>
                     </div>
+                   
                 </div>
             </div>
         </>
