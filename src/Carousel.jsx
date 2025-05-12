@@ -91,6 +91,12 @@ export default function Carousel({data}) {
     }, [charIndex, isDeleting, textIndex, texts]);
     return (
         <>
+            <style
+                dangerouslySetInnerHTML={{
+                    __html:
+                    '\n  .button-77 {\n  top:50px;\n  left:35%;\n  width:20%;\n  align-items: center;\n  appearance: none;\n  background-clip: padding-box;\n  background-color: initial;\n  background-image: none;\n  border-style: none;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  flex-direction: row;\n  flex-shrink: 0;\n  font-family: Eina01,sans-serif;\n  font-size: 16px;\n  font-weight: 800;\n  justify-content: center;\n  line-height: 24px;\n  margin: 0;\n  min-height: 64px;\n  outline: none;\n  overflow: visible;\n  padding: 19px 26px;\n  pointer-events: auto;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  text-transform: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: middle;\n  word-break: keep-all;\n  z-index: 0;\n}\n\n@media (min-width: 768px) {\n  .button-77 {\n    padding: 19px 32px;\n  }\n}\n\n.button-77:before,\n.button-77:after {\n  border-radius: 80px;\n}\n\n.button-77:before {\n  background-color: rgba(249, 58, 19, .32);\n  content: "";\n  display: block;\n  height: 100%;\n  left: 0;\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  z-index: -2;\n}\n\n.button-77:after {\n  background-color: initial;\n  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);\n  bottom: 4px;\n  content: "";\n  display: block;\n  left: 4px;\n  overflow: hidden;\n  position: absolute;\n  right: 4px;\n  top: 4px;\n  transition: all 100ms ease-out;\n  z-index: -1;\n}\n\n.button-77:hover:not(:disabled):after {\n  bottom: 0;\n  left: 0;\n  right: 0;\n  top: 0;\n  transition-timing-function: ease-in;\n}\n\n.button-77:active:not(:disabled) {\n  color: #ccc;\n}\n\n.button-77:active:not(:disabled):after {\n  background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);\n  bottom: 4px;\n  left: 4px;\n  right: 4px;\n  top: 4px;\n}\n\n.button-77:disabled {\n  cursor: default;\n  opacity: .24;\n}\n'
+                }}
+            />
             <div className={`bg-color `} >
                 <div className="d-flex flex-column gap-5 align-items-center justify-content-center h-100vh overflow-hidden position-relative gjhdsf">
                     <div className="glass animation-svg position-absolute opacity-0_5">
@@ -369,9 +375,14 @@ export default function Carousel({data}) {
                                     Designed for Elegance. Crafted for Life
                                 </span>
                             </div>
+                            <div className=' d-flex flex-column position-relative' style={{height:700, width:"60%"}}>
+                                <button className="button-77 position-absolute" role="button">
+                                    Button 77
+                                </button>
+                            </div>
+                           
                         </div>
                     </div>
-                   
                 </div>
             </div>
         </>
