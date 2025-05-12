@@ -38,10 +38,10 @@ const Collections = () => {
   useEffect(() => {
     if (!loading) return;
     const Lenis2 = new Lenis({
-        lerp: 0.2, // Add slight smoothing for better ScrollTrigger compatibility
+        lerp: 0.5, // Add slight smoothing for better ScrollTrigger compatibility
         duration: 1, // Adjust duration for minimal smoothing
         smooth: true, // Enable smooth scrolling
-        wheelMultiplier: 0.2,
+        wheelMultiplier: 0.5,
     });
     const el = document.querySelector('.k8nd8');
     if (el) {
@@ -162,6 +162,7 @@ const Collections = () => {
         }
       }, 600);
     }
+    // alert(window.innerWidth);
     if(window.innerWidth <= 330){
       const tl1 = gsap.timeline({
         scrollTrigger: {
@@ -436,14 +437,14 @@ const Collections = () => {
           tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
         }
       });
-    }else if(window.innerWidth <= 470){
+    }else if(window.innerWidth == 440){
       const tl1 = gsap.timeline({
         scrollTrigger: {
           trigger: ".kdjff",
           start: "top 20%",
           end: "+=200",
           scrub: true,
-          
+          markers:true
         },
       });
 
@@ -514,7 +515,6 @@ const Collections = () => {
           start: "top 20%",
           end: "+=200",
           scrub: true,
-          
         },
       });
 
@@ -905,7 +905,7 @@ const Collections = () => {
           have chosen. Like, text, images, lists, etc.
         </Offcanvas.Body>
       </Offcanvas>
-      <div style={{ position: "relative" }}>
+      <div className="pb-sm-20" style={{ position: "relative" }}>
         <div className="stack-container">
           <div className="mobile_view_frist_section" style={{ position: "fixed", transform: "translate(0px, 12vh)", zIndex: '2', width: "100%", lineHeight: "1", height: "85px" }}>
             <div className="w-100 d-flex h-100 justify-content-center mobile_view">

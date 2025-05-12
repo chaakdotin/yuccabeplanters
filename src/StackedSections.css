@@ -487,7 +487,7 @@ header {
   
 }
 
-@media only screen and (max-width: 470px) and (-webkit-device-pixel-ratio: 3) {
+@media only screen and (max-width: 440px) and (-webkit-device-pixel-ratio: 3) {
  /* iPhone Pro Max */
   .panel-body .d-flex {
     flex-direction: column-reverse;
@@ -705,6 +705,15 @@ header {
   .btn_style {
     font-size: 10px;
     padding: 0.4rem 1rem .4rem 1rem;
+  }
+  .pb-sm-20{
+    padding-bottom: 20px;
+  }
+  .footer-bg-color {
+    margin-bottom: -10px!important;
+  }
+  .panel {
+    height: 75vh;
   }
 }
 @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
