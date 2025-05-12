@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Lenis from 'lenis'
-import lenis  from './LenisWrapper'
+// import lenis  from './LenisWrapper'
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
@@ -35,9 +35,7 @@ const Collections = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   let tl;
-  useEffect(() => {
-    if (!loading) return;
-    const Lenis2 = new Lenis({
+  const lenis = new Lenis({
       lerp: 0.5, // Add slight smoothing for better ScrollTrigger compatibility
       duration: 1, // Adjust duration for minimal smoothing
       smooth: true, // Enable smooth scrolling
@@ -45,6 +43,9 @@ const Collections = () => {
       normalizeWheel: false,
       smoothTouch: true
     });
+  useEffect(() => {
+    if (!loading) return;
+    
     const el = document.querySelector('.k8nd8');
     if (el) {
       const elWidth = el.clientWidth;
