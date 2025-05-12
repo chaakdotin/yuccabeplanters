@@ -41,7 +41,7 @@ const Collections = () => {
       smooth: true, // Enable smooth scrolling
       wheelMultiplier: 0.3,
       normalizeWheel: false,
-      smoothTouch: true
+      smoothTouch: false
     });
   useEffect(() => {
     if (!loading) return;
