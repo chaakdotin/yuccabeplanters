@@ -38,10 +38,12 @@ const Collections = () => {
   useEffect(() => {
     if (!loading) return;
     const Lenis2 = new Lenis({
-        lerp: 0.5, // Add slight smoothing for better ScrollTrigger compatibility
-        duration: 1, // Adjust duration for minimal smoothing
-        smooth: true, // Enable smooth scrolling
-        wheelMultiplier: 0.5,
+      lerp: 0.5, // Add slight smoothing for better ScrollTrigger compatibility
+      duration: 1, // Adjust duration for minimal smoothing
+      smooth: true, // Enable smooth scrolling
+      wheelMultiplier: 0.3,
+      normalizeWheel: false,
+      smoothTouch: true
     });
     const el = document.querySelector('.k8nd8');
     if (el) {
