@@ -58,7 +58,7 @@ const Work = () => {
           </Swiper>
           
         </div> */}
-        <div style={{ width:"100%", gap:20 }} className="jkskdfd d-flex px-2">
+        <div style={{ width:"100%", gap:20 }} className="jkskdfd d-none px-2">
           <div className="d-none d-lg-flex col-lg-3 px-2 py-2 justify-content-start poppins-bold" style={{borderRadius:15, textTransform:"uppercase",backgroundColor:"#d9d4c5"}}>
             <Swiper
               spaceBetween={1}
