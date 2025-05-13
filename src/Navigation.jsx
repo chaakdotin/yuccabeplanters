@@ -17,7 +17,7 @@ function Navigation({scrollToSection }) {
 
       const animation1 = gsap.to(scrollNavLine, {
           transform: "translate3d(0px, 0px, 0px) scale3d(1.5, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-          boxShadow: "0px 0px 2px 0.2px rgba(217, 217, 217, 0.5)",
+          boxShadow: "0px 0px 2px 0.2px rgba(0, 0, 0, 0.5)",
           paused: true,
       });
 

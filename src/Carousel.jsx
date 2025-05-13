@@ -29,12 +29,12 @@ export default function Carousel({data}) {
     useLayoutEffect(() => {
         arrowRef.current.forEach((arrow, index) => {
             gsap.to(arrow, {
-                y: 10,
+                y: 12,
                 duration: 0.8,
                 ease: "power1.inOut",
                 yoyo: true,
                 repeat: -1,
-                delay: index * 0.3, // stagger each arrow animation by 0.3s
+                delay: index * 0.35, // stagger each arrow animation by 0.3s
             });
         });
     }, []);
@@ -94,7 +94,7 @@ export default function Carousel({data}) {
             <style
                 dangerouslySetInnerHTML={{
                     __html:
-                    '\n  .button-77 {\n  top:50px;\n  left:35%;\n  width:20%;\n  align-items: center;\n  appearance: none;\n  background-clip: padding-box;\n  background-color: initial;\n  background-image: none;\n  border-style: none;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  flex-direction: row;\n  flex-shrink: 0;\n  font-family: Eina01,sans-serif;\n  font-size: 16px;\n  font-weight: 800;\n  justify-content: center;\n  line-height: 24px;\n  margin: 0;\n  min-height: 64px;\n  outline: none;\n  overflow: visible;\n  padding: 19px 26px;\n  pointer-events: auto;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  text-transform: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: middle;\n  word-break: keep-all;\n  z-index: 0;\n}\n\n@media (min-width: 768px) {\n  .button-77 {\n    padding: 19px 32px;\n  }\n}\n\n.button-77:before,\n.button-77:after {\n  border-radius: 80px;\n}\n\n.button-77:before {\n  background-color: rgba(249, 58, 19, .32);\n  content: "";\n  display: block;\n  height: 100%;\n  left: 0;\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  z-index: -2;\n}\n\n.button-77:after {\n  background-color: initial;\n  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);\n  bottom: 4px;\n  content: "";\n  display: block;\n  left: 4px;\n  overflow: hidden;\n  position: absolute;\n  right: 4px;\n  top: 4px;\n  transition: all 100ms ease-out;\n  z-index: -1;\n}\n\n.button-77:hover:not(:disabled):after {\n  bottom: 0;\n  left: 0;\n  right: 0;\n  top: 0;\n  transition-timing-function: ease-in;\n}\n\n.button-77:active:not(:disabled) {\n  color: #ccc;\n}\n\n.button-77:active:not(:disabled):after {\n  background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);\n  bottom: 4px;\n  left: 4px;\n  right: 4px;\n  top: 4px;\n}\n\n.button-77:disabled {\n  cursor: default;\n  opacity: .24;\n}\n'
+                    '\n  .button-77 {\n   width:auto;\n  align-items: center;\n  appearance: none;\n  background-clip: padding-box;\n  background-color: initial;\n  background-image: none;\n  border-style: none;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  flex-direction: row;\n  flex-shrink: 0;\n   font-size: 16px;\n  font-weight: 700;\n  justify-content: center;\n  line-height: 24px;\n  margin: 0;\n  min-height: 64px;\n  outline: none;\n  overflow: visible;\n  padding: 19px 26px;\n  pointer-events: auto;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  text-transform: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: middle;\n  word-break: keep-all;\n  z-index: 0;\n}\n\n@media (min-width: 768px) {\n  .button-77 {\n    padding: 19px 32px;\n  }\n}\n\n.button-77:before,\n.button-77:after {\n  border-radius: 80px;\n}\n\n.button-77:before {\n  background-color: rgba(249, 58, 19, .32);\n  content: "";\n  display: block;\n  height: 100%;\n  left: 0;\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  z-index: -2;\n}\n\n.button-77:after {\n  background-color: initial;\n  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);\n  bottom: 4px;\n  content: "";\n  display: block;\n  left: 4px;\n  overflow: hidden;\n  position: absolute;\n  right: 4px;\n  top: 4px;\n  transition: all 100ms ease-out;\n  z-index: -1;\n}\n\n.button-77:hover:not(:disabled):after {\n  bottom: 0;\n  left: 0;\n  right: 0;\n  top: 0;\n  transition-timing-function: ease-in;\n}\n\n.button-77:active:not(:disabled) {\n  color: #ccc;\n}\n\n.button-77:active:not(:disabled):after {\n  background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);\n  bottom: 4px;\n  left: 4px;\n  right: 4px;\n  top: 4px;\n}\n\n.button-77:disabled {\n  cursor: default;\n  opacity: .24;\n}\n'
                 }}
             />
             <div className={`bg-color `} >
@@ -332,7 +332,7 @@ export default function Carousel({data}) {
                         </div>
                     </div>
                      <div className="scroll-down" style={{ textAlign: "center", paddingTop: 50 }}>
-                        <p style={{ color: "rgb(0, 0, 0)", fontFamily: "sans-serif" }}>scroll down</p>
+                        <p className="poppins-regular" style={{ color: "#fff" }}>Scroll Down</p>
                         <div className="arrows">
                             <div
                                 ref={(el) => (arrowRef.current[0] = el)}
@@ -361,25 +361,23 @@ export default function Carousel({data}) {
                 <div ref={refs.home} >
                     <div className='carousel-img d-flex justify-content-center align-items-end h-100vh' style={{padding:"2rem"}}>
                         <div className='h-90vh bg-image border-reduis w-100 d-flex justify-content-start align-items-center text-white' >
-                            <div style={{width: "60%", display:"flex", flexDirection:"column", gap:"1rem", textAlign:"left"}} className='navbar-container-padding'>
+                            <div style={{width: "60%", display:"flex", flexDirection:"column", gap:"1rem", textAlign:"left"}} className='navbar-container-padding poppins-regular'>
                                 <span>[yu-ka-bey]</span>
                                 <span>
                                     At Yuccabe, our vision is to elevate landscaping and space expectations by blending premiumness, functionality and strength harmoniously.
-                                </span>
-                                <span>
-                                    Out of all the aspects of enhancing the beauty of space, greenery is the most sustainable choice. </span>
-                                <span>
+                                    Out of all the aspects of enhancing the beauty of space, greenery is the most sustainable choice.
                                     And we here at Yuccabe Planters make it come home your way. Trust us we are experts at what we do!
                                 </span>
                                 <span>
                                     Designed for Elegance. Crafted for Life
                                 </span>
+                                <div className="">
+                                    <button className="button-77 poppins-regular " role="button">
+                                        Button 77
+                                    </button>
+                                </div>
                             </div>
-                            <div className=' d-flex flex-column position-relative' style={{height:700, width:"60%"}}>
-                                <button className="button-77 position-absolute" role="button">
-                                    Button 77
-                                </button>
-                            </div>
+                            
                            
                         </div>
                     </div>
