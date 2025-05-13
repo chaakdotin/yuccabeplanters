@@ -52,14 +52,14 @@ a, a:hover{
 .scroll-nav .w--current .scroll-nav-line::before{
     content: "";
     display: inline-block;
-    width: 2px; /* Adjust size */
+    width: 4px;
     height: 4px;
-    background-color: #fff; /* Adjust color */
-    border-radius: 50%; /* Makes it a circle */
-    margin-right: 5px; /* Spacing between dot and text */
+    background-color: #fff;
+    border-radius: 50%;
+    margin-right: 5px;
     left: -2px;
-    top: -1.5px;
-    position: absolute;;
+    top: -1.15px;
+    position: absolute;
 }
 .w-node-div-block-21-7d08bc7f {
     -ms-grid-column-span: 1;
