@@ -43,9 +43,15 @@ const Header = () => {
                 src="/yp.svg"
                 alt="Logo" width={'100%'} />
             </Navbar.Brand>
-            <Nav className="w-100 d-flex justify-content-between">
+            <Nav className="w-100 d-flex justify-content-start">
+              <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/explore">Explore</Nav.Link>
               <Nav.Link href="/collections">Collections</Nav.Link>
+              <Nav.Link href="/services">Services</Nav.Link>
+              <Nav.Link href="/aboutabout-us">About</Nav.Link>
+              <Nav.Link href="/projects">Projects</Nav.Link>
+              <Nav.Link href="/blogs">Blogs</Nav.Link>
+              <Nav.Link href="/contact">Contact</Nav.Link>
             </Nav>
           </Container>
         </Navbar>

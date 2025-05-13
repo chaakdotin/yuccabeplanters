@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animated Scroll Cards</title>
+  <style>
+    /* reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+    overflow-x: hidden;
+    }
+    /* background video covers entire viewport */
+    #bg-video {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* container for all cards */
+    .cards-container {
+      position: relative;
+      perspective: 300px;
+    }
+
+    /* each card fills viewport */
+    .card {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: white;
+      transform-origin: bottom left;
+    }
+
+    /* distinct background colors & stacking */
+    .card:nth-child(1) { background: rgba(0,0,0,0.5); z-index: 5; }
+    .card:nth-child(2) { background: rgba(50,50,50,1); z-index: 4; }
+    /* bring 3rd card above the 2nd */
+    .card:nth-child(3) { background: rgba(100,100,100,1); z-index: 6; }
+    .card:nth-child(4) { background: rgba(150,150,150,1); z-index: 3; }
+  </style>
+</head>
+<body>
+
+  <video id="bg-video" autoplay muted loop>
+    <source src="https://videos.pexels.com/video-files/3163534/3163534-uhd_2560_1440_30fps.mp4" type="video/mp4">
+  </video>
+
+  <div class="cards-container">
+    <section class="card">Card 1</section>
+    <section class="card">Card 2</section>
+    <section class="card">Card 3</section>
+    <section class="card">Card 4</section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const cards = gsap.utils.toArray(".card");
+
+    cards.forEach((card, i) => {
+      if (i === 0) {
+        gsap.to(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top top",
+            end: "bottom top",
+            scrub: true
+          },
+          rotation: -15,
+          x: () => -window.innerWidth / 2,
+          y: () => -window.innerHeight,
+          ease: "none"
+        });
+
+      } else if (i === 1) {
+        // start tilted/off-screen
+        gsap.set(card, { rotation: 10, x: -200, y: window.innerHeight/2 });
+
+        // 1) straighten & pin
+        const straighten = gsap.timeline({
+            scrollTrigger: {
+                trigger: card,
+                start: "top bottom",
+                end: "top 80%",
+                scrub: true,
+                pin: true,
+                // pinSpacing: false,
+                markers: true // for debug
+            }
+        });
+        straighten.to(card, { rotation: 0, x: 0, ease: "none" });
+
+        // 2) tilt & move out
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: card,
+            start: "top 40%",
+            end: "top 20%",
+            scrub: true,
+          }
+        }).to(card, { rotation: -15, x: -75, ease: "none" });
+
+      } else if (i === 2) {
+        // initial state
+        gsap.set(card, { rotation: 10, x: -100, y: window.innerHeight/2 });
+
+        // move up behind the pinned card
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom",
+            end: "top top",
+            scrub: true,
+          }
+        }).to(card, { y: "-60%", ease: "none" });
+
+        // straighten into view
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom",
+            end: "top 70%",
+            scrub: true,
+          }
+        }).to(card, { rotation: 0, x: 0, ease: "none" });
+
+        // tilt & exit
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: card,
+            start: "top 20%",
+            end: "top 0%",
+            scrub: true,
+          }
+        }).to(card, { rotation: -10, x: -50, y: "-100%", ease: "none" });
+      }
+    });
+  </script>
+</body>
+</html>
