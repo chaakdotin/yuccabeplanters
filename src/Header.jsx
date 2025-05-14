@@ -44,14 +44,30 @@ const Header = () => {
                 alt="Logo" width={'100%'} />
             </Navbar.Brand>
             <Nav className="w-100 d-flex justify-content-start" defaultActiveKey={location.pathname}>
-              <Nav.Link href="/" >Home</Nav.Link>
-              <Nav.Link href="/explore" >Explore</Nav.Link>
-              <Nav.Link href="/collections" >Collections</Nav.Link>
-              <Nav.Link href="/services" >Services</Nav.Link>
-              <Nav.Link href="/about-us" >About</Nav.Link>
-              <Nav.Link href="/projects" >Projects</Nav.Link>
-              <Nav.Link href="/blogs" >Blogs</Nav.Link>
-              <Nav.Link href="/contact" >Contact</Nav.Link>
+              <Nav.Link href="/" >
+               <span className='dot'></span> Home
+              </Nav.Link>
+              <Nav.Link href="/explore" >
+                <span className='dot'></span> Explore
+              </Nav.Link>
+              <Nav.Link href="/collections" >
+                <span className='dot'></span> Collections
+              </Nav.Link>
+              <Nav.Link href="/services" >
+                <span className='dot'></span> Services
+              </Nav.Link>
+              <Nav.Link href="/about-us" >
+                <span className='dot'></span> About
+              </Nav.Link>
+              <Nav.Link href="/projects" >
+                <span className='dot'></span> Projects
+              </Nav.Link>
+              <Nav.Link href="/blogs" >
+                <span className='dot'></span> Blogs
+              </Nav.Link>
+              <Nav.Link href="/contact" >
+                <span className='dot'></span> Contact
+              </Nav.Link>
             </Nav>
           </Container>
         </Navbar>

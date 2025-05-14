@@ -473,9 +473,9 @@ export default function Carousel({data}) {
                                     Designed for Elegance. Crafted for Life
                                 </span>
                                 <div className="">
-                                    <button className="button-77 poppins-regular " role="button">
-                                        Button 77
-                                    </button>
+                                    <a className="button-77 poppins-regular " role="button" href='/collections'>
+                                        Explore Designs
+                                    </a>
                                 </div>
                             </div>
                             
