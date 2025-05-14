@@ -43,28 +43,36 @@ const Header = () => {
             </Navbar.Brand>
             <Nav className="w-100 d-flex justify-content-start" defaultActiveKey={location.pathname} >
               <Nav.Link href="/" >
-               <span className='dot'></span> Home
+               <span className='dot'></span> 
+               <span className="menu-title"> Home</span>
               </Nav.Link>
               <Nav.Link href="/explore" >
-                <span className='dot'></span> Explore
+                <span className='dot'></span> 
+                <span className="menu-title"> Explore</span>
               </Nav.Link>
               <Nav.Link href="/collections" >
-                <span className='dot'></span> Collections
+                <span className='dot'></span> 
+                <span className="menu-title"> Collections</span>
               </Nav.Link>
               <Nav.Link href="/services" >
-                <span className='dot'></span> Services
+                <span className='dot'></span> 
+                <span className="menu-title"> Services</span>
               </Nav.Link>
               <Nav.Link href="/about-us" >
-                <span className='dot'></span> About
+                <span className='dot'></span> 
+                <span className="menu-title"> About</span>
               </Nav.Link>
               <Nav.Link href="/projects" >
-                <span className='dot'></span> Projects
+                <span className='dot'></span> 
+                <span className="menu-title"> Projects</span>
               </Nav.Link>
               <Nav.Link href="/blogs" >
-                <span className='dot'></span> Blogs
+                <span className='dot'></span> 
+                <span className="menu-title"> Blogs</span>
               </Nav.Link>
               <Nav.Link href="/contact" >
-                <span className='dot'></span> Contact
+                <span className='dot'></span> 
+                <span className="menu-title"> Contact</span>
               </Nav.Link>
             </Nav>
           </Container>
