@@ -200,7 +200,7 @@ export default function Carousel({data}) {
                 }}
             />
             <div className={`bg-color`} >
-                <div className="d-flex flex-column gap-5 align-items-center justify-content-center h-100vh overflow-hidden position-relative gjhdsf">
+                <div ref={refs.homes} className="d-flex flex-column gap-5 align-items-center justify-content-center h-100vh overflow-hidden position-relative gjhdsf">
                     <div className="glass animation-svg position-absolute opacity-0_5">
                         <svg zoomAndPan="magnify" viewBox="0 0 520 520" width="100%" preserveAspectRatio="xMidYMid meet" version="1.0">
 

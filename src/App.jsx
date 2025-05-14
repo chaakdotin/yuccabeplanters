@@ -10,6 +10,7 @@ const App = () => {
   const [currentPage, setCurrentPage] = useState("");
   const [selctPage, setSelctPage] = useState("home");
   const [data, setData] = useState([]);;
+  const homesRef = useRef(null);
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const whyRef = useRef(null);
@@ -19,6 +20,7 @@ const App = () => {
   const contactRef = useRef(null);
 
   const refs = { 
+    homes: homesRef, 
     home: homeRef, 
     about: aboutRef, 
     why: whyRef, 

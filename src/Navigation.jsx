@@ -54,7 +54,7 @@ function Navigation({scrollToSection }) {
     
   }, []);
   const navLinks = [
-    { href: "#0", text: "Home", btn: "home" },
+    { href: "#0", text: "Homes", btn: "homes" },
     { href: "#1", text: "Home", btn: "home" },
     { href: "#2", text: "About Us", btn:"about" },
     { href: "#3", text: "Experience", btn:"why" },
@@ -69,7 +69,7 @@ function Navigation({scrollToSection }) {
         {navLinks.map(({ href, text, btn }) => (
           <button
             key={href}
-            className={`scroll-nav-link-block w-inline-block ${"sub-"+btn}  ${currentPage === btn ? "w--current" : ""} border-0`} style={{backgroundColor: 'transparent'}}
+            className={`scroll-nav-link-block w-inline-block  ${"sub-"+btn}  ${text === 'Homes'? "visually-hidden": "" } ${currentPage === btn ? "w--current" : ""} border-0`} style={{backgroundColor: 'transparent'}}
             onClick={() => scrollFunc(btn)} 
           >
             <div
