@@ -54,6 +54,7 @@ function Navigation({scrollToSection }) {
     
   }, []);
   const navLinks = [
+    { href: "#0", text: "Home", btn: "home" },
     { href: "#1", text: "Home", btn: "home" },
     { href: "#2", text: "About Us", btn:"about" },
     { href: "#3", text: "Experience", btn:"why" },

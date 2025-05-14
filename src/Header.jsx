@@ -39,11 +39,9 @@ const Header = () => {
         <Navbar data-bs-theme="light">
           <Container fluid className="navbar-container-padding">
             <Navbar.Brand href="/" className="menu-logos" >
-              <img
-                src="/yp.svg"
-                alt="Logo" width={'100%'} />
+              <img src="/yp.svg" alt="Logo" width={'100%'} />
             </Navbar.Brand>
-            <Nav className="w-100 d-flex justify-content-start" defaultActiveKey={location.pathname}>
+            <Nav className="w-100 d-flex justify-content-start" defaultActiveKey={location.pathname} >
               <Nav.Link href="/" >
                <span className='dot'></span> Home
               </Nav.Link>

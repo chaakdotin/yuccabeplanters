@@ -97,7 +97,6 @@ const CubeEffectSwiper = ({scrollToSection}) => {
             window.addEventListener("resize", function () {
                 const newDeviceType = getDeviceType();
                 if (newDeviceType !== currentDeviceType) {
-                    // console.log(`Device changed to: ${newDeviceType}`);
                     currentDeviceType = newDeviceType; // Update the current device type
                 }
             });
