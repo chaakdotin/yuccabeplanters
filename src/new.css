@@ -13,7 +13,7 @@
   transform: translate(0, -50%);
 }
 
-.swiper-pagination .active .scroll-nav-line {
+.scroll-nav-inner .active .scroll-nav-line {
   box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.2);
   animation-name: example;
   animation-duration: .5s;

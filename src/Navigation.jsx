@@ -21,25 +21,33 @@ function Navigation({scrollToSection }) {
           paused: true,
       });
 
-      link.addEventListener("mouseenter", async () => {
-        animation.play();
-        animation1.play();
+      link.addEventListener("mouseenter", async (x) => {
+        if (x.target.classList.contains('w--current')) {} else {
+          animation.play();
+          animation1.play();
+        }
       });
-      link.addEventListener("mouseleave", async () => {
-        animation.reverse();
-        animation1.reverse();
+      link.addEventListener("mouseleave", async (x) => {
+        if (x.target.classList.contains('w--current')) {} else {
+          animation.reverse();
+          animation1.reverse();
+        }
       });
     });
 
     return () => {
       scrollNavLinks.forEach((link) => {
-        link.removeEventListener("mouseenter", async () => {
-          animation.play();
-          animation1.play();
-        });
-        link.removeEventListener("mouseleave", async () => {
+        link.removeEventListener("mouseenter", async (x) => {
+        if (x.target.classList.contains('w--current')) {} else {
           animation.reverse();
           animation1.reverse();
+        }
+        });
+        link.removeEventListener("mouseleave",  async (x) => {
+          if (x.target.classList.contains('w--current')) {} else {
+            animation.reverse();
+            animation1.reverse();
+          }
         });
       });
     };
