@@ -94,10 +94,112 @@ export default function Carousel({data}) {
             <style
                 dangerouslySetInnerHTML={{
                     __html:
-                    '\n  .button-77 {\n   width:auto;\n  align-items: center;\n  appearance: none;\n  background-clip: padding-box;\n  background-color: initial;\n  background-image: none;\n  border-style: none;\n  box-sizing: border-box;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  flex-direction: row;\n  flex-shrink: 0;\n   font-size: 16px;\n  font-weight: 700;\n  justify-content: center;\n  line-height: 24px;\n  margin: 0;\n  min-height: 64px;\n  outline: none;\n  overflow: visible;\n  padding: 19px 26px;\n  pointer-events: auto;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  text-transform: none;\n  user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n  vertical-align: middle;\n  word-break: keep-all;\n  z-index: 0;\n}\n\n@media (min-width: 768px) {\n  .button-77 {\n    padding: 19px 32px;\n  }\n}\n\n.button-77:before,\n.button-77:after {\n  border-radius: 80px;\n}\n\n.button-77:before {\n  background-color: rgba(249, 58, 19, .32);\n  content: "";\n  display: block;\n  height: 100%;\n  left: 0;\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  z-index: -2;\n}\n\n.button-77:after {\n  background-color: initial;\n  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);\n  bottom: 4px;\n  content: "";\n  display: block;\n  left: 4px;\n  overflow: hidden;\n  position: absolute;\n  right: 4px;\n  top: 4px;\n  transition: all 100ms ease-out;\n  z-index: -1;\n}\n\n.button-77:hover:not(:disabled):after {\n  bottom: 0;\n  left: 0;\n  right: 0;\n  top: 0;\n  transition-timing-function: ease-in;\n}\n\n.button-77:active:not(:disabled) {\n  color: #ccc;\n}\n\n.button-77:active:not(:disabled):after {\n  background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);\n  bottom: 4px;\n  left: 4px;\n  right: 4px;\n  top: 4px;\n}\n\n.button-77:disabled {\n  cursor: default;\n  opacity: .24;\n}\n'
+                    `
+                      .button-77 {
+                        width:auto;
+                        align-items: center;
+                        appearance: none;
+                        background-clip: padding-box;
+                        background-color: initial;
+                        background-image: none;
+                        border-style: none;
+                        box-sizing: border-box;
+                        color: #fff;
+                        cursor: pointer;
+                        display: inline-block;
+                        flex-direction: row;
+                        flex-shrink: 0;
+                        font-size: 16px;
+                        font-weight: 700;
+                        justify-content: center;
+                        line-height: 24px;
+                        margin: 0;
+                        min-height: 64px;
+                        outline: none;
+                        overflow: visible;
+                        padding: 19px 26px;
+                        pointer-events: auto;
+                        position: relative;
+                        text-align: center;
+                        text-decoration: none;
+                        text-transform: none;
+                        user-select: none;
+                        -webkit-user-select: none;
+                        touch-action: manipulation;
+                        vertical-align: middle;
+                        word-break: keep-all;
+                        z-index: 0;
+                        }
+                        
+                        @media (min-width: 768px) {
+                        .button-77 {
+                            padding: 19px 32px;
+                        }
+                        }
+                        
+                        .button-77:before,
+                        .button-77:after {
+                        border-radius: 80px;
+                        }
+                        
+                        .button-77:before {
+                            border: 10px solid;
+                            border-image-source: radial-gradient(18.55% 50% at 50% 50%, #FFFEFE 0%, #D9D4C4 100%);
+                            border: 10px solid;
+                            content: "";
+                            display: block;
+                            height: 100%;
+                            left: 0;
+                            overflow: hidden;
+                            position: absolute;
+                            top: 0;
+                            width: 100%;
+                            z-index: -2;
+                        }
+                        
+                        .button-77:after {
+                        background-color: initial;
+                        background: linear-gradient(270deg, #D9D4C4 0%, #86857F 100%);
+                        bottom: 4px;
+                        content: "";
+                        display: block;
+                        left: 4px;
+                        overflow: hidden;
+                        position: absolute;
+                        right: 4px;
+                        top: 4px;
+                        transition: all 100ms ease-out;
+                        z-index: -1;
+                        }
+                        
+                        .button-77:hover:not(:disabled):after {
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        transition-timing-function: ease-in;
+                        }
+                        
+                        .button-77:active:not(:disabled) {
+                        color: #ccc;
+                        }
+                        
+                        .button-77:active:not(:disabled):after {
+                        background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+                        bottom: 4px;
+                        left: 4px;
+                        right: 4px;
+                        top: 4px;
+                        }
+                        
+                        .button-77:disabled {
+                        cursor: default;
+                        opacity: .24;
+                        }
+                    `
                 }}
             />
-            <div className={`bg-color `} >
+            <div className={`bg-color`} >
                 <div className="d-flex flex-column gap-5 align-items-center justify-content-center h-100vh overflow-hidden position-relative gjhdsf">
                     <div className="glass animation-svg position-absolute opacity-0_5">
                         <svg zoomAndPan="magnify" viewBox="0 0 520 520" width="100%" preserveAspectRatio="xMidYMid meet" version="1.0">
@@ -356,7 +458,6 @@ export default function Carousel({data}) {
                             />
                         </div>
                     </div>
-
                 </div>
                 <div ref={refs.home} >
                     <div className='carousel-img d-flex justify-content-center align-items-end h-100vh' style={{padding:"2rem"}}>
