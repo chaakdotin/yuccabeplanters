@@ -185,11 +185,11 @@ export default function Carousel({data}) {
                         }
                         
                         .button-77:active:not(:disabled):after {
-                        // background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
-                        bottom: 4px;
-                        left: 4px;
-                        right: 4px;
-                        top: 4px;
+                            background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #D9D4C4 0, #86857F 100%);
+                            bottom: 4px;
+                            left: 4px;
+                            right: 4px;
+                            top: 4px;
                         }
                         
                         .button-77:disabled {
