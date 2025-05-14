@@ -1,3 +1,4 @@
+
 .cursor {
     position: fixed;
     top: 0px;
@@ -81,6 +82,7 @@ a, a:hover{
 
     box-shadow: 0 0 0 0!important;
 }
+
 .mobile-navbar .nav-link{
     color:#000;
     font-family: "Poppins", sans-serif;
@@ -159,4 +161,19 @@ a, a:hover{
 }
 .z-index-99{
     z-index: 99;
+}
+
+@media (max-width:768px){
+    .navbar-brand  img{
+        width: 70%;
+    }
+    .navbar-expand .navbar-toggler{
+        display: block!important;
+    }
+}
+
+@media (max-width:480px){
+    .navbar-brand  img{
+        width: 55%;
+    }
 }

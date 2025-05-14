@@ -331,6 +331,7 @@ header {
     left: 2%;
     top: 6%;
     width: 20%;
+    display: none;
   }
   
   .sdsss .btn_icon .btn_icon_1 {
@@ -348,7 +349,7 @@ header {
 
   .btn_style {
     font-size: 13px;
-    padding: 0.7rem 1.2rem .7rem 2.6rem;
+    padding: 0.7rem 1rem .7rem 1rem;
   }
   #newcolum {
     transform: translate(0px, 0px)!important;
@@ -830,12 +831,15 @@ header {
     left: 15px!important;
   }
   .kdjff {
-    height: 48px !important;
+    height: 42px !important;
   }
   .new_style {
     width: 40%;
   }
-  
+  .sdsss {
+    width: 100% !important;
+    height: 87px !important;
+  }
 }
 @media (max-width: 320px) {
   .mobile_view_frist_section {

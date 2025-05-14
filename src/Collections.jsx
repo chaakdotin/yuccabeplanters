@@ -290,12 +290,12 @@ const Collections = () => {
           // markers:true,
         }
       });
-      tlMain.fromTo(".small-section", { y: "100vh" }, { y: 20, duration: 0.5 });
+      tlMain.fromTo(".small-section", { y: "100vh" }, { y: 40, duration: 0.5 });
       panels.forEach((panel, i) => {
         let lastPanel = panels.length - 1;
-        tlMain.fromTo(panel, { y: "102%" }, { y: 20, duration: 1 }, "<");
+        tlMain.fromTo(panel, { y: "102%" }, { y: 40, duration: 1 }, "<");
         if (i < lastPanel) {
-          tlMain.to(panel, { height: "5vh", y: 20, duration: 1 });
+          tlMain.to(panel, { height: "5vh", y: 40, duration: 1 });
           tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
         }
       });
@@ -596,12 +596,12 @@ const Collections = () => {
           // markers:true,
         }
       });
-      tlMain.fromTo(".small-section", { y: "100vh" }, { y: 60, duration: 0.5 });
+      tlMain.fromTo(".small-section", { y: "100vh" }, { y: 40, duration: 0.5 });
       panels.forEach((panel, i) => {
         let lastPanel = panels.length - 1;
-        tlMain.fromTo(panel, { y: "102%" }, { y: 60, duration: 1 }, "<");
+        tlMain.fromTo(panel, { y: "102%" }, { y: 35, duration: 1 }, "<");
         if (i < lastPanel) {
-          tlMain.to(panel, { height: "5vh", y: 60, duration: 1 });
+          tlMain.to(panel, { height: "5vh", y: 35, duration: 1 });
           tlMain.to(panel.querySelector(".panel-image"), { scale: 0.5, filter: "blur(6px)", duration: 1 }, "<");
         }
       });
