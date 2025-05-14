@@ -77,6 +77,17 @@ a, a:hover{
     text-transform: uppercase;
     color: #000;
 }
+.mobile-navbar .nav-link{
+    color:#000;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    padding: 12px 10px;
+    border-bottom: 1px solid #86857f53;
+}
+.mobile-navbar .nav-link.active{
+    color: #86857F;
+    font-weight: 600;
+}
 .scroll-nav .w--current .scroll-nav-line::before{
     content: "";
     display: inline-block;

@@ -7,12 +7,17 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { gsap, ScrollTrigger } from "gsap/all";
 import './header.css';
-
+import Offcanvas from 'react-bootstrap/Offcanvas';
 const Header = () => {
   gsap.registerPlugin(ScrollTrigger);
   const location = useLocation();
   const header = useRef(null);
   const cursor = useRef(null);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const expand = "md";
   window.addEventListener("mousemove", (e) => {
     gsap.to('.cursor', {
       duration: 0,
@@ -41,7 +46,9 @@ const Header = () => {
             <Navbar.Brand href="/" className="menu-logos" >
               <img src="/yp.svg" alt="Logo" width={'100%'} />
             </Navbar.Brand>
-            <Nav className="w-100 d-flex justify-content-start" defaultActiveKey={location.pathname} >
+            <Navbar.Toggle className='d-block' onClick={handleShow}/>
+           
+            <Nav className="w-100 d-none justify-content-start  d-lg-flex" defaultActiveKey={location.pathname} >
               <Nav.Link href="/" >
                <span className='dot'></span> 
                <span className="menu-title"> Home</span>
@@ -78,6 +85,39 @@ const Header = () => {
           </Container>
         </Navbar>
       </div>
+       <Offcanvas show={show} onHide={handleClose}>
+          <Offcanvas.Header closeButton>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <Nav className=" flex-grow-1 pe-3 flex-column mobile-navbar" defaultActiveKey={location.pathname}>
+              <Nav.Link href="/" >
+                <span className="menu-title"> Home</span>
+              </Nav.Link>
+              <Nav.Link href="/explore" >
+                <span className="menu-title"> Explore</span>
+              </Nav.Link>
+              <Nav.Link href="/collections" >
+                <span className="menu-title"> Collections</span>
+              </Nav.Link>
+              <Nav.Link href="/services" >
+                <span className="menu-title"> Services</span>
+              </Nav.Link>
+              <Nav.Link href="/about-us" >
+                <span className="menu-title"> About</span>
+              </Nav.Link>
+              <Nav.Link href="/projects" >
+                <span className="menu-title"> Projects</span>
+              </Nav.Link>
+              <Nav.Link href="/blogs" >
+                <span className="menu-title"> Blogs</span>
+              </Nav.Link>
+              <Nav.Link href="/contact" >
+                <span className="menu-title"> Contact</span>
+              </Nav.Link>
+            </Nav>
+          </Offcanvas.Body>
+        </Offcanvas>
+      
       <div className='w-100' style={{height: location.pathname == '/' ? '0px' : location.pathname == '/work' ? '70px' : location.pathname == '/explore' ? '70px': location.pathname == '/collections' ? '100px': '0px'}}></div>
       <div className='position-fixed ' style={{
         width: "50px",
