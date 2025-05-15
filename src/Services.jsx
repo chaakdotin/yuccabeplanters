@@ -102,9 +102,8 @@ const Services = () => {
                               }
                               
                               .button-77:before {
-                                  border: 10px solid;
-                                  border-image-source: radial-gradient(18.55% 50% at 50% 50%, #FFFEFE 0%, #D9D4C4 100%);
-                                  border: 10px solid;
+                                  border: 0px solid;
+                                  background: linear-gradient(270deg,#FFFEFE 0%, #D9D4C4 100%);
                                   content: "";
                                   display: block;
                                   height: 100%;
@@ -117,18 +116,18 @@ const Services = () => {
                               }
                               
                               .button-77:after {
-                              background-color: initial;
-                              background: linear-gradient(270deg, #D9D4C4 0%, #86857F 100%);
-                              bottom: 4px;
-                              content: "";
-                              display: block;
-                              left: 4px;
-                              overflow: hidden;
-                              position: absolute;
-                              right: 4px;
-                              top: 4px;
-                              transition: all 100ms ease-out;
-                              z-index: -1;
+                                background-color: initial;
+                                background: linear-gradient(270deg, #D9D4C4 0%, #86857F 100%);
+                                bottom: 4px;
+                                content: "";
+                                display: block;
+                                left: 4px;
+                                overflow: hidden;
+                                position: absolute;
+                                right: 4px;
+                                top: 4px;
+                                transition: all 100ms ease-out;
+                                z-index: -1;
                               }
                               
                               .button-77:hover:not(:disabled):after {

@@ -56,9 +56,9 @@ const Header = () => {
                 <span className='dot'></span> 
                 <span className="menu-title"> Explore</span>
               </Nav.Link>
-              <Nav.Link href="/collections" >
+              <Nav.Link href="/our-products" >
                 <span className='dot'></span> 
-                <span className="menu-title"> Collections</span>
+                <span className="menu-title"> Our Products</span>
               </Nav.Link>
               <Nav.Link href="/services" >
                 <span className='dot'></span> 
@@ -117,7 +117,7 @@ const Header = () => {
           </Offcanvas.Body>
         </Offcanvas>
       
-      <div className='w-100' style={{height: location.pathname == '/' ? '0px' : location.pathname == '/work' ? '70px' : location.pathname == '/explore' ? '70px': location.pathname == '/collections' ? '100px': '0px'}}></div>
+      <div className='w-100' style={{height: location.pathname == '/' ? '0px' : location.pathname == '/work' ? '70px' : location.pathname == '/explore' ? '70px': location.pathname == '/our-products' ? '100px': '0px'}}></div>
       <div className='position-fixed ' style={{
         width: "50px",
         height: "50px",

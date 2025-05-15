@@ -41,7 +41,7 @@ const Data = () => {
               <Route index element={<App />} />
               <Route path="/explore" element={<Explore />} />
               <Route path="/services" element={<Services />} />
-              <Route path="/collections" element={<Collections />} />
+              <Route path="/our-products" element={<Collections />} />
               <Route path="/about-us" element={<AboutUs />} />
               <Route path="/contact" element={<ContactUs />} />
               <Route path="/blogs" element={<Blogs />} />
