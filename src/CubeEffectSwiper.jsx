@@ -109,6 +109,7 @@ const CubeEffectSwiper = ({scrollToSection}) => {
     return (
         <>
             <style>{css}</style>
+            
             <div className="scroll-container" style={{ width: "100vw", overflow: "hidden" }} >
                 <Carousel data={{refs, setCurrentPage}} />
                 <div style={{ zIndex: 1 }} className="h-100vh bg-color position-relative h-100vh stagger"  ref={refs.about}>

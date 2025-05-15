@@ -50,6 +50,114 @@ const Services = () => {
         }
       </style>
       <style>{css}</style>
+       <style
+                      dangerouslySetInnerHTML={{
+                          __html:
+                          `
+                            .button-77 {
+                              width:auto;
+                              align-items: center;
+                              appearance: none;
+                              background-clip: padding-box;
+                              background-color: initial;
+                              background-image: none;
+                              border-style: none;
+                              box-sizing: border-box;
+                              color: #fff;
+                              cursor: pointer;
+                              display: inline-block;
+                              flex-direction: row;
+                              flex-shrink: 0;
+                              font-size: 16px;
+                              font-weight: 700;
+                              justify-content: center;
+                              line-height: 24px;
+                              margin: 0;
+                              min-height: 64px;
+                              outline: none;
+                              overflow: visible;
+                              padding: 19px 26px;
+                              pointer-events: auto;
+                              position: relative;
+                              text-align: center;
+                              text-decoration: none;
+                              text-transform: none;
+                              user-select: none;
+                              -webkit-user-select: none;
+                              touch-action: manipulation;
+                              vertical-align: middle;
+                              word-break: keep-all;
+                              z-index: 0;
+                              }
+                              
+                              @media (min-width: 768px) {
+                              .button-77 {
+                                  padding: 19px 32px;
+                              }
+                              }
+                              
+                              .button-77:before,
+                              .button-77:after {
+                              border-radius: 80px;
+                              }
+                              
+                              .button-77:before {
+                                  border: 10px solid;
+                                  border-image-source: radial-gradient(18.55% 50% at 50% 50%, #FFFEFE 0%, #D9D4C4 100%);
+                                  border: 10px solid;
+                                  content: "";
+                                  display: block;
+                                  height: 100%;
+                                  left: 0;
+                                  overflow: hidden;
+                                  position: absolute;
+                                  top: 0;
+                                  width: 100%;
+                                  z-index: -2;
+                              }
+                              
+                              .button-77:after {
+                              background-color: initial;
+                              background: linear-gradient(270deg, #D9D4C4 0%, #86857F 100%);
+                              bottom: 4px;
+                              content: "";
+                              display: block;
+                              left: 4px;
+                              overflow: hidden;
+                              position: absolute;
+                              right: 4px;
+                              top: 4px;
+                              transition: all 100ms ease-out;
+                              z-index: -1;
+                              }
+                              
+                              .button-77:hover:not(:disabled):after {
+                              bottom: 0;
+                              left: 0;
+                              right: 0;
+                              top: 0;
+                              transition-timing-function: ease-in;
+                              }
+                              
+                              .button-77:active:not(:disabled) {
+                              color: #ccc;
+                              }
+                              
+                              .button-77:active:not(:disabled):after {
+                                  background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #D9D4C4 0, #86857F 100%);
+                                  bottom: 4px;
+                                  left: 4px;
+                                  right: 4px;
+                                  top: 4px;
+                              }
+                              
+                              .button-77:disabled {
+                                  cursor: default;
+                                  opacity: .24;
+                              }
+                          `
+                      }}
+                  />
       <div className='cursor-track position-relative w-100 h-100vh'>
         <div
           id="tracker"
@@ -86,7 +194,9 @@ const Services = () => {
             </div>
             <div class="col-12 pt-4">
               <div class="d-flex justify-content-center">
-                <a href="https://calendly.com/praveenpatkuwal29/30min" class="new_style fs-6 btn btn-primary" >Book a Design Call</a>
+                <a className="button-77 poppins-regular " role="button" href="https://calendly.com/praveenpatkuwal29/30min">
+                  Book a Design Call
+                </a>
               </div>
             </div>
           </div>
@@ -704,7 +814,9 @@ const Services = () => {
                 </p>
                 <div class="col-12 pt-4">
                   <div class="d-flex justify-content-start">
-                    <a href="https://calendly.com/praveenpatkuwal29/30min" class="new_style fs-6 btn btn-primary" >Book a Design Call</a>
+                    <a className="button-77 poppins-regular " role="button" href="https://calendly.com/praveenpatkuwal29/30min">
+                      Book a Design Call
+                    </a>
                   </div>
                 </div>
               </div>
