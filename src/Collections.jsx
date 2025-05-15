@@ -460,7 +460,6 @@ const Collections = () => {
           start: "top 20%",
           end: "+=200",
           scrub: true,
-          markers:true
         },
       });
 
@@ -744,7 +743,6 @@ const Collections = () => {
           end: "+=" + (count * 200),
           scrub: true,
           pin: true,
-          markers: true
         }
       });
       tlMain.fromTo(".small-section", { y: "100vh" }, { y: 0, duration: 0.5 });
