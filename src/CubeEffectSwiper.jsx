@@ -61,8 +61,8 @@ const CubeEffectSwiper = ({scrollToSection}) => {
             scale: 1,
             scrollTrigger: {
                 trigger: ".sdf", 
-                start: "top top",     
-                end: "+1000px",    
+                start: "top center",     
+                end: "+200px",    
                 // pin: true,
                 scrub: true,
             }
