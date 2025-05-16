@@ -1,6 +1,7 @@
 :root{
   --swiper-pagination-right:8px;
 }
+
 .scroll-nav {
   position: fixed;
   left: auto;
@@ -183,6 +184,7 @@ summary {
 
 .sdf-img{
   transition: transform 0.3s ease-out;
+  
 }
 .sdf{
   background-color: #fff;

@@ -56,13 +56,14 @@ const CubeEffectSwiper = ({scrollToSection}) => {
                 document.querySelector(".textsdsdd").style.position = "absolute";
             },
         });
+        gsap.set('.sdf-img', {scale: 2.5})
         gsap.to(".sdf-img", {
-            scale: 2.5,
+            scale: 1,
             scrollTrigger: {
                 trigger: ".sdf", 
                 start: "top top",     
                 end: "+1000px",    
-                pin: true,
+                // pin: true,
                 scrub: true,
             }
         });
@@ -240,7 +241,7 @@ const CubeEffectSwiper = ({scrollToSection}) => {
                 </div>
                 <div className="sdf overflow-hidden" ref={refs.clients}>
                     <div className='d-flex flex-column align-items-center justify-content-center h-100vh w-100' >
-                        <img src="1.jpg" alt="" style={{ width: '40%', borderRadius:'20px' }} className="sdf-img" />
+                        <img src="1.jpg" alt="" style={{ width: '40%', borderRadius:'20px', scale:2.5 }} className="sdf-img" />
                     </div>
                 </div>
                 <div style={{}} className="bg-color contact-us" ref={refs.contact}>
