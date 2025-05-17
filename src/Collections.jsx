@@ -8,6 +8,8 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import jsdhsjd from "./StackedSections.css?raw";
 import AnimatedTypingText from "./AnimatedTypingText";
 import Footer from "./Footer"
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const Image = ({ imageData }) => {
@@ -15,10 +17,15 @@ const Image = ({ imageData }) => {
     <>
     
       {imageData && imageData.map((d) => (
-        <img
-          key={d.Image_ID + "s"}
+        <LazyLoadImage 
+          key={d.Entry_ID + "9444"}
           src={d.Image_Link}
           alt="Man adjusting necklace"
+          effect="blur"
+          wrapperProps={{
+              // If you need to, you can tweak the effect transition using the wrapper style.
+              style: {transitionDelay: "1s"},
+          }}
           className={`clickable ${d.Entry_ID == 1 ? 'active' : ''}`}
         />
       ))}
@@ -1024,7 +1031,7 @@ const Collections = () => {
                           <div className="row h-100 no-gaps justify-content-center w-100 flex-column">
                             
                             <div className="col-lg-10 right-image">
-                              <img className="main-image" src={Images[0].Image_Link} alt="Main Image" />
+                              <LazyLoadImage className="main-image" src={Images[0].Image_Link} alt="Main Image" />
                             </div>
                             <div className=" left-images">
                               <div className="slider">

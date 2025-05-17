@@ -8,6 +8,7 @@ import 'swiper/css/autoplay';
 import { FreeMode, Autoplay } from 'swiper/modules';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 gsap.registerPlugin(ScrollTrigger);
 export default function AboutUs() {
     useEffect(() => {
