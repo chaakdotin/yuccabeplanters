@@ -6,9 +6,9 @@ echo "Deployment started..."
 # Pull the latest version of the app
 git pull
 echo "New changes copied to server !"
-
-echo "Installing Dependencies..."
+echo "Remove Dependencies..."
 rm -rf node_modules package-lock.json
+echo "Installing Dependencies..."
 npm install --yes
 
 echo "Creating Production Build..."
