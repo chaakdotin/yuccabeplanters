@@ -8,16 +8,16 @@ import Footer from './Footer';
 // ..
 import AOS from 'aos';
 AOS.init();
-gsap.registerPlugin( ScrollTrigger, ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-const CubeEffectSwiper = ({scrollToSection}) => {
+const CubeEffectSwiper = ({ scrollToSection }) => {
     const { refs, setCurrentPage } = scrollToSection;
     const swiperRef = useRef(null);
     const targetRef = useRef(null);
     var i = 0;
     // const textEl = document.getElementById('.stagger1 h1');
 
-    useEffect(() => {   
+    useEffect(() => {
         // const tl1 = gsap.timeline({
         //     scrollTrigger: {
         //         trigger: ".stagger", // Element that triggers the animation
@@ -36,7 +36,49 @@ const CubeEffectSwiper = ({scrollToSection}) => {
         //     duration: .8,
         //     ease: "power2.inOut",
         // });
+        // gsap.from(".points-section", {
+        //     opacity: 0,
+        //     y: 100,
+        //     duration: 1,
+        //     scrollTrigger: {
+        //         trigger: ".points-section",
+        //         start: "top 10%", // Start animation when top of points-section is 80% into view
+        //         end: "top 80%",
+                
+        //         toggleActions: "play none none none",
+        //     },
+        // });
 
+        // Horizontal Scroll for Points
+        const pointsContainer = document.querySelector(".points-container");
+        gsap.to(pointsContainer, {
+            x: () => -(pointsContainer.scrollWidth - window.innerWidth), // Scroll to show all points
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".points-section",
+                start: "-5% top", // Pin when points-section hits top
+                end: () => `+=${pointsContainer.scrollWidth - window.innerWidth}`, // Scroll until all points are visible
+                scrub: true, // Smooth scrolling
+                pin: true, // Pin the section during horizontal scroll
+                markers:true,
+                anticipatePin: 1,
+                invalidateOnRefresh: true,
+            },
+        });
+
+        // Animate Dotted Line
+        gsap.from(".dotted-line", {
+            scaleX: 0,
+            transformOrigin: "left",
+            duration: 1,
+            scrollTrigger: {
+                trigger: ".points-section",
+                start: "top 10%",
+                end: "top 50%",
+                toggleActions: "play none none none",
+                
+            },
+        });
         const lt = gsap.timeline({
             scrollTrigger: {
                 trigger: ".YUCCABE", // Element that triggers the animation
@@ -49,20 +91,20 @@ const CubeEffectSwiper = ({scrollToSection}) => {
         lt.to(".textsdsdd", {
             position: "fixed",
             right: 100,
-            top:"-4%",
+            top: "-4%",
             duration: 10,
             onComplete: function () {
                 document.querySelector(".textsdsdd").style.top = "73.6%";
                 document.querySelector(".textsdsdd").style.position = "absolute";
             },
         });
-        gsap.set('.sdf-img', {scale: 2.5})
+        gsap.set('.sdf-img', { scale: 2.5 })
         gsap.to(".sdf-img", {
             scale: 1,
             scrollTrigger: {
-                trigger: ".sdf", 
-                start: "top center",     
-                end: "+200px",    
+                trigger: ".sdf",
+                start: "top center",
+                end: "+200px",
                 // pin: true,
                 scrub: true,
             }
@@ -102,18 +144,18 @@ const CubeEffectSwiper = ({scrollToSection}) => {
                 }
             });
         }
-        
+
         detectDeviceTypeChange();
-       
+
     }, []);
-    
+
     return (
         <>
             <style>{css}</style>
-             <style
+            <style
                 dangerouslySetInnerHTML={{
                     __html:
-                    `
+                        `
                       .button-77 {
                         width:auto;
                         align-items: center;
@@ -218,9 +260,127 @@ const CubeEffectSwiper = ({scrollToSection}) => {
                     `
                 }}
             />
+            <style>
+                {`
+                    .points-section {
+                        height: 100vh!important;
+                        background: #fff;
+                        position: relative;
+                        overflow: hidden;
+                        display:flex;
+                        flex-direction: column;
+                        // justify-content: center;
+                        align-items: center;
+                    }
+
+                    /* Points Container for Horizontal Scroll */
+                    .points-container {
+                        display: flex;
+                        position: relative;
+                        // top: 0;
+                        // left: 0;
+                        bottom:0;
+                        // height: 100%;
+                        width: max-content; /* Allows container to expand based on content */
+                        // transform: translateX(0);
+                    }
+
+                    /* Individual Point Styling */
+                    .point {
+                    position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        width: 30vw; /* Minimal space between points */
+                        height: 100%;
+                        padding: 10px;
+                        text-align: center;
+                    }
+                    .heading-how{
+                        position: relative;
+                        top:10vh;
+                        width:100%;
+                        display: flex;
+                        justify-content: center;
+                    }
+                    .how-it-works-wrap{
+                        gap:10px;
+                        display:flex;
+                        flex-direction: column;
+                    }
+                    .text-140-regular.how {
+                        color: var(--white);
+                        letter-spacing: -.01em;
+                        line-height:.8em;
+                        width: 4em;
+                        margin-left: -.035em;
+                        font-size: 8em;
+                    }
+                    .word {
+                        position: relative;
+                    }   
+                    .text-16-regular.max-w-80 {
+                        width: 29em;
+                        line-height: 130%;
+                    }
+
+                    .point.above {
+                        align-items: flex-end;
+                        justify-content: flex-end;
+                       top:2vh;
+                    }
+
+                    .point.below {
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                        // padding-top: 20vh; /* In the 20vh space below the dotted line */
+                        bottom:-19vh;
+                    }
+
+                    .line-1-text-item {
+                        grid-column-gap: 1.25em;
+                        grid-row-gap: 1.25em;
+                        justify-content: flex-start;
+                        align-items: flex-end;
+                        display: flex;
+                    }
+                    .number-text {
+                        color: #000;
+                        letter-spacing: -.03em;
+                        font-family: BDO Grotesk, Verdana, sans-serif;
+                        font-size: 2em;
+                        line-height: 110%;
+                    }
+                    .text-step.max-504 {
+                        width: 15.9em;
+                    }
+                    .text-step {
+                        color: #000;
+                        flex: none;
+                        font-family: BDO Grotesk, Verdana, sans-serif;
+                        font-size: 1.8em;
+                        line-height: 110%;
+                    }
+
+                    /* Dotted Line (Small Dots) */
+                    .dotted-line {
+                        position: absolute;
+                        bottom: 25vh; /* 20vh from bottom */
+                        left: -5px;
+                        width: 100%;
+                        height: 2px;
+                        // background: repeating-linear-gradient(
+                        //     to right,
+                        //     #333,
+                        //     #333 3px, /* Small dots */
+                        //     transparent 3px,
+                        //     transparent 6px /* Spacing between dots */
+                        // );
+                    }
+                `}
+            </style>
             <div className="scroll-container" style={{ width: "100vw", overflow: "hidden" }} >
-                <Carousel data={{refs, setCurrentPage}} />
-                <div style={{ zIndex: 1 }} className="h-100vh bg-color position-relative h-100vh stagger"  ref={refs.about}>
+                <Carousel data={{ refs, setCurrentPage }} />
+                <div style={{ zIndex: 1 }} className="h-100vh bg-color position-relative h-100vh stagger" ref={refs.about}>
                     <div className='d-flex flex-column gap-5 align-items-center justify-content-center h-100 border-reduis'>
                         <div className="stagger1">
                             <h1 className='text-white secrion-3-font poppins-medium' data-aos="fade-up" data-aos-offset="200" data-aos-anchor-placement="top-bottom">co-create </h1>
@@ -234,20 +394,1809 @@ const CubeEffectSwiper = ({scrollToSection}) => {
                         </div>
                     </div>
                 </div>
-                
-                <div className="YUCCABE overflow-hidden" style={{ position: 'relative',background: "linear-gradient(0deg,#d9d4c5 0%,#b0aca6 100%)"}}>
+
+                <div className="YUCCABE overflow-hidden d-none" style={{ position: 'relative', background: "linear-gradient(0deg,#d9d4c5 0%,#b0aca6 100%)" }}>
                     <div style={{ ...styles.rectStyle, fontSize: '800px', backgroundColor: "transparent", zIndex: 1, opacity: 0.2 }} className="textsdsdd h-100vh d-flex flex-column align-items-center justify-content-center poppins-bold">Yuccabe</div>
-                    <ScrollSections refs={refs}/>
+                    {/* <ScrollSections refs={refs}/> */}
                 </div>
-                <div className="sdf overflow-hidden" ref={refs.clients}>
+                <section style={{height:"100%"}}>
+                    <div className="points-section">
+                        <div className="heading-how">
+                            <div
+                                className="how-it-works-wrap"
+                            >
+                                <div className="how-it-works-heading">
+                                <div
+                                    className="how-it-works-heading-item"
+                                >
+                                    <h2
+                                    letters-slide-up-h1=""
+                                    text-split-h1=""
+                                    className="text-140-regular how"
+                                    style={{ opacity: 1 }}
+                                    >
+                                    <span className="word" style={{ display: "inline-block" }}>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        H
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        o
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        w
+                                        </span>
+                                    </span>{" "}
+                                    <span className="word" style={{ display: "inline-block" }}>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        i
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        t
+                                        </span>
+                                    </span>{" "}
+                                    </h2>
+                                    <h2
+                                    letters-slide-up-h1=""
+                                    text-split-h1=""
+                                    className="text-140-regular how second"
+                                    style={{ opacity: 1 }}
+                                    >
+                                    <span className="word" style={{ display: "inline-block" }}>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        w
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        o
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        r
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        k
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        s
+                                        </span>
+                                    </span>
+                                    </h2>
+                                </div>
+                                </div>
+                                <div
+                                letters-slide-up-h1=""
+                                text-split-h1=""
+                                className="text-16-regular max-w-80"
+                                style={{
+                                    willChange: "transform",
+                                    transform:
+                                    "translate3d(0em, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+                                    transformStyle: "preserve-3d",
+                                    opacity: 1
+                                }}
+                                >
+                                <span className="word" style={{ display: "inline-block" }}>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    O
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    u
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    r
+                                    </span>
+                                </span>{" "}
+                                <span className="word" style={{ display: "inline-block" }}>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    d
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    i
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    s
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    p
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    o
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    s
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    a
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    l
+                                    </span>
+                                </span>{" "}
+                                <span className="word" style={{ display: "inline-block" }}>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    t
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    e
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    c
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    h
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    n
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    o
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    l
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    o
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    g
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    y
+                                    </span>
+                                </span>{" "}
+                                <span className="word" style={{ display: "inline-block" }}>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    i
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    s
+                                    </span>
+                                </span>{" "}
+                                <span className="word" style={{ display: "inline-block" }}>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    b
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    a
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    s
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    e
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    d
+                                    </span>
+                                </span>{" "}
+                                <span className="word" style={{ display: "inline-block" }}>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    o
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    n
+                                    </span>
+                                </span>{" "}
+                                <span className="word" style={{ display: "inline-block" }}>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    t
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    h
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    e
+                                    </span>
+                                </span>{" "}
+                                <span className="word" style={{ display: "inline-block" }}>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    r
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    e
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    s
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    u
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    l
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    t
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    s
+                                    </span>
+                                </span>{" "}
+                                <span className="word" style={{ display: "inline-block" }}>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    o
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    f
+                                    </span>
+                                </span>{" "}
+                                <span className="word" style={{ display: "inline-block" }}>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    f
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    u
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    l
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    l
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    -
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    s
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    c
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    a
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    l
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    e
+                                    </span>
+                                </span>{" "}
+                                <span className="word" style={{ display: "inline-block" }}>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    i
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    n
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    d
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    u
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    s
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    t
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    r
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    i
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    a
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    l
+                                    </span>
+                                </span>{" "}
+                                <span className="word" style={{ display: "inline-block" }}>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    i
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    m
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    p
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    l
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    e
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    m
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    e
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    n
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    t
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    a
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    t
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    i
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    o
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    n
+                                    </span>
+                                </span>{" "}
+                                <span className="word" style={{ display: "inline-block" }}>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    i
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    n
+                                    </span>
+                                </span>{" "}
+                                <span className="word" style={{ display: "inline-block" }}>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    t
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    h
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    e
+                                    </span>
+                                </span>{" "}
+                                <span className="word" style={{ display: "inline-block" }}>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    p
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    e
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    r
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    i
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    o
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    d
+                                    </span>
+                                </span>{" "}
+                                <span className="word" style={{ display: "inline-block" }}>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    2
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    0
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    1
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    0
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    -
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    2
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    0
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    2
+                                    </span>
+                                    <span
+                                    className="char"
+                                    style={{
+                                        display: "inline-block",
+                                        translate: "none",
+                                        rotate: "none",
+                                        scale: "none",
+                                        transform: "translate(0px, 0px)"
+                                    }}
+                                    >
+                                    0
+                                    </span>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="w-100 position-relative d-flex align-items-center h-100">
+                            <div className="points-container">
+                            
+
+                                <div className="point above">
+                                    <div className="line-1-text-item">
+                                        <div className="number-text">01</div>
+                                        <div className="text-step max-504">
+                                        Raw materials are fed into the&nbsp;chamber directly from waste
+                                        collectors or otherwise
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="point below">
+                                    <div className="line-1-text-item">
+                                        <div className="number-text">01</div>
+                                        <div className="text-step max-504">
+                                        Raw materials are fed into the&nbsp;chamber directly from waste
+                                        collectors or otherwise
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="point above">
+                                    <div className="line-1-text-item">
+                                        <div className="number-text">01</div>
+                                        <div className="text-step max-504">
+                                        Raw materials are fed into the&nbsp;chamber directly from waste
+                                        collectors or otherwise
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="point below">
+                                    <div className="line-1-text-item">
+                                        <div className="number-text">01</div>
+                                        <div className="text-step max-504">
+                                        Raw materials are fed into the&nbsp;chamber directly from waste
+                                        collectors or otherwise
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="point above">
+                                    <div className="line-1-text-item">
+                                        <div className="number-text">01</div>
+                                        <div className="text-step max-504">
+                                        Raw materials are fed into the&nbsp;chamber directly from waste
+                                        collectors or otherwise
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="dotted-line w-100">
+                            <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlnsXlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 2767 12"
+                            width={2767}
+                            height={12}
+                            preserveAspectRatio="xMidYMid meet"
+                            style={{
+                                width: "95vw",
+                                transform: "translate3d(0px, 0px, 0px)",
+                                contentVisibility: "visible"
+                            }}
+                            >
+                            <defs>
+                                <clipPath id="__lottie_element_24">
+                                <rect width={2767} height={12} x={0} y={0} />
+                                </clipPath>
+                            </defs>
+                            <g clipPath="url(#__lottie_element_24)">
+                                <g
+                                transform="matrix(1,0,0,1,0,0)"
+                                opacity={1}
+                                style={{ display: "block" }}
+                                >
+                                <g opacity={1} transform="matrix(1,0,0,1,6.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,60.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,114.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,168.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,222.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,276.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,330.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,384.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,438.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,492.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,546.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,600.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,654.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,708.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,762.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,816.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,870.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,924.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,978.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,1032.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,1086.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,1140.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,1194.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,1248.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,1302.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,1356.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,1410.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,1464.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,1518.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,1572.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,1626.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,1680.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,1734.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,1788.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,1842.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,1896.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,1950.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,2004.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,2058.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,2112.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,2166.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,2220.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,2274.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,2328.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,2382.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,2436.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,2490.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,2544.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,2598.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,2652.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,2706.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                <g opacity={1} transform="matrix(1,0,0,1,2760.5,6)">
+                                    <path
+                                    fill="rgb(84,191,68)"
+                                    fillOpacity={1}
+                                    d=" M0,-6 C3.313999891281128,-6 6,-3.313999891281128 6,0 C6,3.313999891281128 3.313999891281128,6 0,6 C-3.313999891281128,6 -6,3.313999891281128 -6,0 C-6,-3.313999891281128 -3.313999891281128,-6 0,-6z"
+                                    />
+                                </g>
+                                </g>
+                            </g>
+                            </svg>
+                        </div>
+                    </div>
+                </section>
+                <div className="w-100" style={{height:100}}></div>
+                <div className="sdf overflow-hidden pt-5" ref={refs.clients}>
                     <div className='d-flex flex-column align-items-center justify-content-center h-100vh w-100' >
-                        <img src="1.jpg" alt="" style={{ width: '40%', borderRadius:'20px', scale:2.5 }} className="sdf-img" />
+                        <img src="1.jpg" alt="" style={{ width: '40%', borderRadius: '20px', scale: 2.5 }} className="sdf-img" />
                     </div>
                 </div>
                 <div style={{}} className="bg-color contact-us" ref={refs.contact}>
                     <div className="container h-100vh ">
                         <div className='row h-100 align-items-center'>
-                            <div className="col-lg-6 col-md-6 col-sm-12 contact-us-info " style={{textAlign:"left"}}>
+                            <div className="col-lg-6 col-md-6 col-sm-12 contact-us-info " style={{ textAlign: "left" }}>
                                 <div className='py-5'>
                                     <div className='text-white'>
                                         <h1 className="poppins-medium">Have a vision for your space?</h1>
@@ -270,29 +2219,29 @@ const CubeEffectSwiper = ({scrollToSection}) => {
                             </div>
                             <div className="col-lg-6 col-md-6 col-sm-12 px-5 form">
                                 <form action="https://yuccabeplanters.chaak.in/api/contact.php" method='POST'>
-                                    <div className='px-5 poppins-medium' style={{textAlign:"left"}}>
+                                    <div className='px-5 poppins-medium' style={{ textAlign: "left" }}>
                                         <div className="form-floatings mt-3 mb-3 form-group">
                                             <label htmlFor="your-name" className="form-label">Your name<span>*</span></label>
-                                            <input type="text" className="form-control" name="your-name" id="your-name" placeholder='Name you’d like us to remember.' required/>
+                                            <input type="text" className="form-control" name="your-name" id="your-name" placeholder='Name you’d like us to remember.' required />
                                         </div>
                                         <div className="form-floatings mt-3 mb-3 form-group">
                                             <label htmlFor="email-address" className="form-label">Email Address<span>*</span></label>
-                                            <input type="text" className="form-control" name="email-address" id="email-address" placeholder='We promise — no spam, just style.' required/>
+                                            <input type="text" className="form-control" name="email-address" id="email-address" placeholder='We promise — no spam, just style.' required />
                                         </div>
                                         <div className="form-floatings mt-3 mb-3 form-group">
                                             <label htmlFor="contact-number" className="form-label">Contact Number<span>*</span></label>
-                                            <input type="text" className="form-control" name="contact-number" id="contact-number" placeholder='Prefer a call? Share your number.' required/>
+                                            <input type="text" className="form-control" name="contact-number" id="contact-number" placeholder='Prefer a call? Share your number.' required />
                                         </div>
                                         <div className="form-floatings mt-3 mb-3 form-group">
                                             <label htmlFor="company" className="form-label">Company<span>*</span></label>
-                                            <input type="text" className="form-control" name="company" id="company" placeholder='Tell us where creativity is brewing.' required/>
+                                            <input type="text" className="form-control" name="company" id="company" placeholder='Tell us where creativity is brewing.' required />
                                         </div>
                                         <div className="form-floatings mt-3 mb-3 form-group">
                                             <label htmlFor="message" className="form-label">Message<span>*</span></label>
-                                            <input type="text" className="form-control" name="message" id="message" placeholder='Your thoughts, ideas, or questions...' required/>
+                                            <input type="text" className="form-control" name="message" id="message" placeholder='Your thoughts, ideas, or questions...' required />
                                         </div>
                                         <div>
-                                            <button className='btn btn-white' style={{ borderRadius: '30px', padding: '10px 30px', fontSize:14 }}> Send your Message</button>
+                                            <button className='btn btn-white' style={{ borderRadius: '30px', padding: '10px 30px', fontSize: 14 }}> Send your Message</button>
                                         </div>
                                     </div>
                                 </form>
@@ -311,9 +2260,9 @@ const CubeEffectSwiper = ({scrollToSection}) => {
                             </div>
                             <Footer />
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
             </div>
         </>

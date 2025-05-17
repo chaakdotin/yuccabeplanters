@@ -47,7 +47,7 @@ const Header = () => {
               <img src="/yp.svg" alt="Logo" width={'100%'} />
             </Navbar.Brand>
             <Navbar.Toggle onClick={handleShow}/>
-            <Nav className="w-100 d-none justify-content-start  d-lg-flex" defaultActiveKey={location.pathname} >
+            <Nav className="w-100 d-none justify-content-end  d-lg-flex" defaultActiveKey={location.pathname}  style={{gap:10}}>
               <Nav.Link href="/" >
                <span className='dot'></span> 
                <span className="menu-title"> Home</span>
