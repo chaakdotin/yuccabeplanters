@@ -37,8 +37,7 @@ export default function AboutUs() {
                 .scrapbook { position: relative; height: 120vh; }
                 .scrap-img {
                     position: absolute;
-                    width: 250px;
-                    height:250px;
+                    width: 300px;
                     opacity: 0;
                     transform: scale(0.9);
                     border-radius: 12px;
@@ -180,93 +179,93 @@ export default function AboutUs() {
             <div className='w-100 overflow-hidden'>
                 <section className="scrapbook">
                     <img
-                        src="/img/Polaroid/1.png"
+                        src="/img/POLAA/1.png"
                         className="scrap-img"
                         style={{ top: "10%", left: "10%", transform: "rotate(-10deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/Polaroid/11.png"
+                        src="/img/POLAA/2.png"
                         className="scrap-img"
                         style={{ top: "10%", left: "22%", transform: "rotate(-10deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/Polaroid/2.png"
+                        src="/img/POLAA/3.png"
                         className="scrap-img"
-                        style={{ top: "15%", left: "40%", transform: "rotate(5deg) scale(0.9)", }}
+                        style={{ top: "15%", left: "35%", transform: "rotate(5deg) scale(0.9)", }}
                     />
                      <img
-                        src="/img/Polaroid/12.png"
+                        src="/img/POLAA/4.png"
                         className="scrap-img"
-                        style={{ top: "15%", left: "52%", transform: "rotate(5deg) scale(0.9)", }}
+                        style={{ top: "15%", left: "50%", transform: "rotate(5deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/Polaroid/3.png"
+                        src="/img/POLAA/5.png"
                         className="scrap-img"
-                        style={{ top: "40%", left: "20%", transform: "rotate(-5deg) scale(0.9)", }}
+                        style={{ top: "40%", left: "10%", transform: "rotate(-5deg) scale(0.9)", }}
                     />
                      <img
-                        src="/img/Polaroid/13.png"
+                        src="/img/POLAA/6.png"
                         className="scrap-img"
-                        style={{ top: "40%", left: "32%", transform: "rotate(-5deg) scale(0.9)", }}
+                        style={{ top: "40%", left: "25%", transform: "rotate(-5deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/Polaroid/4.png"
+                        src="/img/POLAA/7.png"
                         className="scrap-img"
-                        style={{ top: "60%", left: "15%", transform: "rotate(8deg) scale(0.9)", }}
+                        style={{ top: "40%", left: "40%", transform: "rotate(8deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/Polaroid/14.png"
+                        src="/img/POLAA/8.png"
                         className="scrap-img"
-                        style={{ top: "60%", left: "27%", transform: "rotate(8deg) scale(0.9)", }}
+                        style={{ top: "70%", left: "10%", transform: "rotate(8deg) scale(0.9)", }}
                     />
                     
                     <img
-                        src="/img/Polaroid/5.png"
+                        src="/img/POLAA/9.png"
                         className="scrap-img"
-                        style={{ top: "20%", left: "70%", transform: "rotate(-7deg) scale(0.9)", }}
+                        style={{ top: "20%", left: "66%", transform: "rotate(-7deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/Polaroid/15.png"
+                        src="/img/POLAA/10.png"
                         className="scrap-img"
                         style={{ top: "20%", left: "82%", transform: "rotate(-7deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/Polaroid/6.png"
+                        src="/img/POLAA/11.png"
                         className="scrap-img"
-                        style={{ top: "50%", left: "60%", transform: "rotate(3deg) scale(0.9)", }}
+                        style={{ top: "50%", left: "55%", transform: "rotate(3deg) scale(0.9)", }}
                     />
                      <img
-                        src="/img/Polaroid/16.png"
+                        src="/img/POLAA/11.png"
                         className="scrap-img"
-                        style={{ top: "50%", left: "72%", transform: "rotate(3deg) scale(0.9)", }}
+                        style={{ top: "50%", left: "75%", transform: "rotate(3deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/Polaroid/7.png"
+                        src="/img/POLAA/12.png"
                         className="scrap-img"
-                        style={{ top: "70%", left: "30%", transform: "rotate(-3deg) scale(0.9)", }}
+                        style={{ top: "70%", left: "25%", transform: "rotate(-3deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/Polaroid/17.png"
+                        src="/img/POLAA/13.png"
                         className="scrap-img"
                         style={{ top: "70%", left: "42%", transform: "rotate(-3deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/Polaroid/8.png"
+                        src="/img/POLAA/14.png"
                         className="scrap-img"
-                        style={{ top: "30%", left: "80%", transform: "rotate(10deg) scale(0.9)", }}
+                        style={{ top: "75%", left: "80%", transform: "rotate(10deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/Polaroid/18.png"
+                        src="/img/POLAA/15.png"
                         className="scrap-img"
-                        style={{ top: "30%", left: "92%", transform: "rotate(10deg) scale(0.9)", }}
+                        style={{ top: "50%", left: "92%", transform: "rotate(10deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/Polaroid/9.png"
+                        src="/img/POLAA/16.png"
                         className="scrap-img"
-                        style={{ top: "55%", left: "45%", transform: "rotate(-12deg) scale(0.9)", }}
+                        style={{ top: "35%", left: "55%", transform: "rotate(-12deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/Polaroid/10.png"
+                        src="/img/POLAA/17.png"
                         className="scrap-img"
                         style={{ top: "80%", left: "60%", transform: "rotate(6deg) scale(0.9)", }}
                     />
