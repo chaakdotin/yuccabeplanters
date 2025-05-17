@@ -2,8 +2,19 @@ import React, { useEffect } from 'react'
 import css from './Portfolio1.css?raw'
 import gsap from 'gsap'
 
-export default function indiragandhiinternationalairportt1() {
-   
+export default function residentialspace() {
+    useEffect(() => {
+        gsap.to('.project-details-1-right-wrap',{
+            y:0,
+            scrollTrigger:{
+                trigger:".project-details-1-right-wrap",
+                start:"top 11.5%",
+                end:"+=2175",
+                scrub:true,
+                pin:true,
+            }
+        })
+    })
     return (
         <>
             <style>{css}</style>
@@ -12,24 +23,30 @@ export default function indiragandhiinternationalairportt1() {
                     <div className="row g-0">
                         <div className="col-xl-7">
                             <div className="project-details-1-left">
-                               
                                 <div className="project-details-1-thumb mb-10">
                                     <img
-                                        src="/img/IGIGI/1.jpg"
+                                        src="/img/projects/Project_1.jpg"
+                                        alt=""
+                                        className='w-100'
+                                    />
+                                </div>
+                                <div className="project-details-1-thumb mb-10">
+                                    <img
+                                        src="/img/projects/1.jpg"
                                         alt=""
                                          className='w-100'
                                     />
                                 </div>
                                 <div className="project-details-1-thumb mb-10">
                                     <img
-                                        src="/img/IGIGI/2.jpg"
+                                        src="/img/projects/2.jpg"
                                         alt=""
                                          className='w-100'
                                     />
                                 </div>
                                 <div className="project-details-1-thumb mb-10">
                                     <img
-                                        src="/img/IGIGI/3.jpg"
+                                        src="/img/projects/3.jpg"
                                         alt=""
                                          className='w-100'
                                     />
@@ -40,86 +57,35 @@ export default function indiragandhiinternationalairportt1() {
                             <div className="project-details-1-right-wrap" >
                                 <div className="project-details-1-right position-relative">
                                     <div className="project-details-1-title-box">
-                                        <span className="project-details-1-subtitle d-none"></span>
-                                        <h4 className="project-details-1-title" style={{fontSize:70}}>
-                                            Indira Gandhi International Airport: Terminal 1
-                                        </h4>
-                                        <div className="project-details-1-info-wrap">
-                                            <div className="project-details-1-info">
-                                                <span>Client:</span>
-                                                <h4>L&T (direct); GMR Group / Delhi International Airport Limited</h4>
-                                            </div>
-                                            <div className="project-details-1-info">
-                                                <span>Location:</span>
-                                                <h4>Indira Gandhi International Airport, Terminal 1D, New Delhi </h4>
-                                            </div>
-                                            <div className="project-details-1-info">
-                                                <span>Year of Completion:</span>
-                                                <h4>2024</h4>
-                                            </div>
-                                        </div>
+                                        <span className="project-details-1-subtitle">
+                                            <i>01</i>Shooting
+                                        </span>
+                                        <h4 className="project-details-1-title">Roadtrip</h4>
                                         <p>
-                                            Terminal 1D at Indira Gandhi International Airport, Delhi, underwent a strategic enhancement to create a calming, modern, and globally aligned human experience. As part of this upgrade, to soften this space biophilic design principles were integrated, introducing greenery and natural elements to soften the space.
+                                            We provide digital experience services to startups and small
+                                            businesses. We help our clients succeed by creating brand
+                                            identities, digital experiences.!
                                         </p>
-                                          
                                     </div>
-                                    <div className="project-details-1-title-box pt-4">
+                                    <div className="project-details-1-info-wrap">
                                         <div className="project-details-1-info">
-                                            <h3>What was the objective?</h3>
-                                            
-                                            <p>To humanise and green the terminal interiors for a better travel experience.</p>
-                                            
-                                            <p>To use planters as design tools for demarcation, visual flow, and aesthetic depth.</p>
+                                            <span>Client</span>
+                                            <h4>Factor SF &amp; Google</h4>
                                         </div>
-                                        <div className="project-details-1-info">    
-                                            <h3>The Yuccabe Planter Approach</h3>
-                                            <p>We were given the opportunity to take over the project based on our expertise in custom planter solutions, ability to meet architectural specifications, and proven quality in high-traffic commercial environments.</p>
-                                            <ul className=''>
-                                                <li>
-                                                    <p>
-                                                        <b>Customised Planters</b>
-                                                    </p>
-                                                    <ul>
-                                                        <li>
-                                                            <p>
-                                                                Size Customisation: Planters were tailored to fit specific spatial zones—from wide open areas to tight column surrounds and corner pockets.
-
-                                                            </p>
-                                                        </li>
-                                                        <li>
-                                                            <p>
-                                                                Texture & Finish: Special textures were developed to reflect the terminal’s flooring material palette. Finishes were made in neutral stone textures to harmonise with the interior architecture.
-                                                            </p>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <p>
-                                                        <b>Material Specification</b>
-                                                    </p>
-                                                    <ul>
-                                                        <li>
-                                                            <p>
-                                                                All planters were made using hybrid polymers which are reinforced for strength and stability— thus proven to be lightweight, crack-resistant, and weatherproof.
-                                                            </p>
-                                                        </li>
-                                                        <li>
-                                                            <p>
-                                                                UV-resistant and easy-to-clean surfaces ensured long-term durability with minimal maintenance.
-                                                            </p>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                            <p>
-                                                Yuccabe Planters is proud to have contributed to the transformation of one of India’s busiest airports. This project reflects our capability to deliver high-performance, aesthetically cohesive planter solutions at scale, in sync with architectural and functional demands of world-class infrastructure.
-                                            </p>
-                                            <p>
-                                                We remain committed to enhancing spaces through intelligent greening — blending design and durability.
-                                            </p>
+                                        <div className="project-details-1-info">
+                                            <span>Date</span>
+                                            <h4>October '2022</h4>
                                         </div>
-                                    </div> 
-                                    <div className="project-details-1-social d-none">
+                                        <div className="project-details-1-info">
+                                            <span>Services</span>
+                                            <h4>Design &amp; Prototyping</h4>
+                                        </div>
+                                        <div className="project-details-1-info">
+                                            <span>Deliverables</span>
+                                            <h4>UI / UX Design</h4>
+                                        </div>
+                                    </div>
+                                    <div className="project-details-1-social">
                                         <div className="project-details-1-social-inner">
                                             <a href="#">
                                                 <span>
@@ -260,7 +226,10 @@ export default function indiragandhiinternationalairportt1() {
                                     </div>
                                 </div>
                                 <div className="project-details-1-navigation d-flex justify-content-between align-items-center">
-                                    <a className="project-details-1-prev" href="/jamnagar" >
+                                    <a
+                                        className="project-details-1-prev"
+                                        href="/indira-gandhi-international-airport-t1"
+                                    >
                                         {/* <i className="fa-sharp fa-regular fa-arrow-left" /> */}
                                         <i className="fa-solid fa-arrow-left"></i>
                                         <span>Prev</span>
@@ -281,7 +250,11 @@ export default function indiragandhiinternationalairportt1() {
                                             </svg>
                                         </span>
                                     </a>
-                                    <a className="project-details-1-next" href="/residential-space">
+                                    <a
+                                        className="project-details-1-next"
+                                        href="#"
+                                        disabled
+                                    >
                                         <span>Next</span>
                                         <i className="fa-solid fa-arrow-right" />
                                     </a>

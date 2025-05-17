@@ -19,7 +19,7 @@ export default function Projects() {
         }
         // Main horizontal scroll
         gsap.to(container, {
-            xPercent: -(11 * (totalPanels - 1)),
+            xPercent: -(4 * (totalPanels - 1)),
             ease: "none",
             scrollTrigger: {
                 trigger: container,
@@ -78,7 +78,7 @@ export default function Projects() {
                                 />
                             </a>
                         </div>
-                        <div className="parallax-item not-hide-cursor" data-cursor="View<br>Demo">
+                        {/* <div className="parallax-item not-hide-cursor d-none" data-cursor="View<br>Demo">
                             <a className="cursor-hide" href="/jamnagar">
                                 <div className="parallax-content">
                                     <span>Jamnagar</span>
@@ -92,7 +92,7 @@ export default function Projects() {
                                     }}
                                 />
                             </a>
-                        </div>
+                        </div> */}
                         <div className="parallax-item not-hide-cursor" data-cursor="View<br>Demo">
                             <a className="cursor-hide" href="/indira-gandhi-international-airport-t1">
                                 <div className="parallax-content">
@@ -103,12 +103,12 @@ export default function Projects() {
                                     className="parallax-img"
                                     style={{
                                         backgroundImage:
-                                            'url("img/Project_1.jpg")',
+                                            'url("img/Outer/IGI.jpg")',
                                     }}
                                 />
                             </a>
                         </div>
-                        <div className="parallax-item not-hide-cursor" data-cursor="View<br>Demo">
+                        {/* <div className="parallax-item not-hide-cursor d-none" data-cursor="View<br>Demo">
                             <a className="cursor-hide" href="/residential-space">
                                 <div className="parallax-content">
                                     <span>Residential Space</span>
@@ -118,12 +118,26 @@ export default function Projects() {
                                     className="parallax-img"
                                     style={{
                                         backgroundImage:
-                                            'url("img/Project_1.jpg")',
+                                            'url("img/Outer/Max.jpg")',
+                                    }}
+                                />
+                            </a>
+                        </div> */}
+                       <div className="parallax-item not-hide-cursor " data-cursor="View<br>Demo">
+                            <a className="cursor-hide" href="/max-estate">
+                                <div className="parallax-content">
+                                    <span>Max Estate</span>
+                                    <h4></h4>
+                                </div>
+                                <div
+                                    className="parallax-img"
+                                    style={{
+                                        backgroundImage:
+                                            'url("img/Outer/Max.jpg")',
                                     }}
                                 />
                             </a>
                         </div>
-                       
                     </div>
                 </div>
             </div>

@@ -18,6 +18,7 @@ const BlogsDetails2 = lazy(() => import('./BlogsDetails2'));
 const BlogsDetails3 = lazy(() => import('./BlogsDetails3'));
 const BlogsDetails4 = lazy(() => import('./BlogsDetailss4'));
 const BlogsDetails5 = lazy(() => import('./BlogsDetails5'));
+const MaxEstate = lazy(() => import('./max-estate'));
 const Portfolio = lazy(() => import('./Portfolio'));
 const Portfolio1 = lazy(() => import('./Portfolio1'));
 const Parliamentofindia = lazy(() => import('./parliament-of-india'));
@@ -48,7 +49,7 @@ const Data = () => {
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/portfolio1" element={<Portfolio1 />} />
               <Route path="/projects" element={<Projects />} />
-              
+              <Route path="/max-estate" element={<MaxEstate />}></Route>
               <Route path="/top-10-stylish-planters-to-elevate-your-home-decor-in-2025" element={<BlogsDetails />} />
               <Route path="/terrace-garden-ideas-how-to-style-your-outdoors-with-yuccabe-planters" element={<BlogsDetails1 />} />
               <Route path="/how-plants-improve-mental-health-and-why-your-home-needs-more-greenery" element={<BlogsDetails2 />} />
