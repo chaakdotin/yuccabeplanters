@@ -235,37 +235,37 @@ export default function AboutUs() {
                         style={{ top: "50%", left: "55%", transform: "rotate(3deg) scale(0.9)", }}
                     />
                      <img
-                        src="/img/POLAA/11.png"
+                        src="/img/POLAA/12.png"
                         className="scrap-img"
                         style={{ top: "50%", left: "75%", transform: "rotate(3deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/POLAA/12.png"
+                        src="/img/POLAA/13.png"
                         className="scrap-img"
                         style={{ top: "70%", left: "25%", transform: "rotate(-3deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/POLAA/13.png"
+                        src="/img/POLAA/14.png"
                         className="scrap-img"
                         style={{ top: "70%", left: "42%", transform: "rotate(-3deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/POLAA/14.png"
+                        src="/img/POLAA/15.png"
                         className="scrap-img"
                         style={{ top: "75%", left: "80%", transform: "rotate(10deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/POLAA/15.png"
+                        src="/img/POLAA/16.png"
                         className="scrap-img"
                         style={{ top: "50%", left: "92%", transform: "rotate(10deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/POLAA/16.png"
+                        src="/img/POLAA/17.png"
                         className="scrap-img"
                         style={{ top: "35%", left: "55%", transform: "rotate(-12deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/POLAA/17.png"
+                        src="/img/POLAA/18.png"
                         className="scrap-img"
                         style={{ top: "80%", left: "60%", transform: "rotate(6deg) scale(0.9)", }}
                     />
