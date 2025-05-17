@@ -4,16 +4,16 @@ import gsap from 'gsap'
 
 export default function parliamentofindia() {
     useEffect(() => {
-        gsap.to('.project-details-1-right-wrap',{
-            y:0,
-            scrollTrigger:{
-                trigger:".project-details-1-right-wrap",
-                start:"top 11.5%",
-                end:"+=2175",
-                scrub:true,
-                pin:true,
-            }
-        })
+        // gsap.to('.project-details-1-right-wrap',{
+        //     y:0,
+        //     scrollTrigger:{
+        //         trigger:".project-details-1-right-wrap",
+        //         start:"top 11.5%",
+        //         end:"+=2175",
+        //         scrub:true,
+        //         pin:true,
+        //     }
+        // })
     })
     return (
         <>
@@ -58,34 +58,99 @@ export default function parliamentofindia() {
                             <div className="project-details-1-right-wrap" >
                                 <div className="project-details-1-right position-relative">
                                     <div className="project-details-1-title-box">
-                                        <span className="project-details-1-subtitle">
-                                            <i>01</i>Shooting
-                                        </span>
-                                        <h4 className="project-details-1-title">Roadtrip</h4>
+                                        <span className="project-details-1-subtitle d-none"></span>
+                                       
+                                        <h4 className="project-details-1-title" style={{fontSize:70}}>Parliament of India</h4>
+                                        <div className="project-details-1-info-wrap">
+                                            <div className="project-details-1-info">
+                                                <span>Completion Year</span>
+                                                <h4>2024</h4>
+                                            </div>
+                                            <div className="project-details-1-info">
+                                                <span>Location</span>
+                                                <h4>New Delhi, India
+                                                </h4>
+                                            </div>
+                                        </div>
                                         <p>
-                                            We provide digital experience services to startups and small
-                                            businesses. We help our clients succeed by creating brand
-                                            identities, digital experiences.!
+                                            The New Parliament Building in New Delhi, part of the Central Vista redevelopment project, represents a monumental step forward in India’s democratic and architectural vision. Designed with a focus on indigenous design, sustainability, and timeless aesthetics, the building integrates both modern functionality and traditional Indian heritage.
                                         </p>
+                                          
                                     </div>
-                                    <div className="project-details-1-info-wrap">
+                                    <div className="project-details-1-title-box pt-4">
                                         <div className="project-details-1-info">
-                                            <span>Client</span>
-                                            <h4>Factor SF &amp; Google</h4>
+                                            <p>What was the challenge?</p>
+                                            
+                                            <p>Humanising the Parliament landscape to align with the <b>building’s colour and texture</b> is a sensitive and complex task, especially for a national symbol like the New Parliament Building. </p>
+                                            
+                                            <p>Strict adherence to the building's earthy, formal tones (like red sandstone, beige, or muted textures)</p>
+                                            
+                                            <p>It is technically challenging to <b>landscape transformation</b>, the goal was to create an environment that complements the building's grandeur while embracing ecological sensitivity and aesthetic harmony.</p>
+
+                                            <p>Yuccabe Planters was entrusted with a pivotal role in enhancing the visual and environmental appeal of the building's outdoor and semi-covered spaces. Our objective was to <b>design and manufacture customized planters</b> that would seamlessly blend with the <b>building’s unique colour palette, materials, and architectural language.</b></p>
+
+                                            <p>We develop planter designs that aligned with the earthy tones, red sandstone façade, and the clean, angular geometry of the Parliament building.</p>
+                                            <ul className=''>
+                                                <li>
+                                                    <p>
+                                                        <b>Material & Finish Customization:</b>
+                                                    </p>
+                                                    <ul>
+                                                        <li>
+                                                            <p>
+                                                                Planters were crafted using hybrid-polymers and composites.
+                                                                <b className='px-1'>High-grade FRP</b> 
+                                                                for strength and stability.
+                                                            </p>
+                                                        </li>
+                                                        <li>
+                                                            <p>
+                                                                Finishes were customized in
+                                                                <b className='px-1'>earthy terracotta, sandstone, and muted bronze textures</b>,
+                                                                complementing the Parliament building’s natural material palette.
+                                                            </p>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <p>
+                                                        <b>Size & Form Customization:</b>
+                                                    </p>
+                                                    <ul>
+                                                        <li>
+                                                            <p>
+                                                                Designed <b> various planter forms</b>—tall, broad-based, and recessed models—to suit different zones including entry plazas, courtyards, corridors, and podium areas.
+                                                            </p>
+                                                        </li>
+                                                        <li>
+                                                            <p>
+                                                                Sizes were tailored for <b>specific native and ornamental plants</b>, enhancing visual impact and plant health.
+                                                            </p>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <p>
+                                                        <b>Visual Harmony:</b> The planters acted as transitional elements between the built environment and green landscaping, <b>amplifying the architectural intent</b>  and creating soft visual breaks.
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>
+                                                        <b>National Symbolism:</b> Through the thoughtful selection of textures and colours, the planters helped <b>honour India’s cultural narrative</b> while showcasing modern design precision.
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>
+                                                        <b>Recognition:</b>  The aesthetic and functional contribution of Yuccabe Planters has been well acknowledged by project stakeholders, affirming our commitment to quality, customisation, and design excellence.
+
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            <p>
+                                            Yuccabe Planters is proud to have been part of this prestigious national project. Our ability to <b>incorporate design with function</b> and deliver <b>custom solutions at scale</b> reinforces our position as a trusted partner in high-impact architectural and landscape projects across India.
+                                            </p>
                                         </div>
-                                        <div className="project-details-1-info">
-                                            <span>Date</span>
-                                            <h4>October '2022</h4>
-                                        </div>
-                                        <div className="project-details-1-info">
-                                            <span>Services</span>
-                                            <h4>Design &amp; Prototyping</h4>
-                                        </div>
-                                        <div className="project-details-1-info">
-                                            <span>Deliverables</span>
-                                            <h4>UI / UX Design</h4>
-                                        </div>
-                                    </div>
+                                    </div> 
                                     <div className="project-details-1-social">
                                         <div className="project-details-1-social-inner">
                                             <a href="#">

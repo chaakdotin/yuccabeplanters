@@ -3,9 +3,7 @@ import css from './Portfolio1.css?raw'
 import gsap from 'gsap'
 
 export default function indiragandhiinternationalairportt1() {
-    useEffect(() => {
-
-    })
+   
     return (
         <>
             <style>{css}</style>
@@ -53,91 +51,76 @@ export default function indiragandhiinternationalairportt1() {
                                         <h4 className="project-details-1-title" style={{fontSize:70}}>Indira Gandhi International Airport: Terminal 1</h4>
                                         <div className="project-details-1-info-wrap">
                                             <div className="project-details-1-info">
-                                                <span>Completion Year</span>
-                                                <h4>2024</h4>
+                                                <span>Client:</span>
+                                                <h4>L&T (direct); GMR Group / Delhi International Airport Limited</h4>
                                             </div>
                                             <div className="project-details-1-info">
-                                                <span>Location</span>
-                                                <h4>New Delhi, India
-                                                </h4>
+                                                <span>Location:</span>
+                                                <h4>Indira Gandhi International Airport, Terminal 1D, New Delhi </h4>
+                                            </div>
+                                            <div className="project-details-1-info">
+                                                <span>Year of Completion:</span>
+                                                <h4>2024</h4>
                                             </div>
                                         </div>
                                         <p>
-                                            The New Parliament Building in New Delhi, part of the Central Vista redevelopment project, represents a monumental step forward in India’s democratic and architectural vision. Designed with a focus on indigenous design, sustainability, and timeless aesthetics, the building integrates both modern functionality and traditional Indian heritage.
+                                            Terminal 1D at Indira Gandhi International Airport, Delhi, underwent a strategic enhancement to create a calming, modern, and globally aligned human experience. As part of this upgrade, to soften this space biophilic design principles were integrated, introducing greenery and natural elements to soften the space.
                                         </p>
                                           
                                     </div>
                                     <div className="project-details-1-title-box pt-4">
                                         <div className="project-details-1-info">
-                                            <p>What was the challenge?</p>
+                                            <h3>What was the objective?</h3>
                                             
-                                            <p>Humanising the Parliament landscape to align with the <b>building’s colour and texture</b> is a sensitive and complex task, especially for a national symbol like the New Parliament Building. </p>
+                                            <p>To humanise and green the terminal interiors for a better travel experience.</p>
                                             
-                                            <p>Strict adherence to the building's earthy, formal tones (like red sandstone, beige, or muted textures)</p>
-                                            
-                                            <p>It is technically challenging to <b>landscape transformation</b>, the goal was to create an environment that complements the building's grandeur while embracing ecological sensitivity and aesthetic harmony.</p>
-
-                                            <p>Yuccabe Planters was entrusted with a pivotal role in enhancing the visual and environmental appeal of the building's outdoor and semi-covered spaces. Our objective was to <b>design and manufacture customized planters</b> that would seamlessly blend with the <b>building’s unique colour palette, materials, and architectural language.</b></p>
-
-                                            <p>We develop planter designs that aligned with the earthy tones, red sandstone façade, and the clean, angular geometry of the Parliament building.</p>
+                                            <p>To use planters as design tools for demarcation, visual flow, and aesthetic depth.</p>
+                                        </div>
+                                        <div className="project-details-1-info">    
+                                            <h3>The Yuccabe Planter Approach</h3>
+                                            <p>We were given the opportunity to take over the project based on our expertise in custom planter solutions, ability to meet architectural specifications, and proven quality in high-traffic commercial environments.</p>
                                             <ul className=''>
                                                 <li>
                                                     <p>
-                                                        <b>Material & Finish Customization:</b>
+                                                        <b>Customised Planters</b>
                                                     </p>
                                                     <ul>
                                                         <li>
                                                             <p>
-                                                                Planters were crafted using hybrid-polymers and composites.
-                                                                <b className='px-1'>High-grade FRP</b> 
-                                                                for strength and stability.
-                                                            </p>
-                                                        </li>
-                                                        <li>
-                                                            <p>
-                                                                Finishes were customized in
-                                                                <b className='px-1'>earthy terracotta, sandstone, and muted bronze textures</b>,
-                                                                complementing the Parliament building’s natural material palette.
-                                                            </p>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <p>
-                                                        <b>Size & Form Customization:</b>
-                                                    </p>
-                                                    <ul>
-                                                        <li>
-                                                            <p>
-                                                                Designed <b> various planter forms</b>—tall, broad-based, and recessed models—to suit different zones including entry plazas, courtyards, corridors, and podium areas.
-                                                            </p>
-                                                        </li>
-                                                        <li>
-                                                            <p>
-                                                                Sizes were tailored for <b>specific native and ornamental plants</b>, enhancing visual impact and plant health.
-                                                            </p>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <p>
-                                                        <b>Visual Harmony:</b> The planters acted as transitional elements between the built environment and green landscaping, <b>amplifying the architectural intent</b>  and creating soft visual breaks.
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p>
-                                                        <b>National Symbolism:</b> Through the thoughtful selection of textures and colours, the planters helped <b>honour India’s cultural narrative</b> while showcasing modern design precision.
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p>
-                                                        <b>Recognition:</b>  The aesthetic and functional contribution of Yuccabe Planters has been well acknowledged by project stakeholders, affirming our commitment to quality, customisation, and design excellence.
+                                                                Size Customisation: Planters were tailored to fit specific spatial zones—from wide open areas to tight column surrounds and corner pockets.
 
+                                                            </p>
+                                                        </li>
+                                                        <li>
+                                                            <p>
+                                                                Texture & Finish: Special textures were developed to reflect the terminal’s flooring material palette. Finishes were made in neutral stone textures to harmonise with the interior architecture.
+                                                            </p>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <p>
+                                                        <b>Material Specification</b>
                                                     </p>
+                                                    <ul>
+                                                        <li>
+                                                            <p>
+                                                                All planters were made using hybrid polymers which are reinforced for strength and stability— thus proven to be lightweight, crack-resistant, and weatherproof.
+                                                            </p>
+                                                        </li>
+                                                        <li>
+                                                            <p>
+                                                                UV-resistant and easy-to-clean surfaces ensured long-term durability with minimal maintenance.
+                                                            </p>
+                                                        </li>
+                                                    </ul>
                                                 </li>
                                             </ul>
                                             <p>
-                                            Yuccabe Planters is proud to have been part of this prestigious national project. Our ability to <b>incorporate design with function</b> and deliver <b>custom solutions at scale</b> reinforces our position as a trusted partner in high-impact architectural and landscape projects across India.
+                                                Yuccabe Planters is proud to have contributed to the transformation of one of India’s busiest airports. This project reflects our capability to deliver high-performance, aesthetically cohesive planter solutions at scale, in sync with architectural and functional demands of world-class infrastructure.
+                                            </p>
+                                            <p>
+                                                We remain committed to enhancing spaces through intelligent greening — blending design and durability.
                                             </p>
                                         </div>
                                     </div> 
