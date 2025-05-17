@@ -16,7 +16,7 @@ export default function AboutUs() {
           scrollTrigger: {
             trigger: '.scrapbook',
             start: 'top center',
-            end: `+=${images.length * 100}`,
+            end: `+=${images.length * 50}`,
             scrub: true,
             // pin: true,
             anticipatePin: 1,
@@ -185,14 +185,29 @@ export default function AboutUs() {
                         style={{ top: "10%", left: "10%", transform: "rotate(-10deg) scale(0.9)", }}
                     />
                     <img
+                        src="/img/Polaroid/11.png"
+                        className="scrap-img"
+                        style={{ top: "10%", left: "22%", transform: "rotate(-10deg) scale(0.9)", }}
+                    />
+                    <img
                         src="/img/Polaroid/2.png"
                         className="scrap-img"
                         style={{ top: "15%", left: "40%", transform: "rotate(5deg) scale(0.9)", }}
+                    />
+                     <img
+                        src="/img/Polaroid/12.png"
+                        className="scrap-img"
+                        style={{ top: "15%", left: "52%", transform: "rotate(5deg) scale(0.9)", }}
                     />
                     <img
                         src="/img/Polaroid/3.png"
                         className="scrap-img"
                         style={{ top: "40%", left: "20%", transform: "rotate(-5deg) scale(0.9)", }}
+                    />
+                     <img
+                        src="/img/Polaroid/13.png"
+                        className="scrap-img"
+                        style={{ top: "40%", left: "32%", transform: "rotate(-5deg) scale(0.9)", }}
                     />
                     <img
                         src="/img/Polaroid/4.png"
@@ -200,14 +215,30 @@ export default function AboutUs() {
                         style={{ top: "60%", left: "15%", transform: "rotate(8deg) scale(0.9)", }}
                     />
                     <img
+                        src="/img/Polaroid/14.png"
+                        className="scrap-img"
+                        style={{ top: "60%", left: "27%", transform: "rotate(8deg) scale(0.9)", }}
+                    />
+                    
+                    <img
                         src="/img/Polaroid/5.png"
                         className="scrap-img"
                         style={{ top: "20%", left: "70%", transform: "rotate(-7deg) scale(0.9)", }}
                     />
                     <img
+                        src="/img/Polaroid/15.png"
+                        className="scrap-img"
+                        style={{ top: "20%", left: "82%", transform: "rotate(-7deg) scale(0.9)", }}
+                    />
+                    <img
                         src="/img/Polaroid/6.png"
                         className="scrap-img"
                         style={{ top: "50%", left: "60%", transform: "rotate(3deg) scale(0.9)", }}
+                    />
+                     <img
+                        src="/img/Polaroid/16.png"
+                        className="scrap-img"
+                        style={{ top: "50%", left: "72%", transform: "rotate(3deg) scale(0.9)", }}
                     />
                     <img
                         src="/img/Polaroid/7.png"
@@ -215,9 +246,19 @@ export default function AboutUs() {
                         style={{ top: "70%", left: "30%", transform: "rotate(-3deg) scale(0.9)", }}
                     />
                     <img
+                        src="/img/Polaroid/17.png"
+                        className="scrap-img"
+                        style={{ top: "70%", left: "42%", transform: "rotate(-3deg) scale(0.9)", }}
+                    />
+                    <img
                         src="/img/Polaroid/8.png"
                         className="scrap-img"
                         style={{ top: "30%", left: "80%", transform: "rotate(10deg) scale(0.9)", }}
+                    />
+                    <img
+                        src="/img/Polaroid/18.png"
+                        className="scrap-img"
+                        style={{ top: "30%", left: "92%", transform: "rotate(10deg) scale(0.9)", }}
                     />
                     <img
                         src="/img/Polaroid/9.png"
@@ -229,6 +270,14 @@ export default function AboutUs() {
                         className="scrap-img"
                         style={{ top: "80%", left: "60%", transform: "rotate(6deg) scale(0.9)", }}
                     />
+                   
+                   
+                   
+                    
+                    
+                   
+                    
+                    
                 </section>
 
                 <div className="ab-about-area ab-about-mt pb-90 z-index-5 mb-90">
