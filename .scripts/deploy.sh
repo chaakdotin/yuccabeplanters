@@ -8,6 +8,7 @@ git pull
 echo "New changes copied to server !"
 
 echo "Installing Dependencies..."
+rm -rf node_modules package-lock.json
 npm install --yes
 
 echo "Creating Production Build..."
