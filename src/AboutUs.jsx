@@ -270,14 +270,6 @@ export default function AboutUs() {
                         className="scrap-img"
                         style={{ top: "80%", left: "60%", transform: "rotate(6deg) scale(0.9)", }}
                     />
-                   
-                   
-                   
-                    
-                    
-                   
-                    
-                    
                 </section>
 
                 <div className="ab-about-area ab-about-mt pb-90 z-index-5 mb-90">
