@@ -25,28 +25,28 @@ export default function residentialspace() {
                             <div className="project-details-1-left">
                                 <div className="project-details-1-thumb mb-10">
                                     <img
-                                        src="/img/projects/Project_1.jpg"
+                                        src="/img/Max Estate/8.jpg"
                                         alt=""
                                         className='w-100'
                                     />
                                 </div>
                                 <div className="project-details-1-thumb mb-10">
                                     <img
-                                        src="/img/projects/1.jpg"
+                                        src="/img/Max Estate/9.jpg"
                                         alt=""
                                          className='w-100'
                                     />
                                 </div>
                                 <div className="project-details-1-thumb mb-10">
                                     <img
-                                        src="/img/projects/2.jpg"
+                                        src="/img/Max Estate/10.jpg"
                                         alt=""
                                          className='w-100'
                                     />
                                 </div>
                                 <div className="project-details-1-thumb mb-10">
                                     <img
-                                        src="/img/projects/3.jpg"
+                                        src="/img/Max Estate/11.jpg"
                                         alt=""
                                          className='w-100'
                                     />
