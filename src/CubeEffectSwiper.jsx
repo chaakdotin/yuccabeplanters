@@ -84,7 +84,7 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                 start: "top 30%",
                 end: "top 0%",
                 scrub: true, // Smooth scrolli
-                markers:true,
+                
             },
         });
         gsap.to('.text-16-regular',{
@@ -95,7 +95,7 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                 start: "top 30%",
                 end: "top 0%",
                 scrub: true, // Smooth scrolli
-                markers:true,
+                
             },
         });
         // Animate Dotted Line
