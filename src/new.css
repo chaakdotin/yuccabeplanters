@@ -174,7 +174,10 @@ summary {
     stroke-dashoffset: 966.6312255859375;
   }
 }
-
+.secrion-3-font{
+  font-family: 'Unageo', sans-serif;
+  font-weight: 600; 
+}
 #Layer_1 path{
   fill:none;
   stroke:#fff;

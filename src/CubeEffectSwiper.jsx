@@ -407,9 +407,9 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                 <div style={{ zIndex: 1 }} className="h-100vh bg-color position-relative h-100vh stagger" ref={refs.about}>
                     <div className='d-flex flex-column gap-5 align-items-center justify-content-center h-100 border-reduis'>
                         <div className="stagger1">
-                            <h1 className='text-white secrion-3-font poppins-medium' data-aos="fade-up" data-aos-offset="200" data-aos-anchor-placement="top-bottom">co-create </h1>
-                            <h1 className='text-white secrion-3-font poppins-medium' data-aos="fade-up" data-aos-offset="200" data-aos-anchor-placement="top-bottom">your green</h1>
-                            <h1 className='text-white secrion-3-font poppins-medium' data-aos="fade-up" data-aos-offset="200" data-aos-anchor-placement="top-bottom">spaces with us</h1>
+                            <h1 className='text-white secrion-3-font ' data-aos="fade-up" data-aos-offset="200" data-aos-anchor-placement="top-bottom">co-create </h1>
+                            <h1 className='text-white secrion-3-font ' data-aos="fade-up" data-aos-offset="200" data-aos-anchor-placement="top-bottom">your green</h1>
+                            <h1 className='text-white secrion-3-font ' data-aos="fade-up" data-aos-offset="200" data-aos-anchor-placement="top-bottom">spaces with us</h1>
                         </div>
                         <div className="">
                             <a className="button-77 poppins-regular " role="button" href="/services">

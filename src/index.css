@@ -23,6 +23,12 @@ h1, h2, h3, h4, span, input{
     font-style: normal;
 }
 @font-face {
+  font-family: 'Unageo';
+  src: url('/fonts/unageo/ttf/Unageo-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
     font-family: 'MarkPro';
     src: url('/fonts/MarkPro-Medium.b3d53906.woff2') format('woff2');
     font-weight: 500;
