@@ -287,12 +287,9 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                     .points-container {
                         display: flex;
                         position: relative;
-                        // top: 0;
-                        // left: 0;
+                        left: 45px;
                         bottom:0;
-                        // height: 100%;
                         width: max-content; /* Allows container to expand based on content */
-                        // transform: translateX(0);
                     }
 
                     /* Individual Point Styling */
