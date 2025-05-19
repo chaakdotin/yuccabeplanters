@@ -56,7 +56,7 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
             ease: "none",
             scrollTrigger: {
                 trigger: ".points-section",
-                start: "-5% top", // Pin when points-section hits top
+                start: "top top", // Pin when points-section hits top
                 end: () => `+=${pointsContainer.scrollWidth - window.innerWidth}`, // Scroll until all points are visible
                 scrub: true, // Smooth scrolling
                 pin: true, // Pin the section during horizontal scroll
@@ -65,7 +65,17 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                 invalidateOnRefresh: true,
             },
         });
-
+        gsap.to(".textsdsdd", {
+           right: 100,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".points-section",
+                start: "top top", // Pin when points-section hits top
+                end: () => `+=${pointsContainer.scrollWidth - window.innerWidth}`, // Scroll until all points are visible
+                scrub: true, // Smooth scrolling
+                invalidateOnRefresh: true,
+            },
+        });
         // Animate Dotted Line
         gsap.from(".dotted-line", {
             scaleX: 0,
@@ -88,16 +98,16 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
             }
         });
 
-        lt.to(".textsdsdd", {
-            position: "fixed",
-            right: 100,
-            top: "-4%",
-            duration: 10,
-            onComplete: function () {
-                document.querySelector(".textsdsdd").style.top = "73.6%";
-                document.querySelector(".textsdsdd").style.position = "absolute";
-            },
-        });
+        // lt.to(".textsdsdd", {
+        //     position: "fixed",
+        //     right: 100,
+        //     top: "-4%",
+        //     duration: 10,
+        //     onComplete: function () {
+        //         document.querySelector(".textsdsdd").style.top = "73.6%";
+        //         document.querySelector(".textsdsdd").style.position = "absolute";
+        //     },
+        // });
         gsap.set('.sdf-img', { scale: 2.5 })
         gsap.to(".sdf-img", {
             scale: 1,
@@ -264,7 +274,7 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                 {`
                     .points-section {
                         height: 100vh!important;
-                        background: #fff;
+                        background: linear-gradient(0deg,#d9d4c5 0%,#b0aca6 100%);
                         position: relative;
                         overflow: hidden;
                         display:flex;
@@ -368,13 +378,6 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                         left: -5px;
                         width: 100%;
                         height: 2px;
-                        // background: repeating-linear-gradient(
-                        //     to right,
-                        //     #333,
-                        //     #333 3px, /* Small dots */
-                        //     transparent 3px,
-                        //     transparent 6px /* Spacing between dots */
-                        // );
                     }
                 `}
             </style>
@@ -401,6 +404,7 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                 </div>
                 <section style={{height:"100%"}}>
                     <div className="points-section">
+                        <div style={{ ...styles.rectStyle, fontSize: '800px', backgroundColor: "transparent", zIndex: 1, opacity: 0.1 }} className="textsdsdd h-100vh d-flex flex-column align-items-center justify-content-center poppins-bold">Yuccabe</div>
                         <div className="heading-how">
                             <div
                                 className="how-it-works-wrap"
@@ -1743,8 +1747,6 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                         </div>
                         <div className="w-100 position-relative d-flex align-items-center h-100">
                             <div className="points-container">
-                            
-
                                 <div className="point above">
                                     <div className="line-1-text-item">
                                         <div className="number-text">01</div>
@@ -2187,7 +2189,6 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                         </div>
                     </div>
                 </section>
-                <div className="w-100" style={{height:100}}></div>
                 <div className="sdf overflow-hidden pt-5" ref={refs.clients}>
                     <div className='d-flex flex-column align-items-center justify-content-center h-100vh w-100' >
                         <img src="1.jpg" alt="" style={{ width: '40%', borderRadius: '20px', scale: 2.5 }} className="sdf-img" />
