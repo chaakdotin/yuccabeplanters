@@ -57,7 +57,7 @@ a, a:hover{
     font-weight:600;
 }
 .navbar-nav .nav-link.active .menu-title{
-    color: #86857F;
+    color: #936A70;
     /* text-shadow: 0px 0px 4px #000; */
 }
 .navbar-nav .nav-link.active .dot{
@@ -71,7 +71,7 @@ a, a:hover{
     height: 15px;
     top: 0px;
     margin-right: 6px;
-    background-color: #86857F;
+    background-color: #936A70;
 }
 .navbar-nav .nav-link{
     font-family: "Poppins", sans-serif;
