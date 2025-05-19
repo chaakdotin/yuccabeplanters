@@ -77,23 +77,25 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
             },
         });
         gsap.to('.how-it-works-heading-item',{
-            x:"-110%",
+            textAlign:"left",
+            x:"-100%",
             ease: "none",
             scrollTrigger: {
                 trigger: ".points-section",
                 start: "top 30%",
-                end: "top 0%",
+                end: "top 10%",
                 scrub: true, // Smooth scrolli
                 
             },
         });
         gsap.to('.text-16-regular',{
-            x:"-120%",
+            textAlign:"left",
+            x:"-110%",
             ease: "none",
             scrollTrigger: {
                 trigger: ".points-section",
                 start: "top 30%",
-                end: "top 0%",
+                end: "top 10%",
                 scrub: true, // Smooth scrolli
                 
             },
@@ -422,7 +424,7 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                 </div>
                 <section style={{height:"100%"}}>
                     <div className="points-section">
-                        <div style={{ ...styles.rectStyle, fontSize: '800px', backgroundColor: "transparent", zIndex: 1, opacity: 0.1 }} className="textsdsdd h-100vh d-flex flex-column align-items-center justify-content-center poppins-bold">Yuccabe</div>
+                        <div style={{ ...styles.rectStyle, fontSize: '800px', backgroundColor: "transparent", zIndex: 0, opacity: 0.1 }} className="textsdsdd h-100vh d-flex flex-column align-items-center justify-content-center poppins-bold">Yuccabe</div>
                         <div className="heading-how">
                             <div className="how-it-works-wrap">
                                 <div className="how-it-works-heading">
