@@ -3,17 +3,14 @@ import gsap from "gsap";
 import { ScrollTrigger, ScrollToPlugin } from "gsap/all";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
 export default function ScrollSections({refs}) {
   const panelsRef = useRef([]);
   const navsRef = useRef([]);
-  
   useEffect(() => {
-      
     const panels = panelsRef.current;
     const navs = navsRef.current;
+
     panels.forEach((panel, i) => {
       let trigger = ScrollTrigger.create({
         trigger: panel,
@@ -22,7 +19,6 @@ export default function ScrollSections({refs}) {
         pin: true,
         pinSpacing: true,
       });
-
     });
 
     return () => {
@@ -31,20 +27,19 @@ export default function ScrollSections({refs}) {
   }, []);
   const styles = {
     slide: {
-        width: "100%",
-        // height: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontSize: "2rem",
-        borderRadius: "10px",
+      width: "100%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      fontSize: "2rem",
+      borderRadius: "10px",
     },
     rectStyle: {
-        color: "rgba(0, 0, 0, 0.2)",
-        top: "-50px",
-        backgroundColor: "transparent",
-        right: "-3700px",
-        position: "absolute",
+      color: "rgba(0, 0, 0, 0.2)",
+      top: "-50px",
+      backgroundColor: "transparent",
+      right: "-3700px",
+      position: "absolute",
     }
 };
   return (

@@ -386,6 +386,7 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                     .text-step {
                         color: #000;
                         flex: none;
+                        text-align:left;
                         font-family: BDO Grotesk, Verdana, sans-serif;
                         font-size: 1.8em;
                         line-height: 110%;
@@ -422,8 +423,8 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                     <div style={{ ...styles.rectStyle, fontSize: '800px', backgroundColor: "transparent", zIndex: 1, opacity: 0.2 }} className="textsdsdd h-100vh d-flex flex-column align-items-center justify-content-center poppins-bold">Yuccabe</div>
                     {/* <ScrollSections refs={refs}/> */}
                 </div>
-                <section style={{height:"100%"}}>
-                    <div className="points-section">
+                <section style={{ height:"100%" }}  >
+                    <div className="points-section" ref={refs.why}>
                         <div style={{ ...styles.rectStyle, fontSize: '800px', backgroundColor: "transparent", zIndex: 0, opacity: 0.1 }} className="textsdsdd h-100vh d-flex flex-column align-items-center justify-content-center poppins-bold">Yuccabe</div>
                         <div className="heading-how">
                             <div className="how-it-works-wrap">
@@ -514,7 +515,7 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                                     <div className="line-1-text-item">
                                         <div className="number-text">01</div>
                                         <div className="text-step max-504">
-                                            Crafted with Precision
+                                            Each planter is handcrafted with care, detail, and refined technique.
                                         </div>
                                     </div>
                                 </div>
@@ -522,7 +523,7 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                                     <div className="line-1-text-item">
                                         <div className="number-text">02</div>
                                         <div className="text-step max-504">
-                                            Custom Designs for Every Space
+                                            Tailored planter solutions perfectly aligned to your space and vision.
                                         </div>
                                     </div>
                                 </div>
@@ -530,7 +531,7 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                                     <div className="line-1-text-item">
                                         <div className="number-text">03</div>
                                         <div className="text-step max-504">
-                                            Trusted by Architects & Designers
+                                            Preferred by top design professionals across luxury and commercial spaces.
                                         </div>
                                     </div>
                                 </div>
@@ -538,7 +539,7 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                                     <div className="line-1-text-item">
                                         <div className="number-text">04</div>
                                         <div className="text-step max-504">
-                                            Timeless Aesthetic, Functional Form
+                                            Designs that blend beauty, balance, and everyday practicality with ease.
                                         </div>
                                     </div>
                                 </div>
@@ -546,7 +547,7 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                                     <div className="line-1-text-item">
                                         <div className="number-text">05</div>
                                         <div className="text-step max-504">
-                                            Indoor & Outdoor Ready
+                                            Durable and elegant—perfect for both indoor and outdoor use.
                                         </div>
                                     </div>
                                 </div>
@@ -554,7 +555,7 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                                     <div className="line-1-text-item">
                                         <div className="number-text">06</div>
                                         <div className="text-step max-504">
-                                           Pan-India Project Experience
+                                           Successfully styled spaces across India in varied scale and settings.
                                         </div>
                                     </div>
                                 </div>
