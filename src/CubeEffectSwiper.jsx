@@ -60,13 +60,13 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                 end: () => `+=${pointsContainer.scrollWidth - window.innerWidth}`, // Scroll until all points are visible
                 scrub: true, // Smooth scrolling
                 pin: true, // Pin the section during horizontal scroll
-                markers:true,
+
                 anticipatePin: 1,
                 invalidateOnRefresh: true,
             },
         });
         gsap.to(".textsdsdd", {
-           right: 100,
+            right: 100,
             ease: "none",
             scrollTrigger: {
                 trigger: ".points-section",
@@ -74,6 +74,28 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                 end: () => `+=${pointsContainer.scrollWidth - window.innerWidth}`, // Scroll until all points are visible
                 scrub: true, // Smooth scrolling
                 invalidateOnRefresh: true,
+            },
+        });
+        gsap.to('.how-it-works-heading-item',{
+            x:"-110%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".points-section",
+                start: "top 30%",
+                end: "top 0%",
+                scrub: true, // Smooth scrolli
+                markers:true,
+            },
+        });
+        gsap.to('.text-16-regular',{
+            x:"-120%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".points-section",
+                start: "top 30%",
+                end: "top 0%",
+                scrub: true, // Smooth scrolli
+                markers:true,
             },
         });
         // Animate Dotted Line
@@ -89,14 +111,14 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                 
             },
         });
-        const lt = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".YUCCABE", // Element that triggers the animation
-                start: "top top",     // When the top of `.start-class` hits the center of the viewport/ Element that defines the end point
-                end: "bottom bottom",    // When the bottom of `.end-class` hits the center of the viewport
-                scrub: true,
-            }
-        });
+        // const lt = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: ".YUCCABE", // Element that triggers the animation
+        //         start: "top top",     // When the top of `.start-class` hits the center of the viewport/ Element that defines the end point
+        //         end: "bottom bottom",    // When the bottom of `.end-class` hits the center of the viewport
+        //         scrub: true,
+        //     }
+        // });
 
         // lt.to(".textsdsdd", {
         //     position: "fixed",
@@ -292,9 +314,8 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                         width: max-content; /* Allows container to expand based on content */
                     }
 
-                    /* Individual Point Styling */
                     .point {
-                    position: relative;
+                        position: relative;
                         display: flex;
                         flex-direction: column;
                         width: 30vw; /* Minimal space between points */
@@ -403,18 +424,155 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                     <div className="points-section">
                         <div style={{ ...styles.rectStyle, fontSize: '800px', backgroundColor: "transparent", zIndex: 1, opacity: 0.1 }} className="textsdsdd h-100vh d-flex flex-column align-items-center justify-content-center poppins-bold">Yuccabe</div>
                         <div className="heading-how">
-                            <div
-                                className="how-it-works-wrap"
-                            >
+                            <div className="how-it-works-wrap">
                                 <div className="how-it-works-heading">
+                                    <div
+                                        className="how-it-works-heading-item"
+                                    >
+                                        <h2
+                                        letters-slide-up-h1=""
+                                        text-split-h1=""
+                                        className="text-140-regular how"
+                                        style={{ opacity: 1 }}
+                                        >
+                                        <span className="word" style={{ display: "inline-block" }}>
+                                            <span
+                                            className="char"
+                                            style={{
+                                                display: "inline-block",
+                                                translate: "none",
+                                                rotate: "none",
+                                                scale: "none",
+                                                transform: "translate(0px, 0px)"
+                                            }}
+                                            >
+                                            H
+                                            </span>
+                                            <span
+                                            className="char"
+                                            style={{
+                                                display: "inline-block",
+                                                translate: "none",
+                                                rotate: "none",
+                                                scale: "none",
+                                                transform: "translate(0px, 0px)"
+                                            }}
+                                            >
+                                            o
+                                            </span>
+                                            <span
+                                            className="char"
+                                            style={{
+                                                display: "inline-block",
+                                                transform: "translate(0px, 0px)"
+                                            }}
+                                            >
+                                            w
+                                            </span>
+                                        </span>{" "}
+                                        <span className="word" style={{ display: "inline-block" }}>
+                                            <span
+                                            className="char"
+                                            style={{
+                                                display: "inline-block",
+                                                translate: "none",
+                                                rotate: "none",
+                                                scale: "none",
+                                                transform: "translate(0px, 0px)"
+                                            }}
+                                            >
+                                            i
+                                            </span>
+                                            <span
+                                            className="char"
+                                            style={{
+                                                display: "inline-block",
+                                                transform: "translate(0px, 0px)"
+                                            }}
+                                            >
+                                            t
+                                            </span>
+                                        </span>{" "}
+                                        </h2>
+                                        <h2
+                                        letters-slide-up-h1=""
+                                        text-split-h1=""
+                                        className="text-140-regular how second"
+                                        style={{ opacity: 1 }}
+                                        >
+                                        <span className="word" style={{ display: "inline-block" }}>
+                                            <span
+                                            className="char"
+                                            style={{
+                                                display: "inline-block",
+                                                translate: "none",
+                                                rotate: "none",
+                                                scale: "none",
+                                                transform: "translate(0px, 0px)"
+                                            }}
+                                            >
+                                            w
+                                            </span>
+                                            <span
+                                            className="char"
+                                            style={{
+                                                display: "inline-block",
+                                                translate: "none",
+                                                rotate: "none",
+                                                scale: "none",
+                                                transform: "translate(0px, 0px)"
+                                            }}
+                                            >
+                                            o
+                                            </span>
+                                            <span
+                                            className="char"
+                                            style={{
+                                                display: "inline-block",
+                                                translate: "none",
+                                                rotate: "none",
+                                                scale: "none",
+                                                transform: "translate(0px, 0px)"
+                                            }}
+                                            >
+                                            r
+                                            </span>
+                                            <span
+                                            className="char"
+                                            style={{
+                                                display: "inline-block",
+                                                translate: "none",
+                                                rotate: "none",
+                                                scale: "none",
+                                                transform: "translate(0px, 0px)"
+                                            }}
+                                            >
+                                            k
+                                            </span>
+                                            <span
+                                            className="char"
+                                            style={{
+                                                display: "inline-block",
+                                                transform: "translate(0px, 0px)"
+                                            }}
+                                            >
+                                            s
+                                            </span>
+                                        </span>
+                                        </h2>
+                                    </div>
+                                </div>
                                 <div
-                                    className="how-it-works-heading-item"
-                                >
-                                    <h2
                                     letters-slide-up-h1=""
                                     text-split-h1=""
-                                    className="text-140-regular how"
-                                    style={{ opacity: 1 }}
+                                    className="text-16-regular max-w-80"
+                                    style={{
+                                        willChange: "transform",
+                                        transform:
+                                        "translate3d(0em, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+                                        transformStyle: "preserve-3d",
+                                        opacity: 1
+                                    }}
                                     >
                                     <span className="word" style={{ display: "inline-block" }}>
                                         <span
@@ -427,7 +585,81 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                                             transform: "translate(0px, 0px)"
                                         }}
                                         >
-                                        H
+                                        O
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        u
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        r
+                                        </span>
+                                    </span>{" "}
+                                    <span className="word" style={{ display: "inline-block" }}>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        d
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        i
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        s
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        p
                                         </span>
                                         <span
                                         className="char"
@@ -445,10 +677,159 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                                         className="char"
                                         style={{
                                             display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
                                             transform: "translate(0px, 0px)"
                                         }}
                                         >
-                                        w
+                                        s
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        a
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        l
+                                        </span>
+                                    </span>{" "}
+                                    <span className="word" style={{ display: "inline-block" }}>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        t
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        e
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        c
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        h
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        n
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        o
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        l
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        o
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        g
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        y
                                         </span>
                                     </span>{" "}
                                     <span className="word" style={{ display: "inline-block" }}>
@@ -468,19 +849,15 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                                         className="char"
                                         style={{
                                             display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
                                             transform: "translate(0px, 0px)"
                                         }}
                                         >
-                                        t
+                                        s
                                         </span>
                                     </span>{" "}
-                                    </h2>
-                                    <h2
-                                    letters-slide-up-h1=""
-                                    text-split-h1=""
-                                    className="text-140-regular how second"
-                                    style={{ opacity: 1 }}
-                                    >
                                     <span className="word" style={{ display: "inline-block" }}>
                                         <span
                                         className="char"
@@ -492,7 +869,7 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                                             transform: "translate(0px, 0px)"
                                         }}
                                         >
-                                        w
+                                        b
                                         </span>
                                         <span
                                         className="char"
@@ -504,7 +881,415 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                                             transform: "translate(0px, 0px)"
                                         }}
                                         >
+                                        a
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        s
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        e
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        d
+                                        </span>
+                                    </span>{" "}
+                                    <span className="word" style={{ display: "inline-block" }}>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
                                         o
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        n
+                                        </span>
+                                    </span>{" "}
+                                    <span className="word" style={{ display: "inline-block" }}>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        t
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        h
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        e
+                                        </span>
+                                    </span>{" "}
+                                    <span className="word" style={{ display: "inline-block" }}>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        r
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        e
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        s
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        u
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        l
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        t
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        s
+                                        </span>
+                                    </span>{" "}
+                                    <span className="word" style={{ display: "inline-block" }}>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        o
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        f
+                                        </span>
+                                    </span>{" "}
+                                    <span className="word" style={{ display: "inline-block" }}>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        f
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        u
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        l
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        l
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        -
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        s
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        c
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        a
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        l
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        e
+                                        </span>
+                                    </span>{" "}
+                                    <span className="word" style={{ display: "inline-block" }}>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        i
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        n
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        d
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        u
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        s
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        t
                                         </span>
                                         <span
                                         className="char"
@@ -528,1217 +1313,451 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                                             transform: "translate(0px, 0px)"
                                         }}
                                         >
-                                        k
+                                        i
                                         </span>
                                         <span
                                         className="char"
                                         style={{
                                             display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
                                             transform: "translate(0px, 0px)"
                                         }}
                                         >
-                                        s
+                                        a
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        l
+                                        </span>
+                                    </span>{" "}
+                                    <span className="word" style={{ display: "inline-block" }}>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        i
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        m
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        p
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        l
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        e
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        m
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        e
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        n
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        t
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        a
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        t
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        i
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        o
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        n
+                                        </span>
+                                    </span>{" "}
+                                    <span className="word" style={{ display: "inline-block" }}>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        i
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        n
+                                        </span>
+                                    </span>{" "}
+                                    <span className="word" style={{ display: "inline-block" }}>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        t
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        h
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        e
+                                        </span>
+                                    </span>{" "}
+                                    <span className="word" style={{ display: "inline-block" }}>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        p
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        e
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        r
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        i
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        o
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        d
+                                        </span>
+                                    </span>{" "}
+                                    <span className="word" style={{ display: "inline-block" }}>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        2
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        0
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        1
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        0
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        -
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        2
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        0
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        2
+                                        </span>
+                                        <span
+                                        className="char"
+                                        style={{
+                                            display: "inline-block",
+                                            translate: "none",
+                                            rotate: "none",
+                                            scale: "none",
+                                            transform: "translate(0px, 0px)"
+                                        }}
+                                        >
+                                        0
                                         </span>
                                     </span>
-                                    </h2>
-                                </div>
-                                </div>
-                                <div
-                                letters-slide-up-h1=""
-                                text-split-h1=""
-                                className="text-16-regular max-w-80"
-                                style={{
-                                    willChange: "transform",
-                                    transform:
-                                    "translate3d(0em, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                                    transformStyle: "preserve-3d",
-                                    opacity: 1
-                                }}
-                                >
-                                <span className="word" style={{ display: "inline-block" }}>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    O
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    u
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    r
-                                    </span>
-                                </span>{" "}
-                                <span className="word" style={{ display: "inline-block" }}>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    d
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    i
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    s
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    p
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    o
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    s
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    a
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    l
-                                    </span>
-                                </span>{" "}
-                                <span className="word" style={{ display: "inline-block" }}>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    t
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    e
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    c
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    h
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    n
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    o
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    l
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    o
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    g
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    y
-                                    </span>
-                                </span>{" "}
-                                <span className="word" style={{ display: "inline-block" }}>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    i
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    s
-                                    </span>
-                                </span>{" "}
-                                <span className="word" style={{ display: "inline-block" }}>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    b
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    a
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    s
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    e
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    d
-                                    </span>
-                                </span>{" "}
-                                <span className="word" style={{ display: "inline-block" }}>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    o
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    n
-                                    </span>
-                                </span>{" "}
-                                <span className="word" style={{ display: "inline-block" }}>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    t
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    h
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    e
-                                    </span>
-                                </span>{" "}
-                                <span className="word" style={{ display: "inline-block" }}>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    r
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    e
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    s
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    u
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    l
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    t
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    s
-                                    </span>
-                                </span>{" "}
-                                <span className="word" style={{ display: "inline-block" }}>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    o
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    f
-                                    </span>
-                                </span>{" "}
-                                <span className="word" style={{ display: "inline-block" }}>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    f
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    u
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    l
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    l
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    -
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    s
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    c
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    a
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    l
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    e
-                                    </span>
-                                </span>{" "}
-                                <span className="word" style={{ display: "inline-block" }}>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    i
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    n
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    d
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    u
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    s
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    t
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    r
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    i
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    a
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    l
-                                    </span>
-                                </span>{" "}
-                                <span className="word" style={{ display: "inline-block" }}>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    i
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    m
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    p
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    l
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    e
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    m
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    e
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    n
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    t
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    a
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    t
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    i
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    o
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    n
-                                    </span>
-                                </span>{" "}
-                                <span className="word" style={{ display: "inline-block" }}>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    i
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    n
-                                    </span>
-                                </span>{" "}
-                                <span className="word" style={{ display: "inline-block" }}>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    t
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    h
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    e
-                                    </span>
-                                </span>{" "}
-                                <span className="word" style={{ display: "inline-block" }}>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    p
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    e
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    r
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    i
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    o
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    d
-                                    </span>
-                                </span>{" "}
-                                <span className="word" style={{ display: "inline-block" }}>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    2
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    0
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    1
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    0
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    -
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    2
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    0
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    2
-                                    </span>
-                                    <span
-                                    className="char"
-                                    style={{
-                                        display: "inline-block",
-                                        translate: "none",
-                                        rotate: "none",
-                                        scale: "none",
-                                        transform: "translate(0px, 0px)"
-                                    }}
-                                    >
-                                    0
-                                    </span>
-                                </span>
                                 </div>
                             </div>
                         </div>
