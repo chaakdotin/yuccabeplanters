@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
-import lenis from "./LenisWrapper";
+import Lenis from "./LenisWrapper";
 import Header from './Header';
 const App = lazy(() => import('./App'));
 const Collections = lazy(() => import('./Collections'));
@@ -32,7 +32,7 @@ import PageLoadAnimation from './PageLoadAnimation';
 const root = document.getElementById("root");
 
 const Data = () => {
-  <lenis />
+  <Lenis />
   return (
     <>
     <PageLoadAnimation>
