@@ -930,32 +930,62 @@ const Services = () => {
           >
             <SwiperSlide>
               <div className="ab-2-portfolio-thumb fix">
-                <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-about/portfolio/portfolio-1.jpg" alt="" />
+                <img src="/img/Services (630 x 700 px)/1.jpg" alt="" />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="ab-2-portfolio-thumb fix">
-                <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-about/portfolio/portfolio-2.jpg" alt="" />
+                <img src="/img/Services (630 x 700 px)/2.jpg" alt="" />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="ab-2-portfolio-thumb fix">
-                <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-about/portfolio/portfolio-3.jpg" alt="" />
+                <img src="/img/Services (630 x 700 px)/3.jpg" alt="" />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="ab-2-portfolio-thumb fix">
-                <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-about/portfolio/portfolio-1.jpg" alt="" />
+                <img src="/img/Services (630 x 700 px)/4.jpg" alt="" />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="ab-2-portfolio-thumb fix">
-                <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-about/portfolio/portfolio-2.jpg" alt="" />
+                <img src="/img/Services (630 x 700 px)/5.jpg" alt="" />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="ab-2-portfolio-thumb fix">
-                <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-about/portfolio/portfolio-3.jpg" alt="" />
+                <img src="/img/Services (630 x 700 px)/6.jpg" alt="" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="ab-2-portfolio-thumb fix">
+                <img src="/img/Services (630 x 700 px)/7.jpg" alt="" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="ab-2-portfolio-thumb fix">
+                <img src="/img/Services (630 x 700 px)/8.jpg" alt="" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="ab-2-portfolio-thumb fix">
+                <img src="/img/Services (630 x 700 px)/9.jpg" alt="" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="ab-2-portfolio-thumb fix">
+                <img src="/img/Services (630 x 700 px)/10.jpg" alt="" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="ab-2-portfolio-thumb fix">
+                <img src="/img/Services (630 x 700 px)/11.jpg" alt="" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="ab-2-portfolio-thumb fix">
+                <img src="/img/Services (630 x 700 px)/12.jpg" alt="" />
               </div>
             </SwiperSlide>
           </Swiper>
@@ -1241,34 +1271,64 @@ const Services = () => {
           >
             <SwiperSlide >
               <div className="sv-port-thumb port-thumb-2">
-                <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-service/portfolio/port-4.jpg" alt="" />
+                <img src="/img/Services (460 x 260 px)/1.jpg" alt="" />
               </div>
             </SwiperSlide>
             <SwiperSlide >
               <div className="sv-port-thumb port-thumb-1">
-                <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-service/portfolio/port-2.jpg" alt="" />
+                <img src="/img/Services (460 x 260 px)/2.jpg" alt="" />
               </div>
-              </SwiperSlide>
-              <SwiperSlide >
+            </SwiperSlide>
+            <SwiperSlide >
               <div className="sv-port-thumb port-thumb-2">
-                <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-service/portfolio/port-1.jpg" alt="" />
+                <img src="/img/Services (460 x 260 px)/3.jpg" alt="" />
               </div>
-              </SwiperSlide>
-              <SwiperSlide >
+            </SwiperSlide>
+            <SwiperSlide >
               <div className="sv-port-thumb port-thumb-1">
-                <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-service/portfolio/port-2.jpg" alt="" />
+                <img src="/img/Services (460 x 260 px)/4.jpg" alt="" />
               </div>
-              </SwiperSlide>
-              <SwiperSlide >
+            </SwiperSlide>
+            <SwiperSlide >
               <div className="sv-port-thumb port-thumb-2">
-                <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-service/portfolio/port-2.jpg" alt="" />
+                <img src="/img/Services (460 x 260 px)/5.jpg" alt="" />
               </div>
-              </SwiperSlide>
-              <SwiperSlide >
+            </SwiperSlide>
+            <SwiperSlide >
               <div className="sv-port-thumb port-thumb-1">
-                <img src="https://html.hixstudio.net/liko-prev/liko/assets/img/inner-service/portfolio/port-3.jpg" alt="" />
+                <img src="/img/Services (460 x 260 px)/6.jpg" alt="" />
               </div>
-              </SwiperSlide>
+            </SwiperSlide>
+            <SwiperSlide >
+              <div className="sv-port-thumb port-thumb-2">
+                <img src="/img/Services (460 x 260 px)/7.jpg" alt="" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide >
+              <div className="sv-port-thumb port-thumb-1">
+                <img src="/img/Services (460 x 260 px)/8.jpg" alt="" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide >
+              <div className="sv-port-thumb port-thumb-2">
+                <img src="/img/Services (460 x 260 px)/9.jpg" alt="" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide >
+              <div className="sv-port-thumb port-thumb-1">
+                <img src="/img/Services (460 x 260 px)/10.jpg" alt="" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide >
+              <div className="sv-port-thumb port-thumb-2">
+                <img src="/img/Services (460 x 260 px)/11.jpg" alt="" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide >
+              <div className="sv-port-thumb port-thumb-1">
+                <img src="/img/Services (460 x 260 px)/12.jpg" alt="" />
+              </div>
+            </SwiperSlide>
           </Swiper>
       </div>
 

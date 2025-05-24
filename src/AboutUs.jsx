@@ -180,96 +180,62 @@ export default function AboutUs() {
             <div className='w-100 overflow-hidden'>
                 <section className="scrapbook">
                     <img
-                        src="/img/POLAA/1.png"
+                        src="/img/About Us (PolaRoid)/1.png"
                         className="scrap-img"
                         style={{ top: "10%", left: "10%", transform: "rotate(-10deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/POLAA/2.png"
+                        src="/img/About Us (PolaRoid)/2.png"
                         className="scrap-img"
                         style={{ top: "10%", left: "22%", transform: "rotate(-10deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/POLAA/3.png"
+                        src="/img/About Us (PolaRoid)/3.png"
                         className="scrap-img"
                         style={{ top: "15%", left: "35%", transform: "rotate(5deg) scale(0.9)", }}
                     />
                      <img
-                        src="/img/POLAA/4.png"
+                        src="/img/About Us (PolaRoid)/4.png"
                         className="scrap-img"
                         style={{ top: "15%", left: "50%", transform: "rotate(5deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/POLAA/5.png"
+                        src="/img/About Us (PolaRoid)/5.png"
                         className="scrap-img"
                         style={{ top: "40%", left: "10%", transform: "rotate(-5deg) scale(0.9)", }}
                     />
                      <img
-                        src="/img/POLAA/6.png"
+                        src="/img/About Us (PolaRoid)/6.png"
                         className="scrap-img"
                         style={{ top: "40%", left: "25%", transform: "rotate(-5deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/POLAA/7.png"
+                        src="/img/About Us (PolaRoid)/7.png"
                         className="scrap-img"
                         style={{ top: "40%", left: "40%", transform: "rotate(8deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/POLAA/8.png"
+                        src="/img/About Us (PolaRoid)/8.png"
                         className="scrap-img"
                         style={{ top: "70%", left: "10%", transform: "rotate(8deg) scale(0.9)", }}
                     />
                     
                     <img
-                        src="/img/POLAA/9.png"
+                        src="/img/About Us (PolaRoid)/9.png"
                         className="scrap-img"
                         style={{ top: "20%", left: "66%", transform: "rotate(-7deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/POLAA/10.png"
+                        src="/img/About Us (PolaRoid)/10.png"
                         className="scrap-img"
                         style={{ top: "20%", left: "82%", transform: "rotate(-7deg) scale(0.9)", }}
                     />
                     <img
-                        src="/img/POLAA/11.png"
+                        src="/img/About Us (PolaRoid)/11.png"
                         className="scrap-img"
                         style={{ top: "50%", left: "55%", transform: "rotate(3deg) scale(0.9)", }}
                     />
-                     <img
-                        src="/img/POLAA/12.png"
-                        className="scrap-img"
-                        style={{ top: "50%", left: "75%", transform: "rotate(3deg) scale(0.9)", }}
-                    />
-                    <img
-                        src="/img/POLAA/13.png"
-                        className="scrap-img"
-                        style={{ top: "70%", left: "25%", transform: "rotate(-3deg) scale(0.9)", }}
-                    />
-                    <img
-                        src="/img/POLAA/14.png"
-                        className="scrap-img"
-                        style={{ top: "70%", left: "42%", transform: "rotate(-3deg) scale(0.9)", }}
-                    />
-                    <img
-                        src="/img/POLAA/15.png"
-                        className="scrap-img"
-                        style={{ top: "75%", left: "80%", transform: "rotate(10deg) scale(0.9)", }}
-                    />
-                    <img
-                        src="/img/POLAA/16.png"
-                        className="scrap-img"
-                        style={{ top: "50%", left: "92%", transform: "rotate(10deg) scale(0.9)", }}
-                    />
-                    <img
-                        src="/img/POLAA/17.png"
-                        className="scrap-img"
-                        style={{ top: "35%", left: "55%", transform: "rotate(-12deg) scale(0.9)", }}
-                    />
-                    <img
-                        src="/img/POLAA/18.png"
-                        className="scrap-img"
-                        style={{ top: "80%", left: "60%", transform: "rotate(6deg) scale(0.9)", }}
-                    />
+                    
                 </section>
 
                 <div className="ab-about-area ab-about-mt pb-90 z-index-5 mb-90">
@@ -371,7 +337,7 @@ export default function AboutUs() {
                                             </h4>
                                             <img
                                                 className="ab-about-shape-1 d-none d-md-block"
-                                                src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
+                                                src="/img/About Us (375 x 464)/.jpg"
                                                 alt=""
                                             />
                                         </div>
@@ -452,7 +418,7 @@ export default function AboutUs() {
                                             }}>
                                             <div className="tp-hover-btn-item">
                                                 <img
-                                                    src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
+                                                    src="/img/About Us (375 x 464)/1.jpg"
                                                     alt=""
                                                 />
                                             </div>
@@ -475,7 +441,7 @@ export default function AboutUs() {
                                             }}>
                                             <div className="tp-hover-btn-item">
                                                 <img
-                                                    src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
+                                                    src="/img/About Us (375 x 464)/2.jpg"
                                                     alt=""
                                                 />
                                             </div>
@@ -498,7 +464,7 @@ export default function AboutUs() {
                                             }}>
                                             <div className="tp-hover-btn-item">
                                                 <img
-                                                    src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
+                                                    src="/img/About Us (375 x 464)/3.jpg"
                                                     alt=""
                                                 />
                                             </div>
@@ -521,7 +487,7 @@ export default function AboutUs() {
                                             }}>
                                             <div className="tp-hover-btn-item">
                                                 <img
-                                                    src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
+                                                    src="/img/About Us (375 x 464)/4.jpg"
                                                     alt=""
                                                 />
                                             </div>
@@ -544,7 +510,7 @@ export default function AboutUs() {
                                             }}>
                                             <div className="tp-hover-btn-item">
                                                 <img
-                                                    src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
+                                                    src="/img/About Us (375 x 464)/5.jpg"
                                                     alt=""
                                                 />
                                             </div>
@@ -567,7 +533,30 @@ export default function AboutUs() {
                                             }}>
                                             <div className="tp-hover-btn-item">
                                                 <img
-                                                    src="https://algos.chaak.in/cdn/shop/files/5_59875ccd-c4cd-41c9-8914-4559e833e154.jpg?v=12457141878794322571"
+                                                    src="/img/About Us (375 x 464)/6.jpg"
+                                                    alt=""
+                                                />
+                                            </div>
+                                            <div className="tp-team-content d-none">
+                                                <span>Art direction</span>
+                                                <h4 className="tp-team-title-sm">
+                                                    <a href="#">JANE MILLS</a>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        
+                                    </SwiperSlide>
+                                    <SwiperSlide style={{ width: 'auto' }}>
+                                        <div className="tp-team-item tp-hover-btn-wrapper marque fix mb-30"
+                                            style={{
+                                                translate: "none",
+                                                rotate: "none",
+                                                scale: "none",
+                                                transform: "translate(25%, 0px)"
+                                            }}>
+                                            <div className="tp-hover-btn-item">
+                                                <img
+                                                    src="/img/About Us (375 x 464)/7.jpg"
                                                     alt=""
                                                 />
                                             </div>
