@@ -383,8 +383,6 @@ export default function Carousel({data}) {
                                     </a>
                                 </div>
                             </div>
-                            
-                           
                         </div>
                     </div>
                 </div>

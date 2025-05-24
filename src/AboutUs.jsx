@@ -35,7 +35,7 @@ export default function AboutUs() {
     return (
         <>
             <style>{`
-                .scrapbook { position: relative; height: 120vh; }
+                .scrapbook { position: relative; height: 100vh; }
                 .scrap-img {
                     position: absolute;
                     width: 300px;
@@ -182,58 +182,58 @@ export default function AboutUs() {
                     <img
                         src="/img/About Us (PolaRoid)/1.png"
                         className="scrap-img"
-                        style={{ top: "10%", left: "10%", transform: "rotate(-10deg) scale(0.9)", }}
+                        style={{ top: "10%", left: "5%", transform: "rotate(-10deg) scale(0.9)", }}
                     />
                     <img
                         src="/img/About Us (PolaRoid)/2.png"
                         className="scrap-img"
-                        style={{ top: "10%", left: "22%", transform: "rotate(-10deg) scale(0.9)", }}
+                        style={{ top: "10%", left: "19%", transform: "rotate(-10deg) scale(0.9)", }}
                     />
                     <img
                         src="/img/About Us (PolaRoid)/3.png"
                         className="scrap-img"
-                        style={{ top: "15%", left: "35%", transform: "rotate(5deg) scale(0.9)", }}
+                        style={{ top: "15%", left: "33%", transform: "rotate(5deg) scale(0.9)", }}
                     />
                      <img
                         src="/img/About Us (PolaRoid)/4.png"
                         className="scrap-img"
-                        style={{ top: "15%", left: "50%", transform: "rotate(5deg) scale(0.9)", }}
+                        style={{ top: "15%", left: "48%", transform: "rotate(5deg) scale(0.9)", }}
                     />
                     <img
                         src="/img/About Us (PolaRoid)/5.png"
                         className="scrap-img"
-                        style={{ top: "40%", left: "10%", transform: "rotate(-5deg) scale(0.9)", }}
+                        style={{ top: "15%", left: "62%", transform: "rotate(-5deg) scale(0.9)", }}
                     />
                      <img
                         src="/img/About Us (PolaRoid)/6.png"
                         className="scrap-img"
-                        style={{ top: "40%", left: "25%", transform: "rotate(-5deg) scale(0.9)", }}
+                        style={{ top: "15%", left: "75%", transform: "rotate(5deg) scale(0.9)", }}
                     />
                     <img
                         src="/img/About Us (PolaRoid)/7.png"
                         className="scrap-img"
-                        style={{ top: "40%", left: "40%", transform: "rotate(8deg) scale(0.9)", }}
+                        style={{ top: "50%", left: "10%", transform: "rotate(-5deg) scale(0.9)", }}
                     />
                     <img
                         src="/img/About Us (PolaRoid)/8.png"
                         className="scrap-img"
-                        style={{ top: "70%", left: "10%", transform: "rotate(8deg) scale(0.9)", }}
+                        style={{ top: "50%", left: "25%", transform: "rotate(8deg) scale(0.9)", }}
                     />
                     
                     <img
                         src="/img/About Us (PolaRoid)/9.png"
                         className="scrap-img"
-                        style={{ top: "20%", left: "66%", transform: "rotate(-7deg) scale(0.9)", }}
+                        style={{ top: "50%", left: "40%", transform: "rotate(-7deg) scale(0.9)", }}
                     />
                     <img
                         src="/img/About Us (PolaRoid)/10.png"
                         className="scrap-img"
-                        style={{ top: "20%", left: "82%", transform: "rotate(-7deg) scale(0.9)", }}
+                        style={{ top: "50%", left: "55%", transform: "rotate(-7deg) scale(0.9)", }}
                     />
                     <img
                         src="/img/About Us (PolaRoid)/11.png"
                         className="scrap-img"
-                        style={{ top: "50%", left: "55%", transform: "rotate(3deg) scale(0.9)", }}
+                        style={{ top: "50%", left: "70%", transform: "rotate(3deg) scale(0.9)", }}
                     />
                     
                 </section>

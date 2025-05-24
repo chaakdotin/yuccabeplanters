@@ -19,7 +19,7 @@ export default function Projects() {
         }
         // Main horizontal scroll
         gsap.to(container, {
-            xPercent: -(7.5 * (totalPanels - 1)),
+            xPercent: -(8 * (totalPanels - 1)),
             ease: "none",
             scrollTrigger: {
                 trigger: container,
