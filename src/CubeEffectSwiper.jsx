@@ -959,7 +959,7 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                 <div className="sdf  overflow-hidden pt-5" ref={refs.clients}>
                     <div className='d-flex flex-column align-items-center justify-content-center h-100vh w-100 position-relative' >
                         <img src="1.jpg" alt="" style={{ width: '40%', borderRadius: '20px', scale: 2.5 }} className="sdf-img" />
-                        <div className=" position-absolute bottom-0" style={{height:270, display:"flex",alignItems:"center"}} >
+                        <div className=" position-absolute bottom-0" style={{height:"25vh", display:"flex",alignItems:"center"}} >
                             <a className="button-77 poppins-regular " role="button" href='/collections'>
                                 Explore Designs
                             </a>
