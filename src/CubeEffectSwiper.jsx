@@ -956,10 +956,16 @@ const CubeEffectSwiper = ({ scrollToSection }) => {
                         </div>
                     </div>
                 </section>
-                <div className="sdf overflow-hidden pt-5" ref={refs.clients}>
-                    <div className='d-flex flex-column align-items-center justify-content-center h-100vh w-100' >
+                <div className="sdf  overflow-hidden pt-5" ref={refs.clients}>
+                    <div className='d-flex flex-column align-items-center justify-content-center h-100vh w-100 position-relative' >
                         <img src="1.jpg" alt="" style={{ width: '40%', borderRadius: '20px', scale: 2.5 }} className="sdf-img" />
+                         <div className=" position-absolute" style={{bottom:10}}>
+                            <a className="button-77 poppins-regular " role="button" href='/collections'>
+                                Explore Designs
+                            </a>
+                        </div>
                     </div>
+                   
                 </div>
                 <div className="bg-color contact-us" ref={refs.contact}>
                     <div className="container h-100vh ">

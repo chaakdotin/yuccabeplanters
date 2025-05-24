@@ -29,6 +29,32 @@ body, html {
     padding: 0;
     /* overflow-x: hidden; */
 }
+.scroll-down {
+    position: absolute;
+    bottom: 0px;
+    left: 29%;
+    transform: translate(-50%, -0%);
+}
+.scroll-down p {
+    font-size: 16px;
+    line-height: 1;
+    padding: 5px 0px;
+    
+    margin: 0px;
+}
+.scroll-down .arrows {
+    height: 50px;
+    overflow: hidden;
+}
+
+.scroll-down .arrow {
+    width: 12px;
+    height: 12px;
+    margin: .5px auto;
+    border-bottom: 2px solid #000;
+    border-right: 2px solid #000;
+    transform: rotate(45deg);
+}
 .parallax-slider-wrapper {
     /* position: fixed; */
     top: 0;
@@ -100,7 +126,7 @@ a:focus, a:hover {
 .parallax-img {
     position: absolute;
     height: 100%;
-    width: 800px;
+    width: 900px;
     background-size: cover;
     background-position: center;
     margin-left: -100px;

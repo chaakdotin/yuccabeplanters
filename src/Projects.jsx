@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useLayoutEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import css from './Projects.css?raw'
@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Projects() {
     const containerRef = useRef(null);
     const spacerRef = useRef(null);
-    // Set scroll spacer height
+    const arrowRef = useRef([]);
    
     useEffect(() => {
         const container = containerRef.current;
@@ -19,7 +19,7 @@ export default function Projects() {
         }
         // Main horizontal scroll
         gsap.to(container, {
-            xPercent: -(4 * (totalPanels - 1)),
+            xPercent: -(7.5 * (totalPanels - 1)),
             ease: "none",
             scrollTrigger: {
                 trigger: container,
@@ -51,12 +51,32 @@ export default function Projects() {
                 });
             }
         });
-        
-
+        // gsap.to('.scroll-down', {
+        //     bottom: "-200%",
+        //     ease: "none",
+            
+        //     scrollTrigger: {
+        //         trigger: container,
+        //         scrub: 1,
+        //         markers:true,
+        //         start:"top top",
+        //         end: () => `+=${container.scrollWidth}`,
+        //     },
+        // });
+        arrowRef.current.forEach((arrow, index) => {
+            gsap.to(arrow, {
+                y: 12,
+                duration: 0.8,
+                ease: "power1.inOut",
+                yoyo: true,
+                repeat: -1,
+                delay: index * 0.35, // stagger each arrow animation by 0.3s
+            });
+        });
     
         ScrollTrigger.refresh();
     }, []);
-    
+
     return (
         <>
             <style>{css}</style>
@@ -139,7 +159,33 @@ export default function Projects() {
                             </a>
                         </div>
                     </div>
+                    <div className="scroll-down" style={{ textAlign: "center", paddingTop: 50 }}>
+                        <p className="poppins-regular" style={{ color: "#000" }}>Scroll Down</p>
+                        <div className="arrows">
+                            <div
+                                ref={(el) => (arrowRef.current[0] = el)}
+                                className="arrow"
+                                style={{
+                                    translate: "none",
+                                    rotate: "none",
+                                    scale: "none",
+                                    transform: "translate3d(0px, 8.2398px, 0px) rotate(45deg)"
+                                }}
+                            />
+                            <div
+                                className="arrow"
+                                ref={(el) => (arrowRef.current[1] = el)}
+                                style={{
+                                    translate: "none",
+                                    rotate: "none",
+                                    scale: "none",
+                                    transform: "translate3d(0px, 6.302px, 0px) rotate(45deg)"
+                                }}
+                            />
+                        </div>
+                    </div>
                 </div>
+                
             </div>
             <div ref={spacerRef}></div>
             <style>{`.footer-bg-color { background-color: #d9d4c5!important; margin-bottom:20px; }`}</style>
