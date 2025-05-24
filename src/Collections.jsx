@@ -23,10 +23,9 @@ const Image = ({ imageData }) => {
           alt="Man adjusting necklace"
           effect="blur"
           wrapperProps={{
-              // If you need to, you can tweak the effect transition using the wrapper style.
-              style: {transitionDelay: "1s"},
+            style: {transitionDelay: ".3s"},
+            className: ` lazy-load-image-background blur lazy-load-image-loaded clickable ${d.Entry_ID == 1 ? 'active' : ''}`
           }}
-          className={`clickable ${d.Entry_ID == 1 ? 'active' : ''}`}
         />
       ))}
     </>
@@ -104,9 +103,11 @@ const Collections = () => {
   
     imageSections.forEach(section => {
       const clickableImages = section.querySelectorAll('.clickable');
-      const mainImage = section.querySelector('.main-image');
+
+
+      const mainImage = section.querySelector('.right-image');
+
       const slider = section.querySelector('.slider');
-  
       if (!clickableImages.length || !mainImage || !slider) return;
   
       const totalImages = clickableImages.length;
@@ -143,8 +144,9 @@ const Collections = () => {
       }
   
       function handleImageClick(img) {
-        mainImage.src = img.src;
-        mainImage.alt = img.alt;
+
+        mainImage.querySelector('img').src = img.querySelector('img').src;
+        mainImage.querySelector('img').alt = img.querySelector('img').alt;
         clickableImages.forEach(i => i.classList.remove('active'));
         img.classList.add('active');
         centerActiveImage(img);
@@ -785,7 +787,6 @@ const Collections = () => {
       setLoading(true);
     }).catch((err) => {
       setLoading(false);
-      console.error('API Error:', err);
       alert('Failed to load collections. Please try again later.');
     });
   }, []);
@@ -876,7 +877,7 @@ const Collections = () => {
             aspect-ratio: 3/4;
             border: none;
           }
-          .slider img.active {
+          .slider .clickable.active {
             border: 2px solid white;
           }
           .right-image {

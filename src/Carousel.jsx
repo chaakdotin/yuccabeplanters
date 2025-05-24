@@ -357,7 +357,7 @@ export default function Carousel({data}) {
                         <div className='h-90vh bg-image border-reduis w-100 d-flex justify-content-start align-items-center text-white' >
                             <div style={{width: "60%", display:"flex", flexDirection:"column", gap:"1rem", textAlign:"left"}} className='navbar-container-padding poppins-regular'>
                                 <span className='poppins-bold' style={{fontSize:28,fontWeight:500}}>
-                                    <span style={{paddingRight:5}}>Yuccabe</span>[yu-ka-bey]
+                                    <span style={{paddingRight:5}}>Yuccabe</span> [yu-ka-bey]
                                 </span>
                                 <span>
                                     At Yuccabe, our vision is to elevate landscaping and space expectations by blending premiumness, functionality and strength harmoniously.
