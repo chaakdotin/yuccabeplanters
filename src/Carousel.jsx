@@ -23,8 +23,18 @@ export default function Carousel({data}) {
         }
         return ["नमस्ते! शुभ रात्रि", "Hello! Good Night"];
     }
-      const texts = [
-        ...getGreeting(), // Merged greeting
+    const texts = [
+       "Hello",
+       "नमस्ते",
+       "ਸਤ ਸ੍ਰੀ ਅਕਾਲ",
+       "வணக்கம்",
+       "నమస్కారం",
+       "ನಮಸ್ಕಾರ",
+       "നമസ്കാരം",
+       "নমস্কার",
+       "કેમ છો",
+       "नमस्कार",
+       "آداب"
     ];
     useLayoutEffect(() => {
         arrowRef.current.forEach((arrow, index) => {
