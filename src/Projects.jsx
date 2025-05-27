@@ -30,10 +30,6 @@ export default function Projects() {
         });
     
         // Background parallax effect
-        // Animate each image inside the panels
-        // Animate each image inside the panels
-        // Animate each image inside the panels
-        // Animate each image inside the panels
         panels.forEach((panel, index) => {
             const bg = panel.querySelector(".parallax-img");
 

@@ -41,14 +41,16 @@ const Collections = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   let tl;
+  
   const lenis = new Lenis({
-      lerp: 0.5, // Add slight smoothing for better ScrollTrigger compatibility
-      duration: 1, // Adjust duration for minimal smoothing
-      smooth: true, // Enable smooth scrolling
-      wheelMultiplier: 0.3,
-      normalizeWheel: false,
-      smoothTouch: false
-    });
+    lerp: 0.5,
+    duration: 1,
+    smooth: true,
+    wheelMultiplier: 0.3,
+    normalizeWheel: false,
+    smoothTouch: false
+  });
+
   useEffect(() => {
     if (!loading) return;
     
@@ -100,7 +102,7 @@ const Collections = () => {
     const imageSections = document.querySelectorAll('.image-section');
     const imageHeight = 220;
     const containerHeight = 658.68;
-  
+
     imageSections.forEach(section => {
       const clickableImages = section.querySelectorAll('.clickable');
 
@@ -174,7 +176,7 @@ const Collections = () => {
         }
       }, 600);
     }
-    // alert(window.innerWidth);
+
     if(window.innerWidth <= 330){
       const tl1 = gsap.timeline({
         scrollTrigger: {
@@ -926,8 +928,77 @@ const Collections = () => {
           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+            <div>
+              <div>
+                <span>Stone Finishes</span>
+              </div>
+              <div>
+                <div className="row pt-3">
+                  <div className="col-6 overflow-hidden">
+                    <img src="/img/stone-finishes/121.jpg" alt="" className="w-100" style={{height:80}}/>
+                  </div>
+                  <div className="col-6 overflow-hidden">
+                    <img src="/img/stone-finishes/122.jpg" alt="" className="w-100" style={{height:80}}/>
+                  </div>
+                </div>
+                <div className="row pt-3">
+                  <div className="col-6 overflow-hidden">
+                    <img src="/img/stone-finishes/123.jpg" alt="" className="w-100" style={{height:80}}/>
+                  </div>
+                  <div className="col-6 overflow-hidden">
+                    <img src="/img/stone-finishes/124.jpg" alt="" className="w-100" style={{height:80}}/>
+                  </div>
+                </div>
+                <div className="row pt-3">
+                  <div className="col-6 overflow-hidden">
+                    <img src="/img/stone-finishes/125.jpg" alt="" className="w-100" style={{height:80}}/>
+                  </div>
+                  <div className="col-6 overflow-hidden">
+                    <img src="/img/stone-finishes/126.jpg" alt="" className="w-100"style={{height:80}}/>
+                  </div>
+                </div>
+                <div className="row pt-3">
+                  <div className="col-6 overflow-hidden">
+                    <img src="/img/stone-finishes/127.jpg" alt="" className="w-100" style={{height:80}}/>
+                  </div>
+                  <div className="col-6 overflow-hidden">
+                    <img src="/img/stone-finishes/129.png" alt="" className="w-100" style={{height:80}}/>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div className="pt-3">
+              <div>
+                <span>Textures</span>
+              </div>
+              <div>
+                <div className="row pt-3">
+                  <div className="col-6 overflow-hidden">
+                    <img src="/img/stone-finishes/133.png" alt="" className="w-100" style={{height:80}}/>
+                  </div>
+                  <div className="col-6 overflow-hidden">
+                    <img src="/img/stone-finishes/130.png" alt="" className="w-100" style={{height:80}}/>
+                  </div>
+                </div>
+                <div className="row pt-3">
+                  <div className="col-6 overflow-hidden">
+                    <img src="/img/stone-finishes/132.png" alt="" className="w-100" style={{height:80}}/>
+                  </div>
+                  <div className="col-6 overflow-hidden">
+                    <img src="/img/stone-finishes/129.png" alt="" className="w-100" style={{height:80}}/>
+                  </div>
+                </div>
+                <div className="row pt-3">
+                  <div className="col-6 overflow-hidden">
+                    <img src="/img/stone-finishes/134.png" alt="" className="w-100" style={{height:80}}/>
+                  </div>
+                  <div className="col-6 overflow-hidden">
+                    <img src="/img/stone-finishes/135.png" alt="" className="w-100" style={{height:80}}/>
+                  </div>
+                </div>
+              </div>
+            </div>
         </Offcanvas.Body>
       </Offcanvas>
       <div className="pb-sm-20" style={{ position: "relative" }}>
